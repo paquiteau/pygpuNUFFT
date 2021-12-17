@@ -1,17 +1,20 @@
 import os
-import sys
-from setuptools import setup, Extension, find_packages
-from setuptools.command.build_ext import build_ext
-from importlib import import_module
 import platform
-from pprint import pprint
 import subprocess
+import sys
+from importlib import import_module
+from pprint import pprint
+
+from setuptools import Extension, setup
+from setuptools.command.build_ext import build_ext
+
 try:
     from pip._internal.main import main as pip_main
 except ImportError:
     from pip._internal import main as pip_main
 
 release_info = {}
+
 
 class CMakeExtension(Extension):
 
@@ -20,9 +23,9 @@ class CMakeExtension(Extension):
         super().__init__(name, sources=[])
         self.sourcedir = os.path.abspath(sourcedir)
 
+
 class CMakeBuild(build_ext):
-    """ Define a cmake build extension.
-    """
+    """Define a cmake build extension."""
 
     @staticmethod
     def _preinstall(package_list, options=[]):
@@ -33,7 +36,6 @@ class CMakeBuild(build_ext):
             raise TypeError('preinstall inputs must be of type list.')
 
         pip_main(['install'] + options + package_list)
-
 
     def _set_pybind_path(self):
         """ Set path to Pybind11 include directory.
@@ -54,7 +56,7 @@ class CMakeBuild(build_ext):
 
         # Check cmake is installed and is sufficiently new.
         try:
-            out = subprocess.check_output(["cmake", "--version"])
+            _ = subprocess.check_output(["cmake", "--version"])
         except OSError:
             raise RuntimeError(
                 "CMake must be installed to build the following extensions: " +
@@ -70,16 +72,16 @@ class CMakeBuild(build_ext):
         extdir = os.path.abspath(
             os.path.dirname(self.get_ext_fullpath(ext.name)))
         cmake_args = ["-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=" + extdir,
-                      "-DPYTHON_EXECUTABLE=" + sys.executable,
-                      "-DGEN_PYTHON_FILES=ON",
-                      "-DGEN_MEX_FILES=OFF",
-                      "-DPYBIND11_INCLUDE_DIR=" + self.pybind_path]
+ #                     "-Dpybind11_INCLUDE_DIR=" + self.pybind_path
+                      ]
         cfg = "Debug" if self.debug else "Release"
         build_args = ["--config", cfg]
 
         if platform.system() == "Windows":
-            cmake_args += ['-DCMAKE_LIBRARY_OUTPUT_DIRECTORY_{}={}'.format(cfg.upper(), extdir)]
-            cmake_args += ['-DCMAKE_RUNTIME_OUTPUT_DIRECTORY_{}={}'.format(cfg.upper(), extdir)]
+            cmake_args += ['-DCMAKE_LIBRARY_OUTPUT_DIRECTORY_{}={}'.format(
+                cfg.upper(), extdir)]
+            cmake_args += ['-DCMAKE_RUNTIME_OUTPUT_DIRECTORY_{}={}'.format(
+                cfg.upper(), extdir)]
             if sys.maxsize > 2**32:
                 cmake_args += ['-A', 'x64']
             build_args += ['--', '/m']
@@ -105,6 +107,7 @@ class CMakeBuild(build_ext):
                               cwd=build_temp_dir)
         print()
 
+
 setup(
     name="gpuNUFFT",
     version="0.3.2",
@@ -116,5 +119,5 @@ setup(
     cmdclass={
         "build_ext": CMakeBuild,
     },
-    zip_safe=False
+    zip_safe=False,
 )

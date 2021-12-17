@@ -19,8 +19,6 @@ set(GPU_SOURCES gpu/gpuNUFFT_conv_tests.cpp
 				gpu/gpuNUFFT_deapo_tests.cpp
 				gpu/forward/gpuNUFFT_forward_tests.cpp)
 
-#add CPU Tests
-add_subdirectory(cpu)
 
 cuda_add_executable(runGPUATMUnitTests ${GPU_SOURCES} ${GPUNUFFT_SOURCES} ../inc/gpuNUFFT_utils.hpp ../inc/gpuNUFFT_operator_factory.hpp ../inc/gpuNUFFT_operator.hpp ../inc/gpuNUFFT_kernels.hpp)
 if(WIN32)

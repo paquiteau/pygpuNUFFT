@@ -1,39 +1,31 @@
 ## gpuNUFFT - GPU Regridding of arbitrary 3-D/2-D MRI data
-
+Original Software by 
 - Andreas Schwarzl - andy.schwarzl[at]gmail.com
 - Florian Knoll - florian.knoll[at]nyumc.org
+
+Forked and tailored to python by 
+- Chaythia GR 
+- Carole Lazarus
+- Pierre-Antoine Comby
 
 -------------------------------------------------------------------------------
 INFO:
 -------------------------------------------------------------------------------
-GPU 3D/2D regridding library with MATLAB(R) Mexfile output.
-Go to the subdirectory **CUDA** to compile the mexfiles. 
+GPU 3D/2D regridding library. 
 
 REQUIREMENTS:
 -------------------------------------------------------------------------------
 
 - CUDA capable graphics card and working installation of [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads)
 - [CMake 2.8](https://cmake.org/download/) or higher
-- MATLAB 2008 or higher
 - [Google test](https://github.com/google/googletest) framework (optional)
 
 CMAKE Options:
 
-- GEN_MEX_FILES     : DEFAULT ON, enables generation of Matlab MEX files
 - WITH_DEBUG        : DEFAULT OFF, enables Command-Line DEBUG output
 - WITH_MATLAB_DEBUG : DEFAULT OFF, enables MATLAB Console DEBUG output
 - GEN_TESTS         : DEFAULT OFF, generate Unit tests
 - FERMI_GPU         : DEFAULT OFF, set ON to support cards with compute capability 2.0
-
-Prior to compilation, the path where MATLAB is installed has to be defined in the top level CMakeLists.txt file, e.g.:
-
-SET(MATLAB_ROOT_DIR "/home/florian/Programs/MATLAB/R2012b" CACHE STRING "MATLAB Installation Directory")
-
-Alternatively, it can be passed as command line argument when calling cmake, e.g.:
-
-```
-cmake .. -DMATLAB_ROOT_DIR=/path/to/matlab
-```
 
 -------------------------------------------------------------------------------
 LINUX, using gcc:
@@ -94,14 +86,3 @@ in the build directory.
 
 Written documentation and presentations can be found [here](https://www.dropbox.com/sh/gcvcszporj65wnq/AAA3eFsGQnSb7UottCSx0Hiva?dl=0).
 
-
-Python Bindings
----------------
-
-Now we have support for python bindings. Bindings written by Chaithya G R and Carole Lazarus.
-
-For using the python bindings, install from git repository:
-
-`pip install git+https://github.com/andyschwarzl/gpuNUFFT`
-
-To see the usage, please check gpuNUFFT/python or use the NonCartesianFFT class from [pysap-mri](https://github.com/CEA-COSMIC/pysap-mri/)
