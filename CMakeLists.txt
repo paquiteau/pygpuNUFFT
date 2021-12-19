@@ -3,19 +3,20 @@ project(gpuNUFFT)
 
 cmake_minimum_required(VERSION 3.15)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
+SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
+SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/bin)
+SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
+SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG ${PROJECT_SOURCE_DIR}/bin)
 
-if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Release)
-endif()
+#for older CMAKE versions these vars have to be set
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+SET(ARCHIVE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 set(CMAKE_CXX_FLAGS "-std=c++11 -fPIC")
 
 # find dependencies
 find_package(CUDA REQUIRED)
-find_package(pybind11 REQUIRED)
 
 
 #Options
@@ -70,29 +71,27 @@ ENDIF()
 
 message(STATUS "setting NVCC FLAGS to: ${CUDA_NVCC_FLAGS}")
 
-#
 set(GRID_LIB_ATM_NAME "gpuNUFFT_ATM${PREC_SUFFIX}")
 
-message(STATUS "creating lib with name: ${GRID_LIB_ATM_NAME}")
-set(WARNING "/* WARNING: Automatically generated file. Please do not modify this file. */")
-configure_file( ${CMAKE_SOURCE_DIR}/CUDA/inc/config.hpp.cmake ${CMAKE_SOURCE_DIR}/inc/config.hpp)
-configure_file( ${CMAKE_SOURCE_DIR}/CUDA/inc/cufft_config.hpp.cmake ${CMAKE_SOURCE_DIR}/inc/cufft_config.hpp)
+#Include dirs
+set(GPUNUFFT_INC_DIR ${CMAKE_SOURCE_DIR}/CUDA/inc)
+set(GPUNUFFT_INCLUDE ${GPUNUFFT_INC_DIR}/cuda_utils.hpp
+                     ${GPUNUFFT_INC_DIR}/cuda_utils.cuh
+                     ${GPUNUFFT_INC_DIR}/config.hpp
+                     ${GPUNUFFT_INC_DIR}/gpuNUFFT_utils.hpp
+                     ${GPUNUFFT_INC_DIR}/gpuNUFFT_types.hpp
+                     ${GPUNUFFT_INC_DIR}/gpuNUFFT_kernels.hpp
+                     ${GPUNUFFT_INC_DIR}/precomp_kernels.hpp
+                     ${GPUNUFFT_INC_DIR}/precomp_utils.hpp
+                     ${GPUNUFFT_INC_DIR}/gpuNUFFT_operator.hpp
+                     ${GPUNUFFT_INC_DIR}/balanced_operator.hpp
+                     ${GPUNUFFT_INC_DIR}/texture_gpuNUFFT_operator.hpp
+                     ${GPUNUFFT_INC_DIR}/balanced_gpuNUFFT_operator.hpp
+                     ${GPUNUFFT_INC_DIR}/gpuNUFFT_operator_factory.hpp
+                     ${GPUNUFFT_INC_DIR}/balanced_texture_gpuNUFFT_operator.hpp)
 
-include_directories(${CMAKE_SOURCE_DIR}/CUDA/inc
-                    ${CMAKE_SOURCE_DIR}/python/)
+SET(CONFIG_INCLUDE ${GPUNUFFT_INC_DIR}/config.hpp
+                   ${GPUNUFFT_INC_DIR}/cufft_config.hpp)
 
-include_directories(${pybind11_INCLUDE_DIRS})
-
-
-file(GLOB SOURCES_FILES "${CMAKE_SOURCE_DIR}/CUDA/src/*.cpp")
-file(GLOB GPU_SOURCES_FILES "${CMAKE_SOURCE_DIR}/CUDA/src/gpu/*.cu")
-file(GLOB HEADERS_FILES "${CMAKE_SOURCE_DIR}/CUDA/inc/*.hpp")
-
-cuda_include_directories(${CMAKE_SOURCE_DIR}/CUDA/inc)
-cuda_add_library(gpuNUFFT ${GPU_SOURCES_FILES} ${SOURCES_FILES} ${HEADERS_FILES} SHARED)
-cuda_add_cufft_to_target(gpuNUFFT)
-cuda_add_cublas_to_target(gpuNUFFT)
-
-target_link_libraries(gpuNUFFT ${Python3_LIBRARIES} ${CUDA_LIBRARIES})
-
-set_target_properties(gpuNUFFT PROPERTIES PREFIX "")
+add_subdirectory(CUDA)
+add_subdirectory(python)

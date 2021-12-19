@@ -18,10 +18,9 @@ release_info = {}
 
 class CMakeExtension(Extension):
 
-    def __init__(self, name, sourcedir):
+    def __init__(self, name):
         # don't invoke the original build_ext for this special extension
         super().__init__(name, sources=[])
-        self.sourcedir = os.path.abspath(sourcedir)
 
 
 class CMakeBuild(build_ext):
@@ -37,23 +36,9 @@ class CMakeBuild(build_ext):
 
         pip_main(['install'] + options + package_list)
 
-    def _set_pybind_path(self):
-        """ Set path to Pybind11 include directory.
-        """
-        self.pybind_path = getattr(import_module('pybind11'), 'get_include')()
-
     def run(self):
         """ Redifine the run method.
         """
-        # Set preinstall requirements
-        preinstall_list = ["pybind11"]
-
-        # Preinstall packages
-        self._preinstall(preinstall_list)
-
-        # Set Pybind11 path
-        self._set_pybind_path()
-
         # Check cmake is installed and is sufficiently new.
         try:
             _ = subprocess.check_output(["cmake", "--version"])
@@ -101,7 +86,9 @@ class CMakeBuild(build_ext):
         pprint(cmake_args)
         print("Cmake build args:")
         pprint(build_args)
-        subprocess.check_call(["cmake", ext.sourcedir] + cmake_args,
+        # CMakeLists.txt is in the same directory as this setup.py file
+        cmake_list_dir = os.path.abspath(os.path.dirname(__file__))
+        subprocess.check_call(["cmake", cmake_list_dir] + cmake_args,
                               cwd=build_temp_dir, env=env)
         subprocess.check_call(["cmake", "--build", "."] + build_args,
                               cwd=build_temp_dir)
@@ -112,9 +99,9 @@ setup(
     name="gpuNUFFT",
     version="0.3.2",
     description="gpuNUFFT - An open source GPU Library for 3D Gridding and NUFFT",
-    package_dir={"": "CUDA/bin"},
+    package_dir={"": "bin"},
     ext_modules=[
-        CMakeExtension("gpuNUFFT", sourcedir=os.path.join("CUDA")),
+        CMakeExtension("gpuNUFFT"),
     ],
     cmdclass={
         "build_ext": CMakeBuild,

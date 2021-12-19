@@ -1,0 +1,39 @@
+
+
+include(FetchContent)
+FetchContent_Declare(
+    pybind11
+    GIT_REPOSITORY https://github.com/pybind/pybind11
+    GIT_TAG        v2.8.1
+)
+
+FetchContent_GetProperties(pybind11)
+if(NOT pybind11_POPULATED)
+    FetchContent_Populate(pybind11)
+    add_subdirectory(${pybind11_SOURCE_DIR} ${pybind11_BINARY_DIR})
+endif()
+
+include_directories(
+    ${GPUNUFFT_INC_DIR}
+    ${PYTHON_INCLUDE_DIRS}
+    ${pybind11_INCLUDE_DIRS}
+    )
+
+message("pybind : ${pybind11_INCLUDE_DIR}")
+message("python inc : ${PYTHON_INCLUDE_DIRS}")
+message("python lib : ${PYTHON_LIBRARIES}")
+
+
+cuda_include_directories(${GPUNUFFT_INC_DIR})
+cuda_add_library(gpuNUFFT ${GPU_CU_SOURCES}
+                          ${GPU_GPUNUFFT_SOURCES}
+                          ${GPUNUFFT_SOURCES}
+                          ${GPUNUFFT_INCLUDE}
+                          gpuNUFFT_operator_python_factory.cpp
+                          # ${CMAKE_SOURCE_DIR}/CUDA/src/gpu/atomic_gpuNUFFT.cu
+                          SHARED)
+
+set_target_properties(gpuNUFFT PROPERTIES PREFIX "")
+target_link_libraries(gpuNUFFT ${CUDA_LIBRARIES})
+CUDA_ADD_CUFFT_TO_TARGET(gpuNUFFT)
+CUDA_ADD_CUBLAS_TO_TARGET(gpuNUFFT)
