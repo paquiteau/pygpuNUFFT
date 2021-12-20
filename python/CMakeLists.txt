@@ -1,5 +1,6 @@
 
 
+MESSAGE("------setting up Python bindings-------")
 include(FetchContent)
 FetchContent_Declare(
     pybind11

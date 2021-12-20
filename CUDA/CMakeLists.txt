@@ -8,8 +8,7 @@ include_directories(inc)
 add_subdirectory(src)
 
 if(GEN_TESTS)
-	# For make-based builds, defines make target named test.
-	# For Visual Studio builds, defines Visual Studio project named RUN_TESTS.
+
 	enable_testing()
 	add_subdirectory(test)
 	add_test(
