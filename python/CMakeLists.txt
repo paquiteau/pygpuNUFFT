@@ -34,6 +34,6 @@ cuda_add_library(gpuNUFFT ${GPU_CU_SOURCES}
                           SHARED)
 
 set_target_properties(gpuNUFFT PROPERTIES PREFIX "")
-target_link_libraries(gpuNUFFT ${CUDA_LIBRARIES})
+target_link_libraries(gpuNUFFT ${CUDA_LIBRARIES} ${GRID_LIB_ATM_NAME})
 CUDA_ADD_CUFFT_TO_TARGET(gpuNUFFT)
 CUDA_ADD_CUBLAS_TO_TARGET(gpuNUFFT)

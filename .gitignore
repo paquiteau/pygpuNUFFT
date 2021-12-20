@@ -11,10 +11,16 @@
 *.lai
 *.la
 *.a
+
 # Python
 *.pyc 
 *.pyd 
 *.egg-info/
+
+#doxygen
+doc/html/
+doc/latex/
+
 # others
 common/
 lib/

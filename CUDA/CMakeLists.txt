@@ -22,4 +22,3 @@ if(GEN_TESTS)
 		COMMAND runGPUATMUnitTests)
 endif(GEN_TESTS)
 
-add_subdirectory(doc)

@@ -95,3 +95,4 @@ SET(CONFIG_INCLUDE ${GPUNUFFT_INC_DIR}/config.hpp
 
 add_subdirectory(CUDA)
 add_subdirectory(python)
+add_subdirectory(doc)
