@@ -1,0 +1,11 @@
+name: CD
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  docs:
+    name: Deploy documentation
+    runs-on: ubuntu-latest
