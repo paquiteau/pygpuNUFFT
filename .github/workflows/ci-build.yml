@@ -23,6 +23,11 @@ jobs:
         method: 'local'
         # (Linux and 'local' method only) override arguments for the linux .run installer. For example if you don't want samples use ["--toolkit"] double quotes required!
         linux-local-args: '["--toolkit"]' # optional, default is ["--toolkit", "--samples"]
+    - name: export path
+      run: |
+        export PATH="$CUDA_PATH/bin:$PATH"
+        export LD_LIBRARY_PATH="$CUDA_PATH/lib:$LD_LIBRARY_PATH"
+        nvcc -V
     - uses: actions/checkout@v2
     # build project
     - name: mkdir build
