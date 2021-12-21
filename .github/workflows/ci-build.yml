@@ -1,11 +1,24 @@
-name: CD
+name: CI
 
 on:
   push:
-    branches:
-      - master
-
+    branches: [master]
+  pull_request: 
+    branches: [master]
+    
 jobs:
-  docs:
-    name: Deploy documentation
+  build:
     runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    # build project
+    - name: mkdir build
+      run: mkdir build
+    - name: cmake build (with tests)
+      run: cmake  -DGEN_TESTS=on -Bbuild  -S .
+    - name: cmake make
+      run: cmake --build build/ -H.
+    # run tests
+    - name: run tests
+    - run: bin/runGPUATMUnitTests
+    
