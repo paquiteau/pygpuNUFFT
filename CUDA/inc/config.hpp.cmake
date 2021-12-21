@@ -12,7 +12,6 @@
  *
  */
 
-#define MATLAB_DEBUG @MATLAB_DEBUG@
 #define DEBUG @DEBUG@
 
 #cmakedefine GPU_DOUBLE_PREC

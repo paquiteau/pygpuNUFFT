@@ -1,8 +1,5 @@
 
 
-configure_file(${CMAKE_SOURCE_DIR}/CUDA/inc/cufft_config.hpp.cmake ${CMAKE_SOURCE_DIR}/inc/cufft_config.hpp)
-configure_file(${CMAKE_SOURCE_DIR}/CUDA/inc/config.hpp.cmake ${CMAKE_SOURCE_DIR}/inc/config.hpp)
-
 include_directories(inc)
 
 add_subdirectory(src)

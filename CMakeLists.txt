@@ -73,6 +73,11 @@ message(STATUS "setting NVCC FLAGS to: ${CUDA_NVCC_FLAGS}")
 
 set(GRID_LIB_ATM_NAME "gpuNUFFT_ATM${PREC_SUFFIX}")
 
+SET(WARNING "/* WARNING: Automatically generated file. Please do not modify this file. */")
+configure_file(${CMAKE_SOURCE_DIR}/CUDA/inc/cufft_config.hpp.cmake ${CMAKE_SOURCE_DIR}/CUDA/inc/cufft_config.hpp)
+configure_file(${CMAKE_SOURCE_DIR}/CUDA/inc/config.hpp.cmake ${CMAKE_SOURCE_DIR}/CUDA/inc/config.hpp)
+
+message("configure_file called")
 #Include dirs
 set(GPUNUFFT_INC_DIR ${CMAKE_SOURCE_DIR}/CUDA/inc)
 set(GPUNUFFT_INCLUDE ${GPUNUFFT_INC_DIR}/cuda_utils.hpp
