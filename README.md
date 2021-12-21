@@ -20,9 +20,9 @@ REQUIREMENTS:
 -------------------------------------------------------------------------------
 
 - CUDA capable graphics card and working installation of [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads)
-- [pybind11](https://github.com/pybind/pybind11) 
-- [CMake 2.8](https://cmake.org/download/) or higher
-- [Google test](https://github.com/google/googletest) framework (optional)
+- [pybind11](https://github.com/pybind/pybind11) (downloaded by cmake build)
+- [CMake 3.15](https://cmake.org/download/) or higher
+- [Google test](https://github.com/google/googletest) f(downloaded by cmake build if needed)
 
 CMAKE Options:
 
