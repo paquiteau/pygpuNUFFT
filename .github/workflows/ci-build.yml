@@ -31,11 +31,11 @@ jobs:
     - uses: actions/checkout@v2
     # build project
     - name: mkdir build
-      run: mkdir build
+      run: mkdir build && cd build
     - name: cmake build (with tests)
-      run: cmake  -DGEN_TESTS=on -Bbuild  -S .
+      run: cmake  -DGEN_TESTS=on ..
     - name: cmake make
-      run: cmake --build build/ -H.
+      run: cmake --build .
     # run tests
     - name: run tests
       run: bin/runGPUATMUnitTests
