@@ -1,4 +1,8 @@
-## gpuNUFFT - GPU Regridding of arbitrary 3-D/2-D MRI data
+# gpuNUFFT - GPU Regridding of arbitrary 3-D/2-D MRI data
+
+![CD](https://github.com/paquiteau/pygpuNUFFT/actions/workflows/cd-build.yml/badge.svg)
+![CI](https://github.com/paquiteau/pygpuNUFFT/actions/workflows/ci-build.yml/badge.svg)
+
 
 This is an hard fork of https://github.com/andyschwarzl/gpuNUFFT , which focuses on providing extensive python bindings and more functionality for non cartesian MRI reconstruction.
 
@@ -51,6 +55,9 @@ To generate the source code documentation run
     > make doc
 
 in the build directory. 
+
+Otherwise, you can go to https://paquiteau.github.io/pygpuNUFFT/docs/ to access the up-to-date documentation of master branch.
+
 
 *Note: Requires doxygen to be installed.*
 
