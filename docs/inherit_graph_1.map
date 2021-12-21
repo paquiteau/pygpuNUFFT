@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classgpuNUFFT_1_1BalancedOperator.html" title="Interface defined for balanced gpuNUFFT Operators." alt="" coords="12,5,209,32"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1BalancedGpuNUFFTOperator.html" title="Balanced GpuNUFFTOperator inherited from gpuNUFFT::GpuNUFFTOperator." alt="" coords="264,43,529,69"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html" title="GpuNUFFTOperator with load balancing and texture memory lookup." alt="" coords="577,35,768,77"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html" title="Main &quot;Operator&quot; used for gridding operations." alt="" coords="5,68,216,95"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1TextureGpuNUFFTOperator.html" title="GpuNUFFTOperator with texture memory lookup." alt="" coords="269,93,524,120"/>
+</map>

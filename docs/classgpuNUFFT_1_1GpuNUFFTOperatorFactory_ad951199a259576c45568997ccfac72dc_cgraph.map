@@ -1,0 +1,7 @@
+<map id="gpuNUFFT::GpuNUFFTOperatorFactory::computeProcessingOrder" name="gpuNUFFT::GpuNUFFTOperatorFactory::computeProcessingOrder">
+<area shape="rect" id="node1" title="Method to compute the sector processing order." alt="" coords="5,64,224,105"/>
+<area shape="rect" id="node2" href="$structgpuNUFFT_1_1Array.html#af426f56b5d7e05b6143acbdd51bac188" title=" " alt="" coords="297,13,458,39"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a363ead61b541115bb6056de9d4597e05" title=" " alt="" coords="272,64,483,105"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a3c1a8d920315e2659872571adaa4f868" title="Return type of GriddingOperator." alt="" coords="272,129,483,171"/>
+<area shape="rect" id="node3" href="$structgpuNUFFT_1_1Dimensions.html#a4c589934c5444910fbcd890d128229c9" title="Compute total count of array length." alt="" coords="531,5,692,47"/>
+</map>

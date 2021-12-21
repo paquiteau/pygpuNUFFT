@@ -1,0 +1,7 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,60,57"/>
+<area shape="rect" id="node2" href="$gpuNUFFT__fft__tests_8cpp.html#a3072fb22f810f15039e1e0927e5d6ed1" title=" " alt="" coords="108,5,189,32"/>
+<area shape="rect" id="node4" href="$gpuNUFFT__fft__tests_8cpp.html#acaabcb5aba0f894db0a151ef6dd9d97a" title=" " alt="" coords="119,56,179,83"/>
+<area shape="rect" id="node3" href="$precomp__utils_8hpp.html#abe84080342fe3565651b846659b1faba" title="Compute linear index from 3&#45;d point in grid defined by dim." alt="" coords="247,5,370,32"/>
+<area shape="rect" id="node5" href="$gpuNUFFT__utils_8hpp.html#a03311da032c7c532a9947231d7e1f7f1" title="Compute position (x,y,z) from linear index." alt="" coords="237,56,380,83"/>
+</map>

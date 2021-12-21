@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$structgpuNUFFT_1_1Array.html" title="Array container consisting of raw data and gpuNUFFT::Dimensions descriptor." alt="" coords="5,5,159,32"/>
+<area shape="rect" id="node2" href="$structgpuNUFFT_1_1GpuArray.html" title="Array container consisting of raw data, which is expected to be allocated on the GPU,..." alt="" coords="207,5,384,32"/>
+</map>

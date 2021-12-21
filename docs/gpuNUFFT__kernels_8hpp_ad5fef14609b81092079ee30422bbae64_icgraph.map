@@ -1,0 +1,6 @@
+<map id="performFFTShift" name="performFFTShift">
+<area shape="rect" id="node1" title="FFT shift the grid data." alt="" coords="264,78,381,105"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ada5bb598b923ca3e92e987982f3d0d5b" title="Perform forward gridding operation on kspaceData already residing in GPU memory." alt="" coords="5,5,216,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a89e40ec1b777c8033bbc933c6535078c" title="Perform Adjoint gridding operation on kspaceData already residing in GPU memory." alt="" coords="5,71,216,112"/>
+<area shape="rect" id="node4" href="$gpuNUFFT__fft__tests_8cpp.html#a143d7141da78d4955eb9d9228cd5e65e" title=" " alt="" coords="75,137,146,163"/>
+</map>

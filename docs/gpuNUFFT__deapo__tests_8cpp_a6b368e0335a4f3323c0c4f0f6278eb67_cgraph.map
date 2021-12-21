@@ -1,0 +1,7 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,60,108"/>
+<area shape="rect" id="node2" href="$gpuNUFFT__utils_8hpp.html#aa7b00d423ae0e06388b55594fe1adb93" title="beta function used in interpolation function. See Beatty et al." alt="" coords="172,5,228,32"/>
+<area shape="rect" id="node3" href="$gpuNUFFT__utils_8hpp.html#ae484482e9bcc87dfc13c579e083530d3" title="Calculate the deapodization value for the specified grid position (x,y)" alt="" coords="108,56,292,83"/>
+<area shape="rect" id="node4" href="$gpuNUFFT__utils_8hpp.html#adf4f9791004a42552974d505221dda42" title="Calculate the deapodization value for the specified grid position coord." alt="" coords="340,81,528,108"/>
+<area shape="rect" id="node5" href="$gpuNUFFT__utils_8hpp.html#aef2060bda30f28d9dcb968a503ef0136" title="Compute position (x,y) in grid defined by (w,w) from linear index." alt="" coords="121,157,279,184"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="gpuNUFFT::BalancedTextureGpuNUFFTOperator::performGpuNUFFTAdj" name="gpuNUFFT::BalancedTextureGpuNUFFTOperator::performGpuNUFFTAdj">
+<area shape="rect" id="node1" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="5,27,283,69"/>
+<area shape="rect" id="node2" href="$cuda__utils_8hpp.html#aaa83ead29bc50e65ae4298d9206a760b" title="Free variable list of device pointers. Use NULL as stopping element." alt="" coords="357,5,515,32"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a38a45507d840b8d3d97de7fc79b4fa8a" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="331,57,541,98"/>
+<area shape="rect" id="node3" href="$cuda__utils_8hpp.html#a6ffa821f98a8c2b391c12c01308ff1db" title="Free of device memory." alt="" coords="589,5,703,32"/>
+</map>

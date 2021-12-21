@@ -1,0 +1,15 @@
+<map id="gpuNUFFT::GpuNUFFTOperatorFactory::loadPrecomputedGpuNUFFTOperator" name="gpuNUFFT::GpuNUFFTOperatorFactory::loadPrecomputedGpuNUFFTOperator">
+<area shape="rect" id="node1" title="Load GpuNUFFT Operator from previously computed mappings." alt="" coords="5,379,296,421"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a13202f1b875cbedb1b4a1d1599d36865" title="Compute the amount of sectors per dimension." alt="" coords="387,5,600,61"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a9d1a701e1bb5e75b3264f77aa597238b" title=" " alt="" coords="388,85,599,126"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a26762c7cb13205226b6f77c37a57d8a9" title=" " alt="" coords="388,150,599,191"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a3c1a8d920315e2659872571adaa4f868" title="Return type of GriddingOperator." alt="" coords="388,215,599,257"/>
+<area shape="rect" id="node6" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a5dc3d4ddd0bfe7d8a75721c3ad1dc695" title=" " alt="" coords="388,281,599,322"/>
+<area shape="rect" id="node7" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#add849e387acb4ce367943ea44927cb5c" title=" " alt="" coords="388,346,599,387"/>
+<area shape="rect" id="node8" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a6ee83e8e5f1afd1c7d7d4dc765e78b79" title=" " alt="" coords="388,411,599,453"/>
+<area shape="rect" id="node9" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a7b31403334f5722ed8ebb25fcf8e6cbc" title=" " alt="" coords="388,477,599,518"/>
+<area shape="rect" id="node10" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#aa1eab38f22cc6c6038a40b3e3d029c7e" title=" " alt="" coords="388,542,599,583"/>
+<area shape="rect" id="node11" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a3e73693f0e4985e3c40dcdd8b0a76f40" title=" " alt="" coords="388,607,599,649"/>
+<area shape="rect" id="node12" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a8561191acd6b6ddf41ee449b3080ca9b" title=" " alt="" coords="344,673,643,714"/>
+<area shape="rect" id="node13" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#adbc6f59fc4a4998a4ad5bb65c38b1f03" title=" " alt="" coords="388,738,599,779"/>
+</map>

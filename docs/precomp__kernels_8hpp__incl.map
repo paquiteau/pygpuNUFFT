@@ -1,0 +1,23 @@
+<map id="CUDA/inc/precomp_kernels.hpp" name="CUDA/inc/precomp_kernels.hpp">
+<area shape="rect" id="node1" title="GPU Kernels for Precomputation (sector assignment)" alt="" coords="693,5,900,32"/>
+<area shape="rect" id="node2" href="$cuda__utils_8hpp.html" title="Util functions for CUDA memory and texture management." alt="" coords="271,155,376,181"/>
+<area shape="rect" id="node13" href="$gpuNUFFT__operator_8hpp.html" title=" " alt="" coords="663,229,829,256"/>
+<area shape="rect" id="node20" href="$precomp__utils_8hpp.html" title="UTIL functions for precomputation." alt="" coords="683,80,809,107"/>
+<area shape="rect" id="node21" title=" " alt="" coords="919,80,978,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="93,453,153,480"/>
+<area shape="rect" id="node4" title=" " alt="" coords="177,453,288,480"/>
+<area shape="rect" id="node5" title=" " alt="" coords="577,453,637,480"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,229,63,256"/>
+<area shape="rect" id="node7" href="$gpuNUFFT__utils_8hpp.html" title="Definition of util functions used in gridding operations." alt="" coords="348,379,491,405"/>
+<area shape="rect" id="node19" title=" " alt="" coords="87,229,155,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="312,453,375,480"/>
+<area shape="rect" id="node9" title=" " alt="" coords="662,453,742,480"/>
+<area shape="rect" id="node10" title=" " alt="" coords="898,453,957,480"/>
+<area shape="rect" id="node11" title=" " alt="" coords="399,453,461,480"/>
+<area shape="rect" id="node12" title=" " alt="" coords="485,453,553,480"/>
+<area shape="rect" id="node14" href="$gpuNUFFT__types_8hpp.html" title="Definition of gpuNUFFT defined types." alt="" coords="822,304,971,331"/>
+<area shape="rect" id="node15" title=" " alt="" coords="939,379,999,405"/>
+<area shape="rect" id="node16" title=" " alt="" coords="758,379,830,405"/>
+<area shape="rect" id="node17" href="$gpuNUFFT__kernels_8hpp.html" title="gpuNUFFT CUDA function prototypes" alt="" coords="331,304,491,331"/>
+<area shape="rect" id="node18" title=" " alt="" coords="668,304,747,331"/>
+</map>

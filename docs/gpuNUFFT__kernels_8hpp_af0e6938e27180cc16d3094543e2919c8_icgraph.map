@@ -1,0 +1,4 @@
+<map id="performDeapodization" name="performDeapodization">
+<area shape="rect" id="node1" title="Apply the deapodization function to the image." alt="" coords="264,13,411,39"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a89e40ec1b777c8033bbc933c6535078c" title="Perform Adjoint gridding operation on kspaceData already residing in GPU memory." alt="" coords="5,5,216,47"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::setDeapodizationFunction" name="gpuNUFFT::GpuNUFFTOperator::setDeapodizationFunction">
+<area shape="rect" id="node1" title=" " alt="" coords="344,39,555,80"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a0e941d590a7e5effed76f909dfa72bcc" title="Create GpuNUFFT Operator." alt="" coords="38,5,263,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#aa5cecffe2b150073fd71145317ae308b" title="Load GpuNUFFT Operator from previously computed mappings." alt="" coords="5,71,296,112"/>
+</map>

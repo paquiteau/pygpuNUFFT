@@ -1,0 +1,7 @@
+<map id="GpuNUFFTPythonOperator" name="GpuNUFFTPythonOperator">
+<area shape="rect" id="node1" title=" " alt="" coords="174,228,354,255"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html" title="Manages the initialization of the GpuNUFFT Operator and its sub classes." alt="" coords="5,124,216,165"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html" title="Main &quot;Operator&quot; used for gridding operations." alt="" coords="343,131,553,158"/>
+<area shape="rect" id="node4" href="$structgpuNUFFT_1_1Dimensions.html" title="Data dimension struct." alt="" coords="183,5,345,32"/>
+<area shape="rect" id="node5" href="$structgpuNUFFT_1_1GpuNUFFTInfo.html" title="Struct containing meta information of the current Gridding Problem. Used in most GPU operations." alt="" coords="369,5,551,32"/>
+</map>

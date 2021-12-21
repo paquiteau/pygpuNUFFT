@@ -1,0 +1,6 @@
+<map id="gpuNUFFT::TextureGpuNUFFTOperator::adjConvolution" name="gpuNUFFT::TextureGpuNUFFTOperator::adjConvolution">
+<area shape="rect" id="node1" title="Virtual adjoint convolution call, which can be used by sub&#45;classes to add behaviour to the gridding s..." alt="" coords="5,49,260,90"/>
+<area shape="rect" id="node2" href="$cuda__utils_8hpp.html#a46dce0efc9f7cdbb81d0a48b65ce914d" title="Bind to 1&#45;d texture on device." alt="" coords="337,5,457,32"/>
+<area shape="rect" id="node3" href="$gpuNUFFT__kernels_8hpp.html#a56fdc7e7f864e7e80e7b91192a6c7bb3" title="Adjoint gridding convolution implementation on GPU using textures for kernel lookup." alt="" coords="308,56,485,83"/>
+<area shape="rect" id="node4" href="$cuda__utils_8hpp.html#ab4541b0102691624bd5e29777536f1d5" title="Unbind from device texture." alt="" coords="345,107,448,133"/>
+</map>

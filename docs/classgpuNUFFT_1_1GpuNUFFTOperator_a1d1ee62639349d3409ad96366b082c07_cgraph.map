@@ -1,0 +1,8 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::initGpuNUFFTInfo" name="gpuNUFFT::GpuNUFFTOperator::initGpuNUFFTInfo">
+<area shape="rect" id="node1" title="Compute all neccessary meta information used in the gridding steps." alt="" coords="5,35,216,76"/>
+<area shape="rect" id="node2" href="$structgpuNUFFT_1_1Dimensions.html#a4c589934c5444910fbcd890d128229c9" title="Compute total count of array length." alt="" coords="264,5,425,47"/>
+<area shape="rect" id="node3" href="$gpuNUFFT__utils_8hpp.html#a18dd3c6c4b8ac5f6947f3dc1c59651bc" title="Interpolation Kernel evaluation for radius." alt="" coords="316,71,373,98"/>
+<area shape="rect" id="node4" href="$gpuNUFFT__utils_8hpp.html#aa7b00d423ae0e06388b55594fe1adb93" title="beta function used in interpolation function. See Beatty et al." alt="" coords="596,34,652,61"/>
+<area shape="rect" id="node5" href="$gpuNUFFT__utils_8cpp.html#a5472cb661dea68a2ab2b52df187b6291" title="Modified Kaiser Bessel function of zero&#45;th order." alt="" coords="605,97,643,123"/>
+<area shape="rect" id="node6" href="$gpuNUFFT__utils_8hpp.html#ab1456ac35fe51fc4dac2e0054f6d9a50" title="I_0 function used in interpolation function. See Beatty et al." alt="" coords="473,71,548,98"/>
+</map>

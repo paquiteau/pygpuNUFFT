@@ -1,0 +1,4 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::freeDeviceMemory" name="gpuNUFFT::GpuNUFFTOperator::freeDeviceMemory">
+<area shape="rect" id="node1" title="Function to free the neccessary device memory used by the GriddingOperator." alt="" coords="264,5,475,47"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#acf8b3aa450f554ebd8130c11d7c8233e" title=" " alt="" coords="5,5,216,47"/>
+</map>

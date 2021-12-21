@@ -1,0 +1,10 @@
+<map id="gpuNUFFT::GpuNUFFTOperatorFactory::computeSectorCenters2D" name="gpuNUFFT::GpuNUFFTOperatorFactory::computeSectorCenters2D">
+<area shape="rect" id="node1" title="Compute 2&#45;d sector centers array." alt="" coords="5,122,225,163"/>
+<area shape="rect" id="node2" href="$precomp__utils_8hpp.html#a3d5b89e5c4e05c3a558f66dc5b3442f8" title="Compute linear index from 2&#45;d point in grid defined by dim." alt="" coords="321,5,436,32"/>
+<area shape="rect" id="node3" href="$structgpuNUFFT_1_1Dimensions.html#a4c589934c5444910fbcd890d128229c9" title="Compute total count of array length." alt="" coords="298,57,459,98"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a827308da49fcedc4725cf9509dd2a3c0" title=" " alt="" coords="273,122,484,163"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a26762c7cb13205226b6f77c37a57d8a9" title=" " alt="" coords="273,187,484,229"/>
+<area shape="rect" id="node6" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#af28b53802fd66b755083507e1fe99311" title="Initialization method for the sector centers array." alt="" coords="273,253,484,294"/>
+<area shape="rect" id="node7" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a10c8eb392c0a61a80ec1bf8784e20303" title="Return dimension of problem. Either 2&#45;d or 3&#45;d." alt="" coords="532,253,743,294"/>
+<area shape="rect" id="node8" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a635c1cf91573264cafb1f3df27fdf976" title=" " alt="" coords="791,253,1001,294"/>
+</map>

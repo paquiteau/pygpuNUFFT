@@ -1,0 +1,5 @@
+<map id="performTextureConvolution" name="performTextureConvolution">
+<area shape="rect" id="node1" title="Adjoint gridding convolution implementation on GPU using textures for kernel lookup." alt="" coords="308,46,485,73"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a76b6f5c49769489e41af44e5e1e8600b" title="Virtual adjoint convolution call, which can be used by sub&#45;classes to add behaviour to the gridding s..." alt="" coords="17,5,248,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#aeda95a2995806f8362fe135eb7e4ebdb" title="Virtual adjoint convolution call, which can be used by sub&#45;classes to add behaviour to the gridding s..." alt="" coords="5,71,260,112"/>
+</map>

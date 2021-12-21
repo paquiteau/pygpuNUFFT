@@ -1,0 +1,4 @@
+<map id="gpuNUFFT::GpuNUFFTOperatorFactory::checkMemoryConsumption" name="gpuNUFFT::GpuNUFFTOperatorFactory::checkMemoryConsumption">
+<area shape="rect" id="node1" title="Function to check if the problem will fit into device memory." alt="" coords="5,5,233,47"/>
+<area shape="rect" id="node2" href="$structgpuNUFFT_1_1Dimensions.html#a4c589934c5444910fbcd890d128229c9" title="Compute total count of array length." alt="" coords="281,5,443,47"/>
+</map>

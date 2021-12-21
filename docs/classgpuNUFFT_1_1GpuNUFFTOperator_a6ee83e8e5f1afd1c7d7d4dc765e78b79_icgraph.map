@@ -1,0 +1,5 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::setGridSectorDims" name="gpuNUFFT::GpuNUFFTOperator::setGridSectorDims">
+<area shape="rect" id="node1" title=" " alt="" coords="344,39,555,80"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#afa72b607029c78d61b6e01d45077998e" title="Assign the samples on the k&#45;space trajectory to its corresponding sector." alt="" coords="45,5,256,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#aa5cecffe2b150073fd71145317ae308b" title="Load GpuNUFFT Operator from previously computed mappings." alt="" coords="5,71,296,112"/>
+</map>

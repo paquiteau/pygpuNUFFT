@@ -1,0 +1,5 @@
+<map id="computeXY2Lin" name="computeXY2Lin">
+<area shape="rect" id="node1" title="Compute linear index from 2&#45;d point in grid defined by dim." alt="" coords="273,42,388,69"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a65d596418c34d74d383addd455469b5a" title="Compute 2&#45;d sector centers array." alt="" coords="5,5,225,47"/>
+<area shape="rect" id="node3" href="$gpuNUFFT__2D__conv__tests_8cpp.html#a0cdecca403a6734c8b85381c7980245c" title=" " alt="" coords="88,71,143,98"/>
+</map>

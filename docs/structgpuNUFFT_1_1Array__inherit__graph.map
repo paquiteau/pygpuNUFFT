@@ -1,0 +1,4 @@
+<map id="gpuNUFFT::Array&lt; T &gt;" name="gpuNUFFT::Array&lt; T &gt;">
+<area shape="rect" id="node1" title="Array container consisting of raw data and gpuNUFFT::Dimensions descriptor." alt="" coords="17,5,171,32"/>
+<area shape="rect" id="node2" href="$structgpuNUFFT_1_1GpuArray.html" title="Array container consisting of raw data, which is expected to be allocated on the GPU,..." alt="" coords="5,80,183,107"/>
+</map>

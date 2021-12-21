@@ -1,0 +1,11 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title=" " alt="" coords="5,117,60,144"/>
+<area shape="rect" id="node2" href="$gpuNUFFT__utils_8cpp.html#ac57bf34370dd28161430ed9f8a1d9664" title=" " alt="" coords="137,29,304,56"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a15c06b6bd8c74d3ac0b4705c3204db23" title="Create GpuNUFFT Operator." alt="" coords="108,81,333,122"/>
+<area shape="rect" id="node4" href="$gpuNUFFT__utils_8cpp.html#a6683a749816745e9e10c65ac77ebd1c6" title="Loads a radius of the circularly symmetric kernel into a 1&#45;d array, with respect to the kernel radius..." alt="" coords="171,147,270,173"/>
+<area shape="rect" id="node9" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a38a45507d840b8d3d97de7fc79b4fa8a" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="115,198,326,239"/>
+<area shape="rect" id="node5" href="$gpuNUFFT__utils_8hpp.html#a18dd3c6c4b8ac5f6947f3dc1c59651bc" title="Interpolation Kernel evaluation for radius." alt="" coords="381,147,439,173"/>
+<area shape="rect" id="node6" href="$gpuNUFFT__utils_8hpp.html#aa7b00d423ae0e06388b55594fe1adb93" title="beta function used in interpolation function. See Beatty et al." alt="" coords="609,109,665,136"/>
+<area shape="rect" id="node7" href="$gpuNUFFT__utils_8cpp.html#a5472cb661dea68a2ab2b52df187b6291" title="Modified Kaiser Bessel function of zero&#45;th order." alt="" coords="618,172,657,199"/>
+<area shape="rect" id="node8" href="$gpuNUFFT__utils_8hpp.html#ab1456ac35fe51fc4dac2e0054f6d9a50" title="I_0 function used in interpolation function. See Beatty et al." alt="" coords="487,147,561,173"/>
+</map>

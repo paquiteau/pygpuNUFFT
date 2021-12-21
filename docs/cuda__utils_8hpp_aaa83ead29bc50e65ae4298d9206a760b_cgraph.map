@@ -1,0 +1,4 @@
+<map id="freeTotalDeviceMemory" name="freeTotalDeviceMemory">
+<area shape="rect" id="node1" title="Free variable list of device pointers. Use NULL as stopping element." alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node2" href="$cuda__utils_8hpp.html#a6ffa821f98a8c2b391c12c01308ff1db" title="Free of device memory." alt="" coords="212,5,325,32"/>
+</map>

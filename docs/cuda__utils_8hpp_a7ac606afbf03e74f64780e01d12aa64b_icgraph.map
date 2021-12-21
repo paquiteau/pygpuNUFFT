@@ -1,0 +1,10 @@
+<map id="initConstSymbol" name="initConstSymbol">
+<area shape="rect" id="node1" title="Initialize constant symbol on device." alt="" coords="319,222,435,249"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1BalancedGpuNUFFTOperator.html#aebed0b033d85b71c1e48132203b7caed" title="Virtual method to perform precomputation of all neccessary meta information used in the gridding step..." alt="" coords="5,5,271,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a4cfe8965eea8ee447fbffc138eefe588" title="Virtual method to perform precomputation of all neccessary meta information used in the gridding step..." alt="" coords="19,70,257,126"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ad2d7c6604a4cff07dfc707a2428f8fb1" title="Virtual method to perform precomputation of all neccessary meta information used in the gridding step..." alt="" coords="33,149,243,191"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#af62b39293d52e627730c5a63720553e1" title="Virtual method to perform precomputation of all neccessary meta information used in the gridding step..." alt="" coords="11,215,265,256"/>
+<area shape="rect" id="node6" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ab6adcc02b05b28d50aa05fe8dd320dd3" title="Virtual method to allow different methods of generation of the lookup table." alt="" coords="33,280,243,321"/>
+<area shape="rect" id="node7" href="$gpuNUFFT__fft__tests_8cpp.html#a143d7141da78d4955eb9d9228cd5e65e" title=" " alt="" coords="103,346,173,373"/>
+<area shape="rect" id="node8" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a1f505e0efb83311748062de473e2dd39" title="Update amount of concurrently computed coils." alt="" coords="33,397,243,439"/>
+</map>

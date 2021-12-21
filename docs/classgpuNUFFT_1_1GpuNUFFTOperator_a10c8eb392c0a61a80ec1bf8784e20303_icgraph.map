@@ -1,0 +1,7 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::getImageDimensionCount" name="gpuNUFFT::GpuNUFFTOperator::getImageDimensionCount">
+<area shape="rect" id="node1" title="Return dimension of problem. Either 2&#45;d or 3&#45;d." alt="" coords="532,39,743,80"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a3bb929391f61a14ecb6be08ccccf29cb" title="Initialization method for the coords array." alt="" coords="273,5,484,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#af28b53802fd66b755083507e1fe99311" title="Initialization method for the sector centers array." alt="" coords="273,71,484,112"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a62c51a180bf592a0fa82343ed7b4daed" title="Compute sector centers array." alt="" coords="10,37,221,79"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a65d596418c34d74d383addd455469b5a" title="Compute 2&#45;d sector centers array." alt="" coords="5,103,225,144"/>
+</map>

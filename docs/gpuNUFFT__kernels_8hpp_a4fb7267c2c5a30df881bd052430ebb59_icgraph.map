@@ -1,0 +1,4 @@
+<map id="performSensSum" name="performSensSum">
+<area shape="rect" id="node1" title="Perform a element&#45;wise summation over multiple coil images." alt="" coords="264,13,387,39"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a89e40ec1b777c8033bbc933c6535078c" title="Perform Adjoint gridding operation on kspaceData already residing in GPU memory." alt="" coords="5,5,216,47"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="gpuNUFFT::BalancedTextureGpuNUFFTOperator::forwardConvolution" name="gpuNUFFT::BalancedTextureGpuNUFFTOperator::forwardConvolution">
+<area shape="rect" id="node1" title="Virtual forward convolution call, which can be used by sub&#45;classes to add behaviour to the gridding s..." alt="" coords="5,49,263,90"/>
+<area shape="rect" id="node2" href="$cuda__utils_8hpp.html#a46dce0efc9f7cdbb81d0a48b65ce914d" title="Bind to 1&#45;d texture on device." alt="" coords="363,5,483,32"/>
+<area shape="rect" id="node3" href="$gpuNUFFT__kernels_8hpp.html#a2fd6b03e67db18a41056c4f7986382f4" title="Forward gridding convolution implementation on GPU using textures ." alt="" coords="311,56,535,83"/>
+<area shape="rect" id="node4" href="$cuda__utils_8hpp.html#ab4541b0102691624bd5e29777536f1d5" title="Unbind from device texture." alt="" coords="371,107,474,133"/>
+</map>

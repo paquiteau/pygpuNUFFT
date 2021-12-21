@@ -1,0 +1,4 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::forwardConvolution" name="gpuNUFFT::GpuNUFFTOperator::forwardConvolution">
+<area shape="rect" id="node1" title="Virtual forward convolution call, which can be used by sub&#45;classes to add behaviour to the gridding s..." alt="" coords="5,5,216,47"/>
+<area shape="rect" id="node2" href="$gpuNUFFT__kernels_8hpp.html#a8fe8136c250bfbbadda359f4614f5e3d" title="Forward gridding convolution implementation on GPU." alt="" coords="264,13,445,39"/>
+</map>

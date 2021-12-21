@@ -1,0 +1,23 @@
+<map id="gpuNUFFT::Dimensions::count" name="gpuNUFFT::Dimensions::count">
+<area shape="rect" id="node1" title="Compute total count of array length." alt="" coords="595,372,756,413"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a4ad90751b7eff9bba51f2db5ffd425b6" title="Function to check if the problem will fit into device memory." alt="" coords="319,105,547,147"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a82e185db6eda1edb359df5a580be7b37" title="Computation of the deapodization function." alt="" coords="12,5,264,47"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a62c51a180bf592a0fa82343ed7b4daed" title="Compute sector centers array." alt="" coords="327,223,538,264"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a65d596418c34d74d383addd455469b5a" title="Compute 2&#45;d sector centers array." alt="" coords="323,288,543,329"/>
+<area shape="rect" id="node6" href="$structgpuNUFFT_1_1Array.html#af426f56b5d7e05b6143acbdd51bac188" title=" " alt="" coords="352,354,513,381"/>
+<area shape="rect" id="node15" href="$gpuNUFFT__fft__tests_8cpp.html#a143d7141da78d4955eb9d9228cd5e65e" title=" " alt="" coords="103,579,173,606"/>
+<area shape="rect" id="node16" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a0e941d590a7e5effed76f909dfa72bcc" title="Create GpuNUFFT Operator." alt="" coords="320,456,545,497"/>
+<area shape="rect" id="node17" href="$classGpuNUFFTPythonOperator.html#ad9168e25f62f4e47aefb50f2ea279b0d" title=" " alt="" coords="339,521,526,563"/>
+<area shape="rect" id="node18" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a1d1ee62639349d3409ad96366b082c07" title="Compute all neccessary meta information used in the gridding steps." alt="" coords="327,616,538,657"/>
+<area shape="rect" id="node21" href="$gpuNUFFT__deapo__tests_8cpp.html#ab4a979b5876c35e61bdc8ef745674420" title=" " alt="" coords="405,682,460,709"/>
+<area shape="rect" id="node7" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#afa72b607029c78d61b6e01d45077998e" title="Assign the samples on the k&#45;space trajectory to its corresponding sector." alt="" coords="33,71,243,112"/>
+<area shape="rect" id="node8" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#ad951199a259576c45568997ccfac72dc" title="Method to compute the sector processing order." alt="" coords="29,136,247,177"/>
+<area shape="rect" id="node9" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#ad915537942d302c8d192b964e6114f28" title="Compute the boundaries of the assigned dataIndices per sector element." alt="" coords="28,201,248,243"/>
+<area shape="rect" id="node10" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ada5bb598b923ca3e92e987982f3d0d5b" title="Perform forward gridding operation on kspaceData already residing in GPU memory." alt="" coords="33,267,243,308"/>
+<area shape="rect" id="node11" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a89e40ec1b777c8033bbc933c6535078c" title="Perform Adjoint gridding operation on kspaceData already residing in GPU memory." alt="" coords="33,332,243,373"/>
+<area shape="rect" id="node12" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a897f3ec26b76086e3cf174a4ce0c1c23" title="Select data array in ordered manner." alt="" coords="33,397,243,439"/>
+<area shape="rect" id="node13" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#aae7ea9905b763b7b8cc5c36533257163" title=" " alt="" coords="33,463,243,504"/>
+<area shape="rect" id="node14" href="$gpuNUFFT__forward__tests_8cpp.html#a6e7e337161ef805951437dbf21112e43" title=" " alt="" coords="111,529,165,555"/>
+<area shape="rect" id="node19" href="$classgpuNUFFT_1_1BalancedGpuNUFFTOperator.html#aebed0b033d85b71c1e48132203b7caed" title="Virtual method to perform precomputation of all neccessary meta information used in the gridding step..." alt="" coords="5,631,271,672"/>
+<area shape="rect" id="node20" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a4cfe8965eea8ee447fbffc138eefe588" title="Virtual method to perform precomputation of all neccessary meta information used in the gridding step..." alt="" coords="19,695,257,751"/>
+</map>

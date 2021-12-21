@@ -1,0 +1,7 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::setSens" name="gpuNUFFT::GpuNUFFTOperator::setSens">
+<area shape="rect" id="node1" title=" " alt="" coords="541,71,752,112"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a0e941d590a7e5effed76f909dfa72bcc" title="Create GpuNUFFT Operator." alt="" coords="235,5,461,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#aa5cecffe2b150073fd71145317ae308b" title="Load GpuNUFFT Operator from previously computed mappings." alt="" coords="203,71,493,112"/>
+<area shape="rect" id="node4" href="$classGpuNUFFTPythonOperator.html#aaf1b1ce70db899390b2236ee9c350433" title=" " alt="" coords="258,136,438,177"/>
+<area shape="rect" id="node5" href="$gpuNUFFT__operator__python__factory_8cpp.html#ad1a7eaf0d60c015a4df3da44ddf58e27" title=" " alt="" coords="5,143,155,170"/>
+</map>

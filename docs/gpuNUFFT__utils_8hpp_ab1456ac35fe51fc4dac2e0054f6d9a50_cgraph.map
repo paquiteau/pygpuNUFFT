@@ -1,0 +1,5 @@
+<map id="I0_BETA" name="I0_BETA">
+<area shape="rect" id="node1" title="I_0 function used in interpolation function. See Beatty et al." alt="" coords="5,31,80,57"/>
+<area shape="rect" id="node2" href="$gpuNUFFT__utils_8hpp.html#aa7b00d423ae0e06388b55594fe1adb93" title="beta function used in interpolation function. See Beatty et al." alt="" coords="128,5,184,32"/>
+<area shape="rect" id="node3" href="$gpuNUFFT__utils_8cpp.html#a5472cb661dea68a2ab2b52df187b6291" title="Modified Kaiser Bessel function of zero&#45;th order." alt="" coords="137,56,175,83"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="gpuNUFFT::GpuNUFFTOperatorFactory::createNewGpuNUFFTOperator" name="gpuNUFFT::GpuNUFFTOperatorFactory::createNewGpuNUFFTOperator">
+<area shape="rect" id="node1" title="Method to create a new GpuNUFFTOperator or a sub class depending on the parameters." alt="" coords="5,5,257,47"/>
+<area shape="rect" id="node2" href="$gpuNUFFT__fft__tests_8cpp.html#a1267fc514127315f25ad48e26de77b8c" title=" " alt="" coords="305,13,363,39"/>
+<area shape="rect" id="node3" href="$precomp__utils_8hpp.html#abe84080342fe3565651b846659b1faba" title="Compute linear index from 3&#45;d point in grid defined by dim." alt="" coords="411,13,533,39"/>
+</map>

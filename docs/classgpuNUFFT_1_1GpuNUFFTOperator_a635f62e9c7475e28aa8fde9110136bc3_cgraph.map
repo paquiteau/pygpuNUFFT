@@ -1,0 +1,4 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::adjConvolution" name="gpuNUFFT::GpuNUFFTOperator::adjConvolution">
+<area shape="rect" id="node1" title="Virtual adjoint convolution call, which can be used by sub&#45;classes to add behaviour to the gridding s..." alt="" coords="5,5,216,47"/>
+<area shape="rect" id="node2" href="$gpuNUFFT__kernels_8hpp.html#add81989142ddeae7115b5153092a60ec" title="Adjoint gridding convolution implementation on GPU." alt="" coords="264,13,399,39"/>
+</map>

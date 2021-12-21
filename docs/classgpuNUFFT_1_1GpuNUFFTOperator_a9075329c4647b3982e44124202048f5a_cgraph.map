@@ -1,0 +1,7 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::initDeviceMemory" name="gpuNUFFT::GpuNUFFTOperator::initDeviceMemory">
+<area shape="rect" id="node1" title="Function to allocate all neccessary device memory used by the GriddingOperator." alt="" coords="5,23,216,65"/>
+<area shape="rect" id="node2" href="$gpuNUFFT__utils_8hpp.html#a18dd3c6c4b8ac5f6947f3dc1c59651bc" title="Interpolation Kernel evaluation for radius." alt="" coords="264,31,321,57"/>
+<area shape="rect" id="node3" href="$gpuNUFFT__utils_8hpp.html#aa7b00d423ae0e06388b55594fe1adb93" title="beta function used in interpolation function. See Beatty et al." alt="" coords="492,5,548,32"/>
+<area shape="rect" id="node4" href="$gpuNUFFT__utils_8cpp.html#a5472cb661dea68a2ab2b52df187b6291" title="Modified Kaiser Bessel function of zero&#45;th order." alt="" coords="501,68,539,95"/>
+<area shape="rect" id="node5" href="$gpuNUFFT__utils_8hpp.html#ab1456ac35fe51fc4dac2e0054f6d9a50" title="I_0 function used in interpolation function. See Beatty et al." alt="" coords="369,31,444,57"/>
+</map>

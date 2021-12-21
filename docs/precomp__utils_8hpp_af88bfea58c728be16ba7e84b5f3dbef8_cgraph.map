@@ -1,0 +1,4 @@
+<map id="computeSectorMapping" name="computeSectorMapping">
+<area shape="rect" id="node1" title="Compute Sector Mapping for a 2D coord." alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node2" href="$precomp__utils_8hpp.html#a2690913ec6a8065288eae152dd01056c" title="Compute Sector Mapping for one coordinate based on the sector count." alt="" coords="212,5,371,32"/>
+</map>

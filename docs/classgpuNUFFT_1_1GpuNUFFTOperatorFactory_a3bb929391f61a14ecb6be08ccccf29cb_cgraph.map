@@ -1,0 +1,5 @@
+<map id="gpuNUFFT::GpuNUFFTOperatorFactory::initCoordsData" name="gpuNUFFT::GpuNUFFTOperatorFactory::initCoordsData">
+<area shape="rect" id="node1" title="Initialization method for the coords array." alt="" coords="5,5,216,47"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a10c8eb392c0a61a80ec1bf8784e20303" title="Return dimension of problem. Either 2&#45;d or 3&#45;d." alt="" coords="264,5,475,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a635c1cf91573264cafb1f3df27fdf976" title=" " alt="" coords="523,5,733,47"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="showMemoryInfo" name="showMemoryInfo">
+<area shape="rect" id="node1" title="Debug short device memory information (free/total) to stream if DEBUG flag is set to true." alt="" coords="523,111,644,138"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a065bb3f71daa7a8eea80f786d0626f59" title="Function to free the neccessary device memory used by the GriddingOperator." alt="" coords="264,5,475,47"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ada5bb598b923ca3e92e987982f3d0d5b" title="Perform forward gridding operation on kspaceData already residing in GPU memory." alt="" coords="264,71,475,112"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a89e40ec1b777c8033bbc933c6535078c" title="Perform Adjoint gridding operation on kspaceData already residing in GPU memory." alt="" coords="264,136,475,177"/>
+<area shape="rect" id="node6" href="$cuda__utils_8hpp.html#a19900bfa2010b74d2c5064a04e8bf0e8" title="Debug short device memory information (free/total) to stdout if DEBUG flag is set to true." alt="" coords="309,202,430,229"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#acf8b3aa450f554ebd8130c11d7c8233e" title=" " alt="" coords="5,5,216,47"/>
+</map>

@@ -1,0 +1,22 @@
+<map id="i0" name="i0">
+<area shape="rect" id="node1" title="Modified Kaiser Bessel function of zero&#45;th order." alt="" coords="1455,170,1493,197"/>
+<area shape="rect" id="node2" href="$gpuNUFFT__utils_8hpp.html#ab1456ac35fe51fc4dac2e0054f6d9a50" title="I_0 function used in interpolation function. See Beatty et al." alt="" coords="1332,145,1407,171"/>
+<area shape="rect" id="node3" href="$gpuNUFFT__utils_8hpp.html#a18dd3c6c4b8ac5f6947f3dc1c59651bc" title="Interpolation Kernel evaluation for radius." alt="" coords="1227,170,1284,197"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a9075329c4647b3982e44124202048f5a" title="Function to allocate all neccessary device memory used by the GriddingOperator." alt="" coords="946,9,1157,51"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a1d1ee62639349d3409ad96366b082c07" title="Compute all neccessary meta information used in the gridding steps." alt="" coords="946,75,1157,116"/>
+<area shape="rect" id="node8" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a501ffa99025d9cc1f1497e354c56533b" title="Precompute interpolation kernel lookup table." alt="" coords="638,153,849,195"/>
+<area shape="rect" id="node10" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ab6adcc02b05b28d50aa05fe8dd320dd3" title="Virtual method to allow different methods of generation of the lookup table." alt="" coords="946,192,1157,233"/>
+<area shape="rect" id="node11" href="$classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#a57590b9115b854d3152ef64d847665ea" title="Virtual method to allow different methods of generation of the lookup table." alt="" coords="924,257,1179,299"/>
+<area shape="rect" id="node12" href="$gpuNUFFT__utils_8cpp.html#a6683a749816745e9e10c65ac77ebd1c6" title="Loads a radius of the circularly symmetric kernel into a 1&#45;d array, with respect to the kernel radius..." alt="" coords="1002,323,1101,350"/>
+<area shape="rect" id="node6" href="$classgpuNUFFT_1_1BalancedGpuNUFFTOperator.html#aebed0b033d85b71c1e48132203b7caed" title="Virtual method to perform precomputation of all neccessary meta information used in the gridding step..." alt="" coords="611,5,876,47"/>
+<area shape="rect" id="node7" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a4cfe8965eea8ee447fbffc138eefe588" title="Virtual method to perform precomputation of all neccessary meta information used in the gridding step..." alt="" coords="624,70,863,126"/>
+<area shape="rect" id="node9" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a037d0af683c1e451ae40bf0a26e096a1" title="GpuNUFFTOperator ctor." alt="" coords="330,153,541,195"/>
+<area shape="rect" id="node13" href="$classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#a3125b2b6c409e1d52050f9e3859f4f12" title="Precompute interpolation kernel lookup table." alt="" coords="308,363,563,404"/>
+<area shape="rect" id="node15" href="$gpuNUFFT__utils_8cpp.html#a03ba0850f7bccde81a06b55be0d6adb8" title="Loads a radius of the circularly symmetric kernel into a 2&#45;d array, with respect to the kernel radius..." alt="" coords="694,425,793,451"/>
+<area shape="rect" id="node17" href="$gpuNUFFT__utils_8cpp.html#a4603fff4bc63b96eea4500784a77fc48" title="Loads a radius of the circularly symmetric kernel into a 3&#45;d array, with respect to the kernel radius..." alt="" coords="694,222,793,249"/>
+<area shape="rect" id="node19" href="$gpuNUFFT__utils_8cpp.html#acf5440ba3be843dac60ba8642a0b4ede" title="Loads a radius of the circularly symmetric kernel into a 1&#45;d array, with respect to the kernel radius..." alt="" coords="686,273,801,299"/>
+<area shape="rect" id="node20" href="$gpuNUFFT__2D__conv__tests_8cpp.html#aaa68ca62ef9f76180f0da723f0da1dfb" title=" " alt="" coords="716,323,771,350"/>
+<area shape="rect" id="node14" href="$classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#a18169f5278ba0c0b704f31b56edf9a36" title=" " alt="" coords="5,363,260,404"/>
+<area shape="rect" id="node16" href="$gpuNUFFT__conv__tests_8cpp.html#ad3d34fdd2b1c2e4e793734b844b97441" title=" " alt="" coords="408,429,463,455"/>
+<area shape="rect" id="node18" href="$gpuNUFFT__conv__tests_8cpp.html#ae35c8317989c915c0e21d3a2bd4d10a6" title=" " alt="" coords="408,222,463,249"/>
+</map>

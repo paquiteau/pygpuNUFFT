@@ -1,0 +1,4 @@
+<map id="showMemoryInfo" name="showMemoryInfo">
+<area shape="rect" id="node1" title="Debug short device memory information (free/total) to stdout if DEBUG flag is set to true." alt="" coords="5,5,127,32"/>
+<area shape="rect" id="node2" href="$cuda__utils_8hpp.html#ad9458f074da29c52d203d541be58971a" title="Debug short device memory information (free/total) to stream if DEBUG flag is set to true." alt="" coords="175,5,296,32"/>
+</map>

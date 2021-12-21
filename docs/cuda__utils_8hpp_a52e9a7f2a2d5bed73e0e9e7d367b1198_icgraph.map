@@ -1,0 +1,5 @@
+<map id="copyToDevice" name="copyToDevice">
+<area shape="rect" id="node1" title="CUDA memcpy call to copy data from host to device." alt="" coords="264,46,368,73"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ada5bb598b923ca3e92e987982f3d0d5b" title="Perform forward gridding operation on kspaceData already residing in GPU memory." alt="" coords="5,5,216,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a89e40ec1b777c8033bbc933c6535078c" title="Perform Adjoint gridding operation on kspaceData already residing in GPU memory." alt="" coords="5,71,216,112"/>
+</map>

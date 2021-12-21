@@ -1,0 +1,5 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::initGpuNUFFTInfo" name="gpuNUFFT::GpuNUFFTOperator::initGpuNUFFTInfo">
+<area shape="rect" id="node1" title="Compute all neccessary meta information used in the gridding steps." alt="" coords="319,41,529,83"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1BalancedGpuNUFFTOperator.html#aebed0b033d85b71c1e48132203b7caed" title="Virtual method to perform precomputation of all neccessary meta information used in the gridding step..." alt="" coords="5,5,271,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a4cfe8965eea8ee447fbffc138eefe588" title="Virtual method to perform precomputation of all neccessary meta information used in the gridding step..." alt="" coords="19,70,257,126"/>
+</map>

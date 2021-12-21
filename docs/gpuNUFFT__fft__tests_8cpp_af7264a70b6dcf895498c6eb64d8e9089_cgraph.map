@@ -1,0 +1,6 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title=" " alt="" coords="5,78,60,105"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a15c06b6bd8c74d3ac0b4705c3204db23" title="Create GpuNUFFT Operator." alt="" coords="108,5,333,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a10d565529aa2c7778c15edb8a820b417" title="Perform forward gridding operation on given kspaceData." alt="" coords="115,71,326,112"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a38a45507d840b8d3d97de7fc79b4fa8a" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="115,136,326,177"/>
+</map>

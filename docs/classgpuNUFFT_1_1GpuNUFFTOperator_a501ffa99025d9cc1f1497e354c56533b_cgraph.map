@@ -1,0 +1,9 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::initKernel" name="gpuNUFFT::GpuNUFFTOperator::initKernel">
+<area shape="rect" id="node1" title="Precompute interpolation kernel lookup table." alt="" coords="5,73,216,114"/>
+<area shape="rect" id="node2" href="$gpuNUFFT__utils_8cpp.html#ac57bf34370dd28161430ed9f8a1d9664" title=" " alt="" coords="264,29,431,56"/>
+<area shape="rect" id="node3" href="$gpuNUFFT__utils_8hpp.html#a18dd3c6c4b8ac5f6947f3dc1c59651bc" title="Interpolation Kernel evaluation for radius." alt="" coords="479,105,536,132"/>
+<area shape="rect" id="node7" href="$gpuNUFFT__utils_8cpp.html#a6683a749816745e9e10c65ac77ebd1c6" title="Loads a radius of the circularly symmetric kernel into a 1&#45;d array, with respect to the kernel radius..." alt="" coords="298,131,397,157"/>
+<area shape="rect" id="node4" href="$gpuNUFFT__utils_8hpp.html#aa7b00d423ae0e06388b55594fe1adb93" title="beta function used in interpolation function. See Beatty et al." alt="" coords="707,68,763,95"/>
+<area shape="rect" id="node5" href="$gpuNUFFT__utils_8cpp.html#a5472cb661dea68a2ab2b52df187b6291" title="Modified Kaiser Bessel function of zero&#45;th order." alt="" coords="715,131,754,157"/>
+<area shape="rect" id="node6" href="$gpuNUFFT__utils_8hpp.html#ab1456ac35fe51fc4dac2e0054f6d9a50" title="I_0 function used in interpolation function. See Beatty et al." alt="" coords="584,105,659,132"/>
+</map>

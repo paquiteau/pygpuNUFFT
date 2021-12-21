@@ -1,0 +1,4 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::setDebugFunction" name="gpuNUFFT::GpuNUFFTOperator::setDebugFunction">
+<area shape="rect" id="node1" title="Pass debug function pointer." alt="" coords="305,5,516,47"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a82e185db6eda1edb359df5a580be7b37" title="Computation of the deapodization function." alt="" coords="5,5,257,47"/>
+</map>

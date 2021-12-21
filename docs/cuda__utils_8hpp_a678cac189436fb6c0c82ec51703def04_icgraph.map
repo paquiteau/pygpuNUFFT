@@ -1,0 +1,4 @@
+<map id="initTexture" name="initTexture">
+<area shape="rect" id="node1" title="Initialize texture memory on device." alt="" coords="308,13,391,39"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#a57590b9115b854d3152ef64d847665ea" title="Virtual method to allow different methods of generation of the lookup table." alt="" coords="5,5,260,47"/>
+</map>

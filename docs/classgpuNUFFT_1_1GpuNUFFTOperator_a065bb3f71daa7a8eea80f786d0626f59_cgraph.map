@@ -1,0 +1,6 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::freeDeviceMemory" name="gpuNUFFT::GpuNUFFTOperator::freeDeviceMemory">
+<area shape="rect" id="node1" title="Function to free the neccessary device memory used by the GriddingOperator." alt="" coords="5,23,216,65"/>
+<area shape="rect" id="node2" href="$cuda__utils_8hpp.html#aaa83ead29bc50e65ae4298d9206a760b" title="Free variable list of device pointers. Use NULL as stopping element." alt="" coords="264,5,423,32"/>
+<area shape="rect" id="node4" href="$cuda__utils_8hpp.html#ad9458f074da29c52d203d541be58971a" title="Debug short device memory information (free/total) to stream if DEBUG flag is set to true." alt="" coords="283,56,404,83"/>
+<area shape="rect" id="node3" href="$cuda__utils_8hpp.html#a6ffa821f98a8c2b391c12c01308ff1db" title="Free of device memory." alt="" coords="471,5,584,32"/>
+</map>

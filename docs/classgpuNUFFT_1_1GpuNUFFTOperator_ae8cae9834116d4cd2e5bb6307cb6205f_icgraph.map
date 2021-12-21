@@ -1,0 +1,5 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::setDens" name="gpuNUFFT::GpuNUFFTOperator::setDens">
+<area shape="rect" id="node1" title=" " alt="" coords="344,39,555,80"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a0e941d590a7e5effed76f909dfa72bcc" title="Create GpuNUFFT Operator." alt="" coords="38,5,263,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#aa1d2e5c49a52e2170e2f0d698d4777b5" title="Load GpuNUFFT Operator from previously computed mappings." alt="" coords="5,71,296,112"/>
+</map>

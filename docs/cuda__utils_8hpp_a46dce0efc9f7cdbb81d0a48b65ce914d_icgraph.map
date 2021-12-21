@@ -1,0 +1,7 @@
+<map id="bindTo1DTexture" name="bindTo1DTexture">
+<area shape="rect" id="node1" title="Bind to 1&#45;d texture on device." alt="" coords="311,111,431,138"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a76b6f5c49769489e41af44e5e1e8600b" title="Virtual adjoint convolution call, which can be used by sub&#45;classes to add behaviour to the gridding s..." alt="" coords="19,5,249,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#aeda95a2995806f8362fe135eb7e4ebdb" title="Virtual adjoint convolution call, which can be used by sub&#45;classes to add behaviour to the gridding s..." alt="" coords="7,71,261,112"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a643ed4abaf7b00027d8edec5a64ba0ea" title="Virtual forward convolution call, which can be used by sub&#45;classes to add behaviour to the gridding s..." alt="" coords="5,136,263,177"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#af111ef5824d67c6c167211285f1404b0" title="Virtual forward convolution call, which can be used by sub&#45;classes to add behaviour to the gridding s..." alt="" coords="7,201,261,243"/>
+</map>

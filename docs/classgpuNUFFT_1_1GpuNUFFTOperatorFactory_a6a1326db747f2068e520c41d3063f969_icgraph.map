@@ -1,0 +1,4 @@
+<map id="gpuNUFFT::GpuNUFFTOperatorFactory::initSectorDataCount" name="gpuNUFFT::GpuNUFFTOperatorFactory::initSectorDataCount">
+<area shape="rect" id="node1" title="Initialization method for the sector data count array." alt="" coords="273,5,484,47"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#ad915537942d302c8d192b964e6114f28" title="Compute the boundaries of the assigned dataIndices per sector element." alt="" coords="5,5,225,47"/>
+</map>

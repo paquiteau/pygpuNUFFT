@@ -1,0 +1,5 @@
+<map id="fftShift" name="fftShift">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,65,57"/>
+<area shape="rect" id="node2" href="$precomp__utils_8hpp.html#abe84080342fe3565651b846659b1faba" title="Compute linear index from 3&#45;d point in grid defined by dim." alt="" coords="123,5,246,32"/>
+<area shape="rect" id="node3" href="$gpuNUFFT__utils_8hpp.html#a03311da032c7c532a9947231d7e1f7f1" title="Compute position (x,y,z) from linear index." alt="" coords="113,56,256,83"/>
+</map>

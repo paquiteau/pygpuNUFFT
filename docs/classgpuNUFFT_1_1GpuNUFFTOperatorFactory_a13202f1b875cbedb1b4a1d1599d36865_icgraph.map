@@ -1,0 +1,4 @@
+<map id="gpuNUFFT::GpuNUFFTOperatorFactory::computeSectorCountPerDimension" name="gpuNUFFT::GpuNUFFTOperatorFactory::computeSectorCountPerDimension">
+<area shape="rect" id="node1" title="Compute the amount of sectors per dimension." alt="" coords="344,5,557,61"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#aa5cecffe2b150073fd71145317ae308b" title="Load GpuNUFFT Operator from previously computed mappings." alt="" coords="5,13,296,54"/>
+</map>

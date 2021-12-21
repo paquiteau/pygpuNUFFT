@@ -1,0 +1,5 @@
+<map id="getCoordsFromIndex" name="getCoordsFromIndex">
+<area shape="rect" id="node1" title="Compute position (x,y,z) from linear index." alt="" coords="216,5,359,32"/>
+<area shape="rect" id="node2" href="$gpuNUFFT__fft__tests_8cpp.html#acaabcb5aba0f894db0a151ef6dd9d97a" title=" " alt="" coords="108,5,168,32"/>
+<area shape="rect" id="node3" href="$gpuNUFFT__fft__tests_8cpp.html#a2afa82cfeb1d507486af2894e3a2491d" title=" " alt="" coords="5,5,60,32"/>
+</map>

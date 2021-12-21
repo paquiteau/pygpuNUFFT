@@ -1,0 +1,4 @@
+<map id="gpuNUFFT::TextureGpuNUFFTOperator::freeLookupTable" name="gpuNUFFT::TextureGpuNUFFTOperator::freeLookupTable">
+<area shape="rect" id="node1" title="Virtual method to allow custom free of lookup table." alt="" coords="5,5,260,47"/>
+<area shape="rect" id="node2" href="$cuda__utils_8hpp.html#a64671ec2e1ba11c9cbff7bbee5fbd3ef" title="Free texture memory on device." alt="" coords="308,13,395,39"/>
+</map>

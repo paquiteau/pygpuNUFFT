@@ -1,0 +1,5 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::performGpuNUFFTAdj" name="gpuNUFFT::GpuNUFFTOperator::performGpuNUFFTAdj">
+<area shape="rect" id="node1" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="5,5,216,47"/>
+<area shape="rect" id="node2" href="$structgpuNUFFT_1_1Array.html#af426f56b5d7e05b6143acbdd51bac188" title=" " alt="" coords="264,13,425,39"/>
+<area shape="rect" id="node3" href="$structgpuNUFFT_1_1Dimensions.html#a4c589934c5444910fbcd890d128229c9" title="Compute total count of array length." alt="" coords="473,5,635,47"/>
+</map>

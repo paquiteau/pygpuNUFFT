@@ -1,0 +1,4 @@
+<map id="calculateDeapodizationAt2D" name="calculateDeapodizationAt2D">
+<area shape="rect" id="node1" title="Calculate the deapodization value for the specified grid position (x,y)" alt="" coords="5,5,189,32"/>
+<area shape="rect" id="node2" href="$gpuNUFFT__utils_8hpp.html#adf4f9791004a42552974d505221dda42" title="Calculate the deapodization value for the specified grid position coord." alt="" coords="237,5,425,32"/>
+</map>

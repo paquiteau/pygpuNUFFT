@@ -1,0 +1,6 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::getType" name="gpuNUFFT::GpuNUFFTOperator::getType">
+<area shape="rect" id="node1" title="Return type of GriddingOperator." alt="" coords="344,71,555,112"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#ad951199a259576c45568997ccfac72dc" title="Method to compute the sector processing order." alt="" coords="41,5,260,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a0e941d590a7e5effed76f909dfa72bcc" title="Create GpuNUFFT Operator." alt="" coords="38,71,263,112"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#aa5cecffe2b150073fd71145317ae308b" title="Load GpuNUFFT Operator from previously computed mappings." alt="" coords="5,136,296,177"/>
+</map>

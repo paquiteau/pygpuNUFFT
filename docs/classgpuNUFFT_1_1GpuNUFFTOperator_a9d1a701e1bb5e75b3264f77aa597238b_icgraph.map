@@ -1,0 +1,7 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::getGridDims" name="gpuNUFFT::GpuNUFFTOperator::getGridDims">
+<area shape="rect" id="node1" title=" " alt="" coords="344,104,555,145"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#afa72b607029c78d61b6e01d45077998e" title="Assign the samples on the k&#45;space trajectory to its corresponding sector." alt="" coords="45,5,256,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a82e185db6eda1edb359df5a580be7b37" title="Computation of the deapodization function." alt="" coords="25,71,277,112"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a3afe5838f69b6b22db8336e57e2e540d" title="Return Grid Width (ImageWidth * osf)" alt="" coords="45,136,256,177"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#aa5cecffe2b150073fd71145317ae308b" title="Load GpuNUFFT Operator from previously computed mappings." alt="" coords="5,201,296,243"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="gpuNUFFT::TextureGpuNUFFTOperator::TextureGpuNUFFTOperator" name="gpuNUFFT::TextureGpuNUFFTOperator::TextureGpuNUFFTOperator">
+<area shape="rect" id="node1" title=" " alt="" coords="5,123,260,165"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#a3125b2b6c409e1d52050f9e3859f4f12" title="Precompute interpolation kernel lookup table." alt="" coords="308,123,563,165"/>
+<area shape="rect" id="node3" href="$gpuNUFFT__utils_8cpp.html#ac57bf34370dd28161430ed9f8a1d9664" title=" " alt="" coords="612,29,779,56"/>
+<area shape="rect" id="node4" href="$gpuNUFFT__utils_8cpp.html#af646ac63e61d6cb83841391c13c3bfd8" title=" " alt="" coords="611,80,780,107"/>
+<area shape="rect" id="node5" href="$gpuNUFFT__utils_8cpp.html#a6683a749816745e9e10c65ac77ebd1c6" title="Loads a radius of the circularly symmetric kernel into a 1&#45;d array, with respect to the kernel radius..." alt="" coords="828,181,927,208"/>
+<area shape="rect" id="node10" href="$gpuNUFFT__utils_8cpp.html#a03ba0850f7bccde81a06b55be0d6adb8" title="Loads a radius of the circularly symmetric kernel into a 2&#45;d array, with respect to the kernel radius..." alt="" coords="646,181,745,208"/>
+<area shape="rect" id="node11" href="$gpuNUFFT__utils_8cpp.html#a4603fff4bc63b96eea4500784a77fc48" title="Loads a radius of the circularly symmetric kernel into a 3&#45;d array, with respect to the kernel radius..." alt="" coords="646,232,745,259"/>
+<area shape="rect" id="node6" href="$gpuNUFFT__utils_8hpp.html#a18dd3c6c4b8ac5f6947f3dc1c59651bc" title="Interpolation Kernel evaluation for radius." alt="" coords="975,181,1032,208"/>
+<area shape="rect" id="node7" href="$gpuNUFFT__utils_8hpp.html#aa7b00d423ae0e06388b55594fe1adb93" title="beta function used in interpolation function. See Beatty et al." alt="" coords="1203,144,1259,171"/>
+<area shape="rect" id="node8" href="$gpuNUFFT__utils_8cpp.html#a5472cb661dea68a2ab2b52df187b6291" title="Modified Kaiser Bessel function of zero&#45;th order." alt="" coords="1211,207,1250,233"/>
+<area shape="rect" id="node9" href="$gpuNUFFT__utils_8hpp.html#ab1456ac35fe51fc4dac2e0054f6d9a50" title="I_0 function used in interpolation function. See Beatty et al." alt="" coords="1080,181,1155,208"/>
+</map>

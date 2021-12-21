@@ -1,0 +1,5 @@
+<map id="performTextureForwardConvolution" name="performTextureForwardConvolution">
+<area shape="rect" id="node1" title="Forward gridding convolution implementation on GPU using textures ." alt="" coords="311,46,535,73"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a643ed4abaf7b00027d8edec5a64ba0ea" title="Virtual forward convolution call, which can be used by sub&#45;classes to add behaviour to the gridding s..." alt="" coords="5,5,263,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#af111ef5824d67c6c167211285f1404b0" title="Virtual forward convolution call, which can be used by sub&#45;classes to add behaviour to the gridding s..." alt="" coords="7,71,261,112"/>
+</map>

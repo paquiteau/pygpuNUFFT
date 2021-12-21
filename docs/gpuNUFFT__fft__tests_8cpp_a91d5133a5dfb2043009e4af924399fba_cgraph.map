@@ -1,0 +1,11 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title=" " alt="" coords="5,144,60,171"/>
+<area shape="rect" id="node2" href="$cuda__utils_8hpp.html#afc342c146695980b1c7444b7b4449821" title="Copy CUDA memory from device to host." alt="" coords="161,5,280,32"/>
+<area shape="rect" id="node3" href="$structgpuNUFFT_1_1Array.html#af426f56b5d7e05b6143acbdd51bac188" title=" " alt="" coords="140,56,301,83"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a15c06b6bd8c74d3ac0b4705c3204db23" title="Create GpuNUFFT Operator." alt="" coords="108,107,333,149"/>
+<area shape="rect" id="node6" href="$cuda__utils_8hpp.html#aaa83ead29bc50e65ae4298d9206a760b" title="Free variable list of device pointers. Use NULL as stopping element." alt="" coords="141,173,300,200"/>
+<area shape="rect" id="node8" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a10d565529aa2c7778c15edb8a820b417" title="Perform forward gridding operation on given kspaceData." alt="" coords="115,225,326,266"/>
+<area shape="rect" id="node9" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a38a45507d840b8d3d97de7fc79b4fa8a" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="115,290,326,331"/>
+<area shape="rect" id="node4" href="$structgpuNUFFT_1_1Dimensions.html#a4c589934c5444910fbcd890d128229c9" title="Compute total count of array length." alt="" coords="381,49,543,90"/>
+<area shape="rect" id="node7" href="$cuda__utils_8hpp.html#a6ffa821f98a8c2b391c12c01308ff1db" title="Free of device memory." alt="" coords="405,173,519,200"/>
+</map>

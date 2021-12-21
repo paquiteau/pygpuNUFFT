@@ -1,0 +1,17 @@
+<map id="gpuNUFFT::GpuNUFFTOperatorFactory::computeDeapodizationFunction" name="gpuNUFFT::GpuNUFFTOperatorFactory::computeDeapodizationFunction">
+<area shape="rect" id="node1" title="Computation of the deapodization function." alt="" coords="5,321,257,362"/>
+<area shape="rect" id="node2" href="$structgpuNUFFT_1_1Dimensions.html#a4c589934c5444910fbcd890d128229c9" title="Compute total count of array length." alt="" coords="589,18,750,60"/>
+<area shape="rect" id="node3" href="$structgpuNUFFT_1_1Array.html#af426f56b5d7e05b6143acbdd51bac188" title=" " alt="" coords="330,55,491,82"/>
+<area shape="rect" id="node4" href="$gpuNUFFT__fft__tests_8cpp.html#a1267fc514127315f25ad48e26de77b8c" title=" " alt="" coords="382,106,439,132"/>
+<area shape="rect" id="node6" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a10b3740740ac08b85221e610849193cf" title="Debug message." alt="" coords="305,157,516,198"/>
+<area shape="rect" id="node7" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a9d1a701e1bb5e75b3264f77aa597238b" title=" " alt="" coords="305,222,516,264"/>
+<area shape="rect" id="node8" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ab63e41179a49929b7ebf3a83f76fada0" title=" " alt="" coords="305,288,516,329"/>
+<area shape="rect" id="node10" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a38a45507d840b8d3d97de7fc79b4fa8a" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="305,353,516,394"/>
+<area shape="rect" id="node11" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a5dc3d4ddd0bfe7d8a75721c3ad1dc695" title=" " alt="" coords="305,418,516,460"/>
+<area shape="rect" id="node12" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a6e85fdbc19547213ec0ad690305b4795" title="Pass debug function pointer." alt="" coords="305,484,516,525"/>
+<area shape="rect" id="node13" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a7b31403334f5722ed8ebb25fcf8e6cbc" title=" " alt="" coords="305,549,516,590"/>
+<area shape="rect" id="node14" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#aa1eab38f22cc6c6038a40b3e3d029c7e" title=" " alt="" coords="305,614,516,656"/>
+<area shape="rect" id="node15" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a3e73693f0e4985e3c40dcdd8b0a76f40" title=" " alt="" coords="305,680,516,721"/>
+<area shape="rect" id="node5" href="$precomp__utils_8hpp.html#abe84080342fe3565651b846659b1faba" title="Compute linear index from 3&#45;d point in grid defined by dim." alt="" coords="608,106,731,132"/>
+<area shape="rect" id="node9" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a635c1cf91573264cafb1f3df27fdf976" title=" " alt="" coords="564,288,775,329"/>
+</map>

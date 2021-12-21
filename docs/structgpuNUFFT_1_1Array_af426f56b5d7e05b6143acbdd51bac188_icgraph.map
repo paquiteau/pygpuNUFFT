@@ -1,0 +1,13 @@
+<map id="gpuNUFFT::Array::count" name="gpuNUFFT::Array::count">
+<area shape="rect" id="node1" title=" " alt="" coords="305,307,467,334"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#afa72b607029c78d61b6e01d45077998e" title="Assign the samples on the k&#45;space trajectory to its corresponding sector." alt="" coords="26,5,237,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a82e185db6eda1edb359df5a580be7b37" title="Computation of the deapodization function." alt="" coords="5,71,257,112"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#ad951199a259576c45568997ccfac72dc" title="Method to compute the sector processing order." alt="" coords="22,136,241,177"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#ad915537942d302c8d192b964e6114f28" title="Compute the boundaries of the assigned dataIndices per sector element." alt="" coords="21,201,241,243"/>
+<area shape="rect" id="node6" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ada5bb598b923ca3e92e987982f3d0d5b" title="Perform forward gridding operation on kspaceData already residing in GPU memory." alt="" coords="26,267,237,308"/>
+<area shape="rect" id="node7" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a89e40ec1b777c8033bbc933c6535078c" title="Perform Adjoint gridding operation on kspaceData already residing in GPU memory." alt="" coords="26,332,237,373"/>
+<area shape="rect" id="node8" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a897f3ec26b76086e3cf174a4ce0c1c23" title="Select data array in ordered manner." alt="" coords="26,397,237,439"/>
+<area shape="rect" id="node9" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#aae7ea9905b763b7b8cc5c36533257163" title=" " alt="" coords="26,463,237,504"/>
+<area shape="rect" id="node10" href="$gpuNUFFT__forward__tests_8cpp.html#a6e7e337161ef805951437dbf21112e43" title=" " alt="" coords="104,529,159,555"/>
+<area shape="rect" id="node11" href="$gpuNUFFT__fft__tests_8cpp.html#a143d7141da78d4955eb9d9228cd5e65e" title=" " alt="" coords="96,579,167,606"/>
+</map>

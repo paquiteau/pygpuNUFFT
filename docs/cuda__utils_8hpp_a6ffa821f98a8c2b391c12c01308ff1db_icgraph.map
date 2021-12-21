@@ -1,0 +1,13 @@
+<map id="freeDeviceMem" name="freeDeviceMem">
+<area shape="rect" id="node1" title="Free of device memory." alt="" coords="796,255,909,282"/>
+<area shape="rect" id="node2" href="$cuda__utils_8hpp.html#aaa83ead29bc50e65ae4298d9206a760b" title="Free variable list of device pointers. Use NULL as stopping element." alt="" coords="589,255,748,282"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a065bb3f71daa7a8eea80f786d0626f59" title="Function to free the neccessary device memory used by the GriddingOperator." alt="" coords="297,5,508,47"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1BalancedGpuNUFFTOperator.html#a3b8fe03dd1e0e8b68eba22e42e1e032b" title="Perform forward gridding operation on given kspaceData." alt="" coords="270,71,535,112"/>
+<area shape="rect" id="node6" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a8e0514f6dea51134ad49aaeb6c29ac5b" title="Perform forward gridding operation on given kspaceData." alt="" coords="284,135,521,191"/>
+<area shape="rect" id="node7" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ada5bb598b923ca3e92e987982f3d0d5b" title="Perform forward gridding operation on kspaceData already residing in GPU memory." alt="" coords="297,215,508,256"/>
+<area shape="rect" id="node8" href="$classgpuNUFFT_1_1BalancedGpuNUFFTOperator.html#ada71d183719d9375226352e90ff22194" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="270,280,535,321"/>
+<area shape="rect" id="node9" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a1bbc427b1d73850b6025eb52b417174b" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="264,345,541,387"/>
+<area shape="rect" id="node10" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a89e40ec1b777c8033bbc933c6535078c" title="Perform Adjoint gridding operation on kspaceData already residing in GPU memory." alt="" coords="297,411,508,452"/>
+<area shape="rect" id="node11" href="$gpuNUFFT__fft__tests_8cpp.html#a91d5133a5dfb2043009e4af924399fba" title=" " alt="" coords="375,477,430,503"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#acf8b3aa450f554ebd8130c11d7c8233e" title=" " alt="" coords="5,5,216,47"/>
+</map>

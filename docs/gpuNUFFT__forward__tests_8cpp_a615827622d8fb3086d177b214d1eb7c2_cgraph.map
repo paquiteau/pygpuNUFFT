@@ -1,0 +1,7 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,60,98"/>
+<area shape="rect" id="node2" href="$structgpuNUFFT_1_1Array.html#af426f56b5d7e05b6143acbdd51bac188" title=" " alt="" coords="140,13,301,39"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a15c06b6bd8c74d3ac0b4705c3204db23" title="Create GpuNUFFT Operator." alt="" coords="108,64,333,105"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a10d565529aa2c7778c15edb8a820b417" title="Perform forward gridding operation on given kspaceData." alt="" coords="115,129,326,171"/>
+<area shape="rect" id="node3" href="$structgpuNUFFT_1_1Dimensions.html#a4c589934c5444910fbcd890d128229c9" title="Compute total count of array length." alt="" coords="381,5,543,47"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="gpuNUFFT::TextureGpuNUFFTOperator::initAndCopyGpuNUFFTInfo" name="gpuNUFFT::TextureGpuNUFFTOperator::initAndCopyGpuNUFFTInfo">
+<area shape="rect" id="node1" title="Virtual method to perform precomputation of all neccessary meta information used in the gridding step..." alt="" coords="5,5,260,47"/>
+<area shape="rect" id="node2" href="$cuda__utils_8hpp.html#a7ac606afbf03e74f64780e01d12aa64b" title="Initialize constant symbol on device." alt="" coords="308,13,424,39"/>
+</map>

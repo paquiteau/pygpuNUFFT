@@ -1,0 +1,5 @@
+<map id="gpuNUFFT::TextureGpuNUFFTOperator" name="gpuNUFFT::TextureGpuNUFFTOperator">
+<area shape="rect" id="node1" title="GpuNUFFTOperator with texture memory lookup." alt="" coords="5,80,260,107"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html" title="GpuNUFFTOperator with load balancing and texture memory lookup." alt="" coords="37,155,228,196"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html" title="Main &quot;Operator&quot; used for gridding operations." alt="" coords="27,5,238,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="copyFromDevice" name="copyFromDevice">
+<area shape="rect" id="node1" title="Copy CUDA memory from device to host." alt="" coords="124,31,243,57"/>
+<area shape="rect" id="node2" href="$gpuNUFFT__fft__tests_8cpp.html#a91d5133a5dfb2043009e4af924399fba" title=" " alt="" coords="13,5,68,32"/>
+<area shape="rect" id="node3" href="$gpuNUFFT__fft__tests_8cpp.html#a143d7141da78d4955eb9d9228cd5e65e" title=" " alt="" coords="5,56,76,83"/>
+</map>

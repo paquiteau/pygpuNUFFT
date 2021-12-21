@@ -1,0 +1,6 @@
+<map id="gpuNUFFT::BalancedGpuNUFFTOperator::performForwardGpuNUFFT" name="gpuNUFFT::BalancedGpuNUFFTOperator::performForwardGpuNUFFT">
+<area shape="rect" id="node1" title="Perform forward gridding operation on kspaceData already residing in GPU memory." alt="" coords="5,27,271,69"/>
+<area shape="rect" id="node2" href="$cuda__utils_8hpp.html#aaa83ead29bc50e65ae4298d9206a760b" title="Free variable list of device pointers. Use NULL as stopping element." alt="" coords="345,5,503,32"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a10d565529aa2c7778c15edb8a820b417" title="Perform forward gridding operation on given kspaceData." alt="" coords="319,57,529,98"/>
+<area shape="rect" id="node3" href="$cuda__utils_8hpp.html#a6ffa821f98a8c2b391c12c01308ff1db" title="Free of device memory." alt="" coords="577,5,691,32"/>
+</map>

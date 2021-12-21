@@ -1,0 +1,5 @@
+<map id="computeSectorMapping" name="computeSectorMapping">
+<area shape="rect" id="node1" title="Compute Sector Mapping for one coordinate based on the sector count." alt="" coords="264,42,423,69"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#afa72b607029c78d61b6e01d45077998e" title="Assign the samples on the k&#45;space trajectory to its corresponding sector." alt="" coords="5,5,216,47"/>
+<area shape="rect" id="node3" href="$precomp__utils_8hpp.html#a32b179f08838685c3f07e3f7a9ab0699" title="Compute Sector Mapping." alt="" coords="31,71,190,98"/>
+</map>

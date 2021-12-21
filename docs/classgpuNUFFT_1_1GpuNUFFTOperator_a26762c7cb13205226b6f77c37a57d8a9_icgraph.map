@@ -1,0 +1,7 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::getSectorWidth" name="gpuNUFFT::GpuNUFFTOperator::getSectorWidth">
+<area shape="rect" id="node1" title=" " alt="" coords="344,104,555,145"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#afa72b607029c78d61b6e01d45077998e" title="Assign the samples on the k&#45;space trajectory to its corresponding sector." alt="" coords="45,5,256,47"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a62c51a180bf592a0fa82343ed7b4daed" title="Compute sector centers array." alt="" coords="45,71,256,112"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a65d596418c34d74d383addd455469b5a" title="Compute 2&#45;d sector centers array." alt="" coords="41,136,261,177"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#aa5cecffe2b150073fd71145317ae308b" title="Load GpuNUFFT Operator from previously computed mappings." alt="" coords="5,201,296,243"/>
+</map>

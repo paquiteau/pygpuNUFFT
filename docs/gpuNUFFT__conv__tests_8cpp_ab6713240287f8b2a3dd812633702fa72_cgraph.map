@@ -1,0 +1,6 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node1" title=" " alt="" coords="5,64,60,91"/>
+<area shape="rect" id="node2" href="$precomp__utils_8hpp.html#abe84080342fe3565651b846659b1faba" title="Compute linear index from 3&#45;d point in grid defined by dim." alt="" coords="159,5,282,32"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a15c06b6bd8c74d3ac0b4705c3204db23" title="Create GpuNUFFT Operator." alt="" coords="108,57,333,98"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a38a45507d840b8d3d97de7fc79b4fa8a" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="115,122,326,163"/>
+</map>
