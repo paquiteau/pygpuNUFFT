@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gpuNUFFT: Main Page</title>
+<title>gpuNUFFT: gpuNUFFT - GPU Regridding of arbitrary 3-D/2-D MRI data</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -82,16 +82,66 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">gpuNUFFT Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title"><a class="el" href="namespacegpuNUFFT.html" title="gpuNUFFT related classes">gpuNUFFT</a> - GPU Regridding of arbitrary 3-D/2-D MRI data </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p ><a class="anchor" id="md_README"></a> <img src="https://github.com/paquiteau/pygpuNUFFT/actions/workflows/cd-build.yml/badge.svg" alt="CD" style="pointer-events: none;" class="inline"/> <img src="https://github.com/paquiteau/pygpuNUFFT/actions/workflows/ci-build.yml/badge.svg" alt="CI" style="pointer-events: none;" class="inline"/></p>
+<p >This is an hard fork of <a href="https://github.com/andyschwarzl/gpuNUFFT">https://github.com/andyschwarzl/gpuNUFFT</a> , which focuses on providing extensive python bindings and more functionality for non cartesian MRI reconstruction.</p>
+<p >Original Software by</p><ul>
+<li>Andreas Schwarzl - andy.schwarzl[at]gmail.com</li>
+<li>Florian Knoll - florian.knoll[at]nyumc.org</li>
+</ul>
+<p >Forked and tailored to python by</p><ul>
+<li>Chaythia GR <a href="https://github.com/chaithyagr/">@chaithyagr</a></li>
+<li>Pierre-Antoine Comby <a href="https://github.com/paquiteau/">@paquiteau</a></li>
+</ul>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md2"></a>
+INFO:</h1>
+<p >GPU 3D/2D regridding library.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+REQUIREMENTS:</h1>
+<ul>
+<li>CUDA capable graphics card and working installation of <a href="https://developer.nvidia.com/cuda-downloads">CUDA Toolkit</a></li>
+<li><a href="https://github.com/pybind/pybind11">pybind11</a> (downloaded by cmake build)</li>
+<li><a href="https://cmake.org/download/">CMake 3.15</a> or higher</li>
+<li><a href="https://github.com/google/googletest">Google test</a> f(downloaded by cmake build if needed)</li>
+</ul>
+<p >CMAKE Options:</p>
+<ul>
+<li>WITH_DEBUG : DEFAULT OFF, enables Command-Line DEBUG output</li>
+<li>GEN_TESTS : DEFAULT OFF, generate Unit tests</li>
+</ul>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md5"></a>
+LINUX, using gcc:</h1>
+<p >build project via cmake, starting from project root directory: </p><pre class="fragment">&gt; cd CUDA
+&gt; mkdir -p build
+&gt; cd build
+&gt; cmake ..
+&gt; make
+</pre><p> Note: This version of <a class="el" href="namespacegpuNUFFT.html" title="gpuNUFFT related classes">gpuNUFFT</a> was tested with CUDA 11.0</p>
+<hr  />
+ <h1><a class="anchor" id="autotoc_md7"></a>
+Doc:</h1>
+<p >To generate the source code documentation run </p><pre class="fragment">&gt; make doc
+</pre><p> in the build directory.</p>
+<p >Otherwise, you can go to <a href="https://paquiteau.github.io/pygpuNUFFT/docs/">https://paquiteau.github.io/pygpuNUFFT/docs/</a> to access the up-to-date documentation of master branch.</p>
+<p ><em>Note: Requires doxygen to be installed.</em></p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Supporting material</h2>
+<p >The original written documentation and presentations can be found <a href="https://www.dropbox.com/sh/gcvcszporj65wnq/AAA3eFsGQnSb7UottCSx0Hiva?dl=0">here</a>.</p>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Acknowlegdment</h2>
+<p >The authors would like to deeply thank the original authors of <a class="el" href="namespacegpuNUFFT.html" title="gpuNUFFT related classes">gpuNUFFT</a> for their hard work and initial development. </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Dec 21 2021 13:46:37 for gpuNUFFT by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+    <li class="footer">Generated on Thu Dec 23 2021 08:58:00 for gpuNUFFT by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
 </body>

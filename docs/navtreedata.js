@@ -25,6 +25,15 @@
 var NAVTREE =
 [
   [ "gpuNUFFT", "index.html", [
+    [ "gpuNUFFT - GPU Regridding of arbitrary 3-D/2-D MRI data", "index.html", [
+      [ "INFO:", "index.html#autotoc_md2", null ],
+      [ "REQUIREMENTS:", "index.html#autotoc_md3", null ],
+      [ "LINUX, using gcc:", "index.html#autotoc_md5", null ],
+      [ "Doc:", "index.html#autotoc_md7", [
+        [ "Supporting material", "index.html#autotoc_md8", null ],
+        [ "Acknowlegdment", "index.html#autotoc_md9", null ]
+      ] ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -61,8 +70,8 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "classgpuNUFFT_1_1GpuNUFFTOperator.html#ac8461fa16695dfa41e528f6a1f766fa3",
-"gpuNUFFT__cpu_8hpp_source.html",
-"structgpuNUFFT_1_1GpuNUFFTInfo.html#a42a47186827c00334c7dac96f4750057"
+"gpuNUFFT__cpu_8hpp.html#ae8bf3e466a6b42045e1ba95cf8d7df5a",
+"structgpuNUFFT_1_1GpuNUFFTInfo.html#a14031b9d6ccb70859fb8a1f89531c6d8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
