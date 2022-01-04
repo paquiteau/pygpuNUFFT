@@ -9,3 +9,11 @@ jobs:
   docs:
     name: Deploy documentation
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: langroodi/doxygenize@v1.5
+        with:
+            doxygenconf: './doc/Doxyfile'
+            htmloutput: './doc/html/'
+            ghpagesbranch: 'gh-pages'
+            ghpagesdir: './docs/'

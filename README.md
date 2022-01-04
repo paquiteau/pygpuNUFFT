@@ -1,4 +1,8 @@
-## gpuNUFFT - GPU Regridding of arbitrary 3-D/2-D MRI data
+# gpuNUFFT - GPU Regridding of arbitrary 3-D/2-D MRI data
+
+![CD](https://github.com/paquiteau/pygpuNUFFT/actions/workflows/cd-build.yml/badge.svg)
+![CI](https://github.com/paquiteau/pygpuNUFFT/actions/workflows/ci-build.yml/badge.svg)
+
 
 This is an hard fork of https://github.com/andyschwarzl/gpuNUFFT , which focuses on providing extensive python bindings and more functionality for non cartesian MRI reconstruction.
 
@@ -20,9 +24,9 @@ REQUIREMENTS:
 -------------------------------------------------------------------------------
 
 - CUDA capable graphics card and working installation of [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads)
-- [pybind11](https://github.com/pybind/pybind11) 
-- [CMake 2.8](https://cmake.org/download/) or higher
-- [Google test](https://github.com/google/googletest) framework (optional)
+- [pybind11](https://github.com/pybind/pybind11) (downloaded by cmake build)
+- [CMake 3.15](https://cmake.org/download/) or higher
+- [Google test](https://github.com/google/googletest) f(downloaded by cmake build if needed)
 
 CMAKE Options:
 
@@ -51,6 +55,9 @@ To generate the source code documentation run
     > make doc
 
 in the build directory. 
+
+Otherwise, you can go to https://paquiteau.github.io/pygpuNUFFT/docs/ to access the up-to-date documentation of master branch.
+
 
 *Note: Requires doxygen to be installed.*
 
