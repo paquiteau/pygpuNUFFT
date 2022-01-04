@@ -16,10 +16,23 @@
 *.pyc 
 *.pyd 
 *.egg-info/
+*.egg
+dist/
 
 #doxygen
 doc/html/
 doc/latex/
+CMakeDoxyfile.in
+
+#Cmake
+_deps/*
+**/cmake_install.cmake
+.cmake
+**/compile_commands.json
+*.cmake
+CMakeFiles/
+*.dir
+Makefile
 
 # others
 common/
@@ -35,4 +48,11 @@ build/
 *.swp
 *.hdr
 *.cfl
-**/compile_commands.json
+*.nvvp
+
+# IDE
+# Vscode
+.vscode
+# Emacs
+*.el
+
