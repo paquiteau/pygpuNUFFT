@@ -164,27 +164,27 @@ TEST(TestGPUGpuNUFFTConv,KernelCall1Sector)
       printf("\n");
     }
 
-    if (DEBUG) printf("test %f \n",gdata[4].x);
-    int index = get3DC2lin(5,5,5,im_width);
-    if (DEBUG) printf("index to test %d\n",index);
-    EXPECT_EQ(index,555);
-    EXPECT_NEAR(1.0f,gdata[index].x,epsilon);
-    EXPECT_NEAR(0.4502,gdata[get3DC2lin(5,4,5,im_width)].x,epsilon*10.0f);
-    EXPECT_NEAR(0.4502,gdata[get3DC2lin(4,5,5,im_width)].x,epsilon*10.0f);
-    EXPECT_NEAR(0.4502,gdata[get3DC2lin(5,6,5,im_width)].x,epsilon*10.0f);
+  if (DEBUG) printf("test %f \n",gdata[4].x);
+  int index = get3DC2lin(5,5,5,im_width);
+  if (DEBUG) printf("index to test %d\n",index);
+  EXPECT_EQ(index,555);
+  EXPECT_NEAR(1.0f,gdata[index].x,epsilon);
+  EXPECT_NEAR(0.4502,gdata[get3DC2lin(5,4,5,im_width)].x,epsilon*10.0f);
+  EXPECT_NEAR(0.4502,gdata[get3DC2lin(4,5,5,im_width)].x,epsilon*10.0f);
+  EXPECT_NEAR(0.4502,gdata[get3DC2lin(5,6,5,im_width)].x,epsilon*10.0f);
 
-    EXPECT_NEAR(0.2027,gdata[get3DC2lin(6,6,5,im_width)].x,epsilon*10.0f);
-    EXPECT_NEAR(0.2027,gdata[get3DC2lin(4,4,5,im_width)].x,epsilon*10.0f);
-    EXPECT_NEAR(0.2027,gdata[get3DC2lin(4,6,5,im_width)].x,epsilon*10.0f);
+  EXPECT_NEAR(0.2027,gdata[get3DC2lin(6,6,5,im_width)].x,epsilon*10.0f);
+  EXPECT_NEAR(0.2027,gdata[get3DC2lin(4,4,5,im_width)].x,epsilon*10.0f);
+  EXPECT_NEAR(0.2027,gdata[get3DC2lin(4,6,5,im_width)].x,epsilon*10.0f);
 
 
-    free(data);
-    free(coords);
-    free(gdata);
+  free(data);
+  free(coords);
+  free(gdata);
 
-    delete gpuNUFFTOp;
+  delete gpuNUFFTOp;
 
-    EXPECT_EQ(1, 1);
+  EXPECT_EQ(1, 1);
 }
 
 TEST(TestGPUGpuNUFFTConv,KernelCall1SectorArbSW)
@@ -254,33 +254,33 @@ TEST(TestGPUGpuNUFFTConv,KernelCall1SectorArbSW)
         printf("\n");
       }
 
-      if (DEBUG) printf("test %f \n",gdata[4].x);
-      int index = get3DC2lin(5,5,5,im_width);
-      if (DEBUG) printf("index to test %d\n",index);
-      EXPECT_EQ(index,555);
-      EXPECT_NEAR(1.0f,gdata[index].x,epsilon);
-      EXPECT_NEAR(0.4502,gdata[get3DC2lin(5,4,center_slice,im_width)].x,epsilon*10.0f);
-      EXPECT_NEAR(0.4502,gdata[get3DC2lin(4,5,center_slice,im_width)].x,epsilon*10.0f);
-      EXPECT_NEAR(0.4502,gdata[get3DC2lin(5,6,center_slice,im_width)].x,epsilon*10.0f);
+    if (DEBUG) printf("test %f \n",gdata[4].x);
+    int index = get3DC2lin(5,5,5,im_width);
+    if (DEBUG) printf("index to test %d\n",index);
+    EXPECT_EQ(index,555);
+    EXPECT_NEAR(1.0f,gdata[index].x,epsilon);
+    EXPECT_NEAR(0.4502,gdata[get3DC2lin(5,4,center_slice,im_width)].x,epsilon*10.0f);
+    EXPECT_NEAR(0.4502,gdata[get3DC2lin(4,5,center_slice,im_width)].x,epsilon*10.0f);
+    EXPECT_NEAR(0.4502,gdata[get3DC2lin(5,6,center_slice,im_width)].x,epsilon*10.0f);
 
-      EXPECT_NEAR(0.2027,gdata[get3DC2lin(6,6,center_slice,im_width)].x,epsilon*10.0f);
-      EXPECT_NEAR(0.2027,gdata[get3DC2lin(4,4,center_slice,im_width)].x,epsilon*10.0f);
-      EXPECT_NEAR(0.2027,gdata[get3DC2lin(4,6,center_slice,im_width)].x,epsilon*10.0f);
+    EXPECT_NEAR(0.2027,gdata[get3DC2lin(6,6,center_slice,im_width)].x,epsilon*10.0f);
+    EXPECT_NEAR(0.2027,gdata[get3DC2lin(4,4,center_slice,im_width)].x,epsilon*10.0f);
+    EXPECT_NEAR(0.2027,gdata[get3DC2lin(4,6,center_slice,im_width)].x,epsilon*10.0f);
 
-      EXPECT_NEAR(0.4502,gdata[get3DC2lin(9,4,center_slice,im_width)].x,epsilon*10.0f);
-      EXPECT_NEAR(0.4502,gdata[get3DC2lin(8,5,center_slice,im_width)].x,epsilon*10.0f);
-      EXPECT_NEAR(0.4502,gdata[get3DC2lin(9,6,center_slice,im_width)].x,epsilon*10.0f);
+    EXPECT_NEAR(0.4502,gdata[get3DC2lin(9,4,center_slice,im_width)].x,epsilon*10.0f);
+    EXPECT_NEAR(0.4502,gdata[get3DC2lin(8,5,center_slice,im_width)].x,epsilon*10.0f);
+    EXPECT_NEAR(0.4502,gdata[get3DC2lin(9,6,center_slice,im_width)].x,epsilon*10.0f);
 
-      EXPECT_NEAR(0.2027,gdata[get3DC2lin(8,6,center_slice,im_width)].x,epsilon*10.0f);
-      EXPECT_NEAR(0.2027,gdata[get3DC2lin(8,4,center_slice,im_width)].x,epsilon*10.0f);
-      EXPECT_NEAR(0.2027,gdata[get3DC2lin(0,6,center_slice,im_width)].x,epsilon*10.0f);
-      
-      free(gdata);
+    EXPECT_NEAR(0.2027,gdata[get3DC2lin(8,6,center_slice,im_width)].x,epsilon*10.0f);
+    EXPECT_NEAR(0.2027,gdata[get3DC2lin(8,4,center_slice,im_width)].x,epsilon*10.0f);
+    EXPECT_NEAR(0.2027,gdata[get3DC2lin(0,6,center_slice,im_width)].x,epsilon*10.0f);
 
-      delete gpuNUFFTOp;
-    }
-    free(data);
-    free(coords);
+    free(gdata);
+
+    delete gpuNUFFTOp;
+  }
+  free(data);
+  free(coords);
 }
 
 TEST(TestGPUGpuNUFFTConv,GPUTest_1SectorKernel5)
@@ -588,23 +588,23 @@ TEST(TestGPUGpuNUFFTConv,GPUTest_8SectorsKernel3nData)
       printf("\n");
     }
 
-    int index = get3DC2lin(5,5,5,im_width);
-    if (DEBUG) printf("index to test %d\n",index);
-    //EXPECT_EQ(index,2*555);
-    EXPECT_NEAR(1.3152f,gdata[index].x,epsilon);
-    EXPECT_NEAR(0.2432,gdata[get3DC2lin(3,6,5,im_width)].x,epsilon*10.0f);
+  int index = get3DC2lin(5,5,5,im_width);
+  if (DEBUG) printf("index to test %d\n",index);
+  //EXPECT_EQ(index,2*555);
+  EXPECT_NEAR(1.3152f,gdata[index].x,epsilon);
+  EXPECT_NEAR(0.2432,gdata[get3DC2lin(3,6,5,im_width)].x,epsilon*10.0f);
 
-    EXPECT_NEAR(0.2251,gdata[get3DC2lin(1,7,5,im_width)].x,epsilon*10.0f);
-    EXPECT_NEAR(0.4502,gdata[get3DC2lin(6,5,5,im_width)].x,epsilon*10.0f);
+  EXPECT_NEAR(0.2251,gdata[get3DC2lin(1,7,5,im_width)].x,epsilon*10.0f);
+  EXPECT_NEAR(0.4502,gdata[get3DC2lin(6,5,5,im_width)].x,epsilon*10.0f);
 
-    EXPECT_NEAR(1.0f,gdata[get3DC2lin(8,8,5,im_width)].x,epsilon*10.0f);
-    EXPECT_NEAR(0.2027,gdata[get3DC2lin(9,9,5,im_width)].x,epsilon*10.0f);
+  EXPECT_NEAR(1.0f,gdata[get3DC2lin(8,8,5,im_width)].x,epsilon*10.0f);
+  EXPECT_NEAR(0.2027,gdata[get3DC2lin(9,9,5,im_width)].x,epsilon*10.0f);
 
-    free(data);
-    free(coords);
-    free(gdata);
+  free(data);
+  free(coords);
+  free(gdata);
 
-    delete gpuNUFFTOp;
+  delete gpuNUFFTOp;
 }
 
 
@@ -810,11 +810,11 @@ TEST(TestGPUGpuNUFFTConv,GPUTest_8SectorsKernel5nData)
       printf("\n");
     }
 
-    free(data);
-    free(coords);
-    free(gdata);
+  free(data);
+  free(coords);
+  free(gdata);
 
-    delete gpuNUFFTOp;
+  delete gpuNUFFTOp;
 }
 
 
@@ -1616,7 +1616,6 @@ TEST(TestOperatorFactory, DISABLED_GPUTest_256x256x128_osf_15_Balanced)
   int data_entries = nFE * nSpokes;
 
   DType2* data = (DType2*)calloc(data_entries, sizeof(DType2)); //2* re + im
-  int data_cnt = 0;
   for (int data_cnt = 0; data_cnt < data_entries; data_cnt++) {
     data[data_cnt].x = 1.0f;
     data[data_cnt].y = 0.5f;
