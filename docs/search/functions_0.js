@@ -2,7 +2,7 @@ var searchData=
 [
   ['adj_5fop_0',['adj_op',['../classGpuNUFFTPythonOperator.html#a9d5913daa75877d952160c6e126bbe07',1,'GpuNUFFTPythonOperator']]],
   ['adjconvolution_1',['adjConvolution',['../classgpuNUFFT_1_1BalancedGpuNUFFTOperator.html#a4fcd22f7d1e5a300e86f39ea67be9cd7',1,'gpuNUFFT::BalancedGpuNUFFTOperator::adjConvolution()'],['../classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a76b6f5c49769489e41af44e5e1e8600b',1,'gpuNUFFT::BalancedTextureGpuNUFFTOperator::adjConvolution()'],['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a635f62e9c7475e28aa8fde9110136bc3',1,'gpuNUFFT::GpuNUFFTOperator::adjConvolution()'],['../classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#aeda95a2995806f8362fe135eb7e4ebdb',1,'gpuNUFFT::TextureGpuNUFFTOperator::adjConvolution()']]],
-  ['allocate_5fpinned_5fmemory_2',['allocate_pinned_memory',['../gpuNUFFT__operator__python__factory_8cpp.html#a5732db3eeef010cc926583da8f91fcd6',1,'gpuNUFFT_operator_python_factory.cpp']]],
+  ['allocate_5fpinned_5fmemory_2',['allocate_pinned_memory',['../python__utils_8hpp.html#a5732db3eeef010cc926583da8f91fcd6',1,'python_utils.hpp']]],
   ['allocateandcopytodevicemem_3',['allocateAndCopyToDeviceMem',['../cuda__utils_8hpp.html#a18413e749218eb97bc61578b50a57787',1,'cuda_utils.hpp']]],
   ['allocateandsetmem_4',['allocateAndSetMem',['../cuda__utils_8hpp.html#aa4d5ae712947cf5a6ecd5203eba21c3d',1,'cuda_utils.hpp']]],
   ['allocatedevicemem_5',['allocateDeviceMem',['../cuda__utils_8hpp.html#a5fb34b1c5f091a495c7ac4237257d7b1',1,'cuda_utils.hpp']]],

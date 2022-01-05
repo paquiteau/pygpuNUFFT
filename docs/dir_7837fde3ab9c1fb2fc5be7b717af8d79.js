@@ -1,4 +1,5 @@
 var dir_7837fde3ab9c1fb2fc5be7b717af8d79 =
 [
-    [ "gpuNUFFT_operator_python_factory.cpp", "gpuNUFFT__operator__python__factory_8cpp.html", "gpuNUFFT__operator__python__factory_8cpp" ]
+    [ "inc", "dir_40e69006a8833d43b806348207eb6f4a.html", "dir_40e69006a8833d43b806348207eb6f4a" ],
+    [ "src", "dir_f5914bd29df15049ae416e8a0eac21ca.html", "dir_f5914bd29df15049ae416e8a0eac21ca" ]
 ];

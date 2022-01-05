@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>gpuNUFFT: python/gpuNUFFT_operator_python_factory.cpp File Reference</title>
+<title>gpuNUFFT: python/inc/python_utils.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('gpuNUFFT__operator__python__factory_8cpp.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('python__utils_8hpp.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -84,77 +84,53 @@ $(document).ready(function(){initNavTree('gpuNUFFT__operator__python__factory_8c
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">gpuNUFFT_operator_python_factory.cpp File Reference</div></div>
+  <div class="headertitle"><div class="title">python_utils.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;pybind11/pybind11.h&gt;</code><br />
 <code>#include &lt;pybind11/numpy.h&gt;</code><br />
 <code>#include &lt;pybind11/complex.h&gt;</code><br />
-<code>#include &quot;cufft.h&quot;</code><br />
-<code>#include &quot;cuda_runtime.h&quot;</code><br />
 <code>#include &lt;cuda.h&gt;</code><br />
-<code>#include &lt;cublas.h&gt;</code><br />
 <code>#include &quot;config.hpp&quot;</code><br />
 <code>#include &quot;<a class="el" href="gpuNUFFT__operator__factory_8hpp_source.html">gpuNUFFT_operator_factory.hpp</a>&quot;</code><br />
-<code>#include &lt;algorithm&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for gpuNUFFT_operator_python_factory.cpp:</div>
+Include dependency graph for python_utils.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="gpuNUFFT__operator__python__factory_8cpp__incl.svg" width="1822" height="664"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="python__utils_8hpp__incl.svg" width="1679" height="650"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGpuNUFFTPythonOperator.html">GpuNUFFTPythonOperator</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a62882e735e3ca8a857b2baadec7b38e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpuNUFFT__operator__python__factory_8cpp.html#a62882e735e3ca8a857b2baadec7b38e4">GPUNUFFT_OPERATOR_PYTHON_FACTORY_H_INCLUDED</a></td></tr>
-<tr class="separator:a62882e735e3ca8a857b2baadec7b38e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="python__utils_8hpp__dep__incl.svg" width="432" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="python__utils_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aeb74d2cb99381f659a6890373021e833"><td class="memTemplParams" colspan="2">template&lt;typename TType &gt; </td></tr>
-<tr class="memitem:aeb74d2cb99381f659a6890373021e833"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structgpuNUFFT_1_1Array.html">gpuNUFFT::Array</a>&lt; TType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="gpuNUFFT__operator__python__factory_8cpp.html#aeb74d2cb99381f659a6890373021e833">readNumpyArray</a> (py::array_t&lt; TType &gt; data)</td></tr>
+<tr class="memitem:aeb74d2cb99381f659a6890373021e833"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structgpuNUFFT_1_1Array.html">gpuNUFFT::Array</a>&lt; TType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="python__utils_8hpp.html#aeb74d2cb99381f659a6890373021e833">readNumpyArray</a> (py::array_t&lt; TType &gt; data)</td></tr>
 <tr class="separator:aeb74d2cb99381f659a6890373021e833"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a793ca8c7e1dcb4913496113fa10f24e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgpuNUFFT_1_1Array.html">gpuNUFFT::Array</a>&lt; DType2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpuNUFFT__operator__python__factory_8cpp.html#a793ca8c7e1dcb4913496113fa10f24e6">readNumpyArray</a> (py::array_t&lt; std::complex&lt; DType &gt; &gt; data)</td></tr>
+<tr class="memitem:a793ca8c7e1dcb4913496113fa10f24e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgpuNUFFT_1_1Array.html">gpuNUFFT::Array</a>&lt; DType2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="python__utils_8hpp.html#a793ca8c7e1dcb4913496113fa10f24e6">readNumpyArray</a> (py::array_t&lt; std::complex&lt; DType &gt; &gt; data)</td></tr>
 <tr class="separator:a793ca8c7e1dcb4913496113fa10f24e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5732db3eeef010cc926583da8f91fcd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpuNUFFT__operator__python__factory_8cpp.html#a5732db3eeef010cc926583da8f91fcd6">allocate_pinned_memory</a> (<a class="el" href="structgpuNUFFT_1_1Array.html">gpuNUFFT::Array</a>&lt; DType2 &gt; *lin_array, unsigned long int size)</td></tr>
+<tr class="memitem:a5732db3eeef010cc926583da8f91fcd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="python__utils_8hpp.html#a5732db3eeef010cc926583da8f91fcd6">allocate_pinned_memory</a> (<a class="el" href="structgpuNUFFT_1_1Array.html">gpuNUFFT::Array</a>&lt; DType2 &gt; *lin_array, unsigned long int size)</td></tr>
 <tr class="separator:a5732db3eeef010cc926583da8f91fcd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fc45707d1f047d4232b16582576b2e6"><td class="memTemplParams" colspan="2">template&lt;typename TType &gt; </td></tr>
-<tr class="memitem:a6fc45707d1f047d4232b16582576b2e6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="gpuNUFFT__operator__python__factory_8cpp.html#a6fc45707d1f047d4232b16582576b2e6">copyNumpyArray</a> (py::array_t&lt; std::complex&lt; DType &gt; &gt; data, TType *copy_data)</td></tr>
+<tr class="memitem:a6fc45707d1f047d4232b16582576b2e6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="python__utils_8hpp.html#a6fc45707d1f047d4232b16582576b2e6">copyNumpyArray</a> (py::array_t&lt; std::complex&lt; DType &gt; &gt; data, TType *copy_data)</td></tr>
 <tr class="separator:a6fc45707d1f047d4232b16582576b2e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1a7eaf0d60c015a4df3da44ddf58e27"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpuNUFFT__operator__python__factory_8cpp.html#ad1a7eaf0d60c015a4df3da44ddf58e27">PYBIND11_MODULE</a> (gpuNUFFT, m)</td></tr>
-<tr class="separator:ad1a7eaf0d60c015a4df3da44ddf58e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a62882e735e3ca8a857b2baadec7b38e4" name="a62882e735e3ca8a857b2baadec7b38e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62882e735e3ca8a857b2baadec7b38e4">&#9670;&nbsp;</a></span>GPUNUFFT_OPERATOR_PYTHON_FACTORY_H_INCLUDED</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define GPUNUFFT_OPERATOR_PYTHON_FACTORY_H_INCLUDED</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a5732db3eeef010cc926583da8f91fcd6" name="a5732db3eeef010cc926583da8f91fcd6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5732db3eeef010cc926583da8f91fcd6">&#9670;&nbsp;</a></span>allocate_pinned_memory()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void allocate_pinned_memory </td>
@@ -174,11 +150,16 @@ Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="gpuNUFFT__operator__python__factory_8cpp_a5732db3eeef010cc926583da8f91fcd6_icgraph.svg" width="411" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="python__utils_8hpp_a5732db3eeef010cc926583da8f91fcd6_icgraph.svg" width="411" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -191,6 +172,9 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename TType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void copyNumpyArray </td>
@@ -210,45 +194,16 @@ template&lt;typename TType &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="gpuNUFFT__operator__python__factory_8cpp_a6fc45707d1f047d4232b16582576b2e6_icgraph.svg" width="576" height="170"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ad1a7eaf0d60c015a4df3da44ddf58e27" name="ad1a7eaf0d60c015a4df3da44ddf58e27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1a7eaf0d60c015a4df3da44ddf58e27">&#9670;&nbsp;</a></span>PYBIND11_MODULE()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">PYBIND11_MODULE </td>
-          <td>(</td>
-          <td class="paramtype">gpuNUFFT&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">m&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="gpuNUFFT__operator__python__factory_8cpp_ad1a7eaf0d60c015a4df3da44ddf58e27_cgraph.svg" width="667" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="python__utils_8hpp_a6fc45707d1f047d4232b16582576b2e6_icgraph.svg" width="576" height="170"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -259,6 +214,9 @@ Here is the call graph for this function:</div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structgpuNUFFT_1_1Array.html">gpuNUFFT::Array</a>&lt; DType2 &gt; readNumpyArray </td>
@@ -268,6 +226,11 @@ Here is the call graph for this function:</div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -279,6 +242,9 @@ Here is the call graph for this function:</div>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename TType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structgpuNUFFT_1_1Array.html">gpuNUFFT::Array</a>&lt; TType &gt; readNumpyArray </td>
@@ -288,11 +254,16 @@ template&lt;typename TType &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="gpuNUFFT__operator__python__factory_8cpp_aeb74d2cb99381f659a6890373021e833_icgraph.svg" width="364" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="python__utils_8hpp_aeb74d2cb99381f659a6890373021e833_icgraph.svg" width="364" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -303,8 +274,8 @@ Here is the caller graph for this function:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_7837fde3ab9c1fb2fc5be7b717af8d79.html">python</a></li><li class="navelem"><a class="el" href="gpuNUFFT__operator__python__factory_8cpp.html">gpuNUFFT_operator_python_factory.cpp</a></li>
-    <li class="footer">Generated on Tue Jan 4 2022 10:08:31 for gpuNUFFT by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+    <li class="navelem"><a class="el" href="dir_7837fde3ab9c1fb2fc5be7b717af8d79.html">python</a></li><li class="navelem"><a class="el" href="dir_40e69006a8833d43b806348207eb6f4a.html">inc</a></li><li class="navelem"><a class="el" href="python__utils_8hpp.html">python_utils.hpp</a></li>
+    <li class="footer">Generated on Wed Jan 5 2022 09:58:25 for gpuNUFFT by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
 </body>

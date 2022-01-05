@@ -11,8 +11,7 @@ var searchData=
   ['gpunufft_5foperator_2ehpp_8',['gpuNUFFT_operator.hpp',['../gpuNUFFT__operator_8hpp.html',1,'']]],
   ['gpunufft_5foperator_5ffactory_2ecpp_9',['gpuNUFFT_operator_factory.cpp',['../gpuNUFFT__operator__factory_8cpp.html',1,'']]],
   ['gpunufft_5foperator_5ffactory_2ehpp_10',['gpuNUFFT_operator_factory.hpp',['../gpuNUFFT__operator__factory_8hpp.html',1,'']]],
-  ['gpunufft_5foperator_5fpython_5ffactory_2ecpp_11',['gpuNUFFT_operator_python_factory.cpp',['../gpuNUFFT__operator__python__factory_8cpp.html',1,'']]],
-  ['gpunufft_5ftypes_2ehpp_12',['gpuNUFFT_types.hpp',['../gpuNUFFT__types_8hpp.html',1,'']]],
-  ['gpunufft_5futils_2ecpp_13',['gpuNUFFT_utils.cpp',['../gpuNUFFT__utils_8cpp.html',1,'']]],
-  ['gpunufft_5futils_2ehpp_14',['gpuNUFFT_utils.hpp',['../gpuNUFFT__utils_8hpp.html',1,'']]]
+  ['gpunufft_5ftypes_2ehpp_11',['gpuNUFFT_types.hpp',['../gpuNUFFT__types_8hpp.html',1,'']]],
+  ['gpunufft_5futils_2ecpp_12',['gpuNUFFT_utils.cpp',['../gpuNUFFT__utils_8cpp.html',1,'']]],
+  ['gpunufft_5futils_2ehpp_13',['gpuNUFFT_utils.hpp',['../gpuNUFFT__utils_8hpp.html',1,'']]]
 ];

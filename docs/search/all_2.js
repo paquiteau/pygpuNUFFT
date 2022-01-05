@@ -28,7 +28,7 @@ var searchData=
   ['copydevicetodevice_25',['copyDeviceToDevice',['../cuda__utils_8hpp.html#a130580818f5be50503003961ad9f8852',1,'cuda_utils.hpp']]],
   ['copyfromdevice_26',['copyFromDevice',['../cuda__utils_8hpp.html#afc342c146695980b1c7444b7b4449821',1,'cuda_utils.hpp']]],
   ['copyfromdeviceasync_27',['copyFromDeviceAsync',['../cuda__utils_8hpp.html#a0e734eacdc00ba553d77aa057e02059b',1,'cuda_utils.hpp']]],
-  ['copynumpyarray_28',['copyNumpyArray',['../gpuNUFFT__operator__python__factory_8cpp.html#a6fc45707d1f047d4232b16582576b2e6',1,'gpuNUFFT_operator_python_factory.cpp']]],
+  ['copynumpyarray_28',['copyNumpyArray',['../python__utils_8hpp.html#a6fc45707d1f047d4232b16582576b2e6',1,'python_utils.hpp']]],
   ['copytodevice_29',['copyToDevice',['../cuda__utils_8hpp.html#a52e9a7f2a2d5bed73e0e9e7d367b1198',1,'cuda_utils.hpp']]],
   ['copytodeviceasync_30',['copyToDeviceAsync',['../cuda__utils_8hpp.html#a1f04840b22a32448d0069e89cacd0950',1,'cuda_utils.hpp']]],
   ['count_31',['count',['../structgpuNUFFT_1_1Array.html#af426f56b5d7e05b6143acbdd51bac188',1,'gpuNUFFT::Array::count()'],['../structgpuNUFFT_1_1Dimensions.html#a4c589934c5444910fbcd890d128229c9',1,'gpuNUFFT::Dimensions::count()']]],

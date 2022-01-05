@@ -1,5 +1,5 @@
 <map id="GpuNUFFTPythonOperator::adj_op" name="GpuNUFFTPythonOperator::adj_op">
 <area shape="rect" id="node1" title=" " alt="" coords="5,27,185,69"/>
-<area shape="rect" id="node2" href="$gpuNUFFT__operator__python__factory_8cpp.html#a6fc45707d1f047d4232b16582576b2e6" title=" " alt="" coords="279,5,399,32"/>
+<area shape="rect" id="node2" href="$python__utils_8hpp.html#a6fc45707d1f047d4232b16582576b2e6" title=" " alt="" coords="279,5,399,32"/>
 <area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a38a45507d840b8d3d97de7fc79b4fa8a" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="233,57,444,98"/>
 </map>

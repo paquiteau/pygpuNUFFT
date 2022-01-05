@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="gpuNUFFT__operator__python__factory_8cpp.html#ad1a7eaf0d60c015a4df3da44ddf58e27" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="python__bindings_8cpp.html#ad1a7eaf0d60c015a4df3da44ddf58e27" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="0,-6 0,-25 112,-25 112,-6 0,-6"/>
 <text text-anchor="middle" x="56" y="-13" font-family="FreeSans.ttf" font-size="10.00">PYBIND11_MODULE</text>
 </a>

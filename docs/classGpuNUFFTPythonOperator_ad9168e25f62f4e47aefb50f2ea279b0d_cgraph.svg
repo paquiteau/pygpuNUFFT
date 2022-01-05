@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="gpuNUFFT__operator__python__factory_8cpp.html#a5732db3eeef010cc926583da8f91fcd6" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="python__utils_8hpp.html#a5732db3eeef010cc926583da8f91fcd6" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="198.5,-225 198.5,-244 322.5,-244 322.5,-225 198.5,-225"/>
 <text text-anchor="middle" x="260.5" y="-232" font-family="FreeSans.ttf" font-size="10.00">allocate_pinned_memory</text>
 </a>
@@ -36,7 +36,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="gpuNUFFT__operator__python__factory_8cpp.html#a6fc45707d1f047d4232b16582576b2e6" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="python__utils_8hpp.html#a6fc45707d1f047d4232b16582576b2e6" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="215.5,-187 215.5,-206 305.5,-206 305.5,-187 215.5,-187"/>
 <text text-anchor="middle" x="260.5" y="-194" font-family="FreeSans.ttf" font-size="10.00">copyNumpyArray</text>
 </a>
@@ -83,7 +83,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="gpuNUFFT__operator__python__factory_8cpp.html#aeb74d2cb99381f659a6890373021e833" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="python__utils_8hpp.html#aeb74d2cb99381f659a6890373021e833" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="216,-50 216,-69 305,-69 305,-50 216,-50"/>
 <text text-anchor="middle" x="260.5" y="-57" font-family="FreeSans.ttf" font-size="10.00">readNumpyArray</text>
 </a>

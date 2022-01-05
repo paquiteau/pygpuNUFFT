@@ -100,7 +100,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="gpuNUFFT__operator__python__factory_8cpp.html#ad1a7eaf0d60c015a4df3da44ddf58e27" target="_top" xlink:title=" ">
+<g id="a_node3"><a xlink:href="python__bindings_8cpp.html#ad1a7eaf0d60c015a4df3da44ddf58e27" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="0,-191.5 0,-210.5 112,-210.5 112,-191.5 0,-191.5"/>
 <text text-anchor="middle" x="56" y="-198.5" font-family="FreeSans.ttf" font-size="10.00">PYBIND11_MODULE</text>
 </a>

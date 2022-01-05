@@ -70,8 +70,8 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "classgpuNUFFT_1_1GpuNUFFTOperator.html#ac8461fa16695dfa41e528f6a1f766fa3",
-"gpuNUFFT__cpu_8hpp.html#ae8bf3e466a6b42045e1ba95cf8d7df5a",
-"structgpuNUFFT_1_1GpuNUFFTInfo.html#a14031b9d6ccb70859fb8a1f89531c6d8"
+"gpuNUFFT__conv__tests_8cpp.html#afbb6c181bc4c74a820d6ff502434e3ea",
+"structgpuNUFFT_1_1GpuNUFFTInfo.html#a0224da4162ace6554b664472784ae512"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
