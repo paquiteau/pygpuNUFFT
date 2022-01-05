@@ -2,7 +2,6 @@ import os
 import platform
 import subprocess
 import sys
-from importlib import import_module
 from pprint import pprint
 
 from setuptools import Extension, setup
@@ -57,7 +56,6 @@ class CMakeBuild(build_ext):
         extdir = os.path.abspath(
             os.path.dirname(self.get_ext_fullpath(ext.name)))
         cmake_args = ["-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=" + extdir,
- #                     "-Dpybind11_INCLUDE_DIR=" + self.pybind_path
                       ]
         cfg = "Debug" if self.debug else "Release"
         build_args = ["--config", cfg]
