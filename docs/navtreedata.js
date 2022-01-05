@@ -69,9 +69,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"classgpuNUFFT_1_1GpuNUFFTOperator.html#ac8461fa16695dfa41e528f6a1f766fa3",
-"gpuNUFFT__conv__tests_8cpp.html#afbb6c181bc4c74a820d6ff502434e3ea",
-"structgpuNUFFT_1_1GpuNUFFTInfo.html#a0224da4162ace6554b664472784ae512"
+"classgpuNUFFT_1_1GpuNUFFTOperator.html#acba648fd160bf2fee07c0851150e630e",
+"gpuNUFFT__deapo__tests_8cpp.html#a06b50f1ca7258a9862c39d3ed354bf7c",
+"structgpuNUFFT_1_1GpuNUFFTInfo.html#a0d21980f8ba4a7079fcf3c442c4bfebd"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,6 +1,6 @@
 var classgpuNUFFT_1_1GpuNUFFTOperator =
 [
-    [ "GpuNUFFTOperator", "classgpuNUFFT_1_1GpuNUFFTOperator.html#a037d0af683c1e451ae40bf0a26e096a1", null ],
+    [ "GpuNUFFTOperator", "classgpuNUFFT_1_1GpuNUFFTOperator.html#a412cbf2c22a1fbf1ebe47f4711be9fa4", null ],
     [ "~GpuNUFFTOperator", "classgpuNUFFT_1_1GpuNUFFTOperator.html#acf8b3aa450f554ebd8130c11d7c8233e", null ],
     [ "adjConvolution", "classgpuNUFFT_1_1GpuNUFFTOperator.html#a635f62e9c7475e28aa8fde9110136bc3", null ],
     [ "applyDensComp", "classgpuNUFFT_1_1GpuNUFFTOperator.html#acdc981c62032977d08653220fff2149f", null ],
@@ -81,7 +81,6 @@ var classgpuNUFFT_1_1GpuNUFFTOperator =
     [ "kernel", "classgpuNUFFT_1_1GpuNUFFTOperator.html#a582f052be3858a82f735058c8e79a772", null ],
     [ "kernelWidth", "classgpuNUFFT_1_1GpuNUFFTOperator.html#a4737433c1c0c92f8f073cc6de091955a", null ],
     [ "kSpaceTraj", "classgpuNUFFT_1_1GpuNUFFTOperator.html#ae6a540fea068811be386517a654c16eb", null ],
-    [ "matlabSharedMem", "classgpuNUFFT_1_1GpuNUFFTOperator.html#a1718d8ee9a0d754a2c31a59aa7a02821", null ],
     [ "operatorType", "classgpuNUFFT_1_1GpuNUFFTOperator.html#a5890c7e166463a7acd80c279952916a6", null ],
     [ "osf", "classgpuNUFFT_1_1GpuNUFFTOperator.html#ad4b43368ad6024f289bc4ff36a0b3f60", null ],
     [ "sector_centers_d", "classgpuNUFFT_1_1GpuNUFFTOperator.html#a8fa308b64aaf169f74a324172eb53bc5", null ],

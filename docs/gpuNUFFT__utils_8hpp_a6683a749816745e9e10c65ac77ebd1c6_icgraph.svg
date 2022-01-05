@@ -112,7 +112,7 @@
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="classgpuNUFFT_1_1GpuNUFFTOperator.html#a037d0af683c1e451ae40bf0a26e096a1" target="_top" xlink:title="GpuNUFFTOperator ctor.">
+<g id="a_node3"><a xlink:href="classgpuNUFFT_1_1GpuNUFFTOperator.html#a412cbf2c22a1fbf1ebe47f4711be9fa4" target="_top" xlink:title="GpuNUFFTOperator ctor.">
 <polygon fill="none" stroke="black" points="243.5,-195 243.5,-225 401.5,-225 401.5,-195 243.5,-195"/>
 <text text-anchor="start" x="251.5" y="-213" font-family="FreeSans.ttf" font-size="10.00">gpuNUFFT::GpuNUFFTOperator</text>
 <text text-anchor="middle" x="322.5" y="-202" font-family="FreeSans.ttf" font-size="10.00">::GpuNUFFTOperator</text>
@@ -128,7 +128,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#a18169f5278ba0c0b704f31b56edf9a36" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#ae409e2a90a74c6f1890a7591b2ac414d" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="0,-107 0,-137 191,-137 191,-107 0,-107"/>
 <text text-anchor="start" x="8" y="-125" font-family="FreeSans.ttf" font-size="10.00">gpuNUFFT::TextureGpuNUFFTOperator</text>
 <text text-anchor="middle" x="95.5" y="-114" font-family="FreeSans.ttf" font-size="10.00">::TextureGpuNUFFTOperator</text>

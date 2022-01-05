@@ -1,4 +1,4 @@
 <map id="gpuNUFFT::GpuNUFFTOperator::initKernel" name="gpuNUFFT::GpuNUFFTOperator::initKernel">
 <area shape="rect" id="node1" title="Precompute interpolation kernel lookup table." alt="" coords="264,5,475,47"/>
-<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a037d0af683c1e451ae40bf0a26e096a1" title="GpuNUFFTOperator ctor." alt="" coords="5,5,216,47"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a412cbf2c22a1fbf1ebe47f4711be9fa4" title="GpuNUFFTOperator ctor." alt="" coords="5,5,216,47"/>
 </map>

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['n_5fcoils_0',['n_coils',['../classGpuNUFFTPythonOperator.html#a34d74814e74ac3b063bb2ee59f6640cc',1,'GpuNUFFTPythonOperator']]],
-  ['n_5fcoils_5fcc_1',['n_coils_cc',['../structgpuNUFFT_1_1GpuNUFFTInfo.html#a76515c764dd9212c0a4276dc373fd0df',1,'gpuNUFFT::GpuNUFFTInfo']]]
+  ['operatortype_0',['operatorType',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a5890c7e166463a7acd80c279952916a6',1,'gpuNUFFT::GpuNUFFTOperator']]],
+  ['osf_1',['osf',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#ad4b43368ad6024f289bc4ff36a0b3f60',1,'gpuNUFFT::GpuNUFFTOperator::osf()'],['../classTestFFT.html#aec6376858466b41c9d892f1e79308512',1,'TestFFT::osf()']]],
+  ['osr_2',['osr',['../structgpuNUFFT_1_1GpuNUFFTInfo.html#a8421f62a4066ec7d0db9194c6f4b9b81',1,'gpuNUFFT::GpuNUFFTInfo']]]
 ];

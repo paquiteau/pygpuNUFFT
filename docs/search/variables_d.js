@@ -1,5 +1,23 @@
 var searchData=
 [
-  ['radiussquared_0',['radiusSquared',['../structgpuNUFFT_1_1GpuNUFFTInfo.html#ae26ccc9a02b46d5328ec748d4f260858',1,'gpuNUFFT::GpuNUFFTInfo']]],
-  ['radiussquared_5finv_1',['radiusSquared_inv',['../structgpuNUFFT_1_1GpuNUFFTInfo.html#a44d71b1a5adbf9bce2b251485926dcfc',1,'gpuNUFFT::GpuNUFFTInfo']]]
+  ['sector_5fcenters_5fd_0',['sector_centers_d',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a8fa308b64aaf169f74a324172eb53bc5',1,'gpuNUFFT::GpuNUFFTOperator']]],
+  ['sector_5fcount_1',['sector_count',['../structgpuNUFFT_1_1GpuNUFFTInfo.html#aed136639f5f16e9471f46271f46e0bb1',1,'gpuNUFFT::GpuNUFFTInfo']]],
+  ['sector_5fdim_2',['sector_dim',['../structgpuNUFFT_1_1GpuNUFFTInfo.html#a1e99222ceb0073e311f03ec029f829cc',1,'gpuNUFFT::GpuNUFFTInfo']]],
+  ['sector_5foffset_3',['sector_offset',['../structgpuNUFFT_1_1GpuNUFFTInfo.html#a639c9c02d0281a2f94414fb57be74270',1,'gpuNUFFT::GpuNUFFTInfo']]],
+  ['sector_5fpad_5fmax_4',['sector_pad_max',['../structgpuNUFFT_1_1GpuNUFFTInfo.html#a4bd3e2c8335c5c4fe9cf19408b89d1a0',1,'gpuNUFFT::GpuNUFFTInfo']]],
+  ['sector_5fpad_5fwidth_5',['sector_pad_width',['../structgpuNUFFT_1_1GpuNUFFTInfo.html#ac687ba998cfd0cf729a5d815d5d3aaf9',1,'gpuNUFFT::GpuNUFFTInfo']]],
+  ['sector_5fprocessing_5forder_5fd_6',['sector_processing_order_d',['../classgpuNUFFT_1_1BalancedGpuNUFFTOperator.html#aebf151f2072bb25c3ccfe8d189bbdd8c',1,'gpuNUFFT::BalancedGpuNUFFTOperator::sector_processing_order_d()'],['../classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a1b1a2f3671f7b90a8c6f5df388182cce',1,'gpuNUFFT::BalancedTextureGpuNUFFTOperator::sector_processing_order_d()']]],
+  ['sector_5fwidth_7',['sector_width',['../structgpuNUFFT_1_1GpuNUFFTInfo.html#a2bd4de09db35b396c4ad80d7eb685cda',1,'gpuNUFFT::GpuNUFFTInfo::sector_width()'],['../classTestFFT.html#a95b6b0c7479d9f4a5a4bb06d56e834b1',1,'TestFFT::sector_width()']]],
+  ['sectorcenters_8',['sectorCenters',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a7833dc155eabddcb1780c020685940a9',1,'gpuNUFFT::GpuNUFFTOperator']]],
+  ['sectordatacount_9',['sectorDataCount',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a8ad35d460afa1e511bc0f15eedee8a9c',1,'gpuNUFFT::GpuNUFFTOperator']]],
+  ['sectordims_10',['sectorDims',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#ab85e09318a335ce010fafa9ed1ffd78e',1,'gpuNUFFT::GpuNUFFTOperator']]],
+  ['sectorprocessingorder_11',['sectorProcessingOrder',['../classgpuNUFFT_1_1BalancedGpuNUFFTOperator.html#a25a56ec1f31b1f412ccca0a485154bb1',1,'gpuNUFFT::BalancedGpuNUFFTOperator::sectorProcessingOrder()'],['../classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#ae2a23324372276fe0e27635d8b602e13',1,'gpuNUFFT::BalancedTextureGpuNUFFTOperator::sectorProcessingOrder()']]],
+  ['sectors_5fd_12',['sectors_d',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a6974d064d7ae1747d2a6b30748d516e5',1,'gpuNUFFT::GpuNUFFTOperator']]],
+  ['sectorstoprocess_13',['sectorsToProcess',['../structgpuNUFFT_1_1GpuNUFFTInfo.html#a8e47cb9844f48ad9c50bc9921011a89c',1,'gpuNUFFT::GpuNUFFTInfo']]],
+  ['sectorwidth_14',['sectorWidth',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a706b5cdad8e866c79142a075e40cea0f',1,'gpuNUFFT::GpuNUFFTOperator']]],
+  ['sens_15',['sens',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a978ca6d5fe9a9f2bea277d4f626875c5',1,'gpuNUFFT::GpuNUFFTOperator']]],
+  ['sens_5fd_16',['sens_d',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a943a1e807a2d45603627cfcdc238e1da',1,'gpuNUFFT::GpuNUFFTOperator']]],
+  ['sensarray_17',['sensArray',['../classGpuNUFFTPythonOperator.html#aaf9ebc09ee5c816356ea0089f671e645',1,'GpuNUFFTPythonOperator']]],
+  ['start_18',['start',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a4504afb056ff75f2d17fc61e22a38c80',1,'gpuNUFFT::GpuNUFFTOperator']]],
+  ['stop_19',['stop',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a0a8c76ceb4218d001822a213872a80c5',1,'gpuNUFFT::GpuNUFFTOperator']]]
 ];

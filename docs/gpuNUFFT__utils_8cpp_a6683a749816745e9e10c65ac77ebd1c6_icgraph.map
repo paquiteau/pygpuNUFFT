@@ -6,8 +6,8 @@
 <area shape="rect" id="node8" href="$gpuNUFFT__utils_8cpp.html#a4603fff4bc63b96eea4500784a77fc48" title="Loads a radius of the circularly symmetric kernel into a 3&#45;d array, with respect to the kernel radius..." alt="" coords="667,178,765,205"/>
 <area shape="rect" id="node10" href="$gpuNUFFT__utils_8cpp.html#acf5440ba3be843dac60ba8642a0b4ede" title="Loads a radius of the circularly symmetric kernel into a 1&#45;d array, with respect to the kernel radius..." alt="" coords="659,229,773,255"/>
 <area shape="rect" id="node11" href="$gpuNUFFT__2D__conv__tests_8cpp.html#aaa68ca62ef9f76180f0da723f0da1dfb" title=" " alt="" coords="689,279,743,306"/>
-<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a037d0af683c1e451ae40bf0a26e096a1" title="GpuNUFFTOperator ctor." alt="" coords="330,5,541,47"/>
-<area shape="rect" id="node5" href="$classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#a18169f5278ba0c0b704f31b56edf9a36" title=" " alt="" coords="5,123,260,164"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a412cbf2c22a1fbf1ebe47f4711be9fa4" title="GpuNUFFTOperator ctor." alt="" coords="330,5,541,47"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#ae409e2a90a74c6f1890a7591b2ac414d" title=" " alt="" coords="5,123,260,164"/>
 <area shape="rect" id="node7" href="$gpuNUFFT__conv__tests_8cpp.html#ad3d34fdd2b1c2e4e793734b844b97441" title=" " alt="" coords="408,71,463,98"/>
 <area shape="rect" id="node9" href="$gpuNUFFT__conv__tests_8cpp.html#ae35c8317989c915c0e21d3a2bd4d10a6" title=" " alt="" coords="408,189,463,215"/>
 </map>

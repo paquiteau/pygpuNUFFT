@@ -1,6 +1,6 @@
 var classgpuNUFFT_1_1GpuNUFFTOperatorFactory =
 [
-    [ "GpuNUFFTOperatorFactory", "classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a1b850bb8eefbf95234e7abb7f0d5a0fe", null ],
+    [ "GpuNUFFTOperatorFactory", "classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#ae32bbecb4c9e86d10f44e4d5f2c9574a", null ],
     [ "~GpuNUFFTOperatorFactory", "classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a563de8ca4ce0c7bd11a295bead461208", null ],
     [ "assignSectors", "classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#afa72b607029c78d61b6e01d45077998e", null ],
     [ "checkMemoryConsumption", "classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a4ad90751b7eff9bba51f2db5ffd425b6", null ],
@@ -35,7 +35,6 @@ var classgpuNUFFT_1_1GpuNUFFTOperatorFactory =
     [ "sortVector", "classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a9c21d6ef4470dc24a47dced77b5e0bfd", null ],
     [ "sortVector", "classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#aae7ea9905b763b7b8cc5c36533257163", null ],
     [ "balanceWorkload", "classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#afd34891e471ed6f0fc02f51266dbd278", null ],
-    [ "matlabSharedMem", "classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a8b1a91080a011471ef5508cff873f75d", null ],
     [ "useGpu", "classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a4e7a96123098f70bda5451deeebe4c94", null ],
     [ "useTextures", "classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a0b5920167342cab921fcf40ad7e38506", null ]
 ];

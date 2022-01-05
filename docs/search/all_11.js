@@ -10,6 +10,6 @@ var searchData=
   ['texture_5fgpunufft_5foperator_2ecpp_7',['texture_gpuNUFFT_operator.cpp',['../texture__gpuNUFFT__operator_8cpp.html',1,'']]],
   ['texture_5fgpunufft_5foperator_2ehpp_8',['texture_gpuNUFFT_operator.hpp',['../texture__gpuNUFFT__operator_8hpp.html',1,'']]],
   ['texture_5flookup_9',['TEXTURE_LOOKUP',['../namespacegpuNUFFT.html#aee043cc4971d5329660e020f630bb5ebabaa83405dc2dc73f5392e0ec0b442f86',1,'gpuNUFFT']]],
-  ['texturegpunufftoperator_10',['TextureGpuNUFFTOperator',['../classgpuNUFFT_1_1TextureGpuNUFFTOperator.html',1,'gpuNUFFT::TextureGpuNUFFTOperator'],['../classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#a18169f5278ba0c0b704f31b56edf9a36',1,'gpuNUFFT::TextureGpuNUFFTOperator::TextureGpuNUFFTOperator()']]],
+  ['texturegpunufftoperator_10',['TextureGpuNUFFTOperator',['../classgpuNUFFT_1_1TextureGpuNUFFTOperator.html',1,'gpuNUFFT::TextureGpuNUFFTOperator'],['../classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#ae409e2a90a74c6f1890a7591b2ac414d',1,'gpuNUFFT::TextureGpuNUFFTOperator::TextureGpuNUFFTOperator()']]],
   ['trajectory_5flength_11',['trajectory_length',['../classGpuNUFFTPythonOperator.html#a73b95a26a80b9db1d5557b77150e7752',1,'GpuNUFFTPythonOperator']]]
 ];

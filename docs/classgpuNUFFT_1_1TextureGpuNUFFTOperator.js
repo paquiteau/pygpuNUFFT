@@ -1,6 +1,6 @@
 var classgpuNUFFT_1_1TextureGpuNUFFTOperator =
 [
-    [ "TextureGpuNUFFTOperator", "classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#a18169f5278ba0c0b704f31b56edf9a36", null ],
+    [ "TextureGpuNUFFTOperator", "classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#ae409e2a90a74c6f1890a7591b2ac414d", null ],
     [ "~TextureGpuNUFFTOperator", "classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#aad7cd7c897c558d4e87e01c55ecec6e4", null ],
     [ "adjConvolution", "classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#aeda95a2995806f8362fe135eb7e4ebdb", null ],
     [ "forwardConvolution", "classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#af111ef5824d67c6c167211285f1404b0", null ],

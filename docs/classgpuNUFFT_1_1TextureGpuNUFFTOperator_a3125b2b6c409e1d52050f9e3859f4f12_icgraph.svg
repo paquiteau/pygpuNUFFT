@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#a18169f5278ba0c0b704f31b56edf9a36" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#ae409e2a90a74c6f1890a7591b2ac414d" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="0,-0.5 0,-30.5 191,-30.5 191,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="FreeSans.ttf" font-size="10.00">gpuNUFFT::TextureGpuNUFFTOperator</text>
 <text text-anchor="middle" x="95.5" y="-7.5" font-family="FreeSans.ttf" font-size="10.00">::TextureGpuNUFFTOperator</text>
