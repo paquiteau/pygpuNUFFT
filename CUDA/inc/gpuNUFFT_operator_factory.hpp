@@ -24,7 +24,7 @@ namespace gpuNUFFT
  * - new computation of "data - sector" mapping, sorting etc.
  *
  * - reuse of previously calculated mapping, i.e. loading of an already created
- *   operator like from subsequent matlab calls
+ *   operator like from subsequent (matlab) calls
  *
  * The factory defines how the operator is going to process (load balancing
  *and/or
@@ -56,9 +56,8 @@ class GpuNUFFTOperatorFactory
     * @param balanceWorkload Flag to indicate load balancing
     */
   GpuNUFFTOperatorFactory(const bool useTextures = true, const bool useGpu = true,
-                          bool balanceWorkload = true, bool matlabSharedMem = false)
-    : useTextures(useTextures), useGpu(useGpu), balanceWorkload(balanceWorkload),
-    matlabSharedMem(matlabSharedMem)
+                          bool balanceWorkload = true)
+    : useTextures(useTextures), useGpu(useGpu), balanceWorkload(balanceWorkload)
   {
   }
 
@@ -326,8 +325,6 @@ class GpuNUFFTOperatorFactory
   /** \brief Flag to indicate load balancing */
   bool balanceWorkload;
 
-  /** \brief Flag to indicate shared memory usage with Matlab */
-  bool matlabSharedMem;
 };
 }
 

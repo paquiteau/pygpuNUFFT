@@ -27,10 +27,9 @@ class BalancedTextureGpuNUFFTOperator : public TextureGpuNUFFTOperator,
  public:
   BalancedTextureGpuNUFFTOperator(IndType kernelWidth, IndType sectorWidth,
                                   DType osf, Dimensions imgDims,
-                                  InterpolationType interpolationType = TEXTURE2D_LOOKUP,
-                                  bool matlabSharedMem = false)
+                                  InterpolationType interpolationType = TEXTURE2D_LOOKUP)
     : TextureGpuNUFFTOperator(kernelWidth, sectorWidth, osf, imgDims,
-                              interpolationType, matlabSharedMem)
+                              interpolationType)
   {
   }
 
@@ -40,7 +39,8 @@ class BalancedTextureGpuNUFFTOperator : public TextureGpuNUFFTOperator,
   }
 
   // OPERATIONS
-  void performGpuNUFFTAdj(Array<DType2> kspaceData, Array<CufftType> &imgData,
+  void performGpuNUFFTAdj(Array<DType2> kspaceData,
+                          Array<CufftType> &imgData,
                           GpuNUFFTOutput gpuNUFFTOut = DEAPODIZATION);
   void performGpuNUFFTAdj(GpuArray<DType2> kspaceData_gpu,
                           GpuArray<CufftType> &imgData_gpu,

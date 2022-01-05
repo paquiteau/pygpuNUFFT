@@ -21,9 +21,8 @@ class TextureGpuNUFFTOperator : public GpuNUFFTOperator
  public:
   TextureGpuNUFFTOperator(IndType kernelWidth, IndType sectorWidth, DType osf,
                           Dimensions imgDims,
-                          InterpolationType interpolationType = TEXTURE2D_LOOKUP,
-                          bool matlabSharedMem = false)
-    : GpuNUFFTOperator(kernelWidth, sectorWidth, osf, imgDims, false, TEXTURE, matlabSharedMem),
+                          InterpolationType interpolationType = TEXTURE2D_LOOKUP)
+    : GpuNUFFTOperator(kernelWidth, sectorWidth, osf, imgDims, false, TEXTURE),
     interpolationType(interpolationType), kernel_d(NULL)
   {
     if (typeid(DType) == typeid(double))

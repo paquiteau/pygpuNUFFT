@@ -15,6 +15,7 @@ if(NOT pybind11_POPULATED)
 endif()
 
 include_directories(
+    inc
     ${GPUNUFFT_INC_DIR}
     ${PYTHON_INCLUDE_DIRS}
     ${pybind11_INCLUDE_DIRS}
@@ -24,14 +25,14 @@ message("pybind : ${pybind11_INCLUDE_DIR}")
 message("python inc : ${PYTHON_INCLUDE_DIRS}")
 message("python lib : ${PYTHON_LIBRARIES}")
 
-
+set(PYTHON_BINDINGS src/python_factory.cpp
+                    src/python_bindings.cpp)
 cuda_include_directories(${GPUNUFFT_INC_DIR})
 cuda_add_library(gpuNUFFT ${GPU_CU_SOURCES}
                           ${GPU_GPUNUFFT_SOURCES}
                           ${GPUNUFFT_SOURCES}
                           ${GPUNUFFT_INCLUDE}
-                          gpuNUFFT_operator_python_factory.cpp
-                          # ${CMAKE_SOURCE_DIR}/CUDA/src/gpu/atomic_gpuNUFFT.cu
+                          ${PYTHON_BINDINGS}
                           SHARED)
 
 set_target_properties(gpuNUFFT PROPERTIES PREFIX "")
