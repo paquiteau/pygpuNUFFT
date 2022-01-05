@@ -10,7 +10,7 @@ gpuNUFFT::BalancedTextureGpuNUFFTOperator::initAndCopyGpuNUFFTInfo(
   gi_host->interpolationType = interpolationType;
 
   if (DEBUG)
-    printf("copy GpuNUFFT Info to symbol memory... size = %lu \n",
+    printf("copy GpuNUFFT Info to symbol memory... size = %u \n",
       (SizeType)sizeof(gpuNUFFT::GpuNUFFTInfo));
 
   initConstSymbol("GI", gi_host, sizeof(gpuNUFFT::GpuNUFFTInfo));

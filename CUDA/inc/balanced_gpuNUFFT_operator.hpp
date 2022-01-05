@@ -22,8 +22,8 @@ class BalancedGpuNUFFTOperator : public GpuNUFFTOperator,
 {
  public:
   BalancedGpuNUFFTOperator(IndType kernelWidth, IndType sectorWidth, DType osf,
-    Dimensions imgDims, bool matlabSharedMem = false)
-    : GpuNUFFTOperator(kernelWidth, sectorWidth, osf, imgDims, true, BALANCED, matlabSharedMem)
+    Dimensions imgDims)
+    : GpuNUFFTOperator(kernelWidth, sectorWidth, osf, imgDims, true, BALANCED)
   {
   }
 

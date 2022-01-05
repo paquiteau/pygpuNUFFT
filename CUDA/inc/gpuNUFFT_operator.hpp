@@ -52,14 +52,12 @@ class GpuNUFFTOperator
     */
   GpuNUFFTOperator(IndType kernelWidth, IndType sectorWidth, DType osf,
                    Dimensions imgDims, bool loadKernel = true,
-                   OperatorType operatorType = DEFAULT,
-                   bool matlabSharedMem = false)
+                   OperatorType operatorType = DEFAULT)
     : operatorType(operatorType), osf(osf), kernelWidth(kernelWidth),
       sectorWidth(sectorWidth), imgDims(imgDims), gpuMemAllocated(false),
       debugTiming(DEBUG), sens_d(NULL), crds_d(NULL), density_comp_d(NULL),
       deapo_d(NULL), gdata_d(NULL), sector_centers_d(NULL), sectors_d(NULL),
-      data_indices_d(NULL), data_sorted_d(NULL), allocatedCoils(0),
-      matlabSharedMem(matlabSharedMem)
+      data_indices_d(NULL), data_sorted_d(NULL), allocatedCoils(0)
   {
     if (loadKernel)
       initKernel();
@@ -447,10 +445,6 @@ class GpuNUFFTOperator
 
   /** \brief Size of one sector in grid units*/
   Dimensions sectorDims;
-
-  /** \brief Flag which indicates if data pointers are allocated with Matlab 
-  */
-  bool matlabSharedMem;
 
   /** \brief Return Grid Width (ImageWidth * osf) */
   IndType getGridWidth()
