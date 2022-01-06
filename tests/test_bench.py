@@ -1,4 +1,4 @@
-#!/usr/env/bin python
+#!/usr/bin/env python
 
 import numpy as np
 # gpuNUFFT import
@@ -22,14 +22,26 @@ shape2d = (512, 512)
 n_samples2d = 32768
 n_samples3d = 6136781
 shape3d = (128, 128, 160)
+img3dssos = np.linalg.norm(img3d,axis=0).astype(np.complex64)
+img2dssos = np.linalg.norm(img2d,axis=0).astype(np.complex64)
+
+density_comp3d = estimate_density_compensation(samples3d, shape3d)
 
 for i in range(1):
-    density_comp3d = estimate_density_compensation(samples3d, shape3d)
-    print('density  comp done')
+    print('sense')
     gpuNUFFT = NonCartesianFFT(samples=samples3d,
                                shape=shape3d,
                                n_coils=n_coils,
                                smaps=smaps3d,
+                               density_comp=density_comp3d,
+                               implementation='gpuNUFFT')
+    kspace3d = gpuNUFFT.op(img3dssos)
+    img_autoadj = gpuNUFFT.adj_op(kspace3d)
+    
+    print('calibrationless')
+    gpuNUFFT = NonCartesianFFT(samples=samples3d,
+                               shape=shape3d,
+                               n_coils=n_coils,
                                density_comp=density_comp3d,
                                implementation='gpuNUFFT')
     kspace3d = gpuNUFFT.op(img3d)
