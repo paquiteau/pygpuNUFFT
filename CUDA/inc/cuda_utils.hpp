@@ -117,6 +117,20 @@ inline void copyDeviceToDevice(TypeName *device_ptr_src,
                           cudaMemcpyDeviceToDevice));
 }
 
+/** \brief CUDA memcpy call to copy data from device ptr to device ptr
+ *
+ * @param device_ptr_src   source device pointer
+ * @param device_ptr_dest  destination device pointer
+ * @param num_elements     amount of elements of size TypeName
+ */
+template <typename TypeName>
+inline void copyDeviceToDeviceAsync(TypeName *device_ptr_src,
+                               TypeName *device_ptr_dest, IndType num_elements, cudaStream_t stream=0)
+{
+  HANDLE_ERROR(cudaMemcpyAsync(device_ptr_dest, device_ptr_src,
+                          num_elements * sizeof(TypeName),
+                          cudaMemcpyDeviceToDevice, stream));
+}
 /** \brief Copy CUDA memory from device to host
  *
  * @param device_ptr    device pointer
@@ -130,7 +144,7 @@ inline void copyFromDevice(TypeName *device_ptr, TypeName *host_ptr,
   HANDLE_ERROR(cudaMemcpy(host_ptr, device_ptr, num_elements * sizeof(TypeName),
                           cudaMemcpyDeviceToHost));
 }
-/** \brief Copy CUDA memory from device to host
+/** \brief Copy CUDA memory from device to host asynchronously
  *
  * @param device_ptr    device pointer
  * @param host_ptr      host pointer
@@ -205,7 +219,7 @@ inline void showMemoryInfo(bool force, FILE *stream)
   size_t total_mem = 0;
   cudaMemGetInfo(&free_mem, &total_mem);
   if (DEBUG || force)
-    fprintf(stream, "memory usage, free: %lu total: %lu\n", (SizeType)(free_mem),
+    fprintf(stream, "memory usage, free: %u total: %u\n", (SizeType)(free_mem),
     (SizeType)(total_mem));
 }
 
