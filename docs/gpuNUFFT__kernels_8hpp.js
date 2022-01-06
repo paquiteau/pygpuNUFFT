@@ -19,5 +19,6 @@ var gpuNUFFT__kernels_8hpp =
     [ "performTextureConvolution", "gpuNUFFT__kernels_8hpp.html#aa0992a189b0c37f7ec447972f234ddc9", null ],
     [ "performTextureForwardConvolution", "gpuNUFFT__kernels_8hpp.html#a2fd6b03e67db18a41056c4f7986382f4", null ],
     [ "performTextureForwardConvolution", "gpuNUFFT__kernels_8hpp.html#a3836d1bf958993ef97fa036a50d7a408", null ],
+    [ "performUpdateDensityComp", "gpuNUFFT__kernels_8hpp.html#a8431363d47100f4911c3dfd4c8cd833f", null ],
     [ "precomputeDeapodization", "gpuNUFFT__kernels_8hpp.html#a15cd90a446c5e8e40ee2caf88f878d19", null ]
 ];

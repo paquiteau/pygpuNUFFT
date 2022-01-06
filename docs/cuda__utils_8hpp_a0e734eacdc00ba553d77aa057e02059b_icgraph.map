@@ -1,4 +1,4 @@
 <map id="copyFromDeviceAsync" name="copyFromDeviceAsync">
-<area shape="rect" id="node1" title="Copy CUDA memory from device to host." alt="" coords="264,13,419,39"/>
+<area shape="rect" id="node1" title="Copy CUDA memory from device to host asynchronously." alt="" coords="264,13,419,39"/>
 <area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#aec6fcb3f29894b528f1dfb8892cc017b" title="Perform forward gridding operation on given kspaceData." alt="" coords="5,5,216,47"/>
 </map>

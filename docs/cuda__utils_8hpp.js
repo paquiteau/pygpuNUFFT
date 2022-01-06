@@ -8,6 +8,7 @@ var cuda__utils_8hpp =
     [ "allocateDeviceMem", "cuda__utils_8hpp.html#a5fb34b1c5f091a495c7ac4237257d7b1", null ],
     [ "bindTo1DTexture", "cuda__utils_8hpp.html#a46dce0efc9f7cdbb81d0a48b65ce914d", null ],
     [ "copyDeviceToDevice", "cuda__utils_8hpp.html#a130580818f5be50503003961ad9f8852", null ],
+    [ "copyDeviceToDeviceAsync", "cuda__utils_8hpp.html#a9983a1d89d0258fabd5343a8fd48214e", null ],
     [ "copyFromDevice", "cuda__utils_8hpp.html#afc342c146695980b1c7444b7b4449821", null ],
     [ "copyFromDeviceAsync", "cuda__utils_8hpp.html#a0e734eacdc00ba553d77aa057e02059b", null ],
     [ "copyToDevice", "cuda__utils_8hpp.html#a52e9a7f2a2d5bed73e0e9e7d367b1198", null ],

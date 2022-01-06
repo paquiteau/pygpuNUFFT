@@ -7,6 +7,7 @@ var classgpuNUFFT_1_1GpuNUFFTOperator =
     [ "applySensData", "classgpuNUFFT_1_1GpuNUFFTOperator.html#a3b094a1353a1642768df4f10fa1b3616", null ],
     [ "clean_memory", "classgpuNUFFT_1_1GpuNUFFTOperator.html#a11b569c99d639766b533f26ac19a09e2", null ],
     [ "computePossibleConcurrentCoilCount", "classgpuNUFFT_1_1GpuNUFFTOperator.html#a25ab63ee3aa8f612ccfea0084146ecc4", null ],
+    [ "estimate_density_comp", "classgpuNUFFT_1_1GpuNUFFTOperator.html#a7ac11881773486cdca07845299688268", null ],
     [ "forwardConvolution", "classgpuNUFFT_1_1GpuNUFFTOperator.html#afc53849345db2dff57fd4a5367bb5a89", null ],
     [ "freeDeviceMemory", "classgpuNUFFT_1_1GpuNUFFTOperator.html#a065bb3f71daa7a8eea80f786d0626f59", null ],
     [ "freeLocalMemberArray", "classgpuNUFFT_1_1GpuNUFFTOperator.html#a6b89e60117097b42a7e53761e1c3f2bc", null ],

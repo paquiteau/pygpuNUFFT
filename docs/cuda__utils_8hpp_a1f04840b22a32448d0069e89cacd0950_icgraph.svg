@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classgpuNUFFT_1_1GpuNUFFTOperator.html#aec6fcb3f29894b528f1dfb8892cc017b" target="_top" xlink:title="Perform forward gridding operation on given kspaceData.">
+<g id="a_node2"><a xlink:href="classgpuNUFFT_1_1GpuNUFFTOperator.html#ada5bb598b923ca3e92e987982f3d0d5b" target="_top" xlink:title="Perform forward gridding operation on kspaceData already residing in GPU memory.">
 <polygon fill="none" stroke="black" points="0,-0.5 0,-30.5 158,-30.5 158,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="FreeSans.ttf" font-size="10.00">gpuNUFFT::GpuNUFFTOperator</text>
 <text text-anchor="middle" x="79" y="-7.5" font-family="FreeSans.ttf" font-size="10.00">::performForwardGpuNUFFT</text>

@@ -1,0 +1,8 @@
+<map id="gpuNUFFT::GpuNUFFTOperator::estimate_density_comp" name="gpuNUFFT::GpuNUFFTOperator::estimate_density_comp">
+<area shape="rect" id="node1" title=" " alt="" coords="5,74,216,115"/>
+<area shape="rect" id="node2" href="$cuda__utils_8hpp.html#a18413e749218eb97bc61578b50a57787" title="CUDA memory allocation and memcpy call to copy data from host to device." alt="" coords="264,5,467,32"/>
+<area shape="rect" id="node3" href="$cuda__utils_8hpp.html#a5fb34b1c5f091a495c7ac4237257d7b1" title="Allocation of device memory of the given extent for the defined type." alt="" coords="297,56,433,83"/>
+<area shape="rect" id="node4" href="$structgpuNUFFT_1_1Array.html#af426f56b5d7e05b6143acbdd51bac188" title=" " alt="" coords="285,107,446,133"/>
+<area shape="rect" id="node6" href="$gpuNUFFT__kernels_8hpp.html#a8431363d47100f4911c3dfd4c8cd833f" title="Perform the Density compensation method." alt="" coords="273,157,458,184"/>
+<area shape="rect" id="node5" href="$structgpuNUFFT_1_1Dimensions.html#a4c589934c5444910fbcd890d128229c9" title="Compute total count of array length." alt="" coords="515,99,676,141"/>
+</map>

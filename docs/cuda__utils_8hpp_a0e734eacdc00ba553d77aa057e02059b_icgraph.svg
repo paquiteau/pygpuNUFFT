@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Copy CUDA memory from device to host.">
+<g id="a_node1"><a xlink:title="Copy CUDA memory from device to host asynchronously.">
 <polygon fill="#bfbfbf" stroke="black" points="194,-6 194,-25 310,-25 310,-6 194,-6"/>
 <text text-anchor="middle" x="252" y="-13" font-family="FreeSans.ttf" font-size="10.00">copyFromDeviceAsync</text>
 </a>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['writeordered_0',['writeOrdered',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a4c558842a917c1eef6f83eb887e66b53',1,'gpuNUFFT::GpuNUFFTOperator']]],
-  ['writeorderedgpu_1',['writeOrderedGPU',['../precomp__kernels_8hpp.html#a738b63c0ebcc9b273d467f9c1c7d74f6',1,'precomp_kernels.hpp']]]
+  ['unbindtexture_0',['unbindTexture',['../cuda__utils_8hpp.html#ab4541b0102691624bd5e29777536f1d5',1,'cuda_utils.hpp']]],
+  ['updateconcurrentcoilcount_1',['updateConcurrentCoilCount',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a1f505e0efb83311748062de473e2dd39',1,'gpuNUFFT::GpuNUFFTOperator']]]
 ];

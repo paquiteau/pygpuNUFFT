@@ -108,7 +108,7 @@ Include dependency graph for cuda_utils.hpp:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="cuda__utils_8hpp__dep__incl.svg" width="1804" height="619"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="cuda__utils_8hpp__dep__incl.svg" width="1816" height="619"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -152,13 +152,17 @@ Functions</h2></td></tr>
 <tr class="memitem:a130580818f5be50503003961ad9f8852"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="cuda__utils_8hpp.html#a130580818f5be50503003961ad9f8852">copyDeviceToDevice</a> (TypeName *device_ptr_src, TypeName *device_ptr_dest, IndType num_elements)</td></tr>
 <tr class="memdesc:a130580818f5be50503003961ad9f8852"><td class="mdescLeft">&#160;</td><td class="mdescRight">CUDA memcpy call to copy data from device ptr to device ptr.  <a href="cuda__utils_8hpp.html#a130580818f5be50503003961ad9f8852">More...</a><br /></td></tr>
 <tr class="separator:a130580818f5be50503003961ad9f8852"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9983a1d89d0258fabd5343a8fd48214e"><td class="memTemplParams" colspan="2">template&lt;typename TypeName &gt; </td></tr>
+<tr class="memitem:a9983a1d89d0258fabd5343a8fd48214e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="cuda__utils_8hpp.html#a9983a1d89d0258fabd5343a8fd48214e">copyDeviceToDeviceAsync</a> (TypeName *device_ptr_src, TypeName *device_ptr_dest, IndType num_elements, cudaStream_t stream=0)</td></tr>
+<tr class="memdesc:a9983a1d89d0258fabd5343a8fd48214e"><td class="mdescLeft">&#160;</td><td class="mdescRight">CUDA memcpy call to copy data from device ptr to device ptr.  <a href="cuda__utils_8hpp.html#a9983a1d89d0258fabd5343a8fd48214e">More...</a><br /></td></tr>
+<tr class="separator:a9983a1d89d0258fabd5343a8fd48214e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc342c146695980b1c7444b7b4449821"><td class="memTemplParams" colspan="2">template&lt;typename TypeName &gt; </td></tr>
 <tr class="memitem:afc342c146695980b1c7444b7b4449821"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="cuda__utils_8hpp.html#afc342c146695980b1c7444b7b4449821">copyFromDevice</a> (TypeName *device_ptr, TypeName *host_ptr, IndType num_elements)</td></tr>
 <tr class="memdesc:afc342c146695980b1c7444b7b4449821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy CUDA memory from device to host.  <a href="cuda__utils_8hpp.html#afc342c146695980b1c7444b7b4449821">More...</a><br /></td></tr>
 <tr class="separator:afc342c146695980b1c7444b7b4449821"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e734eacdc00ba553d77aa057e02059b"><td class="memTemplParams" colspan="2">template&lt;typename TypeName &gt; </td></tr>
 <tr class="memitem:a0e734eacdc00ba553d77aa057e02059b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="cuda__utils_8hpp.html#a0e734eacdc00ba553d77aa057e02059b">copyFromDeviceAsync</a> (TypeName *device_ptr, TypeName *host_ptr, IndType num_elements, cudaStream_t stream=0)</td></tr>
-<tr class="memdesc:a0e734eacdc00ba553d77aa057e02059b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy CUDA memory from device to host.  <a href="cuda__utils_8hpp.html#a0e734eacdc00ba553d77aa057e02059b">More...</a><br /></td></tr>
+<tr class="memdesc:a0e734eacdc00ba553d77aa057e02059b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy CUDA memory from device to host asynchronously.  <a href="cuda__utils_8hpp.html#a0e734eacdc00ba553d77aa057e02059b">More...</a><br /></td></tr>
 <tr class="separator:a0e734eacdc00ba553d77aa057e02059b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa83ead29bc50e65ae4298d9206a760b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cuda__utils_8hpp.html#aaa83ead29bc50e65ae4298d9206a760b">freeTotalDeviceMemory</a> (void *ptr,...)</td></tr>
 <tr class="memdesc:aaa83ead29bc50e65ae4298d9206a760b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free variable list of device pointers. Use NULL as stopping element.  <a href="cuda__utils_8hpp.html#aaa83ead29bc50e65ae4298d9206a760b">More...</a><br /></td></tr>
@@ -331,6 +335,12 @@ template&lt;typename TypeName &gt; </div>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cuda__utils_8hpp_a18413e749218eb97bc61578b50a57787_icgraph.svg" width="898" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -432,6 +442,12 @@ template&lt;typename TypeName &gt; </div>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cuda__utils_8hpp_a5fb34b1c5f091a495c7ac4237257d7b1_icgraph.svg" width="831" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -539,6 +555,72 @@ template&lt;typename TypeName &gt; </div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="cuda__utils_8hpp_a130580818f5be50503003961ad9f8852_icgraph.svg" width="414" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a9983a1d89d0258fabd5343a8fd48214e" name="a9983a1d89d0258fabd5343a8fd48214e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9983a1d89d0258fabd5343a8fd48214e">&#9670;&nbsp;</a></span>copyDeviceToDeviceAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TypeName &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void copyDeviceToDeviceAsync </td>
+          <td>(</td>
+          <td class="paramtype">TypeName *&#160;</td>
+          <td class="paramname"><em>device_ptr_src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TypeName *&#160;</td>
+          <td class="paramname"><em>device_ptr_dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IndType&#160;</td>
+          <td class="paramname"><em>num_elements</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cudaStream_t&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>CUDA memcpy call to copy data from device ptr to device ptr. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device_ptr_src</td><td>source device pointer </td></tr>
+    <tr><td class="paramname">device_ptr_dest</td><td>destination device pointer </td></tr>
+    <tr><td class="paramname">num_elements</td><td>amount of elements of size TypeName </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cuda__utils_8hpp_a9983a1d89d0258fabd5343a8fd48214e_icgraph.svg" width="450" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -652,7 +734,7 @@ template&lt;typename TypeName &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Copy CUDA memory from device to host. </p>
+<p>Copy CUDA memory from device to host asynchronously. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">device_ptr</td><td>device pointer </td></tr>
@@ -724,7 +806,7 @@ template&lt;typename TypeName &gt; </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="cuda__utils_8hpp_a52e9a7f2a2d5bed73e0e9e7d367b1198_icgraph.svg" width="374" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="cuda__utils_8hpp_a52e9a7f2a2d5bed73e0e9e7d367b1198_icgraph.svg" width="374" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1287,7 +1369,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_ff42a09433eb749dc5553c3aaf33faf9.html">CUDA</a></li><li class="navelem"><a class="el" href="dir_c863ecbbd4d48a925581f0bde02b7064.html">inc</a></li><li class="navelem"><a class="el" href="cuda__utils_8hpp.html">cuda_utils.hpp</a></li>
-    <li class="footer">Generated on Wed Jan 5 2022 15:26:19 for gpuNUFFT by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+    <li class="footer">Generated on Thu Jan 6 2022 00:59:47 for gpuNUFFT by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
 </body>

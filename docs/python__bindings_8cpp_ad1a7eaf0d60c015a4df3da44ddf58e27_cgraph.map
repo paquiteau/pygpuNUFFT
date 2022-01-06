@@ -1,12 +1,19 @@
 <map id="PYBIND11_MODULE" name="PYBIND11_MODULE">
-<area shape="rect" id="node1" title=" " alt="" coords="5,151,155,178"/>
-<area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#a9d5913daa75877d952160c6e126bbe07" title=" " alt="" coords="213,115,393,156"/>
-<area shape="rect" id="node5" href="$classGpuNUFFTPythonOperator.html#aa955beb4fd74d6291151af08eab22f62" title=" " alt="" coords="213,20,393,61"/>
-<area shape="rect" id="node7" href="$classGpuNUFFTPythonOperator.html#a790d6c1885f30c640064a26f618e64ea" title=" " alt="" coords="203,181,403,207"/>
-<area shape="rect" id="node9" href="$classGpuNUFFTPythonOperator.html#aaf1b1ce70db899390b2236ee9c350433" title=" " alt="" coords="213,235,393,276"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,195,155,222"/>
+<area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#a9d5913daa75877d952160c6e126bbe07" title=" " alt="" coords="213,129,393,171"/>
+<area shape="rect" id="node5" href="$classGpuNUFFTPythonOperator.html#aa955beb4fd74d6291151af08eab22f62" title=" " alt="" coords="213,35,393,76"/>
+<area shape="rect" id="node7" href="$classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" title=" " alt="" coords="213,248,393,289"/>
+<area shape="rect" id="node14" href="$classGpuNUFFTPythonOperator.html#a790d6c1885f30c640064a26f618e64ea" title=" " alt="" coords="203,195,403,222"/>
+<area shape="rect" id="node16" href="$classGpuNUFFTPythonOperator.html#aaf1b1ce70db899390b2236ee9c350433" title=" " alt="" coords="213,316,393,357"/>
 <area shape="rect" id="node3" href="$python__utils_8hpp.html#a6fc45707d1f047d4232b16582576b2e6" title=" " alt="" coords="496,137,616,163"/>
 <area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a38a45507d840b8d3d97de7fc79b4fa8a" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="451,71,661,112"/>
 <area shape="rect" id="node6" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a11b569c99d639766b533f26ac19a09e2" title=" " alt="" coords="451,5,661,47"/>
-<area shape="rect" id="node8" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a10d565529aa2c7778c15edb8a820b417" title="Perform forward gridding operation on given kspaceData." alt="" coords="451,188,661,229"/>
-<area shape="rect" id="node10" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#adbc6f59fc4a4998a4ad5bb65c38b1f03" title=" " alt="" coords="451,253,661,295"/>
+<area shape="rect" id="node8" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a7ac11881773486cdca07845299688268" title=" " alt="" coords="451,253,661,295"/>
+<area shape="rect" id="node9" href="$cuda__utils_8hpp.html#a18413e749218eb97bc61578b50a57787" title="CUDA memory allocation and memcpy call to copy data from host to device." alt="" coords="709,185,912,211"/>
+<area shape="rect" id="node10" href="$cuda__utils_8hpp.html#a5fb34b1c5f091a495c7ac4237257d7b1" title="Allocation of device memory of the given extent for the defined type." alt="" coords="743,235,879,262"/>
+<area shape="rect" id="node11" href="$structgpuNUFFT_1_1Array.html#af426f56b5d7e05b6143acbdd51bac188" title=" " alt="" coords="730,286,891,313"/>
+<area shape="rect" id="node13" href="$gpuNUFFT__kernels_8hpp.html#a8431363d47100f4911c3dfd4c8cd833f" title="Perform the Density compensation method." alt="" coords="718,337,903,363"/>
+<area shape="rect" id="node12" href="$structgpuNUFFT_1_1Dimensions.html#a4c589934c5444910fbcd890d128229c9" title="Compute total count of array length." alt="" coords="960,279,1121,320"/>
+<area shape="rect" id="node15" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a10d565529aa2c7778c15edb8a820b417" title="Perform forward gridding operation on given kspaceData." alt="" coords="451,188,661,229"/>
+<area shape="rect" id="node17" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#adbc6f59fc4a4998a4ad5bb65c38b1f03" title=" " alt="" coords="451,319,661,360"/>
 </map>

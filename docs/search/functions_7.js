@@ -1,4 +1,25 @@
 var searchData=
 [
-  ['kernel_0',['kernel',['../gpuNUFFT__utils_8hpp.html#a18dd3c6c4b8ac5f6947f3dc1c59651bc',1,'gpuNUFFT_utils.hpp']]]
+  ['i0_0',['i0',['../gpuNUFFT__utils_8hpp.html#a5472cb661dea68a2ab2b52df187b6291',1,'i0(DType x):&#160;gpuNUFFT_utils.cpp'],['../gpuNUFFT__utils_8cpp.html#a5472cb661dea68a2ab2b52df187b6291',1,'i0(DType x):&#160;gpuNUFFT_utils.cpp']]],
+  ['i0_5fbeta_1',['I0_BETA',['../gpuNUFFT__utils_8hpp.html#ab1456ac35fe51fc4dac2e0054f6d9a50',1,'gpuNUFFT_utils.hpp']]],
+  ['indpair_2',['IndPair',['../structgpuNUFFT_1_1IndPair.html#ab6d16b59928fa6a405127373c5db360d',1,'gpuNUFFT::IndPair']]],
+  ['initandcopygpunufftinfo_3',['initAndCopyGpuNUFFTInfo',['../classgpuNUFFT_1_1BalancedGpuNUFFTOperator.html#aebed0b033d85b71c1e48132203b7caed',1,'gpuNUFFT::BalancedGpuNUFFTOperator::initAndCopyGpuNUFFTInfo()'],['../classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#af62b39293d52e627730c5a63720553e1',1,'gpuNUFFT::TextureGpuNUFFTOperator::initAndCopyGpuNUFFTInfo()'],['../classgpuNUFFT_1_1GpuNUFFTOperator.html#ad2d7c6604a4cff07dfc707a2428f8fb1',1,'gpuNUFFT::GpuNUFFTOperator::initAndCopyGpuNUFFTInfo()'],['../classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a4cfe8965eea8ee447fbffc138eefe588',1,'gpuNUFFT::BalancedTextureGpuNUFFTOperator::initAndCopyGpuNUFFTInfo()']]],
+  ['initconstsymbol_4',['initConstSymbol',['../cuda__utils_8hpp.html#a7ac606afbf03e74f64780e01d12aa64b',1,'cuda_utils.hpp']]],
+  ['initcoordsdata_5',['initCoordsData',['../classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a3bb929391f61a14ecb6be08ccccf29cb',1,'gpuNUFFT::GpuNUFFTOperatorFactory']]],
+  ['initdataindices_6',['initDataIndices',['../classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#ae377ebad7d338686fc37424fe3c5f9cc',1,'gpuNUFFT::GpuNUFFTOperatorFactory']]],
+  ['initdeapodata_7',['initDeapoData',['../classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#aafdbe6593e30a6e7492de4ec91288274',1,'gpuNUFFT::GpuNUFFTOperatorFactory']]],
+  ['initdensdata_8',['initDensData',['../classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#af160f02e1d9a427a5633afc91b36c0ba',1,'gpuNUFFT::GpuNUFFTOperatorFactory']]],
+  ['initdevicememory_9',['initDeviceMemory',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a9075329c4647b3982e44124202048f5a',1,'gpuNUFFT::GpuNUFFTOperator']]],
+  ['initgpunufftinfo_10',['initGpuNUFFTInfo',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a1d1ee62639349d3409ad96366b082c07',1,'gpuNUFFT::GpuNUFFTOperator']]],
+  ['initkernel_11',['initKernel',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a501ffa99025d9cc1f1497e354c56533b',1,'gpuNUFFT::GpuNUFFTOperator::initKernel()'],['../classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#a3125b2b6c409e1d52050f9e3859f4f12',1,'gpuNUFFT::TextureGpuNUFFTOperator::initKernel()']]],
+  ['initlinarray_12',['initLinArray',['../classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a5a9095c4a1ee230ae77a5dae15763cc5',1,'gpuNUFFT::GpuNUFFTOperatorFactory::initLinArray(IndType arrCount)'],['../classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a457d57f0cb536b70ea2b94d2a50193d0',1,'gpuNUFFT::GpuNUFFTOperatorFactory::initLinArray(IndType arrCount)']]],
+  ['initlookuptable_13',['initLookupTable',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#ab6adcc02b05b28d50aa05fe8dd320dd3',1,'gpuNUFFT::GpuNUFFTOperator::initLookupTable()'],['../classgpuNUFFT_1_1TextureGpuNUFFTOperator.html#a57590b9115b854d3152ef64d847665ea',1,'gpuNUFFT::TextureGpuNUFFTOperator::initLookupTable()']]],
+  ['initsectorcenters_14',['initSectorCenters',['../classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#af28b53802fd66b755083507e1fe99311',1,'gpuNUFFT::GpuNUFFTOperatorFactory']]],
+  ['initsectordatacount_15',['initSectorDataCount',['../classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a6a1326db747f2068e520c41d3063f969',1,'gpuNUFFT::GpuNUFFTOperatorFactory']]],
+  ['initsectorprocessingorder_16',['initSectorProcessingOrder',['../classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#ab891ab1e3024ee2e6e07b17b785f08b8',1,'gpuNUFFT::GpuNUFFTOperatorFactory']]],
+  ['inittexture_17',['initTexture',['../cuda__utils_8hpp.html#a678cac189436fb6c0c82ec51703def04',1,'cuda_utils.hpp']]],
+  ['is2dprocessing_18',['is2DProcessing',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#a635c1cf91573264cafb1f3df27fdf976',1,'gpuNUFFT::GpuNUFFTOperator']]],
+  ['is3dprocessing_19',['is3DProcessing',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#ab63e41179a49929b7ebf3a83f76fada0',1,'gpuNUFFT::GpuNUFFTOperator']]],
+  ['isoutlier_20',['isOutlier',['../gpuNUFFT__utils_8hpp.html#a72dc8150edc71f68e9d28b7909ffa9e9',1,'isOutlier(int x, int y, int z, int center_x, int center_y, int center_z, int width, int sector_offset):&#160;gpuNUFFT_utils.hpp'],['../gpuNUFFT__utils_8hpp.html#ad0303fdecb26831fae27b793b7c6713c',1,'isOutlier(int x, int y, int z, int center_x, int center_y, int center_z, IndType3 dim, int sector_offset):&#160;gpuNUFFT_utils.hpp']]],
+  ['isoutlier2d_21',['isOutlier2D',['../gpuNUFFT__utils_8hpp.html#a0b656e96421094c569facdbe2bb9b490',1,'isOutlier2D(int x, int y, int center_x, int center_y, int width, int sector_offset):&#160;gpuNUFFT_utils.hpp'],['../gpuNUFFT__utils_8hpp.html#a2ff05dfa84596f8cbe07d611181d2434',1,'isOutlier2D(int x, int y, int center_x, int center_y, IndType3 dim, int sector_offset):&#160;gpuNUFFT_utils.hpp']]]
 ];
