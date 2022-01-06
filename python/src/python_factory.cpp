@@ -14,6 +14,7 @@ Carole Lazarus <carole.m.lazarus@gmail.com>
 #include "cufft.h"
 #include "cuda_runtime.h"
 #include <cuda.h>
+#include "cuda_utils.hpp"
 #include <cublas.h>
 #include "config.hpp"
 #include "gpuNUFFT_operator_factory.hpp"
@@ -140,4 +141,17 @@ GpuNUFFTPythonOperator::adj_op(py::array_t<std::complex<DType>> input_kspace_dat
             sizeof(DType2),
         },
         ptr, capsule);
+}
+
+
+
+py::array_t<DType>
+GpuNUFFTPythonOperator::estimate_density_comp(int num_iter=10){
+  gpuNUFFT::Array<DType> densArray = gpuNUFFTOp->estimate_density_comp(num_iter);
+  cudaDeviceSynchronize();
+  DType *ptr = reinterpret_cast<DType(&)[0]>(*densArray.data);
+  auto capsule = py::capsule(ptr, [](void *ptr) { return; });
+  return py::array_t<DType>(
+    {trajectory_length},
+    {sizeof(DType) * trajectory_length, sizeof(DType)}, ptr, capsule);
 }

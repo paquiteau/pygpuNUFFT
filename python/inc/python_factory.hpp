@@ -43,6 +43,8 @@ class GpuNUFFTPythonOperator
 
     py::array_t<std::complex<DType>> adj_op(py::array_t<std::complex<DType>> input_kspace_data,
                                             bool grid_data=false);
+
+    py::array_t<DType> estimate_density_comp(int num_iter);
     void clean_memory()
     {
        gpuNUFFTOp->clean_memory();
