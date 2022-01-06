@@ -457,7 +457,7 @@ void gpuNUFFT::GpuNUFFTOperator::performGpuNUFFTAdj(
     if (DEBUG && (cudaDeviceSynchronize() != cudaSuccess))
       fprintf(stderr, "error at adj  thread synchronization 2: %s\n",
               cudaGetErrorString(cudaGetLastError()));
-    if (gpuNUFFTOut == CONVOLUTION)
+    if (gpuNUFFTOut == CONVOLUTION || gpuNUFFTOut == DENSITY_ESTIMATION)
     {
       if (DEBUG)
         printf("stopping output after CONVOLUTION step\n");
@@ -468,6 +468,7 @@ void gpuNUFFT::GpuNUFFTOperator::performGpuNUFFTAdj(
         continue;
 
       freeTotalDeviceMemory(imdata_sum_d, NULL);
+      this->freeDeviceMemory();
       return;
     }
     if ((cudaDeviceSynchronize() != cudaSuccess))
@@ -895,6 +896,37 @@ gpuNUFFT::Array<CufftType> gpuNUFFT::GpuNUFFTOperator::performGpuNUFFTAdj(
   return performGpuNUFFTAdj(kspaceData, DEAPODIZATION);
 }
 
+// ----------------------------------------------------------------------------
+// gpuNUFFT_gpu: NUFFT
+//
+// Inverse gpuNUFFT implementation - interpolation from uniform grid data onto
+//                                   nonuniform k-space data based on optimized
+//                                   gpuNUFFT kernel with minimal oversampling
+//                                   ratio (see Beatty et al.)
+//
+// Basic steps: - apodization correction
+//              - zero padding with osf
+//              - FFT
+//              - convolution and resampling
+//
+// parameters:
+//  * data         : output kspace data
+//  * n_coils      : number of channels or coils
+//  * crds         : coordinates on trajectory, passed as SoA
+//  * imdata       : input image data
+//  * imdata_count : number of image data points
+//  * grid_width   : size of grid
+//  * kernel       : precomputed convolution kernel as lookup table
+//  * kernel_count : number of kernel lookup table entries
+//  * sectors      : mapping of data indices according to each sector
+//  * sector_count : number of sectors
+//  * sector_centers: coordinates (x,y,z) of sector centers
+//  * sector_width : width of sector
+//  * im_width     : dimension of image
+//  * osr          : oversampling ratio
+//  * gpuNUFFT_out : enum indicating how far gpuNUFFT has to be processed
+//
+
 void gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT(
     GpuArray<DType2> imgData_gpu, GpuArray<CufftType> &kspaceData_gpu,
     GpuNUFFTOutput gpuNUFFTOut)
@@ -906,6 +938,7 @@ void gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT(
               << " chnCount: " << kspaceData_gpu.dim.channels << std::endl;
     std::cout << "imgCount: " << imgData_gpu.count()
               << " gridWidth: " << this->getGridWidth() << std::endl;
+    std::cout << "gpuNUFFTOut: " << gpuNUFFTOut << std::endl <<std::endl;
   }
   showMemoryInfo();
 
@@ -939,10 +972,11 @@ void gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT(
     printf("Memory allocation: %.2f ms\n", stopTiming());
 
   int err;
-
+  cudaStream_t new_stream, old_stream;
   // iterate over coils and compute result
   for (int coil_it = 0; coil_it < n_coils; coil_it += n_coils_cc)
   {
+    cudaStreamCreate(&new_stream);
     unsigned long int data_coil_offset = (long int)coil_it * data_count;
     unsigned long int im_coil_offset = coil_it * (long int)imdata_count;
 
@@ -954,31 +988,45 @@ void gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT(
       // perform automatically "repeating" of input image in case
       // of existing sensitivity data
       for (int cnt = 0; cnt < n_coils_cc; cnt++)
-        copyDeviceToDevice<DType2>(imgData_gpu.data,
-                                   imdata_d + cnt * imdata_count, imdata_count);
+        copyDeviceToDeviceAsync<DType2>(imgData_gpu.data,
+                                   imdata_d + cnt * imdata_count, imdata_count, new_stream);
     else
-      copyDeviceToDevice<DType2>(imgData_gpu.data + im_coil_offset, imdata_d,
-                                 imdata_count * n_coils_cc);
+      copyDeviceToDeviceAsync<DType2>(imgData_gpu.data + im_coil_offset, imdata_d,
+                                 imdata_count * n_coils_cc, new_stream);
 
     // reset temp arrays
-    cudaMemset(gdata_d, 0,
-               sizeof(CufftType) * gi_host->grid_width_dim * n_coils_cc);
-    cudaMemset(data_d, 0, sizeof(CufftType) * data_count * n_coils_cc);
+    cudaMemsetAsync(gdata_d, 0,
+               sizeof(CufftType) * gi_host->grid_width_dim * n_coils_cc,new_stream);
+    cudaMemsetAsync(data_d, 0, sizeof(CufftType) * data_count * n_coils_cc, new_stream);
 
-    if (DEBUG && (cudaDeviceSynchronize() != cudaSuccess))
+    if (DEBUG && (cudaStreamSynchronize(new_stream) != cudaSuccess))
       printf("error at thread synchronization 1: %s\n",
              cudaGetErrorString(cudaGetLastError()));
 
     if (this->applySensData())
     {
-      copyToDevice(this->sens.data + im_coil_offset, sens_d,
+      copyToDeviceAsync(this->sens.data + im_coil_offset, sens_d,
                    imdata_count * n_coils_cc);
       performSensMul(imdata_d, sens_d, gi_host, false);
     }
 
     // apodization Correction
     performForwardDeapodization(imdata_d, deapo_d, gi_host);
-	  
+    if (gpuNUFFTOut == DENSITY_ESTIMATION)
+    {
+      forwardConvolution(data_d, crds_d, imdata_d, NULL, sectors_d,
+                         sector_centers_d, gi_host);
+      writeOrderedGPU(data_sorted_d, data_indices_d, data_d,
+                      data_count, n_coils_cc);
+      copyDeviceToDeviceAsync(data_sorted_d, kspaceData_gpu.data + data_coil_offset,
+                          data_count * n_coils_cc, new_stream);
+      if ((coil_it + n_coils_cc) < (n_coils))
+        continue;
+      freeTotalDeviceMemory(data_d, imdata_d, NULL);
+      this->freeDeviceMemory();
+      return;
+    }
+
     if (DEBUG && (cudaDeviceSynchronize() != cudaSuccess))
       printf("error at thread synchronization 2: %s\n",
              cudaGetErrorString(cudaGetLastError()));
@@ -1057,36 +1105,6 @@ void gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT(
             cudaGetErrorString(cudaGetLastError()));
 }
 
-// ----------------------------------------------------------------------------
-// gpuNUFFT_gpu: NUFFT
-//
-// Inverse gpuNUFFT implementation - interpolation from uniform grid data onto
-//                                   nonuniform k-space data based on optimized
-//                                   gpuNUFFT kernel with minimal oversampling
-//                                   ratio (see Beatty et al.)
-//
-// Basic steps: - apodization correction
-//              - zero padding with osf
-//              - FFT
-//              - convolution and resampling
-//
-// parameters:
-//  * data         : output kspace data
-//  * n_coils      : number of channels or coils
-//  * crds         : coordinates on trajectory, passed as SoA
-//  * imdata       : input image data
-//  * imdata_count : number of image data points
-//  * grid_width   : size of grid
-//  * kernel       : precomputed convolution kernel as lookup table
-//  * kernel_count : number of kernel lookup table entries
-//  * sectors      : mapping of data indices according to each sector
-//  * sector_count : number of sectors
-//  * sector_centers: coordinates (x,y,z) of sector centers
-//  * sector_width : width of sector
-//  * im_width     : dimension of image
-//  * osr          : oversampling ratio
-//  * gpuNUFFT_out : enum indicating how far gpuNUFFT has to be processed
-//
 void gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT(
     gpuNUFFT::Array<DType2> imgData, gpuNUFFT::Array<CufftType> &kspaceData,
     GpuNUFFTOutput gpuNUFFTOut)
@@ -1098,6 +1116,7 @@ void gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT(
               << " chnCount: " << kspaceData.dim.channels << std::endl;
     std::cout << "imgCount: " << imgData.count()
               << " gridWidth: " << this->getGridWidth() << std::endl;
+    std::cout << "gpuNUFFTOut:" << gpuNUFFTOut << std::endl;
   }
   showMemoryInfo();
 
@@ -1172,21 +1191,21 @@ void gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT(
       performSensMul(imdata_d, sens_d, gi_host, false);
     }
 
-    // apodization Correction
+    // apodization Correction 
     performForwardDeapodization(imdata_d, deapo_d, gi_host);
-	  if(gpuNUFFTOut == DENSITY_ESTIMATION)
-	  {
-	      forwardConvolution(data_d, crds_d, imdata_d, NULL, sectors_d,
-                       sector_centers_d, gi_host);
-        writeOrderedGPU(data_sorted_d, data_indices_d, data_d,
-                    (int)this->kSpaceTraj.count(), n_coils_cc);
-        copyFromDeviceAsync(data_sorted_d, kspaceData.data + data_coil_offset,
-                   data_count * n_coils_cc, new_stream);
-        if ((coil_it + n_coils_cc) < (n_coils))
-            continue;
-        freeTotalDeviceMemory(data_d, imdata_d, NULL);
-        this->freeDeviceMemory();
-        return;
+    if (gpuNUFFTOut == DENSITY_ESTIMATION)
+    {
+      forwardConvolution(data_d, crds_d, imdata_d, NULL, sectors_d,
+                         sector_centers_d, gi_host);
+      writeOrderedGPU(data_sorted_d, data_indices_d, data_d,
+                      data_count, n_coils_cc);
+      copyFromDeviceAsync(data_sorted_d, kspaceData.data + data_coil_offset,
+                          data_count * n_coils_cc, new_stream);
+      if ((coil_it + n_coils_cc) < (n_coils))
+        continue;
+      freeTotalDeviceMemory(data_d, imdata_d, NULL);
+      this->freeDeviceMemory();
+      return;
     }
     if (DEBUG && (cudaThreadSynchronize() != cudaSuccess))
       printf("error at thread synchronization 2: %s\n",
@@ -1319,4 +1338,61 @@ float gpuNUFFT::GpuNUFFTOperator::stopTiming()
 void gpuNUFFT::GpuNUFFTOperator::clean_memory()
 {
     this->freeDeviceMemory();
+}
+
+gpuNUFFT::Array<DType>
+gpuNUFFT::GpuNUFFTOperator::estimate_density_comp(int num_iter)
+{
+  IndType n_samples =  kSpaceTraj.count();
+  gpuNUFFT::Array<CufftType> densArray;
+  densArray.data = (CufftType *)calloc(n_samples, sizeof(CufftType));
+  densArray.dim.length = n_samples;
+
+
+  for (int cnt = 0; cnt < n_samples; cnt++)
+  {
+    densArray.data[cnt].x = 1.0;
+    densArray.data[cnt].y = 0.0;
+  }
+
+  gpuNUFFT::GpuArray<DType2> densArray_gpu;
+  densArray_gpu.dim.length = n_samples;
+  allocateAndCopyToDeviceMem(&densArray_gpu.data, densArray.data, densArray_gpu.count());
+
+  gpuNUFFT::GpuArray<CufftType> densEstimation_gpu;
+  densEstimation_gpu.dim.length = n_samples;
+  allocateDeviceMem(&densEstimation_gpu.data, n_samples);
+
+  gpuNUFFT::GpuArray<CufftType> image_gpu;
+  image_gpu.dim  = imgDims;
+  allocateDeviceMem(&image_gpu.data, imgDims.count());
+
+  gpuNUFFT::GpuArray<DType2> image_gpu_dt;
+  image_gpu_dt.dim = image_gpu.dim;
+
+  gpuNUFFT::Array<DType> final_densArray;
+  final_densArray.dim.length = n_samples;
+  if(DEBUG)
+    printf("## array allocation done ##\n");
+
+  for (int cnt = 0; cnt < num_iter; cnt++)
+  {
+    if(DEBUG)
+      printf("### update %i\n",cnt);
+    this->performGpuNUFFTAdj(densArray_gpu, image_gpu, DENSITY_ESTIMATION);
+    cudaDeviceSynchronize();
+    if(DEBUG)
+      printf("## gpuNUFFTAdj done ##\n");
+    this->performForwardGpuNUFFT(image_gpu, densEstimation_gpu, DENSITY_ESTIMATION);
+    cudaDeviceSynchronize();
+    if(DEBUG)
+      printf("## gpuNUFFT Forward done ##\n");
+    performUpdateDensityComp(densArray_gpu.data, densEstimation_gpu.data, gi_host);
+    if(DEBUG)
+      printf("## Update Density done ##\n");
+  }
+  // copy only the real part back to cpu
+  DType *tmp_d = (DType*)densArray.data;
+  HANDLE_ERROR(cudaMemcpy2D(final_densArray.data, sizeof(DType), tmp_d, sizeof(CufftType), sizeof(DType), n_samples, cudaMemcpyDeviceToHost))
+  return final_densArray;
 }

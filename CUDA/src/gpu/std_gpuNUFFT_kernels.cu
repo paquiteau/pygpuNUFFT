@@ -2,7 +2,6 @@
 #define STD_GPUNUFFT_KERNELS_CU
 
 #include <string>
-
 #include "gpuNUFFT_kernels.hpp"
 #include "cuda_utils.hpp"
 #include "precomp_utils.hpp"
@@ -792,4 +791,28 @@ void performPadding(DType2* imdata_d,
     paddingKernel<<<grid_dim,block_dim>>>(imdata_d,gdata_d,ind_off,gi_host->im_width_dim);
 }
 
+// Density compensation utils Kernels
+
+__global__ void updateDensityCompKernel(DType2* density_data, DType2* estimation_data, int N)
+{
+  int t = threadIdx.x + blockIdx.x * blockDim.x;
+  while (t < N)
+  {
+    for (int c = threadIdx.z; c < GI.n_coils_cc; c+= blockDim.z)
+    {
+      DType2 data_p = density_data[t + c * N];
+      DType2 esti_p = estimation_data[t + c * N];
+      data_p.x = data_p.x * rsqrtf(esti_p.x * esti_p.x + esti_p.y * esti_p.y);
+      density_data[t + c * N] = data_p;
+    }
+    t = t + blockDim.x*gridDim.x;
+  }
+}
+
+void performUpdateDensityComp(DType2* density_data, DType2* estimation_data,  gpuNUFFT::GpuNUFFTInfo* gi_host)
+{
+  dim3 block_dim(64, 1, 8);
+  dim3 grid_dim(getOptimalGridDim(gi_host->data_count,THREAD_BLOCK_SIZE));
+  updateDensityCompKernel<<<grid_dim,block_dim>>>(density_data,estimation_data,gi_host->data_count);
+}
 #endif //STD_GPUNUFFT_KERNELS_CU

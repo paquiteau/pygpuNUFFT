@@ -358,6 +358,8 @@ class GpuNUFFTOperator
     return operatorType;
   }
 
+  Array<DType> estimate_density_comp(int num_iter = 10);
+
  protected:
 
    template<typename T>
