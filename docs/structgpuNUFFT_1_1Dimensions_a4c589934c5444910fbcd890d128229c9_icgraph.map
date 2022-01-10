@@ -1,26 +1,26 @@
 <map id="gpuNUFFT::Dimensions::count" name="gpuNUFFT::Dimensions::count">
-<area shape="rect" id="node1" title="Compute total count of array length." alt="" coords="1020,423,1181,464"/>
-<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a4ad90751b7eff9bba51f2db5ffd425b6" title="Function to check if the problem will fit into device memory." alt="" coords="744,156,972,197"/>
-<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a82e185db6eda1edb359df5a580be7b37" title="Computation of the deapodization function." alt="" coords="437,5,689,47"/>
-<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a62c51a180bf592a0fa82343ed7b4daed" title="Compute sector centers array." alt="" coords="753,273,963,315"/>
-<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a65d596418c34d74d383addd455469b5a" title="Compute 2&#45;d sector centers array." alt="" coords="748,339,968,380"/>
-<area shape="rect" id="node6" href="$structgpuNUFFT_1_1Array.html#af426f56b5d7e05b6143acbdd51bac188" title=" " alt="" coords="777,405,939,431"/>
-<area shape="rect" id="node18" href="$gpuNUFFT__fft__tests_8cpp.html#a143d7141da78d4955eb9d9228cd5e65e" title=" " alt="" coords="528,645,599,671"/>
-<area shape="rect" id="node19" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a0e941d590a7e5effed76f909dfa72bcc" title="Create GpuNUFFT Operator." alt="" coords="745,507,971,548"/>
-<area shape="rect" id="node20" href="$classGpuNUFFTPythonOperator.html#ad9168e25f62f4e47aefb50f2ea279b0d" title=" " alt="" coords="765,572,951,613"/>
-<area shape="rect" id="node21" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a1d1ee62639349d3409ad96366b082c07" title="Compute all neccessary meta information used in the gridding steps." alt="" coords="753,667,963,708"/>
-<area shape="rect" id="node24" href="$gpuNUFFT__deapo__tests_8cpp.html#ab4a979b5876c35e61bdc8ef745674420" title=" " alt="" coords="831,733,885,759"/>
-<area shape="rect" id="node7" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#afa72b607029c78d61b6e01d45077998e" title="Assign the samples on the k&#45;space trajectory to its corresponding sector." alt="" coords="458,71,669,112"/>
-<area shape="rect" id="node8" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#ad951199a259576c45568997ccfac72dc" title="Method to compute the sector processing order." alt="" coords="454,136,673,177"/>
-<area shape="rect" id="node9" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#ad915537942d302c8d192b964e6114f28" title="Compute the boundaries of the assigned dataIndices per sector element." alt="" coords="453,201,673,243"/>
-<area shape="rect" id="node10" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a7ac11881773486cdca07845299688268" title=" " alt="" coords="458,267,669,308"/>
-<area shape="rect" id="node13" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ada5bb598b923ca3e92e987982f3d0d5b" title="Perform forward gridding operation on kspaceData already residing in GPU memory." alt="" coords="458,332,669,373"/>
-<area shape="rect" id="node14" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a89e40ec1b777c8033bbc933c6535078c" title="Perform Adjoint gridding operation on kspaceData already residing in GPU memory." alt="" coords="458,397,669,439"/>
-<area shape="rect" id="node15" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a897f3ec26b76086e3cf174a4ce0c1c23" title="Select data array in ordered manner." alt="" coords="458,463,669,504"/>
-<area shape="rect" id="node16" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#aae7ea9905b763b7b8cc5c36533257163" title=" " alt="" coords="458,528,669,569"/>
-<area shape="rect" id="node17" href="$gpuNUFFT__forward__tests_8cpp.html#a6e7e337161ef805951437dbf21112e43" title=" " alt="" coords="536,594,591,621"/>
-<area shape="rect" id="node11" href="$classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" title=" " alt="" coords="203,267,383,308"/>
-<area shape="rect" id="node12" href="$python__bindings_8cpp.html#ad1a7eaf0d60c015a4df3da44ddf58e27" title=" " alt="" coords="5,274,155,301"/>
-<area shape="rect" id="node22" href="$classgpuNUFFT_1_1BalancedGpuNUFFTOperator.html#aebed0b033d85b71c1e48132203b7caed" title="Virtual method to perform precomputation of all neccessary meta information used in the gridding step..." alt="" coords="431,696,696,737"/>
-<area shape="rect" id="node23" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a4cfe8965eea8ee447fbffc138eefe588" title="Virtual method to perform precomputation of all neccessary meta information used in the gridding step..." alt="" coords="444,761,683,817"/>
+<area shape="rect" id="node1" title="Compute total count of array length." alt="" coords="792,460,953,501"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a4ad90751b7eff9bba51f2db5ffd425b6" title="Function to check if the problem will fit into device memory." alt="" coords="516,168,744,209"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a82e185db6eda1edb359df5a580be7b37" title="Computation of the deapodization function." alt="" coords="209,5,461,47"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a62c51a180bf592a0fa82343ed7b4daed" title="Compute sector centers array." alt="" coords="525,285,735,327"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a65d596418c34d74d383addd455469b5a" title="Compute 2&#45;d sector centers array." alt="" coords="520,351,740,392"/>
+<area shape="rect" id="node6" href="$structgpuNUFFT_1_1Array.html#af426f56b5d7e05b6143acbdd51bac188" title=" " alt="" coords="549,417,711,443"/>
+<area shape="rect" id="node17" href="$gpuNUFFT__fft__tests_8cpp.html#a143d7141da78d4955eb9d9228cd5e65e" title=" " alt="" coords="300,645,371,671"/>
+<area shape="rect" id="node18" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a0e941d590a7e5effed76f909dfa72bcc" title="Create GpuNUFFT Operator." alt="" coords="517,519,743,560"/>
+<area shape="rect" id="node19" href="$classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" title=" " alt="" coords="540,584,720,625"/>
+<area shape="rect" id="node20" href="$classGpuNUFFTPythonOperator.html#ad9168e25f62f4e47aefb50f2ea279b0d" title=" " alt="" coords="537,649,723,691"/>
+<area shape="rect" id="node21" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a1d1ee62639349d3409ad96366b082c07" title="Compute all neccessary meta information used in the gridding steps." alt="" coords="525,736,735,777"/>
+<area shape="rect" id="node24" href="$gpuNUFFT__deapo__tests_8cpp.html#ab4a979b5876c35e61bdc8ef745674420" title=" " alt="" coords="603,802,657,829"/>
+<area shape="rect" id="node7" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#afa72b607029c78d61b6e01d45077998e" title="Assign the samples on the k&#45;space trajectory to its corresponding sector." alt="" coords="230,71,441,112"/>
+<area shape="rect" id="node8" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#ad951199a259576c45568997ccfac72dc" title="Method to compute the sector processing order." alt="" coords="226,136,445,177"/>
+<area shape="rect" id="node9" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#ad915537942d302c8d192b964e6114f28" title="Compute the boundaries of the assigned dataIndices per sector element." alt="" coords="225,201,445,243"/>
+<area shape="rect" id="node10" href="$classGpuNUFFTPythonOperator.html#a564644dc7ea9b8306cd6296ea6f1fca6" title=" " alt="" coords="245,267,425,308"/>
+<area shape="rect" id="node12" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ada5bb598b923ca3e92e987982f3d0d5b" title="Perform forward gridding operation on kspaceData already residing in GPU memory." alt="" coords="230,332,441,373"/>
+<area shape="rect" id="node13" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a89e40ec1b777c8033bbc933c6535078c" title="Perform Adjoint gridding operation on kspaceData already residing in GPU memory." alt="" coords="230,397,441,439"/>
+<area shape="rect" id="node14" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a897f3ec26b76086e3cf174a4ce0c1c23" title="Select data array in ordered manner." alt="" coords="230,463,441,504"/>
+<area shape="rect" id="node15" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#aae7ea9905b763b7b8cc5c36533257163" title=" " alt="" coords="230,528,441,569"/>
+<area shape="rect" id="node16" href="$gpuNUFFT__forward__tests_8cpp.html#a6e7e337161ef805951437dbf21112e43" title=" " alt="" coords="308,594,363,621"/>
+<area shape="rect" id="node11" href="$python__bindings_8cpp.html#ad1a7eaf0d60c015a4df3da44ddf58e27" title=" " alt="" coords="5,485,155,511"/>
+<area shape="rect" id="node22" href="$classgpuNUFFT_1_1BalancedGpuNUFFTOperator.html#aebed0b033d85b71c1e48132203b7caed" title="Virtual method to perform precomputation of all neccessary meta information used in the gridding step..." alt="" coords="203,747,468,788"/>
+<area shape="rect" id="node23" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a4cfe8965eea8ee447fbffc138eefe588" title="Virtual method to perform precomputation of all neccessary meta information used in the gridding step..." alt="" coords="216,811,455,867"/>
 </map>

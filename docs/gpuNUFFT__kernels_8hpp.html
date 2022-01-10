@@ -170,13 +170,58 @@ Functions</h2></td></tr>
 <tr class="memitem:a15cd90a446c5e8e40ee2caf88f878d19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpuNUFFT__kernels_8hpp.html#a15cd90a446c5e8e40ee2caf88f878d19">precomputeDeapodization</a> (DType *deapo_d, <a class="el" href="structgpuNUFFT_1_1GpuNUFFTInfo.html">gpuNUFFT::GpuNUFFTInfo</a> *gi_host)</td></tr>
 <tr class="memdesc:a15cd90a446c5e8e40ee2caf88f878d19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the precomputation of the deapodization function.  <a href="gpuNUFFT__kernels_8hpp.html#a15cd90a446c5e8e40ee2caf88f878d19">More...</a><br /></td></tr>
 <tr class="separator:a15cd90a446c5e8e40ee2caf88f878d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8431363d47100f4911c3dfd4c8cd833f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpuNUFFT__kernels_8hpp.html#a8431363d47100f4911c3dfd4c8cd833f">performUpdateDensityComp</a> (DType2 *density_data, DType2 *estimation_data, <a class="el" href="structgpuNUFFT_1_1GpuNUFFTInfo.html">gpuNUFFT::GpuNUFFTInfo</a> *gi_host)</td></tr>
-<tr class="memdesc:a8431363d47100f4911c3dfd4c8cd833f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the Density compensation method.  <a href="gpuNUFFT__kernels_8hpp.html#a8431363d47100f4911c3dfd4c8cd833f">More...</a><br /></td></tr>
-<tr class="separator:a8431363d47100f4911c3dfd4c8cd833f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeef5d0634868e22a476b5cbb3f54f6a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpuNUFFT__kernels_8hpp.html#aeef5d0634868e22a476b5cbb3f54f6a2">performUpdateDensityComp</a> (DType2 *density_data, DType2 *estimation_data, int n_samples)</td></tr>
+<tr class="memdesc:aeef5d0634868e22a476b5cbb3f54f6a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the Density compensation method.  <a href="gpuNUFFT__kernels_8hpp.html#aeef5d0634868e22a476b5cbb3f54f6a2">More...</a><br /></td></tr>
+<tr class="separator:aeef5d0634868e22a476b5cbb3f54f6a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea425f71e9b13006582e6280512f11c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpuNUFFT__kernels_8hpp.html#a7ea425f71e9b13006582e6280512f11c">diffInPlace</a> (DType2 *data1, DType2 *data2, int n_samples)</td></tr>
+<tr class="memdesc:a7ea425f71e9b13006582e6280512f11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform data1 = data1 - data2.  <a href="gpuNUFFT__kernels_8hpp.html#a7ea425f71e9b13006582e6280512f11c">More...</a><br /></td></tr>
+<tr class="separator:a7ea425f71e9b13006582e6280512f11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><a class="el" href="namespacegpuNUFFT.html" title="gpuNUFFT related classes">gpuNUFFT</a> CUDA function prototypes </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a7ea425f71e9b13006582e6280512f11c" name="a7ea425f71e9b13006582e6280512f11c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea425f71e9b13006582e6280512f11c">&#9670;&nbsp;</a></span>diffInPlace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void diffInPlace </td>
+          <td>(</td>
+          <td class="paramtype">DType2 *&#160;</td>
+          <td class="paramname"><em>data1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DType2 *&#160;</td>
+          <td class="paramname"><em>data2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n_samples</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Perform data1 = data1 - data2. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="gpuNUFFT__kernels_8hpp_a7ea425f71e9b13006582e6280512f11c_icgraph.svg" width="519" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="add81989142ddeae7115b5153092a60ec" name="add81989142ddeae7115b5153092a60ec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#add81989142ddeae7115b5153092a60ec">&#9670;&nbsp;</a></span>performConvolution() <span class="overload">[1/2]</span></h2>
 
@@ -1375,8 +1420,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a8431363d47100f4911c3dfd4c8cd833f" name="a8431363d47100f4911c3dfd4c8cd833f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8431363d47100f4911c3dfd4c8cd833f">&#9670;&nbsp;</a></span>performUpdateDensityComp()</h2>
+<a id="aeef5d0634868e22a476b5cbb3f54f6a2" name="aeef5d0634868e22a476b5cbb3f54f6a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeef5d0634868e22a476b5cbb3f54f6a2">&#9670;&nbsp;</a></span>performUpdateDensityComp()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1396,8 +1441,8 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structgpuNUFFT_1_1GpuNUFFTInfo.html">gpuNUFFT::GpuNUFFTInfo</a> *&#160;</td>
-          <td class="paramname"><em>gi_host</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n_samples</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1419,7 +1464,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="gpuNUFFT__kernels_8hpp_a8431363d47100f4911c3dfd4c8cd833f_icgraph.svg" width="880" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="gpuNUFFT__kernels_8hpp_aeef5d0634868e22a476b5cbb3f54f6a2_icgraph.svg" width="622" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1468,7 +1513,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_ff42a09433eb749dc5553c3aaf33faf9.html">CUDA</a></li><li class="navelem"><a class="el" href="dir_c863ecbbd4d48a925581f0bde02b7064.html">inc</a></li><li class="navelem"><a class="el" href="gpuNUFFT__kernels_8hpp.html">gpuNUFFT_kernels.hpp</a></li>
-    <li class="footer">Generated on Thu Jan 6 2022 00:59:47 for gpuNUFFT by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+    <li class="footer">Generated on Mon Jan 10 2022 14:43:16 for gpuNUFFT by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
 </body>

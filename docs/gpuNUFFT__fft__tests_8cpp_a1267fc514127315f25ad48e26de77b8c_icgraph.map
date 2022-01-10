@@ -4,6 +4,6 @@
 <area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a82e185db6eda1edb359df5a580be7b37" title="Computation of the deapodization function." alt="" coords="5,71,257,112"/>
 <area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a0e941d590a7e5effed76f909dfa72bcc" title="Create GpuNUFFT Operator." alt="" coords="19,136,244,177"/>
 <area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#af7f33863787749fdc05b360efe79f5df" title="Method to create a new GpuNUFFTOperator or a sub class depending on the parameters." alt="" coords="5,201,257,243"/>
-<area shape="rect" id="node6" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a13915ff85070f8cc0a374d76e6cbcdee" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="26,267,237,308"/>
+<area shape="rect" id="node6" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a89e40ec1b777c8033bbc933c6535078c" title="Perform Adjoint gridding operation on kspaceData already residing in GPU memory." alt="" coords="26,267,237,308"/>
 <area shape="rect" id="node7" href="$gpuNUFFT__fft__tests_8cpp.html#a143d7141da78d4955eb9d9228cd5e65e" title=" " alt="" coords="96,333,167,359"/>
 </map>

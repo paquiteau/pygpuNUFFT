@@ -1,4 +1,0 @@
-<map id="computeInd32Lin" name="computeInd32Lin">
-<area shape="rect" id="node1" title="Compute linear index from 3&#45;d point in grid defined by dim." alt="" coords="264,13,387,39"/>
-<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#afa72b607029c78d61b6e01d45077998e" title="Assign the samples on the k&#45;space trajectory to its corresponding sector." alt="" coords="5,5,216,47"/>
-</map>

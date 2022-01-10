@@ -127,18 +127,24 @@ $(document).ready(function(){initNavTree('python__utils_8hpp_source.html',''); i
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  cudaMallocHost((<span class="keywordtype">void</span> **)&amp;new_data, size);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  lin_array-&gt;<a class="code hl_variable" href="structgpuNUFFT_1_1Array.html#a1828982f04cbad76587d1906fd61c709">data</a> = new_data;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TType&gt;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="python__utils_8hpp.html#a6fc45707d1f047d4232b16582576b2e6">   43</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="python__utils_8hpp.html#a6fc45707d1f047d4232b16582576b2e6">copyNumpyArray</a>(py::array_t&lt;std::complex&lt;DType&gt;&gt; data, TType *copy_data)</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    py::buffer_info myData = data.request();</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    std::complex&lt;DType&gt; *t_data = (std::complex&lt;DType&gt; *) myData.ptr;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    TType *my_data = <span class="keyword">reinterpret_cast&lt;</span>TType(&amp;)[0]<span class="keyword">&gt;</span>(*t_data);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    memcpy(copy_data, my_data, myData.size*<span class="keyword">sizeof</span>(TType));</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#endif </span><span class="comment">// PYTHON_UTILS_H_</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="python__utils_8hpp.html#a7beb421656d23e64d57981e750dcc512">   42</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="python__utils_8hpp.html#a5732db3eeef010cc926583da8f91fcd6">allocate_pinned_memory</a>(<a class="code hl_struct" href="structgpuNUFFT_1_1Array.html">gpuNUFFT::Array&lt;DType&gt;</a> *lin_array, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> size)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  DType *new_data;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  cudaMallocHost((<span class="keywordtype">void</span> **)&amp;new_data, size);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  lin_array-&gt;<a class="code hl_variable" href="structgpuNUFFT_1_1Array.html#a1828982f04cbad76587d1906fd61c709">data</a> = new_data;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TType&gt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="python__utils_8hpp.html#a6fc45707d1f047d4232b16582576b2e6">   49</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="python__utils_8hpp.html#a6fc45707d1f047d4232b16582576b2e6">copyNumpyArray</a>(py::array_t&lt;std::complex&lt;DType&gt;&gt; data, TType *copy_data)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    py::buffer_info myData = data.request();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    std::complex&lt;DType&gt; *t_data = (std::complex&lt;DType&gt; *) myData.ptr;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    TType *my_data = <span class="keyword">reinterpret_cast&lt;</span>TType(&amp;)[0]<span class="keyword">&gt;</span>(*t_data);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    memcpy(copy_data, my_data, myData.size*<span class="keyword">sizeof</span>(TType));</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif </span><span class="comment">// PYTHON_UTILS_H_</span></div>
 <div class="ttc" id="agpuNUFFT__operator__factory_8hpp_html"><div class="ttname"><a href="gpuNUFFT__operator__factory_8hpp.html">gpuNUFFT_operator_factory.hpp</a></div></div>
 <div class="ttc" id="apython__utils_8hpp_html_a5732db3eeef010cc926583da8f91fcd6"><div class="ttname"><a href="python__utils_8hpp.html#a5732db3eeef010cc926583da8f91fcd6">allocate_pinned_memory</a></div><div class="ttdeci">void allocate_pinned_memory(gpuNUFFT::Array&lt; DType2 &gt; *lin_array, unsigned long int size)</div><div class="ttdef"><b>Definition:</b> python_utils.hpp:36</div></div>
-<div class="ttc" id="apython__utils_8hpp_html_a6fc45707d1f047d4232b16582576b2e6"><div class="ttname"><a href="python__utils_8hpp.html#a6fc45707d1f047d4232b16582576b2e6">copyNumpyArray</a></div><div class="ttdeci">void copyNumpyArray(py::array_t&lt; std::complex&lt; DType &gt; &gt; data, TType *copy_data)</div><div class="ttdef"><b>Definition:</b> python_utils.hpp:43</div></div>
+<div class="ttc" id="apython__utils_8hpp_html_a6fc45707d1f047d4232b16582576b2e6"><div class="ttname"><a href="python__utils_8hpp.html#a6fc45707d1f047d4232b16582576b2e6">copyNumpyArray</a></div><div class="ttdeci">void copyNumpyArray(py::array_t&lt; std::complex&lt; DType &gt; &gt; data, TType *copy_data)</div><div class="ttdef"><b>Definition:</b> python_utils.hpp:49</div></div>
 <div class="ttc" id="apython__utils_8hpp_html_aeb74d2cb99381f659a6890373021e833"><div class="ttname"><a href="python__utils_8hpp.html#aeb74d2cb99381f659a6890373021e833">readNumpyArray</a></div><div class="ttdeci">gpuNUFFT::Array&lt; TType &gt; readNumpyArray(py::array_t&lt; TType &gt; data)</div><div class="ttdef"><b>Definition:</b> python_utils.hpp:16</div></div>
 <div class="ttc" id="astructgpuNUFFT_1_1Array_html"><div class="ttname"><a href="structgpuNUFFT_1_1Array.html">gpuNUFFT::Array</a></div><div class="ttdoc">Array container consisting of raw data and gpuNUFFT::Dimensions descriptor.</div><div class="ttdef"><b>Definition:</b> gpuNUFFT_types.hpp:139</div></div>
 <div class="ttc" id="astructgpuNUFFT_1_1Array_html_a1828982f04cbad76587d1906fd61c709"><div class="ttname"><a href="structgpuNUFFT_1_1Array.html#a1828982f04cbad76587d1906fd61c709">gpuNUFFT::Array::data</a></div><div class="ttdeci">T * data</div><div class="ttdef"><b>Definition:</b> gpuNUFFT_types.hpp:143</div></div>
@@ -148,7 +154,7 @@ $(document).ready(function(){initNavTree('python__utils_8hpp_source.html',''); i
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_7837fde3ab9c1fb2fc5be7b717af8d79.html">python</a></li><li class="navelem"><a class="el" href="dir_40e69006a8833d43b806348207eb6f4a.html">inc</a></li><li class="navelem"><a class="el" href="python__utils_8hpp.html">python_utils.hpp</a></li>
-    <li class="footer">Generated on Thu Jan 6 2022 00:59:47 for gpuNUFFT by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+    <li class="footer">Generated on Mon Jan 10 2022 14:43:16 for gpuNUFFT by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
 </body>

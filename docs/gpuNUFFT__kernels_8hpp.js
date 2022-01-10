@@ -1,5 +1,6 @@
 var gpuNUFFT__kernels_8hpp =
 [
+    [ "diffInPlace", "gpuNUFFT__kernels_8hpp.html#a7ea425f71e9b13006582e6280512f11c", null ],
     [ "performConvolution", "gpuNUFFT__kernels_8hpp.html#add81989142ddeae7115b5153092a60ec", null ],
     [ "performConvolution", "gpuNUFFT__kernels_8hpp.html#a876dd3c97a9a97de2541d7cdaf8ab190", null ],
     [ "performCrop", "gpuNUFFT__kernels_8hpp.html#a9c8fce91e8db3c2970f0fe6b9e75687f", null ],
@@ -19,6 +20,6 @@ var gpuNUFFT__kernels_8hpp =
     [ "performTextureConvolution", "gpuNUFFT__kernels_8hpp.html#aa0992a189b0c37f7ec447972f234ddc9", null ],
     [ "performTextureForwardConvolution", "gpuNUFFT__kernels_8hpp.html#a2fd6b03e67db18a41056c4f7986382f4", null ],
     [ "performTextureForwardConvolution", "gpuNUFFT__kernels_8hpp.html#a3836d1bf958993ef97fa036a50d7a408", null ],
-    [ "performUpdateDensityComp", "gpuNUFFT__kernels_8hpp.html#a8431363d47100f4911c3dfd4c8cd833f", null ],
+    [ "performUpdateDensityComp", "gpuNUFFT__kernels_8hpp.html#aeef5d0634868e22a476b5cbb3f54f6a2", null ],
     [ "precomputeDeapodization", "gpuNUFFT__kernels_8hpp.html#a15cd90a446c5e8e40ee2caf88f878d19", null ]
 ];

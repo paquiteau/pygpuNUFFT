@@ -1,12 +1,11 @@
 <map id="gpuNUFFT::GpuNUFFTOperator::is2DProcessing" name="gpuNUFFT::GpuNUFFTOperator::is2DProcessing">
-<area shape="rect" id="node1" title=" " alt="" coords="832,71,1043,112"/>
-<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#afa72b607029c78d61b6e01d45077998e" title="Assign the samples on the k&#45;space trajectory to its corresponding sector." alt="" coords="573,5,784,47"/>
-<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a10c8eb392c0a61a80ec1bf8784e20303" title="Return dimension of problem. Either 2&#45;d or 3&#45;d." alt="" coords="573,71,784,112"/>
-<area shape="rect" id="node8" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ab63e41179a49929b7ebf3a83f76fada0" title=" " alt="" coords="573,136,784,177"/>
-<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a3bb929391f61a14ecb6be08ccccf29cb" title="Initialization method for the coords array." alt="" coords="294,5,505,47"/>
-<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#af28b53802fd66b755083507e1fe99311" title="Initialization method for the sector centers array." alt="" coords="294,71,505,112"/>
-<area shape="rect" id="node6" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a62c51a180bf592a0fa82343ed7b4daed" title="Compute sector centers array." alt="" coords="10,39,221,80"/>
-<area shape="rect" id="node7" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a65d596418c34d74d383addd455469b5a" title="Compute 2&#45;d sector centers array." alt="" coords="5,104,225,145"/>
-<area shape="rect" id="node9" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a82e185db6eda1edb359df5a580be7b37" title="Computation of the deapodization function." alt="" coords="273,136,525,177"/>
-<area shape="rect" id="node10" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a0e941d590a7e5effed76f909dfa72bcc" title="Create GpuNUFFT Operator." alt="" coords="287,201,512,243"/>
+<area shape="rect" id="node1" title=" " alt="" coords="832,104,1043,145"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a10c8eb392c0a61a80ec1bf8784e20303" title="Return dimension of problem. Either 2&#45;d or 3&#45;d." alt="" coords="573,71,784,112"/>
+<area shape="rect" id="node7" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ab63e41179a49929b7ebf3a83f76fada0" title=" " alt="" coords="573,136,784,177"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a3bb929391f61a14ecb6be08ccccf29cb" title="Initialization method for the coords array." alt="" coords="294,5,505,47"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#af28b53802fd66b755083507e1fe99311" title="Initialization method for the sector centers array." alt="" coords="294,71,505,112"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a62c51a180bf592a0fa82343ed7b4daed" title="Compute sector centers array." alt="" coords="10,39,221,80"/>
+<area shape="rect" id="node6" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a65d596418c34d74d383addd455469b5a" title="Compute 2&#45;d sector centers array." alt="" coords="5,104,225,145"/>
+<area shape="rect" id="node8" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a82e185db6eda1edb359df5a580be7b37" title="Computation of the deapodization function." alt="" coords="273,136,525,177"/>
+<area shape="rect" id="node9" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a0e941d590a7e5effed76f909dfa72bcc" title="Create GpuNUFFT Operator." alt="" coords="287,201,512,243"/>
 </map>
