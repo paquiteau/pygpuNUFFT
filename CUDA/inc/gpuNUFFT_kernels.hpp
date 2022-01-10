@@ -420,5 +420,10 @@ void precomputeDeapodization(DType *deapo_d, gpuNUFFT::GpuNUFFTInfo *gi_host);
  * @param estimation_data the autoadjoint of density_data
  * @param gi_host Info struct with meta information
  */
-void performUpdateDensityComp(DType2* density_data, DType2* estimation_data,  gpuNUFFT::GpuNUFFTInfo* gi_host);
+void performUpdateDensityComp(DType2* density_data, DType2* estimation_data,  int n_samples);
+
+/** \brief Perform data1 = data1 - data2
+ */
+void diffInPlace(DType2* data1, DType2* data2, int n_samples);
+
 #endif

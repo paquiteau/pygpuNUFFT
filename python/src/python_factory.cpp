@@ -143,15 +143,133 @@ GpuNUFFTPythonOperator::adj_op(py::array_t<std::complex<DType>> input_kspace_dat
         ptr, capsule);
 }
 
-
-
 py::array_t<DType>
-GpuNUFFTPythonOperator::estimate_density_comp(int num_iter=10){
-  gpuNUFFT::Array<DType> densArray = gpuNUFFTOp->estimate_density_comp(num_iter);
+GpuNUFFTPythonOperator::estimate_density_comp(int num_iter = 10)
+{
+  IndType n_samples = kspace_data.count();
+  gpuNUFFT::Array<CufftType> densArray;
+  allocate_pinned_memory(&densArray, n_samples * sizeof(CufftType));
+  densArray.dim.length = n_samples;
+
+  for (int cnt = 0; cnt < n_samples; cnt++)
+  {
+    densArray.data[cnt].x = 1.0;
+    densArray.data[cnt].y = 0.0;
+  }
+
+  gpuNUFFT::GpuArray<DType2> densArray_gpu;
+  densArray_gpu.dim.length = n_samples;
+  allocateDeviceMem(&densArray_gpu.data, n_samples);
+  
+  copyToDeviceAsync(densArray.data, densArray_gpu.data, n_samples);
+
+  gpuNUFFT::GpuArray<CufftType> densEstimation_gpu;
+  densEstimation_gpu.dim.length = n_samples;
+  allocateDeviceMem(&densEstimation_gpu.data, n_samples);
+
+  gpuNUFFT::GpuArray<CufftType> image_gpu;
+  image_gpu.dim = imgDims;
+  allocateDeviceMem(&image_gpu.data, imgDims.count());
+
+  if (DEBUG && (cudaDeviceSynchronize() != cudaSuccess))
+    printf("error at adj thread synchronization a: %s\n",
+           cudaGetErrorString(cudaGetLastError()));
+  for (int cnt = 0; cnt < num_iter; cnt++)
+  {
+    if (DEBUG)
+      printf("### update %i\n", cnt);
+    gpuNUFFTOp->performGpuNUFFTAdj(densArray_gpu, image_gpu, gpuNUFFT::DENSITY_ESTIMATION);
+    gpuNUFFTOp->performForwardGpuNUFFT(image_gpu, densEstimation_gpu, gpuNUFFT::DENSITY_ESTIMATION);
+    performUpdateDensityComp(densArray_gpu.data, densEstimation_gpu.data,
+                             n_samples);
+    if (DEBUG && (cudaDeviceSynchronize() != cudaSuccess))
+      printf("error at adj thread synchronization d: %s\n",
+             cudaGetErrorString(cudaGetLastError()));
+  }
+  freeDeviceMem(densEstimation_gpu.data);
+  freeDeviceMem(image_gpu.data);
+  cudaFreeHost(densArray.data);
+
   cudaDeviceSynchronize();
-  DType *ptr = reinterpret_cast<DType(&)[0]>(*densArray.data);
+  // copy only the real part back to cpu
+  DType *tmp_d = (DType *)densArray_gpu.data;
+
+  gpuNUFFT::Array<DType> final_densArray;
+  final_densArray.dim.length = n_samples;
+  allocate_pinned_memory(&final_densArray, n_samples * sizeof(DType));
+  copyFromDeviceAsync(densArray_gpu.data, densArray.data, n_samples);
+  HANDLE_ERROR(cudaMemcpy2DAsync(final_densArray.data, sizeof(DType), tmp_d,
+                            sizeof(DType2), sizeof(DType), n_samples,
+                            cudaMemcpyDeviceToHost));
+
+  cudaDeviceSynchronize();
+  freeDeviceMem(densArray_gpu.data);
+  DType *ptr = reinterpret_cast<DType(&)[0]>(*final_densArray.data);
   auto capsule = py::capsule(ptr, [](void *ptr) { return; });
-  return py::array_t<DType>(
-    {trajectory_length},
-    {sizeof(DType) * trajectory_length, sizeof(DType)}, ptr, capsule);
+  return py::array_t<DType>({ trajectory_length }, { sizeof(DType) }, ptr,
+                            capsule);
+}
+
+py::array_t<std::complex<DType>> GpuNUFFTPythonOperator::data_consistency(
+    py::array_t<std::complex<DType>> input_image,
+    py::array_t<std::complex<DType>> obs_data)
+{
+  gpuNUFFT::Dimensions myDims = imgDims;
+  if (dimension == 2)
+    myDims.depth = 1;
+  printf("in data_consistency\n");
+
+  copyNumpyArray(input_image,image.data);
+  gpuNUFFT::Array<DType2> obsArray = readNumpyArray(obs_data);
+  printf("image and obs init done\n");
+
+  gpuNUFFT::GpuArray<DType2> obsArray_gpu;
+  obsArray_gpu.dim = obsArray.dim;
+  gpuNUFFT::GpuArray<DType2> resArray_gpu;
+  resArray_gpu.dim = obsArray.dim;
+  gpuNUFFT::GpuArray<DType2> imArray_gpu;
+  imArray_gpu.dim = image.dim;
+  allocateDeviceMem(&imArray_gpu.data, image.count());
+  allocateDeviceMem(&resArray_gpu.data, resArray_gpu.count());
+
+  copyToDeviceAsync(image.data, imArray_gpu.data, image.count());
+  allocateAndCopyToDeviceMem(&obsArray_gpu.data, obsArray.data, obsArray.count());
+
+  HANDLE_ERROR(cudaDeviceSynchronize());
+  printf(" init done\n");
+  // F^H(Fx - y) on gpu.
+  gpuNUFFTOp->performForwardGpuNUFFT(imArray_gpu,resArray_gpu);
+  printf(" forward done\n");
+  diffInPlace(resArray_gpu.data, obsArray_gpu.data, obsArray.count());
+  printf(" diff done\n");
+  gpuNUFFTOp->performGpuNUFFTAdj(resArray_gpu, imArray_gpu);
+  printf(" adj done\n");
+  copyFromDeviceAsync(imArray_gpu.data, image.data, image.count());
+  printf("from device done");
+  HANDLE_ERROR(cudaDeviceSynchronize());
+
+ //return image as numpy array
+  std::complex<DType> *ptr =
+      reinterpret_cast<std::complex<DType>(&)[0]>(*image.data);
+  auto capsule = py::capsule(ptr, [](void *ptr) { return; });
+  if (has_sense_data == false)
+    return py::array_t<std::complex<DType>>(
+        { n_coils, (int)myDims.depth, (int)myDims.height, (int)myDims.width },
+        {
+            sizeof(DType2) * (int)myDims.depth * (int)myDims.height *
+                (int)myDims.width,
+            sizeof(DType2) * (int)myDims.height * (int)myDims.width,
+            sizeof(DType2) * (int)myDims.width,
+            sizeof(DType2),
+        },
+        ptr, capsule);
+  else
+    return py::array_t<std::complex<DType>>(
+        { (int)myDims.depth, (int)myDims.height, (int)myDims.width },
+        {
+            sizeof(DType2) * (int)myDims.height * (int)myDims.width,
+            sizeof(DType2) * (int)myDims.width,
+            sizeof(DType2),
+        },
+        ptr, capsule);
 }

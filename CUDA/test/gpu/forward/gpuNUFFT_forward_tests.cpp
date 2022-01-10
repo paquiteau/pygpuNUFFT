@@ -69,7 +69,7 @@ TEST(TestGPUGpuNUFFTForwardConv, KernelCall1Sector)
 
   // gpuNUFFT::GpuNUFFTOperator *gpuNUFFTOp = new
   // gpuNUFFT::GpuNUFFTOperator(kernel_width,sector_width,osr);
-  gpuNUFFT::GpuNUFFTOperatorFactory factory(false, true, true);
+  gpuNUFFT::GpuNUFFTOperatorFactory factory(false, true);
   gpuNUFFT::GpuNUFFTOperator *gpuNUFFTOp = factory.createGpuNUFFTOperator(
       kSpaceData, kernel_width, sector_width, osr, imgDims);
 

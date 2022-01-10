@@ -135,42 +135,7 @@ gpuNUFFT::Array<IndType> gpuNUFFT::GpuNUFFTOperatorFactory::assignSectors(
   cudaMallocHost((void **) &assignedSectors.data, coordCnt * sizeof(IndType));
   assignedSectors.dim.length = coordCnt;
 
-  if (useGpu)
-  {
-    assignSectorsGPU(gpuNUFFTOp, kSpaceTraj, assignedSectors.data);
-  }
-  else
-  {
-    IndType sector;
-    for (IndType cCnt = 0; cCnt < coordCnt; cCnt++)
-    {
-      if (gpuNUFFTOp->is2DProcessing())
-      {
-        DType2 coord;
-        coord.x = kSpaceTraj.data[cCnt];
-        coord.y = kSpaceTraj.data[cCnt + coordCnt];
-        IndType2 mappedSector =
-            computeSectorMapping(coord, gpuNUFFTOp->getGridDims(),
-                                 (DType)gpuNUFFTOp->getSectorWidth());
-        // linearize mapped sector
-        sector = computeInd22Lin(mappedSector, gpuNUFFTOp->getGridSectorDims());
-      }
-      else
-      {
-        DType3 coord;
-        coord.x = kSpaceTraj.data[cCnt];
-        coord.y = kSpaceTraj.data[cCnt + coordCnt];
-        coord.z = kSpaceTraj.data[cCnt + 2 * coordCnt];
-        IndType3 mappedSector =
-            computeSectorMapping(coord, gpuNUFFTOp->getGridDims(),
-                                 (DType)gpuNUFFTOp->getSectorWidth());
-        // linearize mapped sector
-        sector = computeInd32Lin(mappedSector, gpuNUFFTOp->getGridSectorDims());
-      }
-
-      assignedSectors.data[cCnt] = sector;
-    }
-  }
+  assignSectorsGPU(gpuNUFFTOp, kSpaceTraj, assignedSectors.data);
   debug("finished assign sectors\n");
   return assignedSectors;
 }
@@ -484,36 +449,9 @@ gpuNUFFT::GpuNUFFTOperatorFactory::createGpuNUFFTOperator(
   if (sensData.data != NULL)
     gpuNUFFTOp->setSens(sensData);
 
-  if (useGpu)
-  {
-    sortArrays(gpuNUFFTOp, assignedSectorsAndIndicesSorted,
+  sortArrays(gpuNUFFTOp, assignedSectorsAndIndicesSorted,
                assignedSectors.data, dataIndices.data, kSpaceTraj,
                trajSorted.data, densCompData.data, densData.data);
-  }
-  else
-  {
-    // sort kspace data coords
-    for (unsigned i = 0; i < coordCnt; i++)
-    {
-      trajSorted.data[i] =
-          kSpaceTraj.data[assignedSectorsAndIndicesSorted[i].first];
-      trajSorted.data[i + 1 * coordCnt] =
-          kSpaceTraj
-              .data[assignedSectorsAndIndicesSorted[i].first + 1 * coordCnt];
-      if (gpuNUFFTOp->is3DProcessing())
-        trajSorted.data[i + 2 * coordCnt] =
-            kSpaceTraj
-                .data[assignedSectorsAndIndicesSorted[i].first + 2 * coordCnt];
-
-      // sort density compensation
-      if (densCompData.data != NULL)
-        densData.data[i] =
-            densCompData.data[assignedSectorsAndIndicesSorted[i].first];
-
-      dataIndices.data[i] = assignedSectorsAndIndicesSorted[i].first;
-      assignedSectors.data[i] = assignedSectorsAndIndicesSorted[i].second;
-    }
-  }
 
   gpuNUFFTOp->setSectorDataCount(
       computeSectorDataCount(gpuNUFFTOp, assignedSectors));

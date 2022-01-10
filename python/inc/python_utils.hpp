@@ -39,6 +39,12 @@ inline void allocate_pinned_memory(gpuNUFFT::Array<DType2> *lin_array, unsigned 
   cudaMallocHost((void **)&new_data, size);
   lin_array->data = new_data;
 }
+inline void allocate_pinned_memory(gpuNUFFT::Array<DType> *lin_array, unsigned long int size)
+{
+  DType *new_data;
+  cudaMallocHost((void **)&new_data, size);
+  lin_array->data = new_data;
+}
 template <typename TType>
 inline void copyNumpyArray(py::array_t<std::complex<DType>> data, TType *copy_data)
 {
