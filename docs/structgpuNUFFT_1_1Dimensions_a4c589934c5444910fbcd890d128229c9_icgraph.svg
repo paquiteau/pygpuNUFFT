@@ -131,7 +131,7 @@
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:href="classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" target="_top" xlink:title=" ">
+<g id="a_node19"><a xlink:href="classGpuNUFFTPythonOperator.html#aee99f5b7d79d7a40c4a2475c9a439c59" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="401,-182 401,-212 536,-212 536,-182 401,-182"/>
 <text text-anchor="start" x="409" y="-200" font-family="FreeSans.ttf" font-size="10.00">GpuNUFFTPythonOperator</text>
 <text text-anchor="middle" x="468.5" y="-189" font-family="FreeSans.ttf" font-size="10.00">::estimate_density_comp</text>
