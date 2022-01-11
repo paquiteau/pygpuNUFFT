@@ -143,7 +143,7 @@ GpuNUFFTPythonOperator::adj_op(py::array_t<std::complex<DType>> input_kspace_dat
         ptr, capsule);
 }
 
-py::array_t<DType>
+py::array_t<std::complex<DType>>
 GpuNUFFTPythonOperator::estimate_density_comp(int num_iter = 10)
 {
   IndType n_samples = kspace_data.count();
@@ -188,25 +188,25 @@ GpuNUFFTPythonOperator::estimate_density_comp(int num_iter = 10)
   }
   freeDeviceMem(densEstimation_gpu.data);
   freeDeviceMem(image_gpu.data);
-  cudaFreeHost(densArray.data);
+  //cudaFreeHost(densArray.data);
 
   cudaDeviceSynchronize();
   // copy only the real part back to cpu
   DType *tmp_d = (DType *)densArray_gpu.data;
 
-  gpuNUFFT::Array<DType> final_densArray;
-  final_densArray.dim.length = n_samples;
-  allocate_pinned_memory(&final_densArray, n_samples * sizeof(DType));
+  // gpuNUFFT::Array<DType2> final_densArray;
+  // final_densArray.dim.length = n_samples;
+  // allocate_pinned_memory(&final_densArray, n_samples * sizeof(DType2));
   copyFromDeviceAsync(densArray_gpu.data, densArray.data, n_samples);
-  HANDLE_ERROR(cudaMemcpy2DAsync(final_densArray.data, sizeof(DType), tmp_d,
-                            sizeof(DType2), sizeof(DType), n_samples,
-                            cudaMemcpyDeviceToHost));
+  // HANDLE_ERROR(cudaMemcpy2DAsync(final_densArray.data, sizeof(DType), tmp_d,
+  //                           sizeof(DType2), sizeof(DType), n_samples,
+  //                           cudaMemcpyDeviceToHost));
 
   cudaDeviceSynchronize();
   freeDeviceMem(densArray_gpu.data);
-  DType *ptr = reinterpret_cast<DType(&)[0]>(*final_densArray.data);
+  std::complex<DType> *ptr = reinterpret_cast<std::complex<DType>(&)[0]>(*densArray.data);
   auto capsule = py::capsule(ptr, [](void *ptr) { return; });
-  return py::array_t<DType>({ trajectory_length }, { sizeof(DType) }, ptr,
+  return py::array_t<std::complex<DType>>({ trajectory_length }, { sizeof(DType2) }, ptr,
                             capsule);
 }
 

@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import numpy as np
 # gpuNUFFT import
 from mri.operators import NonCartesianFFT
@@ -7,7 +6,7 @@ from mri.operators.fourier.utils import estimate_density_compensation
 from pysap.data import get_sample_data
 
 
-# Density Compensation 2D 
+# Density Compensation 2D
 
 img2d = get_sample_data("2d-pmri").data.astype(np.complex64)
 samples2d = get_sample_data("mri-radial-samples").data
@@ -16,23 +15,29 @@ shape2d = (512, 512)
 n_samples2d = 32768
 img2dssos = np.linalg.norm(img2d,axis=0).astype(np.complex64)
 
+first_op = NonCartesianFFT(samples=samples2d,
+                           shape=shape2d,
+                           implementation='gpuNUFFT'
+                           )
+
 
 grid_op = NonCartesianFFT(
-        samples=samples2d,
-        shape=shape2d,
-        implementation='gpuNUFFT',
-        osf=1,
+    samples=samples2d,
+    shape=shape2d,
+    implementation='gpuNUFFT',
+    osf=1,
 )
-density2d_new = grid_op.impl.operator.estimate_density_comp(1)
-density2d = estimate_density_compensation(samples2d, shape2d, 1)
+density2d_new = grid_op.impl.operator.estimate_density_comp(2)
+density2d = estimate_density_compensation(samples2d, shape2d, 2)
 print(np.allclose(density2d, density2d_new))
 print(np.linalg.norm(density2d_new-density2d))
-print(density2d_new)
+print(density2d_new.real)
 
 
 
 
-# # Density Compensation 3d 
+
+# # Density Compensation 3d
 # img3d = get_sample_data("3d-pmri").data.astype(np.complex64)
 # samples3d = get_sample_data("mri-radial-3d-samples").data
 # samples3d *= 2 * np.pi
