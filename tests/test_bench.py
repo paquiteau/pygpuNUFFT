@@ -13,8 +13,8 @@ samples2d = get_sample_data("mri-radial-samples").data
 samples2d *= 2 * np.pi
 shape2d = (512, 512)
 n_samples2d = 32768
-n_coils = 32
-img2dssos = np.linalg.norm(img2d,axis=0).astype(np.complex64)
+n_samples3d = 6136781
+shape3d = (128, 128, 160)
 
 smaps2d = np.ones_like(img2d, dtype='complex128')
 smaps2d = smaps2d * np.arange(1, len(smaps2d) + 1)[:, np.newaxis,  np.newaxis]
