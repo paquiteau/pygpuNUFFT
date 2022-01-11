@@ -24,14 +24,6 @@ n_samples3d = 6136781
 shape3d = (128, 128, 160)
 
 for i in range(1):
-    density_comp3d = estimate_density_compensation(samples3d, shape3d)
+    density_comp3d = estimate_density_compensation(samples2d, shape2d)
+    print(density_comp3d)
     print('density  comp done')
-    gpuNUFFT = NonCartesianFFT(samples=samples3d,
-                               shape=shape3d,
-                               n_coils=n_coils,
-                               smaps=smaps3d,
-                               density_comp=density_comp3d,
-                               implementation='gpuNUFFT')
-    kspace3d = gpuNUFFT.op(img3d)
-    img_autoadj = gpuNUFFT.adj_op(kspace3d)
-    del gpuNUFFT
