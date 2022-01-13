@@ -5,43 +5,54 @@
 #include "cuda_utils.cuh"
 #include "cuda_utils.hpp"
 
-__global__ void assignSectorsKernel(DType* kSpaceTraj,
-  IndType* assignedSectors,
-  long coordCnt,
-  bool is2DProcessing,
-  gpuNUFFT::Dimensions gridSectorDims,
-  gpuNUFFT::Dimensions gridDims,
-  int sectorWidth)
+__global__ void assignSectorsKernel2D(DType* kSpaceTraj,
+                                      IndType* assignedSectors,
+                                      long coordCnt,
+                                      gpuNUFFT::Dimensions gridSectorDims,
+                                      gpuNUFFT::Dimensions gridDims,
+                                      int sectorWidth)
 {
-  int t = threadIdx.x +  blockIdx.x *blockDim.x;
-  IndType sector;
+    int t = threadIdx.x +  blockIdx.x *blockDim.x;
+    IndType sector;
 
-  while (t < coordCnt) 
-  {
-    if (is2DProcessing)
+    while (t < coordCnt)
     {
-      DType2 coord;
-      coord.x = kSpaceTraj[t];
-      coord.y = kSpaceTraj[t + coordCnt];
-      IndType2 mappedSector = computeSectorMapping(coord,gridDims,sectorWidth);
-      //linearize mapped sector
-      sector = computeInd22Lin(mappedSector,gridSectorDims);		
+        DType2 coord;
+        coord.x = kSpaceTraj[t];
+        coord.y = kSpaceTraj[t + coordCnt];
+        IndType2 mappedSector = computeSectorMapping(coord,gridDims,sectorWidth);
+        //linearize mapped sector
+        sector = computeInd22Lin(mappedSector,gridSectorDims);
+        assignedSectors[t] = sector;
+
+        t = t+ blockDim.x*gridDim.x;
     }
-    else
+}
+
+__global__ void assignSectorsKernel3D(DType* kSpaceTraj,
+                                      IndType* assignedSectors,
+                                      long coordCnt,
+                                      gpuNUFFT::Dimensions gridSectorDims,
+                                      gpuNUFFT::Dimensions gridDims,
+                                      int sectorWidth)
+{
+    int t = threadIdx.x +  blockIdx.x *blockDim.x;
+    IndType sector;
+
+    while (t < coordCnt)
     {
-      DType3 coord;
-      coord.x = kSpaceTraj[t];
-      coord.y = kSpaceTraj[t + coordCnt];
-      coord.z = kSpaceTraj[t + 2*coordCnt];
-      IndType3 mappedSector = computeSectorMapping(coord,gridDims,sectorWidth);
-      //linearize mapped sector
-      sector = computeInd32Lin(mappedSector,gridSectorDims);		
+        DType3 coord;
+        coord.x = kSpaceTraj[t];
+        coord.y = kSpaceTraj[t + coordCnt];
+        coord.z = kSpaceTraj[t + 2*coordCnt];
+        IndType3 mappedSector = computeSectorMapping(coord,gridDims,sectorWidth);
+        //linearize mapped sector
+        sector = computeInd32Lin(mappedSector,gridSectorDims);
+
+        assignedSectors[t] = sector;
+
+        t = t+ blockDim.x*gridDim.x;
     }
-
-    assignedSectors[t] = sector;
-
-    t = t+ blockDim.x*gridDim.x;
-  }
 }
 
 void assignSectorsGPU(gpuNUFFT::GpuNUFFTOperator* gpuNUFFTOp, gpuNUFFT::Array<DType>& kSpaceTraj, IndType* assignedSectors)
@@ -55,21 +66,31 @@ void assignSectorsGPU(gpuNUFFT::GpuNUFFTOperator* gpuNUFFTOp, gpuNUFFT::Array<DT
   IndType* assignedSectors_d;
 
   if (DEBUG)
-    printf("allocate and copy trajectory of size %d...\n",gpuNUFFTOp->getImageDimensionCount()*coordCnt);
+    printf("allocate and copy trajectory of size %dx%d ...\n",gpuNUFFTOp->getImageDimensionCount(), coordCnt);
   allocateAndCopyToDeviceMem<DType>(&kSpaceTraj_d,kSpaceTraj.data,gpuNUFFTOp->getImageDimensionCount()*coordCnt);
 
   if (DEBUG)
-    printf("allocate and copy data of size %d...\n",coordCnt);
+      printf("allocate and copy data of size %d...\n",coordCnt);
   allocateDeviceMem<IndType>(&assignedSectors_d,coordCnt);
+  if (gpuNUFFTOp->is2DProcessing())
+  {
+      assignSectorsKernel2D<<<grid_dim,block_dim>>>(kSpaceTraj_d,
+                                                  assignedSectors_d,
+                                                  (long)coordCnt,
+                                                  gpuNUFFTOp->getGridSectorDims(),
+                                                  gpuNUFFTOp->getGridDims(),
+                                                  gpuNUFFTOp->getSectorWidth());
+  }
+  else
+  {
+      assignSectorsKernel3D<<<grid_dim,block_dim>>>(kSpaceTraj_d,
+                                                  assignedSectors_d,
+                                                  (long)coordCnt,
+                                                  gpuNUFFTOp->getGridSectorDims(),
+                                                  gpuNUFFTOp->getGridDims(),
+                                                  gpuNUFFTOp->getSectorWidth());
 
-  assignSectorsKernel<<<grid_dim,block_dim>>>(kSpaceTraj_d,
-    assignedSectors_d,
-    (long)coordCnt,
-    gpuNUFFTOp->is2DProcessing(),
-    gpuNUFFTOp->getGridSectorDims(),
-    gpuNUFFTOp->getGridDims(),
-    gpuNUFFTOp->getSectorWidth());
-
+  }
   if (DEBUG && (cudaDeviceSynchronize() != cudaSuccess))
     printf("error: at assignSectors thread synchronization 1: %s\n",cudaGetErrorString(cudaGetLastError()));
 
