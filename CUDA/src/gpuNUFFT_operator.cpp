@@ -1033,7 +1033,6 @@ void gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT(
     if (DEBUG && (cudaDeviceSynchronize() != cudaSuccess))
       printf("error at thread synchronization 7: %s\n",
              cudaGetErrorString(cudaGetLastError()));
-
     if (debugTiming)
       printf("Forward Convolution: %.2f ms\n", stopTiming());
 
