@@ -16,11 +16,8 @@ parser.add_argument('dim', metavar='dim', type=int,
 
 def test_density3D():
     print("# 3D DensityCompensation")
-    img3d = get_sample_data("3d-pmri").data.astype(np.complex64)
     samples3d = get_sample_data("mri-radial-3d-samples").data
     samples3d *= np.pi / samples3d.max()
-    n_coils = 32
-    n_samples3d = 6136781
     shape3d = (128, 128, 160)
     grid_op = NonCartesianFFT(
         samples=samples3d,
@@ -33,14 +30,12 @@ def test_density3D():
     density_comp3d = estimate_density_compensation(samples3d, shape3d, 10)
     print(np.allclose(density_comp3d, density_new))
 
+
 def test_density2D():
     print("# 2D DensityCompensation")
-    img2d = get_sample_data("2d-pmri").data.astype(np.complex64)
     samples2d = get_sample_data("mri-radial-samples").data
     samples2d *= 2 * np.pi
     shape2d = (512, 512)
-    n_samples2d = 32768
-    img2dssos = np.linalg.norm(img2d, axis=0).astype(np.complex64)
 
     grid_op = NonCartesianFFT(
         samples=samples2d,
@@ -51,7 +46,7 @@ def test_density2D():
 
     density_new = grid_op.impl.operator.estimate_density_comp(10)
     density_comp2d = estimate_density_compensation(samples2d, shape2d, 10)
-    print(np.allclose(density_comp3d, density_new))
+    print(np.allclose(density_comp2d, density_new))
 
 
 if __name__ == "__main__":

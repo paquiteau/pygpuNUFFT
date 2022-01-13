@@ -10,7 +10,7 @@ from pysap.data import get_sample_data
 
 
 parser = argparse.ArgumentParser(description='test density_compensation.')
-parser.add_argument('dim', metavar='dim', type=int,
+parser.add_argument('dim', metavar='dim', type=int, const=0, default=0, nargs='?',
                     help='select dimension')
 
 

@@ -29,6 +29,10 @@ GpuNUFFTPythonOperator::GpuNUFFTPythonOperator(py::array_t<DType> kspace_loc, py
 py::array_t<std::complex<DType>> sense_maps,  py::array_t<float> density_comp, int kernel_width,
 int sector_width, int osr, bool balance_workload)
 {
+    //initialize CUDA
+    printf("initialize cuda...");
+    cudaFree(0);
+    printf("done\n");
     // k-space coordinates
     py::buffer_info sample_loc = kspace_loc.request();
     trajectory_length = sample_loc.shape[1];
