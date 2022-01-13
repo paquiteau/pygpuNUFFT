@@ -7,7 +7,7 @@
 <area shape="rect" id="node6" href="$structgpuNUFFT_1_1Array.html#af426f56b5d7e05b6143acbdd51bac188" title=" " alt="" coords="549,417,711,443"/>
 <area shape="rect" id="node17" href="$gpuNUFFT__fft__tests_8cpp.html#a143d7141da78d4955eb9d9228cd5e65e" title=" " alt="" coords="300,645,371,671"/>
 <area shape="rect" id="node18" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a0e941d590a7e5effed76f909dfa72bcc" title="Create GpuNUFFT Operator." alt="" coords="517,519,743,560"/>
-<area shape="rect" id="node19" href="$classGpuNUFFTPythonOperator.html#aee99f5b7d79d7a40c4a2475c9a439c59" title=" " alt="" coords="540,584,720,625"/>
+<area shape="rect" id="node19" href="$classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" title=" " alt="" coords="540,584,720,625"/>
 <area shape="rect" id="node20" href="$classGpuNUFFTPythonOperator.html#ad9168e25f62f4e47aefb50f2ea279b0d" title=" " alt="" coords="537,649,723,691"/>
 <area shape="rect" id="node21" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a1d1ee62639349d3409ad96366b082c07" title="Compute all neccessary meta information used in the gridding steps." alt="" coords="525,736,735,777"/>
 <area shape="rect" id="node24" href="$gpuNUFFT__deapo__tests_8cpp.html#ab4a979b5876c35e61bdc8ef745674420" title=" " alt="" coords="603,802,657,829"/>

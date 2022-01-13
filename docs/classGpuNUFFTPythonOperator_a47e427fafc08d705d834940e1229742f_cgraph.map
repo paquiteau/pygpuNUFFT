@@ -1,0 +1,11 @@
+<map id="GpuNUFFTPythonOperator::estimate_density_comp" name="GpuNUFFTPythonOperator::estimate_density_comp">
+<area shape="rect" id="node1" title=" " alt="" coords="5,187,185,229"/>
+<area shape="rect" id="node2" href="$python__utils_8hpp.html#a5732db3eeef010cc926583da8f91fcd6" title=" " alt="" coords="256,5,421,32"/>
+<area shape="rect" id="node3" href="$cuda__utils_8hpp.html#a5fb34b1c5f091a495c7ac4237257d7b1" title="Allocation of device memory of the given extent for the defined type." alt="" coords="271,56,407,83"/>
+<area shape="rect" id="node4" href="$cuda__utils_8hpp.html#a1f04840b22a32448d0069e89cacd0950" title="CUDA memcpy call to copy data from host to device." alt="" coords="269,107,409,133"/>
+<area shape="rect" id="node5" href="$structgpuNUFFT_1_1Dimensions.html#a4c589934c5444910fbcd890d128229c9" title="Compute total count of array length." alt="" coords="258,158,419,199"/>
+<area shape="rect" id="node6" href="$cuda__utils_8hpp.html#a6ffa821f98a8c2b391c12c01308ff1db" title="Free of device memory." alt="" coords="282,224,395,251"/>
+<area shape="rect" id="node7" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a10d565529aa2c7778c15edb8a820b417" title="Perform forward gridding operation on given kspaceData." alt="" coords="233,275,444,317"/>
+<area shape="rect" id="node8" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a38a45507d840b8d3d97de7fc79b4fa8a" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="233,341,444,382"/>
+<area shape="rect" id="node9" href="$gpuNUFFT__kernels_8hpp.html#aeef5d0634868e22a476b5cbb3f54f6a2" title="Perform the Density compensation method." alt="" coords="246,407,431,433"/>
+</map>

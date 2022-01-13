@@ -1,6 +1,6 @@
 <map id="freeDeviceMem" name="freeDeviceMem">
 <area shape="rect" id="node1" title="Free of device memory." alt="" coords="817,244,931,271"/>
-<area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#aee99f5b7d79d7a40c4a2475c9a439c59" title=" " alt="" coords="589,103,769,145"/>
+<area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" title=" " alt="" coords="589,103,769,145"/>
 <area shape="rect" id="node4" href="$cuda__utils_8hpp.html#aaa83ead29bc50e65ae4298d9206a760b" title="Free variable list of device pointers. Use NULL as stopping element." alt="" coords="600,273,759,300"/>
 <area shape="rect" id="node3" href="$python__bindings_8cpp.html#ad1a7eaf0d60c015a4df3da44ddf58e27" title=" " alt="" coords="328,5,477,32"/>
 <area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a065bb3f71daa7a8eea80f786d0626f59" title="Function to free the neccessary device memory used by the GriddingOperator." alt="" coords="297,57,508,98"/>

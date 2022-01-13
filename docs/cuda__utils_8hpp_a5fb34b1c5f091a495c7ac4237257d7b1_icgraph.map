@@ -1,6 +1,6 @@
 <map id="allocateDeviceMem" name="allocateDeviceMem">
 <area shape="rect" id="node1" title="Allocation of device memory of the given extent for the defined type." alt="" coords="431,46,567,73"/>
 <area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#a564644dc7ea9b8306cd6296ea6f1fca6" title=" " alt="" coords="203,5,383,47"/>
-<area shape="rect" id="node4" href="$classGpuNUFFTPythonOperator.html#aee99f5b7d79d7a40c4a2475c9a439c59" title=" " alt="" coords="203,71,383,112"/>
+<area shape="rect" id="node4" href="$classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" title=" " alt="" coords="203,71,383,112"/>
 <area shape="rect" id="node3" href="$python__bindings_8cpp.html#ad1a7eaf0d60c015a4df3da44ddf58e27" title=" " alt="" coords="5,46,155,73"/>
 </map>

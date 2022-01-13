@@ -1,7 +1,7 @@
 <map id="copyToDeviceAsync" name="copyToDeviceAsync">
 <area shape="rect" id="node1" title="CUDA memcpy call to copy data from host to device." alt="" coords="461,78,601,105"/>
 <area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#a564644dc7ea9b8306cd6296ea6f1fca6" title=" " alt="" coords="218,5,398,47"/>
-<area shape="rect" id="node4" href="$classGpuNUFFTPythonOperator.html#aee99f5b7d79d7a40c4a2475c9a439c59" title=" " alt="" coords="218,71,398,112"/>
-<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ada5bb598b923ca3e92e987982f3d0d5b" title="Perform forward gridding operation on kspaceData already residing in GPU memory." alt="" coords="203,136,413,177"/>
+<area shape="rect" id="node4" href="$classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" title=" " alt="" coords="218,71,398,112"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#aec6fcb3f29894b528f1dfb8892cc017b" title="Perform forward gridding operation on given kspaceData." alt="" coords="203,136,413,177"/>
 <area shape="rect" id="node3" href="$python__bindings_8cpp.html#ad1a7eaf0d60c015a4df3da44ddf58e27" title=" " alt="" coords="5,46,155,73"/>
 </map>

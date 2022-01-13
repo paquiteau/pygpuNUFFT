@@ -5,7 +5,7 @@ var classGpuNUFFTPythonOperator =
     [ "adj_op", "classGpuNUFFTPythonOperator.html#a9d5913daa75877d952160c6e126bbe07", null ],
     [ "clean_memory", "classGpuNUFFTPythonOperator.html#aa955beb4fd74d6291151af08eab22f62", null ],
     [ "data_consistency", "classGpuNUFFTPythonOperator.html#a564644dc7ea9b8306cd6296ea6f1fca6", null ],
-    [ "estimate_density_comp", "classGpuNUFFTPythonOperator.html#aee99f5b7d79d7a40c4a2475c9a439c59", null ],
+    [ "estimate_density_comp", "classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f", null ],
     [ "op", "classGpuNUFFTPythonOperator.html#a790d6c1885f30c640064a26f618e64ea", null ],
     [ "set_smaps", "classGpuNUFFTPythonOperator.html#aaf1b1ce70db899390b2236ee9c350433", null ],
     [ "dimension", "classGpuNUFFTPythonOperator.html#a3e11bcb5dbcd1ce293aecb3d73e1ed4e", null ],

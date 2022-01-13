@@ -84,7 +84,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="classgpuNUFFT_1_1GpuNUFFTOperator.html#a89e40ec1b777c8033bbc933c6535078c" target="_top" xlink:title="Perform Adjoint gridding operation on kspaceData already residing in GPU memory.">
+<g id="a_node6"><a xlink:href="classgpuNUFFT_1_1GpuNUFFTOperator.html#a13915ff85070f8cc0a374d76e6cbcdee" target="_top" xlink:title="Perform Adjoint gridding operation on given kspaceData.">
 <polygon fill="none" stroke="black" points="15.5,-39 15.5,-69 173.5,-69 173.5,-39 15.5,-39"/>
 <text text-anchor="start" x="23.5" y="-57" font-family="FreeSans.ttf" font-size="10.00">gpuNUFFT::GpuNUFFTOperator</text>
 <text text-anchor="middle" x="94.5" y="-46" font-family="FreeSans.ttf" font-size="10.00">::performGpuNUFFTAdj</text>

@@ -1,7 +1,7 @@
 <map id="gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT" name="gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT">
 <area shape="rect" id="node1" title="Perform forward gridding operation on given kspaceData." alt="" coords="516,159,727,200"/>
 <area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#a564644dc7ea9b8306cd6296ea6f1fca6" title=" " alt="" coords="245,5,425,47"/>
-<area shape="rect" id="node4" href="$classGpuNUFFTPythonOperator.html#aee99f5b7d79d7a40c4a2475c9a439c59" title=" " alt="" coords="245,71,425,112"/>
+<area shape="rect" id="node4" href="$classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" title=" " alt="" coords="245,71,425,112"/>
 <area shape="rect" id="node5" href="$classGpuNUFFTPythonOperator.html#a790d6c1885f30c640064a26f618e64ea" title=" " alt="" coords="235,137,435,163"/>
 <area shape="rect" id="node6" href="$classgpuNUFFT_1_1BalancedGpuNUFFTOperator.html#a3b8fe03dd1e0e8b68eba22e42e1e032b" title="Perform forward gridding operation on given kspaceData." alt="" coords="203,188,468,229"/>
 <area shape="rect" id="node7" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a8e0514f6dea51134ad49aaeb6c29ac5b" title="Perform forward gridding operation on given kspaceData." alt="" coords="217,253,454,309"/>

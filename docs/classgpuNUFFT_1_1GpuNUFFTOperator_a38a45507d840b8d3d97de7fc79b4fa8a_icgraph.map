@@ -3,7 +3,7 @@
 <area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#a9d5913daa75877d952160c6e126bbe07" title=" " alt="" coords="251,5,431,47"/>
 <area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html#a82e185db6eda1edb359df5a580be7b37" title="Computation of the deapodization function." alt="" coords="215,71,467,112"/>
 <area shape="rect" id="node5" href="$classGpuNUFFTPythonOperator.html#a564644dc7ea9b8306cd6296ea6f1fca6" title=" " alt="" coords="251,136,431,177"/>
-<area shape="rect" id="node6" href="$classGpuNUFFTPythonOperator.html#aee99f5b7d79d7a40c4a2475c9a439c59" title=" " alt="" coords="251,201,431,243"/>
+<area shape="rect" id="node6" href="$classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" title=" " alt="" coords="251,201,431,243"/>
 <area shape="rect" id="node7" href="$classgpuNUFFT_1_1BalancedGpuNUFFTOperator.html#ada71d183719d9375226352e90ff22194" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="209,267,474,308"/>
 <area shape="rect" id="node8" href="$classgpuNUFFT_1_1BalancedTextureGpuNUFFTOperator.html#a1bbc427b1d73850b6025eb52b417174b" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="203,332,480,373"/>
 <area shape="rect" id="node9" href="$gpuNUFFT__2D__conv__tests_8cpp.html#aaa68ca62ef9f76180f0da723f0da1dfb" title=" " alt="" coords="314,398,369,425"/>
