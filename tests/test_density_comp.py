@@ -51,7 +51,7 @@ def test_density2D():
 
     density_new = grid_op.impl.operator.estimate_density_comp(10)
     density_comp2d = estimate_density_compensation(samples2d, shape2d, 10)
-    print(np.allclose(density_comp3d, density_new))
+    print(np.allclose(density_comp2d, density_new))
 
 
 if __name__ == "__main__":
