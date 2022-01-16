@@ -353,7 +353,7 @@ gpuNUFFT::Array<DType> gpuNUFFT::GpuNUFFTOperatorFactory::computeDeapodizationFu
     computeSectorDataCount(deapoGpuNUFFTOp, assignedSectors, true));
 
   // only one data entry, data index = 0
-  Array<IndType> dataIndices;
+  gpuNUFFT::Array<IndType> dataIndices;
   dataIndices.data = (IndType*)calloc(1, sizeof(IndType));
   dataIndices.dim.length = 1;
   deapoGpuNUFFTOp->setDataIndices(dataIndices);
@@ -379,7 +379,8 @@ gpuNUFFT::Array<DType> gpuNUFFT::GpuNUFFTOperatorFactory::computeDeapodizationFu
   // cleanup locally initialized arrays here
   free(dataArray.data);
   free(assignedSectors.data);
-
+  free(kSpaceTraj.data);
+  free(dataIndices.data);
   // Compute abs values of deapo function and compensate
   // FFT scaling sqrt(N)
   Array<DType> deapoAbs = initDeapoData(deapoFunction.count());
