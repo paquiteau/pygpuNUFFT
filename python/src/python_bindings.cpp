@@ -15,5 +15,6 @@ PYBIND11_MODULE(gpuNUFFT, m) {
         .def("adj_op",  &GpuNUFFTPythonOperator::adj_op)
         .def("clean_memory", &GpuNUFFTPythonOperator::clean_memory)
         .def("set_smaps", &GpuNUFFTPythonOperator::set_smaps)
-        .def("estimate_density_comp", &GpuNUFFTPythonOperator::estimate_density_comp);
+        .def("estimate_density_comp", &GpuNUFFTPythonOperator::estimate_density_comp)
+        .def("data_consistency", &GpuNUFFTPythonOperator::data_consistency);
 }

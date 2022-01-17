@@ -45,6 +45,10 @@ class GpuNUFFTPythonOperator
                                             bool grid_data=false);
 
     py::array_t<DType> estimate_density_comp(int num_iter);
+
+    py::array_t<std::complex<DType>> data_consistency(py::array_t<std::complex<DType>> input_image,
+                                                     py::array_t<std::complex<DType>> obs_data);
+
     void clean_memory()
     {
        gpuNUFFTOp->clean_memory();

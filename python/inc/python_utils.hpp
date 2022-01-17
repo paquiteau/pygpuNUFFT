@@ -33,12 +33,14 @@ readNumpyArray(py::array_t<std::complex<DType>> data)
     return dataArray;
 }
 
-inline void allocate_pinned_memory(gpuNUFFT::Array<DType2> *lin_array, unsigned long int size)
+template <typename TType>
+inline void allocate_pinned_memory(gpuNUFFT::Array<TType> *lin_array, unsigned long int size)
 {
-  DType2 *new_data;
+  TType *new_data;
   cudaMallocHost((void **)&new_data, size);
   lin_array->data = new_data;
 }
+
 template <typename TType>
 inline void copyNumpyArray(py::array_t<std::complex<DType>> data, TType *copy_data)
 {
