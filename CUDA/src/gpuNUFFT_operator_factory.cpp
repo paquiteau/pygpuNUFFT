@@ -91,7 +91,7 @@ void gpuNUFFT::GpuNUFFTOperatorFactory::computeProcessingOrder(
   {
     if (countPerSector[i].second > 0)
     {
-      processingOrder.push_back(IndType2(countPerSector[i].first, 0));
+      processingOrder.push_back(make_IndType2(countPerSector[i].first, 0));
       if (countPerSector[i].second > MAXIMUM_PAYLOAD)
       {
         int remaining = (int)countPerSector[i].second;
@@ -101,7 +101,7 @@ void gpuNUFFT::GpuNUFFTOperatorFactory::computeProcessingOrder(
         {
           remaining -= MAXIMUM_PAYLOAD;
           processingOrder.push_back(
-              IndType2(countPerSector[i].first, (offset++) * MAXIMUM_PAYLOAD));
+              make_IndType2(countPerSector[i].first, (offset++) * MAXIMUM_PAYLOAD));
         }
       }
     }
@@ -367,7 +367,7 @@ gpuNUFFT::Array<DType> gpuNUFFT::GpuNUFFTOperatorFactory::computeDeapodizationFu
   
   // Data
   gpuNUFFT::Array<DType2> dataArray;
-  cudaMallocHost((void **) &dataArray.data, sizeof(DType2));
+  dataArray.data = (DType2 *)calloc(1, sizeof(DType2));
   dataArray.dim.length = 1;
   dataArray.data[0].x = 1;
   dataArray.data[0].y = 0;
@@ -376,9 +376,9 @@ gpuNUFFT::Array<DType> gpuNUFFT::GpuNUFFTOperatorFactory::computeDeapodizationFu
   // should result in k-space center (0,0,0)
   gpuNUFFT::Array<DType> kSpaceTraj;
   if (deapoGpuNUFFTOp->is3DProcessing())
-    cudaMallocHost((void **) &kSpaceTraj.data, 3*sizeof(DType));
+    kSpaceTraj.data = (DType*)calloc(3, sizeof(DType));
   else
-    cudaMallocHost((void **) &kSpaceTraj.data, 2*sizeof(DType));
+    kSpaceTraj.data = (DType*)calloc(3, sizeof(DType));
   kSpaceTraj.dim.length = 1;
   deapoGpuNUFFTOp->setKSpaceTraj(kSpaceTraj);
   
@@ -390,7 +390,7 @@ gpuNUFFT::Array<DType> gpuNUFFT::GpuNUFFTOperatorFactory::computeDeapodizationFu
   
   // only one data entry, data index = 0
   Array<IndType> dataIndices;
-  cudaMallocHost((void **) &dataIndices.data, 2*sizeof(IndType));
+  dataIndices.data = (IndType*)calloc(1, sizeof(IndType));
   dataIndices.dim.length = 1;
   deapoGpuNUFFTOp->setDataIndices(dataIndices);
   
@@ -413,8 +413,11 @@ gpuNUFFT::Array<DType> gpuNUFFT::GpuNUFFTOperatorFactory::computeDeapodizationFu
   debug("finished deapo computation\n");
 
   // cleanup locally initialized arrays here
-  cudaFreeHost(dataArray.data);
+  free(dataArray.data);
   cudaFreeHost(assignedSectors.data);
+  free(kSpaceTraj.data);
+  free(dataIndices.data);
+
 
   // Compute abs values of deapo function and compensate
   // FFT scaling sqrt(N)

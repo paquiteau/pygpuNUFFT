@@ -792,4 +792,46 @@ void performPadding(DType2* imdata_d,
     paddingKernel<<<grid_dim,block_dim>>>(imdata_d,gdata_d,ind_off,gi_host->im_width_dim);
 }
 
+// Density compensation utils Kernels
+__global__ void updateDensityCompKernel(DType2* density_data, DType2* estimation_data, int N)
+{
+  int t = threadIdx.x + blockIdx.x * blockDim.x;
+  while (t < N)
+  {
+    DType2 data_p = density_data[t];
+    DType2 esti_p = estimation_data[t];
+    data_p.x = data_p.x * rsqrtf(esti_p.x * esti_p.x + esti_p.y * esti_p.y);
+    density_data[t] = data_p;
+    t = t + blockDim.x*gridDim.x;
+  }
+}
+
+void performUpdateDensityComp(DType2* density_data, DType2* estimation_data,  int n_samples)
+{
+  dim3 block_dim(64, 1, 8);
+  dim3 grid_dim(getOptimalGridDim(n_samples,THREAD_BLOCK_SIZE));
+  updateDensityCompKernel<<<grid_dim,block_dim>>>(density_data, estimation_data, n_samples);
+}
+
+__global__ void diffInplaceKernel(DType2* data1, DType2* data2, int N)
+{
+   int t = threadIdx.x + blockIdx.x * blockDim.x;
+  while (t < N)
+  {
+    DType2 data1p = data1[t];
+    DType2 data2p = data2[t];
+    data1p.x = data1p.x - data2p.x;
+    data1p.y = data1p.y - data2p.x;
+    data1[t] = data1p;
+    t = t + blockDim.x*gridDim.x;
+  }
+
+}
+void diffInPlace(DType2* data1, DType2* data2, int n_samples)
+{
+  dim3 block_dim(64, 1, 8);
+  dim3 grid_dim(getOptimalGridDim(n_samples,THREAD_BLOCK_SIZE));
+  diffInplaceKernel<<<grid_dim,block_dim>>>(data1, data2, n_samples);
+}
+
 #endif //STD_GPUNUFFT_KERNELS_CU

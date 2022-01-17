@@ -30,7 +30,7 @@ def test_gradient(image, shape, n_coils, samples, samples_data, smaps=None, dens
 
 
 def test_gradient3D():
-    print("# 3D data_consistency")
+    print("# 3D gradient")
     img3d = get_sample_data("3d-pmri").data.astype(np.complex64)
     samples3d = get_sample_data("mri-radial-3d-samples").data
     samples3d *= np.pi / samples3d.max()
@@ -54,7 +54,7 @@ def test_gradient3D():
 
 
 def test_gradient2D():
-    print("# 2D data_consistency")
+    print("# 2D gradient")
     img2d = get_sample_data("2d-pmri").data.astype(np.complex64)
     samples2d = get_sample_data("mri-radial-samples").data
     print(img2d.shape)

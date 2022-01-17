@@ -415,4 +415,16 @@ void performPadding(DType2 *imdata_d, CufftType *gdata_d,
   */
 void precomputeDeapodization(DType *deapo_d, gpuNUFFT::GpuNUFFTInfo *gi_host);
 
+/** \brief Perform the Density compensation method
+ * @param density_data density compensation array
+ * @param estimation_data the autoadjoint of density_data
+ * @param gi_host Info struct with meta information
+ */
+void performUpdateDensityComp(DType2* density_data, DType2* estimation_data,  int n_samples);
+
+/** \brief Perform data1 = data1 - data2
+ */
+void diffInPlace(DType2* data1, DType2* data2, int n_samples);
+
+
 #endif
