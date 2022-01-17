@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
-
+from time import perf_counter
 import numpy as np
 # gpuNUFFT import
 from mri.operators import NonCartesianFFT
@@ -30,8 +30,18 @@ def test_density3D():
 
     print("samples: ", samples3d.shape)
     print("img size ", img3d.shape)
+    print("### new: ",end="")
+    ts = perf_counter()
     density_new = grid_op.impl.operator.estimate_density_comp(10)
+    tf = perf_counter()
+    print(f"{tf-ts:.2f}s")
+    print("## density finish, clearing")
+    del grid_op
+    print("### classic: ", end="")
+    ts = perf_counter()
     density_comp3d = estimate_density_compensation(samples3d, shape3d, 10)
+    tf = perf_counter()
+    print(f"{tf-ts:.2f}s")
     print(np.allclose(density_comp3d, density_new))
     print("Is Close:", np.allclose(density_comp3d, density_new))
     print("NaN in classic:", np.isnan(density_comp3d).any())
@@ -55,8 +65,20 @@ def test_density2D():
         osf=1,
     )
 
+    print("### new: ", end="")
+    ts = perf_counter()
     density_new = grid_op.impl.operator.estimate_density_comp(10)
+    tf = perf_counter()
+    print(f"{1000*(tf-ts):.2f}ms")
+
+    print("## density finish, clearing")
+    del grid_op
+
+    print("### classic: ", end="")
+    ts = perf_counter()
     density_comp2d = estimate_density_compensation(samples2d, shape2d, 10)
+    tf = perf_counter()
+    print(f"{1000*(tf-ts):.2f}ms")
     print("Is Close:", np.allclose(density_comp2d, density_new))
     print("NaN in classic:", np.isnan(density_comp2d).any())
     print("NaN in new:", np.isnan(density_new).any())
