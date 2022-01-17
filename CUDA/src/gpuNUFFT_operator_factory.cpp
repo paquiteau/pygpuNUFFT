@@ -413,11 +413,12 @@ gpuNUFFT::Array<DType> gpuNUFFT::GpuNUFFTOperatorFactory::computeDeapodizationFu
   debug("finished deapo computation\n");
 
   // cleanup locally initialized arrays here
-  free(dataArray.data);
+  free(dataArray.data); dataArray.data = NULL;
   cudaFreeHost(assignedSectors.data);
-  free(kSpaceTraj.data);
-  free(dataIndices.data);
-
+  free(dataIndices.data); dataIndices.data = NULL;
+  free(kSpaceTraj.data); kSpaceTraj.data = NULL;
+  deapoGpuNUFFTOp->setKSpaceTraj(kSpaceTraj);
+  deapoGpuNUFFTOp->setDataIndices(dataIndices);
 
   // Compute abs values of deapo function and compensate
   // FFT scaling sqrt(N)
