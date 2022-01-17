@@ -4,7 +4,7 @@
 <area shape="rect" id="node3" href="$cuda__utils_8hpp.html#a5fb34b1c5f091a495c7ac4237257d7b1" title="Allocation of device memory of the given extent for the defined type." alt="" coords="271,56,407,83"/>
 <area shape="rect" id="node4" href="$cuda__utils_8hpp.html#a0e734eacdc00ba553d77aa057e02059b" title="Copy CUDA memory from device to host asynchronously." alt="" coords="261,107,416,133"/>
 <area shape="rect" id="node5" href="$python__utils_8hpp.html#a6fc45707d1f047d4232b16582576b2e6" title=" " alt="" coords="279,157,399,184"/>
-<area shape="rect" id="node6" href="$cuda__utils_8hpp.html#a1f04840b22a32448d0069e89cacd0950" title="CUDA memcpy call to copy data from host to device." alt="" coords="269,208,409,235"/>
+<area shape="rect" id="node6" href="$cuda__utils_8hpp.html#a52e9a7f2a2d5bed73e0e9e7d367b1198" title="CUDA memcpy call to copy data from host to device." alt="" coords="287,208,391,235"/>
 <area shape="rect" id="node7" href="$structgpuNUFFT_1_1Array.html#af426f56b5d7e05b6143acbdd51bac188" title=" " alt="" coords="258,259,419,285"/>
 <area shape="rect" id="node9" href="$gpuNUFFT__kernels_8hpp.html#a7ea425f71e9b13006582e6280512f11c" title="Perform data1 = data1 &#45; data2." alt="" coords="297,309,380,336"/>
 <area shape="rect" id="node10" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a10d565529aa2c7778c15edb8a820b417" title="Perform forward gridding operation on given kspaceData." alt="" coords="233,361,444,402"/>

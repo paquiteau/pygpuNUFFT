@@ -20,10 +20,10 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classGpuNUFFTPythonOperator.html#a564644dc7ea9b8306cd6296ea6f1fca6" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" target="_top" xlink:title=" ">
 <polygon fill="none" stroke="black" points="159.5,-98.5 159.5,-128.5 294.5,-128.5 294.5,-98.5 159.5,-98.5"/>
 <text text-anchor="start" x="167.5" y="-116.5" font-family="FreeSans.ttf" font-size="10.00">GpuNUFFTPythonOperator</text>
-<text text-anchor="middle" x="227" y="-105.5" font-family="FreeSans.ttf" font-size="10.00">::data_consistency</text>
+<text text-anchor="middle" x="227" y="-105.5" font-family="FreeSans.ttf" font-size="10.00">::estimate_density_comp</text>
 </a>
 </g>
 </g>
@@ -36,31 +36,31 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="159.5,-49.5 159.5,-79.5 294.5,-79.5 294.5,-49.5 159.5,-49.5"/>
-<text text-anchor="start" x="167.5" y="-67.5" font-family="FreeSans.ttf" font-size="10.00">GpuNUFFTPythonOperator</text>
-<text text-anchor="middle" x="227" y="-56.5" font-family="FreeSans.ttf" font-size="10.00">::estimate_density_comp</text>
+<g id="a_node4"><a xlink:href="classgpuNUFFT_1_1GpuNUFFTOperator.html#aec6fcb3f29894b528f1dfb8892cc017b" target="_top" xlink:title="Perform forward gridding operation on given kspaceData.">
+<polygon fill="none" stroke="black" points="148,-49.5 148,-79.5 306,-79.5 306,-49.5 148,-49.5"/>
+<text text-anchor="start" x="156" y="-67.5" font-family="FreeSans.ttf" font-size="10.00">gpuNUFFT::GpuNUFFTOperator</text>
+<text text-anchor="middle" x="227" y="-56.5" font-family="FreeSans.ttf" font-size="10.00">::performForwardGpuNUFFT</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M331.26,-64.5C319.3,-64.5 306.73,-64.5 294.63,-64.5"/>
+<path fill="none" stroke="midnightblue" d="M331.33,-64.5C323.09,-64.5 314.56,-64.5 306.09,-64.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="331.59,-68 341.59,-64.5 331.59,-61 331.59,-68"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classgpuNUFFT_1_1GpuNUFFTOperator.html#aec6fcb3f29894b528f1dfb8892cc017b" target="_top" xlink:title="Perform forward gridding operation on given kspaceData.">
+<g id="a_node5"><a xlink:href="classgpuNUFFT_1_1GpuNUFFTOperator.html#a89e40ec1b777c8033bbc933c6535078c" target="_top" xlink:title="Perform Adjoint gridding operation on kspaceData already residing in GPU memory.">
 <polygon fill="none" stroke="black" points="148,-0.5 148,-30.5 306,-30.5 306,-0.5 148,-0.5"/>
 <text text-anchor="start" x="156" y="-18.5" font-family="FreeSans.ttf" font-size="10.00">gpuNUFFT::GpuNUFFTOperator</text>
-<text text-anchor="middle" x="227" y="-7.5" font-family="FreeSans.ttf" font-size="10.00">::performForwardGpuNUFFT</text>
+<text text-anchor="middle" x="227" y="-7.5" font-family="FreeSans.ttf" font-size="10.00">::performGpuNUFFTAdj</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
-<g id="edge5" class="edge">
+<g id="edge4" class="edge">
 <title>Node1&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M351.44,-52.05C329.33,-45.5 302.07,-37.43 278.79,-30.54"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="350.61,-55.45 361.2,-54.94 352.6,-48.74 350.61,-55.45"/>
@@ -69,22 +69,16 @@
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="python__bindings_8cpp.html#ad1a7eaf0d60c015a4df3da44ddf58e27" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="0,-79 0,-98 112,-98 112,-79 0,-79"/>
-<text text-anchor="middle" x="56" y="-86" font-family="FreeSans.ttf" font-size="10.00">PYBIND11_MODULE</text>
+<polygon fill="none" stroke="black" points="0,-104 0,-123 112,-123 112,-104 0,-104"/>
+<text text-anchor="middle" x="56" y="-111" font-family="FreeSans.ttf" font-size="10.00">PYBIND11_MODULE</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M149.25,-102.15C136.74,-100.3 124.01,-98.41 112.16,-96.66"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="148.8,-105.62 159.21,-103.62 149.83,-98.69 148.8,-105.62"/>
-</g>
-<!-- Node4&#45;&gt;Node3 -->
-<g id="edge4" class="edge">
-<title>Node4&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M149.25,-75.4C136.74,-77.18 124.01,-78.98 112.16,-80.67"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="149.8,-78.86 159.21,-73.99 148.81,-71.93 149.8,-78.86"/>
+<path fill="none" stroke="midnightblue" d="M148.88,-113.5C136.49,-113.5 123.89,-113.5 112.16,-113.5"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="149.21,-117 159.21,-113.5 149.21,-110 149.21,-117"/>
 </g>
 </g>
 </svg>

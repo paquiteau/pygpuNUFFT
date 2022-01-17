@@ -21,32 +21,32 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="cuda__utils_8hpp.html#a130580818f5be50503003961ad9f8852" target="_top" xlink:title="CUDA memcpy call to copy data from device ptr to device ptr.">
-<polygon fill="none" stroke="black" points="212,-456.5 212,-475.5 320,-475.5 320,-456.5 212,-456.5"/>
-<text text-anchor="middle" x="266" y="-463.5" font-family="FreeSans.ttf" font-size="10.00">copyDeviceToDevice</text>
+<g id="a_node2"><a xlink:href="cuda__utils_8hpp.html#a9983a1d89d0258fabd5343a8fd48214e" target="_top" xlink:title="CUDA memcpy call to copy data from device ptr to device ptr.">
+<polygon fill="none" stroke="black" points="198.5,-456.5 198.5,-475.5 333.5,-475.5 333.5,-456.5 198.5,-456.5"/>
+<text text-anchor="middle" x="266" y="-463.5" font-family="FreeSans.ttf" font-size="10.00">copyDeviceToDeviceAsync</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M83.76,-253.06C94.2,-291.61 127.24,-394.49 194,-447 196.74,-449.16 199.71,-451.07 202.82,-452.76"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="201.35,-455.94 211.9,-456.99 204.31,-449.6 201.35,-455.94"/>
+<path fill="none" stroke="midnightblue" d="M83.76,-253.06C94.2,-291.61 127.24,-394.49 194,-447 196.3,-448.81 198.77,-450.45 201.34,-451.94"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="199.93,-455.14 210.45,-456.4 203.01,-448.86 199.93,-455.14"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="cuda__utils_8hpp.html#a52e9a7f2a2d5bed73e0e9e7d367b1198" target="_top" xlink:title="CUDA memcpy call to copy data from host to device.">
-<polygon fill="none" stroke="black" points="227,-418.5 227,-437.5 305,-437.5 305,-418.5 227,-418.5"/>
-<text text-anchor="middle" x="266" y="-425.5" font-family="FreeSans.ttf" font-size="10.00">copyToDevice</text>
+<g id="a_node3"><a xlink:href="cuda__utils_8hpp.html#a1f04840b22a32448d0069e89cacd0950" target="_top" xlink:title="CUDA memcpy call to copy data from host to device.">
+<polygon fill="none" stroke="black" points="213.5,-418.5 213.5,-437.5 318.5,-437.5 318.5,-418.5 213.5,-418.5"/>
+<text text-anchor="middle" x="266" y="-425.5" font-family="FreeSans.ttf" font-size="10.00">copyToDeviceAsync</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M85.75,-253.25C99.23,-286.84 136.16,-367.52 194,-409 200.78,-413.86 208.73,-417.48 216.81,-420.17"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="216.09,-423.61 226.66,-423.02 218.03,-416.88 216.09,-423.61"/>
+<path fill="none" stroke="midnightblue" d="M85.75,-253.25C99.23,-286.84 136.16,-367.52 194,-409 197.08,-411.21 200.41,-413.17 203.88,-414.89"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="202.77,-418.22 213.34,-418.95 205.53,-411.79 202.77,-418.22"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">

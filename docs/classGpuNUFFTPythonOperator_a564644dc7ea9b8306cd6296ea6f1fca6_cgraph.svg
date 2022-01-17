@@ -81,17 +81,17 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="cuda__utils_8hpp.html#a1f04840b22a32448d0069e89cacd0950" target="_top" xlink:title="CUDA memcpy call to copy data from host to device.">
-<polygon fill="none" stroke="black" points="197.5,-213.5 197.5,-232.5 302.5,-232.5 302.5,-213.5 197.5,-213.5"/>
-<text text-anchor="middle" x="250" y="-220.5" font-family="FreeSans.ttf" font-size="10.00">copyToDeviceAsync</text>
+<g id="a_node6"><a xlink:href="cuda__utils_8hpp.html#a52e9a7f2a2d5bed73e0e9e7d367b1198" target="_top" xlink:title="CUDA memcpy call to copy data from host to device.">
+<polygon fill="none" stroke="black" points="211,-213.5 211,-232.5 289,-232.5 289,-213.5 211,-213.5"/>
+<text text-anchor="middle" x="250" y="-220.5" font-family="FreeSans.ttf" font-size="10.00">copyToDevice</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M135.2,-211.02C152.16,-212.81 170.32,-214.72 187.04,-216.48"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="186.93,-219.99 197.24,-217.55 187.66,-213.02 186.93,-219.99"/>
+<path fill="none" stroke="midnightblue" d="M135.2,-211.02C156.92,-213.31 180.6,-215.8 200.7,-217.92"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="200.55,-221.42 210.86,-218.99 201.29,-214.46 200.55,-221.42"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">

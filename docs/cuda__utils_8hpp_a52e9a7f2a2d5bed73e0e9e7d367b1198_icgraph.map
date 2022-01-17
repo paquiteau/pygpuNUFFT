@@ -1,5 +1,7 @@
 <map id="copyToDevice" name="copyToDevice">
-<area shape="rect" id="node1" title="CUDA memcpy call to copy data from host to device." alt="" coords="264,46,368,73"/>
-<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ada5bb598b923ca3e92e987982f3d0d5b" title="Perform forward gridding operation on kspaceData already residing in GPU memory." alt="" coords="5,5,216,47"/>
-<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a89e40ec1b777c8033bbc933c6535078c" title="Perform Adjoint gridding operation on kspaceData already residing in GPU memory." alt="" coords="5,71,216,112"/>
+<area shape="rect" id="node1" title="CUDA memcpy call to copy data from host to device." alt="" coords="461,78,565,105"/>
+<area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#a564644dc7ea9b8306cd6296ea6f1fca6" title=" " alt="" coords="218,5,398,47"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ada5bb598b923ca3e92e987982f3d0d5b" title="Perform forward gridding operation on kspaceData already residing in GPU memory." alt="" coords="203,71,413,112"/>
+<area shape="rect" id="node5" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a13915ff85070f8cc0a374d76e6cbcdee" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="203,136,413,177"/>
+<area shape="rect" id="node3" href="$python__bindings_8cpp.html#ad1a7eaf0d60c015a4df3da44ddf58e27" title=" " alt="" coords="5,13,155,39"/>
 </map>
