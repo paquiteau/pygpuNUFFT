@@ -457,7 +457,7 @@ void gpuNUFFT::GpuNUFFTOperator::performGpuNUFFTAdj(
     if (DEBUG && (cudaDeviceSynchronize() != cudaSuccess))
       fprintf(stderr, "error at adj  thread synchronization 2: %s\n",
               cudaGetErrorString(cudaGetLastError()));
-    if (gpuNUFFTOut == CONVOLUTION)
+    if (gpuNUFFTOut == CONVOLUTION || gpuNUFFTOut == DENSITY_ESTIMATION)
     {
       if (DEBUG)
         printf("stopping output after CONVOLUTION step\n");
@@ -466,6 +466,8 @@ void gpuNUFFT::GpuNUFFTOperator::performGpuNUFFTAdj(
                                     gi_host->grid_width_dim * n_coils_cc);
       if ((coil_it + n_coils_cc) < (n_coils))
         continue;
+      if (DEBUG)
+        printf("stopping output after CONVOLUTION step\n");
 
       freeTotalDeviceMemory(imdata_sum_d, NULL);
       return;
@@ -978,7 +980,21 @@ void gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT(
 
     // apodization Correction
     performForwardDeapodization(imdata_d, deapo_d, gi_host);
-	  
+    if (gpuNUFFTOut == DENSITY_ESTIMATION)
+    {
+      forwardConvolution(data_d, crds_d, imdata_d, NULL, sectors_d,
+                         sector_centers_d, gi_host);
+      writeOrderedGPU(data_sorted_d, data_indices_d, data_d,
+                      (int)this->kSpaceTraj.count(), n_coils_cc);
+      copyDeviceToDevice(data_sorted_d, data_d,
+                          data_count * n_coils_cc);
+      if ((coil_it + n_coils_cc) < (n_coils))
+        continue;
+      freeTotalDeviceMemory(imdata_d, NULL);
+      this->freeDeviceMemory();
+      return;
+    }
+
     if (DEBUG && (cudaDeviceSynchronize() != cudaSuccess))
       printf("error at thread synchronization 2: %s\n",
              cudaGetErrorString(cudaGetLastError()));
@@ -1188,7 +1204,7 @@ void gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT(
         this->freeDeviceMemory();
         return;
     }
-    if (DEBUG && (cudaThreadSynchronize() != cudaSuccess))
+    if (DEBUG && (cudaStreamSynchronize(new_stream) != cudaSuccess))
       printf("error at thread synchronization 2: %s\n",
              cudaGetErrorString(cudaGetLastError()));
     // resize by oversampling factor and zero pad
