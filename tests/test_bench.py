@@ -26,8 +26,10 @@ def test_gradient(image, shape, n_coils, samples, samples_data, smaps=None, dens
     gradient_new = fourier_op.impl.operator.data_consistency(
         image, samples_data)
     print("gradient new done")
+    print("classic has NaN:", np.isnan(gradient).any())
+    print("new has NaN", np.isnan(gradient_new).any())
     print(np.allclose(gradient, gradient_new.T))
-
+    print(np.linalg.norm(gradient - gradient_new.T))
 
 def test_gradient3D():
     print("# 3D gradient")
