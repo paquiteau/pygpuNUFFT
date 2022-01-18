@@ -135,6 +135,7 @@ gpuNUFFT::Array<IndType> gpuNUFFT::GpuNUFFTOperatorFactory::assignSectors(
   cudaMallocHost((void **) &assignedSectors.data, coordCnt * sizeof(IndType));
   assignedSectors.dim.length = coordCnt;
   assignSectorsGPU(gpuNUFFTOp, kSpaceTraj, assignedSectors.data);
+  return assignedSectors;
 }
 
 gpuNUFFT::Array<IndType>
