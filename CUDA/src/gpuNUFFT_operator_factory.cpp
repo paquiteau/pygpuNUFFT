@@ -132,9 +132,11 @@ gpuNUFFT::Array<IndType> gpuNUFFT::GpuNUFFTOperatorFactory::assignSectors(
 
   // create temporary array to store assigned values
   gpuNUFFT::Array<IndType> assignedSectors;
-  cudaMallocHost((void **) &assignedSectors.data, coordCnt * sizeof(IndType));
+  assignedSectors.data = (IndType *)malloc(coordCnt * sizeof(IndType));
   assignedSectors.dim.length = coordCnt;
+
   assignSectorsGPU(gpuNUFFTOp, kSpaceTraj, assignedSectors.data);
+  debug("finished assign sectors\n");
   return assignedSectors;
 }
 
@@ -156,7 +158,7 @@ gpuNUFFT::GpuNUFFTOperatorFactory::computeSectorDataCount(
     dataCount.push_back(cnt);
   }
   Array<IndType> sectorDataCount =
-      useLocalMemory ? GpuNUFFTOperatorFactory::initSectorDataCount(gpuNUFFTOp, (IndType)dataCount.size()) : 
+      useLocalMemory ? GpuNUFFTOperatorFactory::initSectorDataCount(gpuNUFFTOp, (IndType)dataCount.size()) :
        initSectorDataCount(gpuNUFFTOp, (IndType)dataCount.size());
   std::memcpy(sectorDataCount.data, dataCount.data(), dataCount.size() * sizeof(IndType));
   return sectorDataCount;
@@ -309,7 +311,7 @@ gpuNUFFT::GpuNUFFTOperatorFactory::createNewGpuNUFFTOperator(
   {
     debug("creating DEFAULT GpuNUFFT Operator!\n");
     return new gpuNUFFT::GpuNUFFTOperator(kernelWidth, sectorWidth, osf,
-                                          imgDims, true, DEFAULT);
+                                          imgDims, true);
   }
 }
 
@@ -317,46 +319,46 @@ gpuNUFFT::Array<DType> gpuNUFFT::GpuNUFFTOperatorFactory::computeDeapodizationFu
   const IndType &kernelWidth, const DType &osf, gpuNUFFT::Dimensions &imgDims)
 {
   debug("compute deapodization function\n");
-  
+
   // Create simple gpuNUFFT Operator
   IndType sectorWidth = 8;
   gpuNUFFT::GpuNUFFTOperator *deapoGpuNUFFTOp;
-  
+
   if (useTextures)
     deapoGpuNUFFTOp = new gpuNUFFT::TextureGpuNUFFTOperator(kernelWidth, sectorWidth, osf,
     imgDims, TEXTURE2D_LOOKUP);
   else
     deapoGpuNUFFTOp = new gpuNUFFT::GpuNUFFTOperator(kernelWidth, sectorWidth, osf, imgDims);
-  
+
   // Data
   gpuNUFFT::Array<DType2> dataArray;
-  dataArray.data = (DType2 *)calloc(1, sizeof(DType2));
+  dataArray.data = (DType2*)calloc(1, sizeof(DType2)); // re + im
   dataArray.dim.length = 1;
   dataArray.data[0].x = 1;
   dataArray.data[0].y = 0;
-  
+
   // Coord triplet (x,y,z)
   // should result in k-space center (0,0,0)
   gpuNUFFT::Array<DType> kSpaceTraj;
   if (deapoGpuNUFFTOp->is3DProcessing())
-    kSpaceTraj.data = (DType*)calloc(3, sizeof(DType));
+    kSpaceTraj.data = (DType*)calloc(3, sizeof(DType)); // x,y,z
   else
-    kSpaceTraj.data = (DType*)calloc(3, sizeof(DType));
+    kSpaceTraj.data = (DType*)calloc(2, sizeof(DType)); // x,y
   kSpaceTraj.dim.length = 1;
   deapoGpuNUFFTOp->setKSpaceTraj(kSpaceTraj);
-  
+
   // assign according sector to k-Space position
   gpuNUFFT::Array<IndType> assignedSectors =
     assignSectors(deapoGpuNUFFTOp, kSpaceTraj);
   deapoGpuNUFFTOp->setSectorDataCount(
     computeSectorDataCount(deapoGpuNUFFTOp, assignedSectors, true));
-  
+
   // only one data entry, data index = 0
   Array<IndType> dataIndices;
   dataIndices.data = (IndType*)calloc(1, sizeof(IndType));
   dataIndices.dim.length = 1;
   deapoGpuNUFFTOp->setDataIndices(dataIndices);
-  
+
   // sector centers
   if (deapoGpuNUFFTOp->is3DProcessing())
     deapoGpuNUFFTOp->setSectorCenters(computeSectorCenters(deapoGpuNUFFTOp, true));
@@ -367,21 +369,17 @@ gpuNUFFT::Array<DType> gpuNUFFT::GpuNUFFTOperatorFactory::computeDeapodizationFu
   debug("compute deapodization\n");
   deapoGpuNUFFTOp->setDebugFunction(std::bind(&gpuNUFFT::GpuNUFFTOperatorFactory::debug, this, std::placeholders::_1));
 
-  // Compute deapodization function by gridding of a single value positioned 
+  // Compute deapodization function by gridding of a single value positioned
   // in the center of k-space and by using the intended oversampling factor
   // and interpolation kernel width
   gpuNUFFT::Array<CufftType> deapoFunction =
     deapoGpuNUFFTOp->performGpuNUFFTAdj(dataArray,FFT);
-  
+
   debug("finished deapo computation\n");
 
   // cleanup locally initialized arrays here
-  free(dataArray.data); dataArray.data = NULL;
-  cudaFreeHost(assignedSectors.data);
-  free(dataIndices.data); dataIndices.data = NULL;
-  free(kSpaceTraj.data); kSpaceTraj.data = NULL;
-  deapoGpuNUFFTOp->setKSpaceTraj(kSpaceTraj);
-  deapoGpuNUFFTOp->setDataIndices(dataIndices);
+  free(dataArray.data);
+  free(assignedSectors.data);
 
   // Compute abs values of deapo function and compensate
   // FFT scaling sqrt(N)
@@ -389,7 +387,7 @@ gpuNUFFT::Array<DType> gpuNUFFT::GpuNUFFTOperatorFactory::computeDeapodizationFu
 
   DType maxDeapoVal = 0;
   DType minDeapoVal = std::numeric_limits<DType>::max();
-  double fft_scaling_factor = std::sqrt(deapoGpuNUFFTOp->getGridDims().count()); 
+  double fft_scaling_factor = std::sqrt(deapoGpuNUFFTOp->getGridDims().count());
 
   for (unsigned cnt = 0; cnt < deapoFunction.count(); cnt++)
   {
@@ -451,10 +449,9 @@ gpuNUFFT::GpuNUFFTOperatorFactory::createGpuNUFFTOperator(
   if (sensData.data != NULL)
     gpuNUFFTOp->setSens(sensData);
 
-  sortArrays(gpuNUFFTOp, assignedSectorsAndIndicesSorted, assignedSectors.data,
-             dataIndices.data, kSpaceTraj, trajSorted.data, densCompData.data,
-             densData.data);
-
+  sortArrays(gpuNUFFTOp, assignedSectorsAndIndicesSorted,
+               assignedSectors.data, dataIndices.data, kSpaceTraj,
+               trajSorted.data, densCompData.data, densData.data);
   gpuNUFFTOp->setSectorDataCount(
       computeSectorDataCount(gpuNUFFTOp, assignedSectors));
 
@@ -475,14 +472,14 @@ gpuNUFFT::GpuNUFFTOperatorFactory::createGpuNUFFTOperator(
     gpuNUFFTOp->setSectorCenters(computeSectorCenters2D(gpuNUFFTOp));
 
   // free temporary array
-  cudaFreeHost(assignedSectors.data);
+  free(assignedSectors.data);
   assignedSectors.data = NULL;
 
   gpuNUFFTOp->setDeapodizationFunction(
     this->computeDeapodizationFunction(kernelWidth, osf, imgDims));
-    
+
   debug("finished creation of gpuNUFFT operator\n");
-  
+
   return gpuNUFFTOp;
 }
 
@@ -513,7 +510,7 @@ gpuNUFFT::GpuNUFFTOperatorFactory::loadPrecomputedGpuNUFFTOperator(
     gpuNUFFT::Array<IndType> &sectorDataCount,
     gpuNUFFT::Array<IndType2> &sectorProcessingOrder,
     gpuNUFFT::Array<IndType> &sectorCenters, gpuNUFFT::Array<DType2> &sensData,
-    gpuNUFFT::Array<DType> &deapoData, const IndType &kernelWidth, 
+    gpuNUFFT::Array<DType> &deapoData, const IndType &kernelWidth,
     const IndType &sectorWidth, const DType &osf,
     gpuNUFFT::Dimensions &imgDims)
 {
