@@ -52,12 +52,11 @@ class GpuNUFFTOperatorFactory
   /** \brief Constructor overload
     *
     * @param useTextures Flag to indicate texture interpolation
-    * @param useGpu Flag to indicat&GpuNUFFTPythonOperator::adj_op);e gpu usage for precomputation
     * @param balanceWorkload Flag to indicate load balancing
     */
-  GpuNUFFTOperatorFactory(const bool useTextures = true, const bool useGpu = true,
+  GpuNUFFTOperatorFactory(const bool useTextures = true,
                           bool balanceWorkload = true)
-    : useTextures(useTextures), useGpu(useGpu), balanceWorkload(balanceWorkload)
+    : useTextures(useTextures), balanceWorkload(balanceWorkload)
   {
   }
 
@@ -318,9 +317,6 @@ class GpuNUFFTOperatorFactory
  private:
   /** \brief Flag to indicate texture interpolation */
   bool useTextures;
-
-  /** \brief Flag to indicate gpu usage for precomputation */
-  bool useGpu;
 
   /** \brief Flag to indicate load balancing */
   bool balanceWorkload;

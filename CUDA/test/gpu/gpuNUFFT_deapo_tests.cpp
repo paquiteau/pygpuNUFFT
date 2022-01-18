@@ -292,7 +292,7 @@ TEST(TestGPUGpuNUFFTDeapo, 2D_32_32_4)
   imgDims.width = im_width;
   imgDims.height = im_width;
 
-  gpuNUFFT::GpuNUFFTOperatorFactory factory(true, true, true);
+  gpuNUFFT::GpuNUFFTOperatorFactory factory(true, true);
   gpuNUFFT::GpuNUFFTOperator *gpuNUFFTOp = factory.createGpuNUFFTOperator(
       kSpaceData, kernel_width, sector_width, osr, imgDims);
 
