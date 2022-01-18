@@ -205,7 +205,7 @@ GpuNUFFTPythonOperator::estimate_density_comp(int num_iter = 10)
                              cudaMemcpyDeviceToHost));
   cudaDeviceSynchronize();
   freeDeviceMem(densArray_gpu.data);
-  DType *ptr = reinterpret_cast<DType(&)[0]>(*densArray.data);
+  DType *ptr = reinterpret_cast<DType(&)[0]>(*final_densArray.data);
   auto capsule = py::capsule(ptr, [](void *ptr) { return; });
   return py::array_t<DType>({ trajectory_length }, { sizeof(DType) }, ptr,
                             capsule);
