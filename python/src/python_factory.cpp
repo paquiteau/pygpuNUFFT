@@ -221,29 +221,35 @@ py::array_t<std::complex<DType>> GpuNUFFTPythonOperator::data_consistency(
     myDims.depth = 1;
   printf("in data_consistency\n");
 
-  copyNumpyArray(input_image,image.data);
-  gpuNUFFT::Array<DType2> obsArray = readNumpyArray(obs_data);
+  copyNumpyArray(input_image, image.data);
+  copyNumpyArray(obs_data, kspace_data.data);
   printf("image and obs init done\n");
 
   gpuNUFFT::GpuArray<DType2> obsArray_gpu;
   obsArray_gpu.dim = kspace_data.dim;
+  allocateDeviceMem(&obsArray_gpu.data, image.count());
+
   gpuNUFFT::GpuArray<DType2> resArray_gpu;
   resArray_gpu.dim = kspace_data.dim;
+  allocateDeviceMem(&resArray_gpu.data, kspace_data.count());
+
   gpuNUFFT::GpuArray<DType2> imArray_gpu;
   imArray_gpu.dim = image.dim;
   allocateDeviceMem(&imArray_gpu.data, image.count());
-  allocateDeviceMem(&resArray_gpu.data, resArray_gpu.count());
 
   copyToDevice(image.data, imArray_gpu.data, image.count());
-  allocateAndCopyToDeviceMem(&obsArray_gpu.data, obsArray.data, obsArray.count());
 
+  printf("first done\n");
+  copyToDevice(kspace_data.data, obsArray_gpu.data, kspace_data.count());
+
+  printf("second done\n");
   HANDLE_ERROR(cudaDeviceSynchronize());
   printf("### init done\n");
   // F^H(Fx - y) on gpu.
-  gpuNUFFTOp->performForwardGpuNUFFT(imArray_gpu,resArray_gpu);
+  gpuNUFFTOp->performForwardGpuNUFFT(imArray_gpu, resArray_gpu);
   if(DEBUG && cudaDeviceSynchronize() == cudaSuccess)
     printf("### forward done\n");
-  diffInPlace(resArray_gpu.data, obsArray_gpu.data, obsArray.count());
+  diffInPlace(resArray_gpu.data, obsArray_gpu.data, kspace_data.count());
   if(DEBUG && cudaDeviceSynchronize() == cudaSuccess)
     printf("### diff done\n");
   gpuNUFFTOp->performGpuNUFFTAdj(resArray_gpu, imArray_gpu);
