@@ -191,6 +191,7 @@ GpuNUFFTPythonOperator::estimate_density_comp(int num_iter = 10)
   }
   freeDeviceMem(densEstimation_gpu.data);
   freeDeviceMem(image_gpu.data);
+  cudaFreeHost(densArray.data);
   //cudaFreeHost(densArray.data);
 
   cudaDeviceSynchronize();
