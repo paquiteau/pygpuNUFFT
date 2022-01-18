@@ -51,12 +51,13 @@ cuda_select_nvcc_arch_flags(ARCH_FLAGS "Auto")
 IF(CMAKE_BUILD_TYPE MATCHES Debug)
   message("debug mode")
   list(APPEND CUDA_NVCC_FLAGS  ${ARCH_FLAGS} ${MY_NVCC_FLAGS} --ptxas-options=-v -G)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g  -std=c++11")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g")
 ELSE(CMAKE_BUILD_TYPE)
   list(APPEND CUDA_NVCC_FLAGS ${MY_NVCC_FLAGS} ${ARCH_FLAGS})
 ENDIF()
 
 message(STATUS "setting NVCC FLAGS to: ${CUDA_NVCC_FLAGS}")
+message(STATUS "setting CMAKE_CXX_FLAGS to: ${CMAKE_CXX_FLAGS}")
 
 set(GRID_LIB_ATM_NAME "gpuNUFFT_ATM${PREC_SUFFIX}")
 
