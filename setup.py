@@ -77,9 +77,6 @@ class CMakeBuild(build_ext):
         env["CXXFLAGS"] = '{0} -DVERSION_INFO=\\"{1}\\"'.format(
             env.get("CXXFLAGS", ""), self.distribution.get_version())
         build_temp_dir = os.path.join(self.build_temp, ext.name)
-        bin_dir = os.path.join(self.build_temp, "bin")
-        if not os.path.exists(bin_dir):
-            os.makedirs(bin_dir)
         if not os.path.exists(build_temp_dir):
             os.makedirs(build_temp_dir)
         print("Building " + ext.name + " in {0}...".format(build_temp_dir))

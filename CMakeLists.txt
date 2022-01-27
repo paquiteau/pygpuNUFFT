@@ -13,6 +13,8 @@ SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(ARCHIVE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
+file(MAKE_DIRECTORY ${EXECUTABLE_OUTPUT_PATH})
+
 set(CMAKE_CXX_FLAGS "-std=c++11 -fPIC")
 
 # find dependencies
@@ -104,6 +106,6 @@ set(GPUNUFFT_INCLUDE ${GPUNUFFT_INC_DIR}/cuda_utils.hpp
 SET(CONFIG_INCLUDE ${GPUNUFFT_INC_DIR}/config.hpp
                    ${GPUNUFFT_INC_DIR}/cufft_config.hpp)
 
-add_subdirectory(CUDA)
+include(CUDA/CMakeLists.txt)
 add_subdirectory(python)
 add_subdirectory(doc)
