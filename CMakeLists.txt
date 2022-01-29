@@ -106,6 +106,6 @@ set(GPUNUFFT_INCLUDE ${GPUNUFFT_INC_DIR}/cuda_utils.hpp
 SET(CONFIG_INCLUDE ${GPUNUFFT_INC_DIR}/config.hpp
                    ${GPUNUFFT_INC_DIR}/cufft_config.hpp)
 
-add_subdirectory(CUDA)
+include(CUDA/CMakeLists.txt)
 add_subdirectory(python)
 add_subdirectory(doc)
