@@ -1,5 +1,5 @@
 <map id="GpuNUFFTPythonOperator" name="GpuNUFFTPythonOperator">
-<area shape="rect" id="node1" title="Create the bindings for Python module." alt="" coords="174,228,354,255"/>
+<area shape="rect" id="node1" title="Python Wrapper for gpuNUFFT Operator." alt="" coords="174,228,354,255"/>
 <area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperatorFactory.html" title="Manages the initialization of the GpuNUFFT Operator and its sub classes." alt="" coords="5,124,216,165"/>
 <area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html" title="Main &quot;Operator&quot; used for gridding operations." alt="" coords="343,131,553,158"/>
 <area shape="rect" id="node4" href="$structgpuNUFFT_1_1Dimensions.html" title="Data dimension struct." alt="" coords="183,5,345,32"/>

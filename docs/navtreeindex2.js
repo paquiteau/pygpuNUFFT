@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"gpuNUFFT__cpu_8hpp.html#ae8bf3e466a6b42045e1ba95cf8d7df5a":[3,0,0,0,5,0],
 "gpuNUFFT__cpu_8hpp_source.html":[3,0,0,0,5],
 "gpuNUFFT__deapo__tests_8cpp.html":[3,0,0,2,0,3],
 "gpuNUFFT__deapo__tests_8cpp.html#a06b50f1ca7258a9862c39d3ed354bf7c":[3,0,0,2,0,3,0],
@@ -240,14 +241,13 @@ var NAVTREEINDEX2 =
 "structgpuNUFFT_1_1Dimensions.html#a9542531b38535ae036e78019bb9c4475":[1,0,0,4,10],
 "structgpuNUFFT_1_1Dimensions.html#aa62a91b14bd22b2faa5fb4cbe98b4289":[2,0,0,4,7],
 "structgpuNUFFT_1_1Dimensions.html#aa62a91b14bd22b2faa5fb4cbe98b4289":[1,0,0,4,7],
-"structgpuNUFFT_1_1Dimensions.html#aae44f01853ba3d1a0478e216db592555":[1,0,0,4,6],
 "structgpuNUFFT_1_1Dimensions.html#aae44f01853ba3d1a0478e216db592555":[2,0,0,4,6],
+"structgpuNUFFT_1_1Dimensions.html#aae44f01853ba3d1a0478e216db592555":[1,0,0,4,6],
 "structgpuNUFFT_1_1Dimensions.html#ab1126ab4f56d86f2009345b82ebcfc3d":[1,0,0,4,8],
 "structgpuNUFFT_1_1Dimensions.html#ab1126ab4f56d86f2009345b82ebcfc3d":[2,0,0,4,8],
 "structgpuNUFFT_1_1Dimensions.html#adf5c5482aada43401ebaec6cec01cc71":[2,0,0,4,4],
 "structgpuNUFFT_1_1Dimensions.html#adf5c5482aada43401ebaec6cec01cc71":[1,0,0,4,4],
-"structgpuNUFFT_1_1GpuArray.html":[2,0,0,5],
 "structgpuNUFFT_1_1GpuArray.html":[1,0,0,5],
-"structgpuNUFFT_1_1GpuNUFFTInfo.html":[2,0,0,6],
-"structgpuNUFFT_1_1GpuNUFFTInfo.html":[1,0,0,6]
+"structgpuNUFFT_1_1GpuArray.html":[2,0,0,5],
+"structgpuNUFFT_1_1GpuNUFFTInfo.html":[2,0,0,6]
 };

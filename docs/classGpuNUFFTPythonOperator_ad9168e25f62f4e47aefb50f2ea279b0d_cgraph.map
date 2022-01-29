@@ -1,5 +1,5 @@
 <map id="GpuNUFFTPythonOperator::GpuNUFFTPythonOperator" name="GpuNUFFTPythonOperator::GpuNUFFTPythonOperator">
-<area shape="rect" id="node1" title=" " alt="" coords="5,141,192,182"/>
+<area shape="rect" id="node1" title="Constructor." alt="" coords="5,141,192,182"/>
 <area shape="rect" id="node2" href="$python__utils_8hpp.html#a5732db3eeef010cc926583da8f91fcd6" title=" " alt="" coords="270,5,435,32"/>
 <area shape="rect" id="node3" href="$python__utils_8hpp.html#a6fc45707d1f047d4232b16582576b2e6" title=" " alt="" coords="293,56,413,83"/>
 <area shape="rect" id="node4" href="$structgpuNUFFT_1_1Dimensions.html#a4c589934c5444910fbcd890d128229c9" title="Compute total count of array length." alt="" coords="272,107,433,149"/>

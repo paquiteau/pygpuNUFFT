@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title=" ">
+<g id="a_node1"><a xlink:title="Estimate density Compensation array using gpu&#45;only functions.">
 <polygon fill="#bfbfbf" stroke="black" points="0,-154 0,-184 135,-184 135,-154 0,-154"/>
 <text text-anchor="start" x="8" y="-172" font-family="FreeSans.ttf" font-size="10.00">GpuNUFFTPythonOperator</text>
 <text text-anchor="middle" x="67.5" y="-161" font-family="FreeSans.ttf" font-size="10.00">::estimate_density_comp</text>

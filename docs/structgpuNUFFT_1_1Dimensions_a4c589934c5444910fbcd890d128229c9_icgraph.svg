@@ -131,7 +131,7 @@
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:href="classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" target="_top" xlink:title=" ">
+<g id="a_node19"><a xlink:href="classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" target="_top" xlink:title="Estimate density Compensation array using gpu&#45;only functions.">
 <polygon fill="none" stroke="black" points="401,-182 401,-212 536,-212 536,-182 401,-182"/>
 <text text-anchor="start" x="409" y="-200" font-family="FreeSans.ttf" font-size="10.00">GpuNUFFTPythonOperator</text>
 <text text-anchor="middle" x="468.5" y="-189" font-family="FreeSans.ttf" font-size="10.00">::estimate_density_comp</text>
@@ -147,7 +147,7 @@
 <!-- Node20 -->
 <g id="node20" class="node">
 <title>Node20</title>
-<g id="a_node20"><a xlink:href="classGpuNUFFTPythonOperator.html#ad9168e25f62f4e47aefb50f2ea279b0d" target="_top" xlink:title=" ">
+<g id="a_node20"><a xlink:href="classGpuNUFFTPythonOperator.html#ad9168e25f62f4e47aefb50f2ea279b0d" target="_top" xlink:title="Constructor.">
 <polygon fill="none" stroke="black" points="398.5,-133 398.5,-163 538.5,-163 538.5,-133 398.5,-133"/>
 <text text-anchor="start" x="406.5" y="-151" font-family="FreeSans.ttf" font-size="10.00">GpuNUFFTPythonOperator</text>
 <text text-anchor="middle" x="468.5" y="-140" font-family="FreeSans.ttf" font-size="10.00">::GpuNUFFTPythonOperator</text>

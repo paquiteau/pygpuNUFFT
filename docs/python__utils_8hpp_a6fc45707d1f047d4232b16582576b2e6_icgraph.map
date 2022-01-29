@@ -1,8 +1,8 @@
 <map id="copyNumpyArray" name="copyNumpyArray">
 <area shape="rect" id="node1" title=" " alt="" coords="451,111,571,138"/>
-<area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#a9d5913daa75877d952160c6e126bbe07" title=" " alt="" coords="213,5,393,47"/>
+<area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#a9d5913daa75877d952160c6e126bbe07" title="Adjoint operator (kspace to Image)" alt="" coords="213,5,393,47"/>
 <area shape="rect" id="node4" href="$classGpuNUFFTPythonOperator.html#a564644dc7ea9b8306cd6296ea6f1fca6" title=" " alt="" coords="213,71,393,112"/>
-<area shape="rect" id="node5" href="$classGpuNUFFTPythonOperator.html#ad9168e25f62f4e47aefb50f2ea279b0d" title=" " alt="" coords="209,136,396,177"/>
-<area shape="rect" id="node6" href="$classGpuNUFFTPythonOperator.html#a790d6c1885f30c640064a26f618e64ea" title=" " alt="" coords="203,202,403,229"/>
+<area shape="rect" id="node5" href="$classGpuNUFFTPythonOperator.html#ad9168e25f62f4e47aefb50f2ea279b0d" title="Constructor." alt="" coords="209,136,396,177"/>
+<area shape="rect" id="node6" href="$classGpuNUFFTPythonOperator.html#a790d6c1885f30c640064a26f618e64ea" title="Forward operator (Image to kspace)" alt="" coords="203,202,403,229"/>
 <area shape="rect" id="node3" href="$python__bindings_8cpp.html#ad1a7eaf0d60c015a4df3da44ddf58e27" title=" " alt="" coords="5,78,155,105"/>
 </map>

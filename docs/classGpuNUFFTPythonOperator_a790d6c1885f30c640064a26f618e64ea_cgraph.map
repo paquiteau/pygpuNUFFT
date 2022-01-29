@@ -1,5 +1,5 @@
 <map id="GpuNUFFTPythonOperator::op" name="GpuNUFFTPythonOperator::op">
-<area shape="rect" id="node1" title=" " alt="" coords="5,35,205,61"/>
+<area shape="rect" id="node1" title="Forward operator (Image to kspace)" alt="" coords="5,35,205,61"/>
 <area shape="rect" id="node2" href="$python__utils_8hpp.html#a6fc45707d1f047d4232b16582576b2e6" title=" " alt="" coords="299,5,419,32"/>
 <area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a10d565529aa2c7778c15edb8a820b417" title="Perform forward gridding operation on given kspaceData." alt="" coords="253,57,464,98"/>
 </map>

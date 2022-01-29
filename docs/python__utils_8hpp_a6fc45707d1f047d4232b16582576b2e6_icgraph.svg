@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classGpuNUFFTPythonOperator.html#a9d5913daa75877d952160c6e126bbe07" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classGpuNUFFTPythonOperator.html#a9d5913daa75877d952160c6e126bbe07" target="_top" xlink:title="Adjoint operator (kspace to Image)">
 <polygon fill="none" stroke="black" points="155.5,-137 155.5,-167 290.5,-167 290.5,-137 155.5,-137"/>
 <text text-anchor="start" x="163.5" y="-155" font-family="FreeSans.ttf" font-size="10.00">GpuNUFFTPythonOperator</text>
 <text text-anchor="middle" x="223" y="-144" font-family="FreeSans.ttf" font-size="10.00">::adj_op</text>
@@ -52,7 +52,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classGpuNUFFTPythonOperator.html#ad9168e25f62f4e47aefb50f2ea279b0d" target="_top" xlink:title=" ">
+<g id="a_node5"><a xlink:href="classGpuNUFFTPythonOperator.html#ad9168e25f62f4e47aefb50f2ea279b0d" target="_top" xlink:title="Constructor.">
 <polygon fill="none" stroke="black" points="153,-39 153,-69 293,-69 293,-39 153,-39"/>
 <text text-anchor="start" x="161" y="-57" font-family="FreeSans.ttf" font-size="10.00">GpuNUFFTPythonOperator</text>
 <text text-anchor="middle" x="223" y="-46" font-family="FreeSans.ttf" font-size="10.00">::GpuNUFFTPythonOperator</text>
@@ -68,7 +68,7 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="classGpuNUFFTPythonOperator.html#a790d6c1885f30c640064a26f618e64ea" target="_top" xlink:title=" ">
+<g id="a_node6"><a xlink:href="classGpuNUFFTPythonOperator.html#a790d6c1885f30c640064a26f618e64ea" target="_top" xlink:title="Forward operator (Image to kspace)">
 <polygon fill="none" stroke="black" points="148,-0.5 148,-19.5 298,-19.5 298,-0.5 148,-0.5"/>
 <text text-anchor="middle" x="223" y="-7.5" font-family="FreeSans.ttf" font-size="10.00">GpuNUFFTPythonOperator::op</text>
 </a>

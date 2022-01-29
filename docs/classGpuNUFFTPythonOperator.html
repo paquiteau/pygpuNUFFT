@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('classGpuNUFFTPythonOperator.html','');
 </div><!--header-->
 <div class="contents">
 
-<p>Create the bindings for Python module.  
+<p>Python Wrapper for <a class="el" href="namespacegpuNUFFT.html" title="gpuNUFFT related classes">gpuNUFFT</a> Operator.  
  <a href="classGpuNUFFTPythonOperator.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="python__factory_8hpp_source.html">python_factory.hpp</a>&gt;</code></p>
@@ -105,13 +105,20 @@ Collaboration diagram for GpuNUFFTPythonOperator:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad9168e25f62f4e47aefb50f2ea279b0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGpuNUFFTPythonOperator.html#ad9168e25f62f4e47aefb50f2ea279b0d">GpuNUFFTPythonOperator</a> (py::array_t&lt; DType &gt; kspace_loc, py::array_t&lt; int &gt; image_size, int num_coils, py::array_t&lt; std::complex&lt; DType &gt; &gt; sense_maps, py::array_t&lt; float &gt; density_comp, int kernel_width=3, int sector_width=8, int osr=2, bool balance_workload=1)</td></tr>
+<tr class="memdesc:ad9168e25f62f4e47aefb50f2ea279b0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classGpuNUFFTPythonOperator.html#ad9168e25f62f4e47aefb50f2ea279b0d">More...</a><br /></td></tr>
 <tr class="separator:ad9168e25f62f4e47aefb50f2ea279b0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a790d6c1885f30c640064a26f618e64ea"><td class="memItemLeft" align="right" valign="top">py::array_t&lt; std::complex&lt; DType &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGpuNUFFTPythonOperator.html#a790d6c1885f30c640064a26f618e64ea">op</a> (py::array_t&lt; std::complex&lt; DType &gt; &gt; input_image, bool interpolate_data=false)</td></tr>
+<tr class="memdesc:a790d6c1885f30c640064a26f618e64ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward operator (Image to kspace)  <a href="classGpuNUFFTPythonOperator.html#a790d6c1885f30c640064a26f618e64ea">More...</a><br /></td></tr>
 <tr class="separator:a790d6c1885f30c640064a26f618e64ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d5913daa75877d952160c6e126bbe07"><td class="memItemLeft" align="right" valign="top">py::array_t&lt; std::complex&lt; DType &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGpuNUFFTPythonOperator.html#a9d5913daa75877d952160c6e126bbe07">adj_op</a> (py::array_t&lt; std::complex&lt; DType &gt; &gt; input_kspace_data, bool grid_data=false)</td></tr>
+<tr class="memdesc:a9d5913daa75877d952160c6e126bbe07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjoint operator (kspace to Image)  <a href="classGpuNUFFTPythonOperator.html#a9d5913daa75877d952160c6e126bbe07">More...</a><br /></td></tr>
 <tr class="separator:a9d5913daa75877d952160c6e126bbe07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47e427fafc08d705d834940e1229742f"><td class="memItemLeft" align="right" valign="top">py::array_t&lt; DType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f">estimate_density_comp</a> (int num_iter)</td></tr>
+<tr class="memdesc:a47e427fafc08d705d834940e1229742f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimate density Compensation array using gpu-only functions.  <a href="classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f">More...</a><br /></td></tr>
 <tr class="separator:a47e427fafc08d705d834940e1229742f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff247734503217d39bc2a2144032324f"><td class="memItemLeft" align="right" valign="top">py::float_&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGpuNUFFTPythonOperator.html#aff247734503217d39bc2a2144032324f">get_spectral_radius</a> (int max_iter, float tolerance)</td></tr>
+<tr class="memdesc:aff247734503217d39bc2a2144032324f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimate the spectral radius using gpu-only functions.  <a href="classGpuNUFFTPythonOperator.html#aff247734503217d39bc2a2144032324f">More...</a><br /></td></tr>
+<tr class="separator:aff247734503217d39bc2a2144032324f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a564644dc7ea9b8306cd6296ea6f1fca6"><td class="memItemLeft" align="right" valign="top">py::array_t&lt; std::complex&lt; DType &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGpuNUFFTPythonOperator.html#a564644dc7ea9b8306cd6296ea6f1fca6">data_consistency</a> (py::array_t&lt; std::complex&lt; DType &gt; &gt; input_image, py::array_t&lt; std::complex&lt; DType &gt; &gt; obs_data)</td></tr>
 <tr class="separator:a564644dc7ea9b8306cd6296ea6f1fca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa955beb4fd74d6291151af08eab22f62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGpuNUFFTPythonOperator.html#aa955beb4fd74d6291151af08eab22f62">clean_memory</a> ()</td></tr>
@@ -145,7 +152,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a6c8a9b97852f2c2050feebf234409725"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Create the bindings for Python module. </p>
+<div class="textblock"><p >Python Wrapper for <a class="el" href="namespacegpuNUFFT.html" title="gpuNUFFT related classes">gpuNUFFT</a> Operator. </p>
+<p >This wrapper exposes forward and adjoint operation of <a class="el" href="namespacegpuNUFFT.html" title="gpuNUFFT related classes">gpuNUFFT</a>. It also implements standart methods with gpu-only function for better performances. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad9168e25f62f4e47aefb50f2ea279b0d" name="ad9168e25f62f4e47aefb50f2ea279b0d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad9168e25f62f4e47aefb50f2ea279b0d">&#9670;&nbsp;</a></span>GpuNUFFTPythonOperator()</h2>
@@ -214,6 +222,22 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">kspace_loc</td><td>The kspace location point </td></tr>
+    <tr><td class="paramname">image_size</td><td>Size of image space </td></tr>
+    <tr><td class="paramname">num_coils</td><td>Number of coil </td></tr>
+    <tr><td class="paramname">sense_maps</td><td>Array of sensitivity maps </td></tr>
+    <tr><td class="paramname">density_comp</td><td>Array for density_compensation </td></tr>
+    <tr><td class="paramname">kernel_width</td><td>Width of the interpolation kernel </td></tr>
+    <tr><td class="paramname">sector_width</td><td>Width of the sector </td></tr>
+    <tr><td class="paramname">osr</td><td>Oversampling ratio of the fourier grid </td></tr>
+    <tr><td class="paramname">balance_workload</td><td>Flag to indicate load balancing </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -274,6 +298,15 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Adjoint operator (kspace to Image) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input_kspace_data</td><td>Input Kspace data </td></tr>
+    <tr><td class="paramname">grid_data</td><td>Flag use for cpu density compensation </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -381,6 +414,14 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Estimate density Compensation array using gpu-only functions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num_iter</td><td>number of iterations </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -391,6 +432,55 @@ Here is the call graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classGpuNUFFTPythonOperator_a47e427fafc08d705d834940e1229742f_icgraph.svg" width="388" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aff247734503217d39bc2a2144032324f" name="aff247734503217d39bc2a2144032324f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff247734503217d39bc2a2144032324f">&#9670;&nbsp;</a></span>get_spectral_radius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">py::float_ GpuNUFFTPythonOperator::get_spectral_radius </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max_iter</em> = <code>20</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>tolerance</em> = <code>1e-6</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estimate the spectral radius using gpu-only functions. </p>
+<p >The spectral radius is estimated using the power method.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num_iter</td><td>number of iterations </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGpuNUFFTPythonOperator_aff247734503217d39bc2a2144032324f_cgraph.svg" width="450" height="220"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classGpuNUFFTPythonOperator_aff247734503217d39bc2a2144032324f_icgraph.svg" width="388" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -421,6 +511,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Forward operator (Image to kspace) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input_image</td><td>Input Image </td></tr>
+    <tr><td class="paramname">interpolate_data</td><td>Flag use for cpu density compensation </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -705,7 +804,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classGpuNUFFTPythonOperator.html">GpuNUFFTPythonOperator</a></li>
-    <li class="footer">Generated on Fri Jan 28 2022 21:38:14 for gpuNUFFT by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+    <li class="footer">Generated on Sat Jan 29 2022 14:43:06 for gpuNUFFT by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
 </body>

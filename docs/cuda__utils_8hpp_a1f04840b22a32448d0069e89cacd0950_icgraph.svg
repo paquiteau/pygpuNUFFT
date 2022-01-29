@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" target="_top" xlink:title="Estimate density Compensation array using gpu&#45;only functions.">
 <polygon fill="none" stroke="black" points="159.5,-98.5 159.5,-128.5 294.5,-128.5 294.5,-98.5 159.5,-98.5"/>
 <text text-anchor="start" x="167.5" y="-116.5" font-family="FreeSans.ttf" font-size="10.00">GpuNUFFTPythonOperator</text>
 <text text-anchor="middle" x="227" y="-105.5" font-family="FreeSans.ttf" font-size="10.00">::estimate_density_comp</text>

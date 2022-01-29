@@ -36,7 +36,7 @@
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classGpuNUFFTPythonOperator.html#ad9168e25f62f4e47aefb50f2ea279b0d" target="_top" xlink:title=" ">
+<g id="a_node4"><a xlink:href="classGpuNUFFTPythonOperator.html#ad9168e25f62f4e47aefb50f2ea279b0d" target="_top" xlink:title="Constructor.">
 <polygon fill="none" stroke="black" points="148,-0.5 148,-30.5 288,-30.5 288,-0.5 148,-0.5"/>
 <text text-anchor="start" x="156" y="-18.5" font-family="FreeSans.ttf" font-size="10.00">GpuNUFFTPythonOperator</text>
 <text text-anchor="middle" x="218" y="-7.5" font-family="FreeSans.ttf" font-size="10.00">::GpuNUFFTPythonOperator</text>

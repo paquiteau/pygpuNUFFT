@@ -1,26 +1,28 @@
 <map id="PYBIND11_MODULE" name="PYBIND11_MODULE">
-<area shape="rect" id="node1" title=" " alt="" coords="5,303,155,330"/>
-<area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#a9d5913daa75877d952160c6e126bbe07" title=" " alt="" coords="213,208,393,249"/>
-<area shape="rect" id="node5" href="$classGpuNUFFTPythonOperator.html#aa955beb4fd74d6291151af08eab22f62" title=" " alt="" coords="213,75,393,116"/>
-<area shape="rect" id="node7" href="$classGpuNUFFTPythonOperator.html#a564644dc7ea9b8306cd6296ea6f1fca6" title=" " alt="" coords="213,325,393,367"/>
-<area shape="rect" id="node17" href="$classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" title=" " alt="" coords="213,603,393,644"/>
-<area shape="rect" id="node22" href="$classGpuNUFFTPythonOperator.html#a790d6c1885f30c640064a26f618e64ea" title=" " alt="" coords="203,274,403,301"/>
-<area shape="rect" id="node23" href="$classGpuNUFFTPythonOperator.html#aaf1b1ce70db899390b2236ee9c350433" title=" " alt="" coords="213,765,393,807"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,350,155,377"/>
+<area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#a9d5913daa75877d952160c6e126bbe07" title="Adjoint operator (kspace to Image)" alt="" coords="213,225,393,267"/>
+<area shape="rect" id="node5" href="$classGpuNUFFTPythonOperator.html#aa955beb4fd74d6291151af08eab22f62" title=" " alt="" coords="213,71,393,112"/>
+<area shape="rect" id="node7" href="$classGpuNUFFTPythonOperator.html#a564644dc7ea9b8306cd6296ea6f1fca6" title=" " alt="" coords="213,343,393,384"/>
+<area shape="rect" id="node17" href="$classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" title="Estimate density Compensation array using gpu&#45;only functions." alt="" coords="213,652,393,693"/>
+<area shape="rect" id="node22" href="$classGpuNUFFTPythonOperator.html#aff247734503217d39bc2a2144032324f" title="Estimate the spectral radius using gpu&#45;only functions." alt="" coords="213,492,393,533"/>
+<area shape="rect" id="node24" href="$classGpuNUFFTPythonOperator.html#a790d6c1885f30c640064a26f618e64ea" title="Forward operator (Image to kspace)" alt="" coords="203,291,403,318"/>
+<area shape="rect" id="node25" href="$classGpuNUFFTPythonOperator.html#aaf1b1ce70db899390b2236ee9c350433" title=" " alt="" coords="213,815,393,856"/>
 <area shape="rect" id="node3" href="$python__utils_8hpp.html#a6fc45707d1f047d4232b16582576b2e6" title=" " alt="" coords="496,71,616,98"/>
-<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a38a45507d840b8d3d97de7fc79b4fa8a" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="451,325,661,367"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a38a45507d840b8d3d97de7fc79b4fa8a" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="451,427,661,468"/>
 <area shape="rect" id="node6" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a11b569c99d639766b533f26ac19a09e2" title=" " alt="" coords="451,5,661,47"/>
-<area shape="rect" id="node8" href="$cuda__utils_8hpp.html#a18413e749218eb97bc61578b50a57787" title="CUDA memory allocation and memcpy call to copy data from host to device." alt="" coords="455,173,657,199"/>
-<area shape="rect" id="node9" href="$cuda__utils_8hpp.html#a5fb34b1c5f091a495c7ac4237257d7b1" title="Allocation of device memory of the given extent for the defined type." alt="" coords="488,559,624,586"/>
-<area shape="rect" id="node10" href="$cuda__utils_8hpp.html#a0e734eacdc00ba553d77aa057e02059b" title="Copy CUDA memory from device to host asynchronously." alt="" coords="479,223,633,250"/>
-<area shape="rect" id="node11" href="$cuda__utils_8hpp.html#a52e9a7f2a2d5bed73e0e9e7d367b1198" title="CUDA memcpy call to copy data from host to device." alt="" coords="504,274,608,301"/>
-<area shape="rect" id="node12" href="$structgpuNUFFT_1_1Array.html#af426f56b5d7e05b6143acbdd51bac188" title=" " alt="" coords="475,442,637,469"/>
-<area shape="rect" id="node14" href="$gpuNUFFT__kernels_8hpp.html#a7ea425f71e9b13006582e6280512f11c" title="Perform data1 = data1 &#45; data2." alt="" coords="515,391,597,418"/>
-<area shape="rect" id="node15" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a10d565529aa2c7778c15edb8a820b417" title="Perform forward gridding operation on given kspaceData." alt="" coords="451,493,661,535"/>
-<area shape="rect" id="node16" href="$python__utils_8hpp.html#aeb74d2cb99381f659a6890373021e833" title=" " alt="" coords="497,122,615,149"/>
-<area shape="rect" id="node13" href="$structgpuNUFFT_1_1Dimensions.html#a4c589934c5444910fbcd890d128229c9" title="Compute total count of array length." alt="" coords="709,519,871,560"/>
-<area shape="rect" id="node18" href="$python__utils_8hpp.html#a5732db3eeef010cc926583da8f91fcd6" title=" " alt="" coords="473,762,639,789"/>
-<area shape="rect" id="node19" href="$cuda__utils_8hpp.html#a1f04840b22a32448d0069e89cacd0950" title="CUDA memcpy call to copy data from host to device." alt="" coords="486,813,626,839"/>
-<area shape="rect" id="node20" href="$cuda__utils_8hpp.html#a6ffa821f98a8c2b391c12c01308ff1db" title="Free of device memory." alt="" coords="499,661,613,687"/>
-<area shape="rect" id="node21" href="$gpuNUFFT__kernels_8hpp.html#aeef5d0634868e22a476b5cbb3f54f6a2" title="Perform the Density compensation method." alt="" coords="463,711,649,738"/>
-<area shape="rect" id="node24" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#adbc6f59fc4a4998a4ad5bb65c38b1f03" title=" " alt="" coords="451,864,661,905"/>
+<area shape="rect" id="node8" href="$cuda__utils_8hpp.html#a18413e749218eb97bc61578b50a57787" title="CUDA memory allocation and memcpy call to copy data from host to device." alt="" coords="455,122,657,149"/>
+<area shape="rect" id="node9" href="$cuda__utils_8hpp.html#a5fb34b1c5f091a495c7ac4237257d7b1" title="Allocation of device memory of the given extent for the defined type." alt="" coords="488,609,624,635"/>
+<area shape="rect" id="node10" href="$cuda__utils_8hpp.html#a0e734eacdc00ba553d77aa057e02059b" title="Copy CUDA memory from device to host asynchronously." alt="" coords="479,173,633,199"/>
+<area shape="rect" id="node11" href="$cuda__utils_8hpp.html#a52e9a7f2a2d5bed73e0e9e7d367b1198" title="CUDA memcpy call to copy data from host to device." alt="" coords="504,223,608,250"/>
+<area shape="rect" id="node12" href="$structgpuNUFFT_1_1Array.html#af426f56b5d7e05b6143acbdd51bac188" title=" " alt="" coords="475,274,637,301"/>
+<area shape="rect" id="node14" href="$gpuNUFFT__kernels_8hpp.html#a7ea425f71e9b13006582e6280512f11c" title="Perform data1 = data1 &#45; data2." alt="" coords="515,325,597,351"/>
+<area shape="rect" id="node15" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a10d565529aa2c7778c15edb8a820b417" title="Perform forward gridding operation on given kspaceData." alt="" coords="451,492,661,533"/>
+<area shape="rect" id="node16" href="$python__utils_8hpp.html#aeb74d2cb99381f659a6890373021e833" title=" " alt="" coords="497,375,615,402"/>
+<area shape="rect" id="node13" href="$structgpuNUFFT_1_1Dimensions.html#a4c589934c5444910fbcd890d128229c9" title="Compute total count of array length." alt="" coords="709,561,871,603"/>
+<area shape="rect" id="node18" href="$python__utils_8hpp.html#a5732db3eeef010cc926583da8f91fcd6" title=" " alt="" coords="473,659,639,686"/>
+<area shape="rect" id="node19" href="$cuda__utils_8hpp.html#a1f04840b22a32448d0069e89cacd0950" title="CUDA memcpy call to copy data from host to device." alt="" coords="486,710,626,737"/>
+<area shape="rect" id="node20" href="$cuda__utils_8hpp.html#a6ffa821f98a8c2b391c12c01308ff1db" title="Free of device memory." alt="" coords="499,761,613,787"/>
+<area shape="rect" id="node21" href="$gpuNUFFT__kernels_8hpp.html#aeef5d0634868e22a476b5cbb3f54f6a2" title="Perform the Density compensation method." alt="" coords="463,811,649,838"/>
+<area shape="rect" id="node23" href="$cuda__utils_8hpp.html#a130580818f5be50503003961ad9f8852" title="CUDA memcpy call to copy data from device ptr to device ptr." alt="" coords="484,558,628,585"/>
+<area shape="rect" id="node26" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#adbc6f59fc4a4998a4ad5bb65c38b1f03" title=" " alt="" coords="451,913,661,955"/>
 </map>

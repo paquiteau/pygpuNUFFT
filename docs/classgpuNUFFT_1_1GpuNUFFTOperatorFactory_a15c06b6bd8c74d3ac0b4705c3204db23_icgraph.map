@@ -1,5 +1,5 @@
 <map id="gpuNUFFT::GpuNUFFTOperatorFactory::createGpuNUFFTOperator" name="gpuNUFFT::GpuNUFFTOperatorFactory::createGpuNUFFTOperator">
 <area shape="rect" id="node1" title="Create GpuNUFFT Operator." alt="" coords="240,35,465,76"/>
-<area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#ad9168e25f62f4e47aefb50f2ea279b0d" title=" " alt="" coords="5,5,192,47"/>
+<area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#ad9168e25f62f4e47aefb50f2ea279b0d" title="Constructor." alt="" coords="5,5,192,47"/>
 <area shape="rect" id="node3" href="$gpuNUFFT__forward__tests_8cpp.html#a6e7e337161ef805951437dbf21112e43" title=" " alt="" coords="71,71,126,98"/>
 </map>

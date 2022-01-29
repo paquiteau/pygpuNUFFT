@@ -1,5 +1,5 @@
 <map id="GpuNUFFTPythonOperator::estimate_density_comp" name="GpuNUFFTPythonOperator::estimate_density_comp">
-<area shape="rect" id="node1" title=" " alt="" coords="5,187,185,229"/>
+<area shape="rect" id="node1" title="Estimate density Compensation array using gpu&#45;only functions." alt="" coords="5,187,185,229"/>
 <area shape="rect" id="node2" href="$python__utils_8hpp.html#a5732db3eeef010cc926583da8f91fcd6" title=" " alt="" coords="256,5,421,32"/>
 <area shape="rect" id="node3" href="$cuda__utils_8hpp.html#a5fb34b1c5f091a495c7ac4237257d7b1" title="Allocation of device memory of the given extent for the defined type." alt="" coords="271,56,407,83"/>
 <area shape="rect" id="node4" href="$cuda__utils_8hpp.html#a1f04840b22a32448d0069e89cacd0950" title="CUDA memcpy call to copy data from host to device." alt="" coords="269,107,409,133"/>

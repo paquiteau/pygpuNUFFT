@@ -1,5 +1,5 @@
 <map id="performUpdateDensityComp" name="performUpdateDensityComp">
 <area shape="rect" id="node1" title="Perform the Density compensation method." alt="" coords="431,13,616,39"/>
-<area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" title=" " alt="" coords="203,5,383,47"/>
+<area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#a47e427fafc08d705d834940e1229742f" title="Estimate density Compensation array using gpu&#45;only functions." alt="" coords="203,5,383,47"/>
 <area shape="rect" id="node3" href="$python__bindings_8cpp.html#ad1a7eaf0d60c015a4df3da44ddf58e27" title=" " alt="" coords="5,13,155,39"/>
 </map>
