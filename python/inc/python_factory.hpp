@@ -10,12 +10,11 @@
 namespace py = pybind11;
 
 
-
-/** \brief Create the bindings for Python module
- *
- *
- * */
-
+/** \brief Python Wrapper for gpuNUFFT Operator
+  *
+  * This wrapper exposes forward and adjoint operation of gpuNUFFT.
+  * It also implements standart methods with gpu-only function for better performances.
+  */
 class GpuNUFFTPythonOperator
 {
 
@@ -28,6 +27,19 @@ class GpuNUFFTPythonOperator
     gpuNUFFT::Array<DType2> sensArray, kspace_data, image;
 
     public:
+
+    /** \brief Constructor
+      *
+      * @param kspace_loc       The kspace location point
+      * @param image_size       Size of image space
+      * @param num_coils        Number of coil
+      * @param sense_maps       Array of sensitivity maps
+      * @param density_comp     Array for density_compensation
+      * @param kernel_width     Width of the interpolation kernel
+      * @param sector_width     Width of the sector
+      * @param osr              Oversampling ratio of the fourier grid
+      * @param balance_workload Flag to indicate load balancing
+      */
     GpuNUFFTPythonOperator(py::array_t<DType> kspace_loc,
                            py::array_t<int> image_size,
                            int num_coils,
@@ -37,14 +49,36 @@ class GpuNUFFTPythonOperator
                            int sector_width=8,
                            int osr=2,
                            bool balance_workload=1);
-
+    /** \brief Forward operator (Image to kspace)
+      *
+      * @param input_image      Input Image
+      * @param interpolate_data Flag use for cpu density compensation
+      */
     py::array_t<std::complex<DType>> op(py::array_t<std::complex<DType>> input_image,
                                         bool interpolate_data=false);
 
+    /** \brief Adjoint operator (kspace to Image)
+      *
+      * @param input_kspace_data    Input Kspace data
+      * @param grid_data     Flag use for cpu density compensation
+      */
     py::array_t<std::complex<DType>> adj_op(py::array_t<std::complex<DType>> input_kspace_data,
                                             bool grid_data=false);
 
+    /** \brief Estimate density Compensation array using gpu-only functions
+      *
+      * @param num_iter  number of iterations
+      */
     py::array_t<DType> estimate_density_comp(int num_iter);
+
+    /** \brief Estimate the spectral radius using gpu-only functions
+      *
+      * The spectral radius is estimated using the power method.
+      *
+      * @param num_iter  number of iterations
+      */
+
+    py::float_ get_spectral_radius(int max_iter,float tolerance);
 
     py::array_t<std::complex<DType>> data_consistency(py::array_t<std::complex<DType>> input_image,
                                                      py::array_t<std::complex<DType>> obs_data);
