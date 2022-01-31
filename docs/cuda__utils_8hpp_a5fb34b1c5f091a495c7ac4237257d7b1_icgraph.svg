@@ -52,7 +52,7 @@
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="classGpuNUFFTPythonOperator.html#aff247734503217d39bc2a2144032324f" target="_top" xlink:title="Estimate the spectral radius using gpu&#45;only functions.">
+<g id="a_node5"><a xlink:href="classGpuNUFFTPythonOperator.html#a10bcd0d453fef0947c00cb4448398d3b" target="_top" xlink:title="Estimate the spectral radius using gpu&#45;only functions.">
 <polygon fill="none" stroke="black" points="148,-0.5 148,-30.5 283,-30.5 283,-0.5 148,-0.5"/>
 <text text-anchor="start" x="156" y="-18.5" font-family="FreeSans.ttf" font-size="10.00">GpuNUFFTPythonOperator</text>
 <text text-anchor="middle" x="215.5" y="-7.5" font-family="FreeSans.ttf" font-size="10.00">::get_spectral_radius</text>

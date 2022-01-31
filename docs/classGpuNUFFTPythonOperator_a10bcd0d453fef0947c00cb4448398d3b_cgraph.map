@@ -1,0 +1,6 @@
+<map id="GpuNUFFTPythonOperator::get_spectral_radius" name="GpuNUFFTPythonOperator::get_spectral_radius">
+<area shape="rect" id="node1" title="Estimate the spectral radius using gpu&#45;only functions." alt="" coords="5,57,185,98"/>
+<area shape="rect" id="node2" href="$cuda__utils_8hpp.html#a5fb34b1c5f091a495c7ac4237257d7b1" title="Allocation of device memory of the given extent for the defined type." alt="" coords="271,5,407,32"/>
+<area shape="rect" id="node3" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a10d565529aa2c7778c15edb8a820b417" title="Perform forward gridding operation on given kspaceData." alt="" coords="233,57,444,98"/>
+<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#a38a45507d840b8d3d97de7fc79b4fa8a" title="Perform Adjoint gridding operation on given kspaceData." alt="" coords="233,122,444,163"/>
+</map>

@@ -1,6 +1,4 @@
 <map id="copyDeviceToDevice" name="copyDeviceToDevice">
-<area shape="rect" id="node1" title="CUDA memcpy call to copy data from device ptr to device ptr." alt="" coords="461,46,605,73"/>
-<area shape="rect" id="node2" href="$classGpuNUFFTPythonOperator.html#aff247734503217d39bc2a2144032324f" title="Estimate the spectral radius using gpu&#45;only functions." alt="" coords="218,5,398,47"/>
-<area shape="rect" id="node4" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ada5bb598b923ca3e92e987982f3d0d5b" title="Perform forward gridding operation on kspaceData already residing in GPU memory." alt="" coords="203,71,413,112"/>
-<area shape="rect" id="node3" href="$python__bindings_8cpp.html#ad1a7eaf0d60c015a4df3da44ddf58e27" title=" " alt="" coords="5,13,155,39"/>
+<area shape="rect" id="node1" title="CUDA memcpy call to copy data from device ptr to device ptr." alt="" coords="264,13,408,39"/>
+<area shape="rect" id="node2" href="$classgpuNUFFT_1_1GpuNUFFTOperator.html#ada5bb598b923ca3e92e987982f3d0d5b" title="Perform forward gridding operation on kspaceData already residing in GPU memory." alt="" coords="5,5,216,47"/>
 </map>

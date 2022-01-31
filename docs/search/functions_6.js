@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['get_5fspectral_5fradius_0',['get_spectral_radius',['../classGpuNUFFTPythonOperator.html#aff247734503217d39bc2a2144032324f',1,'GpuNUFFTPythonOperator']]],
+  ['get_5fspectral_5fradius_0',['get_spectral_radius',['../classGpuNUFFTPythonOperator.html#a10bcd0d453fef0947c00cb4448398d3b',1,'GpuNUFFTPythonOperator']]],
   ['getcoordsfromindex_1',['getCoordsFromIndex',['../gpuNUFFT__utils_8hpp.html#a03311da032c7c532a9947231d7e1f7f1',1,'getCoordsFromIndex(int index, int *x, int *y, int *z, int w):&#160;gpuNUFFT_utils.hpp'],['../gpuNUFFT__utils_8hpp.html#aa2b28b246452cffb9ec316745ce795d0',1,'getCoordsFromIndex(int index, int *x, int *y, int *z, int w_x, int w_y, int w_z):&#160;gpuNUFFT_utils.hpp']]],
   ['getcoordsfromindex2d_2',['getCoordsFromIndex2D',['../gpuNUFFT__utils_8hpp.html#aef2060bda30f28d9dcb968a503ef0136',1,'getCoordsFromIndex2D(int index, int *x, int *y, int w):&#160;gpuNUFFT_utils.hpp'],['../gpuNUFFT__utils_8hpp.html#a70f46bebc65a7a03db0f72d34e290c02',1,'getCoordsFromIndex2D(int index, int *x, int *y, int w_x, int w_y):&#160;gpuNUFFT_utils.hpp']]],
   ['getdataindices_3',['getDataIndices',['../classgpuNUFFT_1_1GpuNUFFTOperator.html#ac25b18eb8679c32837b91edf9bb42f15',1,'gpuNUFFT::GpuNUFFTOperator']]],
