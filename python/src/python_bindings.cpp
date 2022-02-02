@@ -4,7 +4,7 @@
 
 #include "python_utils.hpp"
 #include "python_factory.hpp"
-//#include "fastsum_binder.hpp"
+#include "fastsum_binder.hpp"
 
 namespace py = pybind11;
 
@@ -20,6 +20,6 @@ PYBIND11_MODULE(gpuNUFFT, m) {
         .def("data_consistency", &GpuNUFFTPythonOperator::data_consistency)
         .def("get_spectral_radius", &GpuNUFFTPythonOperator::get_spectral_radius);
 
-    /*py::class_<FastSumOperator>(m, "FastSumOp")
-        .def(py::init<int, int, int, int, int, const char *>());*/
+    py::class_<FastSumOperator>(m, "FastSumOp")
+        .def(py::init<int, int, int, int, int, const char *>());
 }
