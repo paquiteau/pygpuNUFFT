@@ -24,4 +24,4 @@ if(GEN_TESTS)
 		NAME runGPUATMUnitTests
 		COMMAND runGPUATMUnitTests)
 endif(GEN_TESTS)
-
+include(${CMAKE_SOURCE_DIR}/CUDA/fastsum/CMakeLists.txt)
