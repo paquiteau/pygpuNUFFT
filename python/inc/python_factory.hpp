@@ -78,7 +78,7 @@ class GpuNUFFTPythonOperator
       * @param num_iter  number of iterations
       */
 
-    py::float_ get_spectral_radius(int max_iter,float tolerance);
+    float get_spectral_radius(int max_iter, float tolerance);
 
     py::array_t<std::complex<DType>> data_consistency(py::array_t<std::complex<DType>> input_image,
                                                      py::array_t<std::complex<DType>> obs_data);

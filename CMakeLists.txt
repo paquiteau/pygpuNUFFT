@@ -51,30 +51,13 @@ endif()
 
 cuda_select_nvcc_arch_flags(ARCH_FLAGS "Auto")
 
-# if(${CUDA_VERSION_MAJOR} GREATER 7)
-#   message("add CUDA 8 flags: Current version: ${CUDA_VERSION}")
-#   list(APPEND MY_NVCC_FLAGS -gencode=arch=compute_60,code=sm_60)
-#   list(APPEND MY_NVCC_FLAGS -gencode=arch=compute_61,code=sm_61)
-#   list(APPEND MY_NVCC_FLAGS -gencode=arch=compute_61,code=compute_61)
-# endif()
-
-# if(${CUDA_VERSION_MAJOR} GREATER 8)
-#   message("add CUDA 9 flags: Current version: ${CUDA_VERSION}")
-#   list(APPEND MY_NVCC_FLAGS -gencode=arch=compute_70,code=sm_70)
-# endif()
-
-# if(${CUDA_VERSION_MAJOR} GREATER 9)
-#   message("add CUDA 10 flags: Current version: ${CUDA_VERSION}")
-#   list(APPEND MY_NVCC_FLAGS -gencode=arch=compute_75,code=sm_75)
-# endif()
-
 
 IF(CMAKE_BUILD_TYPE MATCHES Debug)
   message("debug mode")
   list(APPEND CUDA_NVCC_FLAGS  ${ARCH_FLAGS} ${MY_NVCC_FLAGS} --ptxas-options=-v -G)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g  -std=c++11")
 ELSE(CMAKE_BUILD_TYPE)
-  list(APPEND CUDA_NVCC_FLAGS ${MY_NVCC_FLAGS} ${ARCH_FLAGS})
+  list(APPEND CUDA_NVCC_FLAGS ${MY_NVCC_FLAGS} ${ARCH_FLAGS} --generate-line-info)
 ENDIF()
 
 message(STATUS "setting NVCC FLAGS to: ${CUDA_NVCC_FLAGS}")
