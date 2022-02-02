@@ -34,7 +34,7 @@ cuda_add_library(gpuNUFFT ${GPU_CU_SOURCES}
                           ${GPUNUFFT_SOURCES}
                           ${GPUNUFFT_INCLUDE}
                           ${PYTHON_BINDINGS}
-                          ${FASTSUM_SOURCES}
+                         # ${FASTSUM_SOURCES}
                           SHARED)
 
 #add_library(fastSum SHARED ${FASTSUM_SOURCES})
@@ -42,8 +42,7 @@ cuda_add_library(gpuNUFFT ${GPU_CU_SOURCES}
 
 
 set_target_properties(gpuNUFFT PROPERTIES PREFIX "")
-target_link_libraries(gpuNUFFT ${CUDA_LIBRARIES})
-
+target_link_libraries(gpuNUFFT ${CUDA_LIBRARIES} )# nfft3_threads nfft3 fftw3_threads fftw3)
 
 CUDA_ADD_CUFFT_TO_TARGET(gpuNUFFT)
 CUDA_ADD_CUBLAS_TO_TARGET(gpuNUFFT)
