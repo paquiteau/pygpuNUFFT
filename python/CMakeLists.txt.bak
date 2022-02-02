@@ -27,8 +27,7 @@ message("python inc : ${PYTHON_INCLUDE_DIRS}")
 message("python lib : ${PYTHON_LIBRARIES}")
 
 set(PYTHON_BINDINGS src/python_factory.cpp
-                    src/python_bindings.cpp
-                    src/fastsum_binder.cpp)
+                    src/python_bindings.cpp)
 cuda_include_directories(${GPUNUFFT_INC_DIR})
 cuda_add_library(gpuNUFFT ${GPU_CU_SOURCES}
                           ${GPU_GPUNUFFT_SOURCES}
@@ -39,8 +38,7 @@ cuda_add_library(gpuNUFFT ${GPU_CU_SOURCES}
                           SHARED)
 
 set_target_properties(gpuNUFFT PROPERTIES PREFIX "")
-target_link_libraries(gpuNUFFT ${CUDA_LIBRARIES} ${CUDA_curand_LIBRARY})
-target_link_libraries(gpuNUFFT nfft3_threads nfft3 fftw3_threads fftw3)
+target_link_libraries(gpuNUFFT ${CUDA_LIBRARIES} nfft3_threads nfft3 fftw3_threads fftw3)
 
 CUDA_ADD_CUFFT_TO_TARGET(gpuNUFFT)
 CUDA_ADD_CUBLAS_TO_TARGET(gpuNUFFT)
