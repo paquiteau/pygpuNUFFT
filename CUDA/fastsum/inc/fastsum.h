@@ -112,8 +112,8 @@ typedef struct fastsum_plan_
   R eps_I;                         /**< inner boundary                  */  /* fixed to p/n so far  */
   R eps_B;                         /**< outer boundary                  */  /* fixed to 1/16 so far */
 
-  X(plan) *mv1;                        /**< source nfft plan                */
-  X(plan) *mv2;                       /**< target nfft plan                */
+  X(plan) mv1;                        /**< source nfft plan                */
+  X(plan) mv2;                       /**< target nfft plan                */
 
   /** near field */
   int Ad;                               /**< number of spline knots for nearfield computation of regularized kernel */

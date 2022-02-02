@@ -181,7 +181,52 @@ static C regkern1(kernel_fs k, R xx, int p, const R *param, R a, R b)
   return k(xx, 0, param);
 }
 
+/** regularized kernel for even kernels with K_I even and K_B mirrored */
+//static C regkern2(kernel k, R xx, int p, const R *param, R a, R b)
+//{
+//  int r;
+//  C sum = K(0.0);
+//
+//  xx = FABS(xx);
+//
+//  if (xx > K(0.5))
+//  {
+//    for (r = 0; r < p; r++)
+//    {
+//      sum += POW(b, (R) r) * k(K(0.5) - b, r, param)
+//          * (BasisPoly(p - 1, r, 0) + BasisPoly(p - 1, r, 0));
+//    }
+//    return sum;
+//  }
+//  else if ((a <= xx) && (xx <= K(0.5) - b))
+//  {
+//    return k(xx, 0, param);
+//  }
+//  else if (xx < a)
+//  {
+//    for (r = 0; r < p; r++)
+//    {
+//      sum += POW(-a, (R) r) * k(a, r, param)
+//          * (BasisPoly(p - 1, r, xx / a) + BasisPoly(p - 1, r, -xx / a));
+//    }
+//    return sum;
+//  }
+//  else if ((K(0.5) - b < xx) && (xx <= K(0.5)))
+//  {
+//    for (r = 0; r < p; r++)
+//    {
+//      sum += POW(b, (R) r) * k(K(0.5) - b, r, param)
+//          * (BasisPoly(p - 1, r, (xx - K(0.5)) / b)
+//              + BasisPoly(p - 1, r, -(xx - K(0.5)) / b));
+//    }
+//    return sum;
+//  }
+//  return K(0.0);
+//}
 
+/** regularized kernel for even kernels with K_I even
+ *  and K_B mirrored smooth to K(1/2) (used in dD, d>1)
+ */
 static C regkern3(kernel_fs k, R xx, int p, const R *param, R a, R b)
 {
   int r;
@@ -871,9 +916,9 @@ void fastsum_init_guru_source_nodes(fastsum_plan *ths, int N_total, int nn_overs
       PRE_PHI_HUT | PRE_PSI | /*MALLOC_X | MALLOC_F_HAT | MALLOC_F |*/ FFTW_INIT
           | ((ths->d == 1) ? FFT_OUT_OF_PLACE : 0U),
       FFTW_ESTIMATE | FFTW_DESTROY_INPUT);
-  ths->mv1->x = ths->x;
-  ths->mv1->f = ths->alpha;
-  ths->mv1->f_hat = ths->f_hat;
+  ths->mv1.x = ths->x;
+  ths->mv1.f = ths->alpha;
+  ths->mv1.f_hat = ths->f_hat;
   
   ths->box_offset = NULL;
   ths->box_alpha = NULL;
@@ -933,9 +978,9 @@ void fastsum_init_guru_target_nodes(fastsum_plan *ths, int M_total, int nn_overs
       PRE_PHI_HUT | PRE_PSI | /*MALLOC_X | MALLOC_F_HAT | MALLOC_F |*/ FFTW_INIT
           | ((ths->d == 1) ? FFT_OUT_OF_PLACE : 0U),
       FFTW_ESTIMATE | FFTW_DESTROY_INPUT);
-  ths->mv2->x = ths->y;
-  ths->mv2->f = ths->f;
-  ths->mv2->f_hat = ths->f_hat;
+  ths->mv2.x = ths->y;
+  ths->mv2.f = ths->f;
+  ths->mv2.f_hat = ths->f_hat;
 }
 
 /** initialization of fastsum plan */
@@ -1074,13 +1119,13 @@ void fastsum_precompute_source_nodes(fastsum_plan *ths)
 //      ths->mv1.x[ths->mv1.d * k + t] = -ths->x[ths->mv1.d * k + t]; /* note the factor -1 for transposed transform instead of adjoint*/
 
   /** precompute psi, the entries of the matrix B */
-  if (ths->mv1->flags & PRE_LIN_PSI)
+  if (ths->mv1.flags & PRE_LIN_PSI)
     NFFT(precompute_lin_psi)(&(ths->mv1));
 
-  if (ths->mv1->flags & PRE_PSI)
+  if (ths->mv1.flags & PRE_PSI)
     NFFT(precompute_psi)(&(ths->mv1));
 
-  if (ths->mv1->flags & PRE_FULL_PSI)
+  if (ths->mv1.flags & PRE_FULL_PSI)
     NFFT(precompute_full_psi)(&(ths->mv1));
 #ifdef MEASURE_TIME
   t1 = getticks();
@@ -1110,13 +1155,13 @@ void fastsum_precompute_target_nodes(fastsum_plan *ths)
 //      ths->mv2.x[ths->mv2.d * j + t] = -ths->y[ths->mv2.d * j + t]; /* note the factor -1 for conjugated transform instead of standard*/
 
   /** precompute psi, the entries of the matrix B */
-  if (ths->mv2->flags & PRE_LIN_PSI)
+  if (ths->mv2.flags & PRE_LIN_PSI)
     NFFT(precompute_lin_psi)(&(ths->mv2));
 
-  if (ths->mv2->flags & PRE_PSI)
+  if (ths->mv2.flags & PRE_PSI)
     NFFT(precompute_psi)(&(ths->mv2));
 
-  if (ths->mv2->flags & PRE_FULL_PSI)
+  if (ths->mv2.flags & PRE_FULL_PSI)
     NFFT(precompute_full_psi)(&(ths->mv2));
 #ifdef MEASURE_TIME
   t1 = getticks();
@@ -1161,8 +1206,8 @@ void fastsum_trafo(fastsum_plan *ths)
 #ifdef _OPENMP
   #pragma omp parallel for default(shared) private(k)
 #endif
-  for (k = 0; k < ths->mv2->N_total; k++)
-    ths->mv2->f_hat[k] = ths->b[k] * ths->mv1->f_hat[k];
+  for (k = 0; k < ths->mv2.N_total; k++)
+    ths->mv2.f_hat[k] = ths->b[k] * ths->mv1.f_hat[k];
 #ifdef MEASURE_TIME
   t1 = getticks();
   ths->MEASURE_TIME_t[5] += nfft_elapsed_seconds(t1,t0);
@@ -1187,7 +1232,7 @@ void fastsum_trafo(fastsum_plan *ths)
   #pragma omp parallel for default(shared) private(j)
 #endif
   for (j = 0; j < ths->M_total; j++)
-    ths->f[j] = ths->mv2->f[j];
+    ths->f[j] = ths->mv2.f[j];
 
   if (ths->eps_I > 0.0)
   {

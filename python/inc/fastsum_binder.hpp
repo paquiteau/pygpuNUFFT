@@ -39,6 +39,11 @@ class FastSumOperator
   public:
 
   FastSumOperator(int dimension, int N, int M, int n, int m, const char *s);
+  
+  ~FastSumOperator()
+  {    
+  }
+
 };
 
 

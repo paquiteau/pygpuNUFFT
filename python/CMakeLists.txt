@@ -12,6 +12,7 @@ FetchContent_GetProperties(pybind11)
 if(NOT pybind11_POPULATED)
     FetchContent_Populate(pybind11)
     add_subdirectory(${pybind11_SOURCE_DIR} ${pybind11_BINARY_DIR})
+    message(${pybind11_BINARY_DIR})
 endif()
 
 include_directories(
@@ -40,7 +41,7 @@ cuda_add_library(gpuNUFFT ${GPU_CU_SOURCES}
 
 set_target_properties(gpuNUFFT PROPERTIES PREFIX "")
 target_link_libraries(gpuNUFFT ${CUDA_LIBRARIES} ${CUDA_curand_LIBRARY})
-target_link_libraries(gpuNUFFT nfft3_threads nfft3 fftw3_threads fftw3)
+target_link_libraries(gpuNUFFT nfft3 fftw3)
 
 CUDA_ADD_CUFFT_TO_TARGET(gpuNUFFT)
 CUDA_ADD_CUBLAS_TO_TARGET(gpuNUFFT)
