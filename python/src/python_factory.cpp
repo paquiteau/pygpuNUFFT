@@ -285,69 +285,75 @@ py::array_t<std::complex<DType>> GpuNUFFTPythonOperator::data_consistency(
         ptr, capsule);
 }
 
-py::float_ GpuNUFFTPythonOperator::get_spectral_radius(int max_iter=20, float tolerance=1e-6)
+float GpuNUFFTPythonOperator::get_spectral_radius(int max_iter=20, float tolerance=1e-6)
 {
   //TODO: add error checking for curand, cublas and cuda
 
   int im_size = image.count();
 
-  gpuNUFFT::GpuArray<DType2> x_old_gpu;
-  x_old_gpu.dim = image.dim;
-  allocateDeviceMem(&x_old_gpu.data, im_size);
-
-  gpuNUFFT::GpuArray<DType2> x_new_gpu;
-  x_new_gpu.dim = image.dim;
-  allocateDeviceMem(&x_old_gpu.data, im_size);
+  gpuNUFFT::GpuArray<DType2> x_gpu;
+  x_gpu.dim = image.dim;
+  allocateDeviceMem(&x_gpu.data, im_size);
 
   gpuNUFFT::GpuArray<DType2> tmp_kspace_gpu;
   tmp_kspace_gpu.dim = kspace_data.dim;
   allocateDeviceMem(&tmp_kspace_gpu.data, kspace_data.count());
 
-  __device__ DType *norm_new_d;
-  DType norm_old;
-  DType norm_new;
-
+  cudaDeviceSynchronize();
+  // __device__ DType *norm_new_d;
+  // DType *norm_new_d;
+  // cudaMalloc(&norm_new_d, sizeof(DType));
+  DType norm_old = 1.0;
+  DType norm_new = 1.0;
+  DType inv_norm = 1.0;
   // initialisation: create a random complex image.
   curandGenerator_t generator;
   curandCreateGenerator(&generator, CURAND_RNG_PSEUDO_XORWOW);
   curandSetPseudoRandomGeneratorSeed(generator,(int)time(NULL));
 
   // complex value generator by giving twice the size.
-  curandGenerateUniform(generator, (DType *) x_old_gpu.data, 2*im_size);
+  curandGenerateUniform(generator, (DType *) x_gpu.data, 2*im_size);
   // xold = initialize random x of image size.
   curandDestroyGenerator(generator);
-
   // Create a handle
   cublasHandle_t handle;
   cublasCreate(&handle);
 
 
-  cublasScnrm2(handle, im_size, x_old_gpu.data, 1, &norm_old);
-  cublasCsscal(handle, im_size, &norm_old, x_old_gpu.data, 1);
+  cublasScnrm2(handle, im_size, x_gpu.data, 1, &norm_old);
+  inv_norm = 1.0/norm_old;
+  cublasCsscal(handle, im_size, &inv_norm, x_gpu.data, 1);
 
   for(int i=0; i < max_iter; i++)
   {
-    //compute ||x_old||
-
     //compute x_new = adj_op(op(x_old))
-    gpuNUFFTOp->performForwardGpuNUFFT(x_old_gpu,tmp_kspace_gpu);
+    gpuNUFFTOp->performForwardGpuNUFFT(x_gpu,tmp_kspace_gpu);
     if(DEBUG && cudaDeviceSynchronize() != cudaSuccess)
       printf("Error at thread sync 1");
-    gpuNUFFTOp->performGpuNUFFTAdj(tmp_kspace_gpu, x_new_gpu);
+    gpuNUFFTOp->performGpuNUFFTAdj(tmp_kspace_gpu, x_gpu);
     if(DEBUG && cudaDeviceSynchronize() == cudaSuccess)
       printf("Error at thread sync 2");
     //compute ||x_new||
-    cublasScnrm2(handle, im_size, x_new_gpu.data, 1, norm_new_d);
+    cublasScnrm2(handle, im_size, x_gpu.data, 1, &norm_new);
+    if(DEBUG && cudaDeviceSynchronize() == cudaSuccess)
+      printf("Error at thread sync 3");
     // x_new <- x_new/ ||x_new||
-    cublasCsscal(handle, im_size, norm_new_d, x_new_gpu.data, 1);
+    inv_norm = 1.0/norm_new;
+    cublasCsscal(handle, im_size, &inv_norm, x_gpu.data, 1);
 
-    cudaMemcpy(&norm_new, norm_new_d, sizeof(DType),cudaMemcpyDeviceToHost);
+    if(DEBUG && cudaDeviceSynchronize() == cudaSuccess)
+      printf("Error at thread sync 4");
+ //   cudaMemcpy(&norm_new, norm_new_d, sizeof(DType),cudaMemcpyDeviceToHost);
 
+    if(DEBUG && cudaDeviceSynchronize() == cudaSuccess)
+      printf("Error at thread sync 5");
+ //   std::cout << std::to_string(norm_new - norm_old) << std::endl;
     if(fabs(norm_new - norm_old) < tolerance ){
+   //   std::cout << "stop after" << i << std::endl;
       break;
     }
-    copyDeviceToDevice(x_new_gpu.data, x_old_gpu.data, im_size);
-
+    norm_old = norm_new;
   }
+  cublasDestroy(handle);
   return norm_new;
 }
