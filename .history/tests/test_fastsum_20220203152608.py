@@ -23,7 +23,7 @@ times_fastsum = []
 for N in np.logspace(5, 8, 10):
     dimension = 3
     N = int(N)
-    fastsum = FastSumOp(dimension, N, N, 128, 4, 2, "inverse_multiquadric", 1e-5, 0.003125, 0.003125)
+    fastsum = FastSumOp(dimension, N, N, 128, 4, 2, "inverse_multiquadric", 1e-5, 0.0003125, 0.003125)
     max_val = (1/4-0.003125)/np.sqrt(dimension)
     points = np.random.uniform(-max_val,  max_val, (N, dimension))
     print(points[0])

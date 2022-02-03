@@ -128,12 +128,14 @@ py::array_t<R> FastSumOperator::sum(py::array_t<R> points, bool direct)
   }
   if(direct)
   { 
+    printf("direct computation: \n");
     fastsum_exact(&my_fastsum_plan);
   }
   else
   {
     // precomputation 
     fastsum_precompute(&my_fastsum_plan);
+    printf("fast computation:   \n");
     fastsum_trafo(&my_fastsum_plan);
   }
   /** copy result */
