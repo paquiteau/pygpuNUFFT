@@ -76,7 +76,7 @@ void FastSumOperator::init_random()
     R r2 = K(0.0);
 
     for (j = 0; j < d; j++)
-      my_fastsum_plan.x[k * d + j] = K(2.0) * r_max * 0.08 - r_max;
+      my_fastsum_plan.x[k * d + j] = K(2.0) * r_max * NFFT(drand48)() - r_max;
 
     for (j = 0; j < d; j++)
       r2 += my_fastsum_plan.x[k * d + j] * my_fastsum_plan.x[k * d + j];
