@@ -910,12 +910,12 @@ void fastsum_init_guru_source_nodes(fastsum_plan *ths, int N_total, int nn_overs
     n[t] = nn_oversampled;
   }
 
-  // CGR NFFT(init_guru)(&(ths->mv1), ths->d, N, N_total, n, m,
-  // CGR     sort_flags_adjoint |
-  // CGR     PRE_PHI_HUT | PRE_PSI | /*MALLOC_X | MALLOC_F_HAT | MALLOC_F |*/ FFTW_INIT
-  // CGR         | ((ths->d == 1) ? FFT_OUT_OF_PLACE : 0U),
-  // CGR     FFTW_ESTIMATE | FFTW_DESTROY_INPUT);
-  // CGR ths->mv1.x = ths->x;
+  NFFT(init_guru)(&(ths->mv1), ths->d, N, N_total, n, m,
+      sort_flags_adjoint |
+      PRE_PHI_HUT | PRE_PSI | /*MALLOC_X | MALLOC_F_HAT | MALLOC_F |*/ FFTW_INIT
+          | ((ths->d == 1) ? FFT_OUT_OF_PLACE : 0U),
+      FFTW_ESTIMATE | FFTW_DESTROY_INPUT);
+  ths->mv1.x = ths->x;
   // CGR ths->mv1.f = ths->alpha;
   // CGR ths->mv1.f_hat = ths->f_hat;
   
@@ -972,12 +972,12 @@ void fastsum_init_guru_target_nodes(fastsum_plan *ths, int M_total, int nn_overs
     n[t] = nn_oversampled;
   }
 
-  // CGR NFFT(init_guru)(&(ths->mv2), ths->d, N, M_total, n, m,
-  // CGR     sort_flags_trafo |
-  // CGR     PRE_PHI_HUT | PRE_PSI | /*MALLOC_X | MALLOC_F_HAT | MALLOC_F |*/ FFTW_INIT
-  // CGR         | ((ths->d == 1) ? FFT_OUT_OF_PLACE : 0U),
-  // CGR     FFTW_ESTIMATE | FFTW_DESTROY_INPUT);
-  // CGR ths->mv2.x = ths->y;
+  NFFT(init_guru)(&(ths->mv2), ths->d, N, M_total, n, m,
+      sort_flags_trafo |
+      PRE_PHI_HUT | PRE_PSI | /*MALLOC_X | MALLOC_F_HAT | MALLOC_F |*/ FFTW_INIT
+          | ((ths->d == 1) ? FFT_OUT_OF_PLACE : 0U),
+      FFTW_ESTIMATE | FFTW_DESTROY_INPUT);
+  ths->mv2.x = ths->y;
   // CGR ths->mv2.f = ths->f;
   // CGR ths->mv2.f_hat = ths->f_hat;
 }
@@ -997,7 +997,7 @@ void fastsum_finalize_source_nodes(fastsum_plan *ths)
   NFFT(free)(ths->x);
   NFFT(free)(ths->alpha);
 
-  // CGR NFFT(finalize)(&(ths->mv1));
+  NFFT(finalize)(&(ths->mv1));
 
   if (ths->flags & NEARFIELD_BOXES)
   {
@@ -1021,7 +1021,7 @@ void fastsum_finalize_target_nodes(fastsum_plan *ths)
   NFFT(free)(ths->y);
   NFFT(free)(ths->f);
 
-  // CGR NFFT(finalize)(&(ths->mv2));
+  NFFT(finalize)(&(ths->mv2));
 }
 
 /** finalization of fastsum plan */
@@ -1154,14 +1154,14 @@ void fastsum_precompute_target_nodes(fastsum_plan *ths)
 //      ths->mv2.x[ths->mv2.d * j + t] = -ths->y[ths->mv2.d * j + t]; /* note the factor -1 for conjugated transform instead of standard*/
 
   /** precompute psi, the entries of the matrix B */
-  // CGR if (ths->mv2.flags & PRE_LIN_PSI)
-  // CGR   NFFT(precompute_lin_psi)(&(ths->mv2));
+  if (ths->mv2.flags & PRE_LIN_PSI)
+    NFFT(precompute_lin_psi)(&(ths->mv2));
 
-  // CGR if (ths->mv2.flags & PRE_PSI)
-  // CGR   NFFT(precompute_psi)(&(ths->mv2));
+  if (ths->mv2.flags & PRE_PSI)
+    NFFT(precompute_psi)(&(ths->mv2));
 
-  // CGR if (ths->mv2.flags & PRE_FULL_PSI)
-  // CGR   NFFT(precompute_full_psi)(&(ths->mv2));
+  if (ths->mv2.flags & PRE_FULL_PSI)
+    NFFT(precompute_full_psi)(&(ths->mv2));
 #ifdef MEASURE_TIME
   t1 = getticks();
   ths->MEASURE_TIME_t[2] += NFFT(elapsed_seconds)(t1,t0);
