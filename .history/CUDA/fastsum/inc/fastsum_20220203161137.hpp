@@ -43,18 +43,17 @@
 #define fastsum_h_inc
 
 #include "config.h"
-#include <complex>
+
 /** Include header for C99 complex datatype. */
 #ifdef HAVE_COMPLEX_H
 #include <complex.h>
 #endif
 /** Include header for utils from NFFT3 library. */
 /** Include header for NFFT3 library. */
-
 #include "infft.h"
 #define R DType
-#define C std::complex<DType>
-#define K(x) ((R) x)
+#define C DType2
+
 #if !(defined(NF_LIN) || defined(NF_QUADR) || defined(NF_KUB))
   #define NF_KUB
 #endif

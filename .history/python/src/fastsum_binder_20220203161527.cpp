@@ -141,7 +141,7 @@ py::array_t<R> FastSumOperator::sum(py::array_t<R> points, bool direct)
   R *out_data = (R *) out_result.request().ptr;
   
   for (j = 0; j < my_fastsum_plan.M_total; j++)
-    out_data[j] = my_fastsum_plan.f[j].real();
+    out_data[j] = my_fastsum_plan.f[j];
   
   return out_result;
 }

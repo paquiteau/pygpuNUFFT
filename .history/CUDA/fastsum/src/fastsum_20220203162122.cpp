@@ -110,7 +110,7 @@ C regkern(kernel_fs k, R xx, int p, const R *param, R a, R b)
           POW(a, (R) r)
               * (k(-a, r, param) * BasisPoly(p - 1, r, xx / a)
                   + k(a, r, param) * BasisPoly(p - 1, r, -xx / a)
-                      * (C) (r & 1 ? -1 : 1));
+                      *u (r & 1 ? -1 : 1));
     }
     return sum;
   }

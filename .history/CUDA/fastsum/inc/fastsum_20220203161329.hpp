@@ -54,7 +54,7 @@
 #include "infft.h"
 #define R DType
 #define C std::complex<DType>
-#define K(x) ((R) x)
+
 #if !(defined(NF_LIN) || defined(NF_QUADR) || defined(NF_KUB))
   #define NF_KUB
 #endif

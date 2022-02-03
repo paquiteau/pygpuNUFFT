@@ -51,7 +51,6 @@
 /** Include header for utils from NFFT3 library. */
 /** Include header for NFFT3 library. */
 
-#include "infft.h"
 #define R DType
 #define C std::complex<DType>
 #define K(x) ((R) x)
