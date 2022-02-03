@@ -1,4 +1,10 @@
 #include "fastsum_binder.hpp"
+#include <pybind11/pybind11.h>
+#include <pybind11/numpy.h>
+#include <pybind11/complex.h>
+
+
+namespace py = pybind11;
 
 
 void get_kernel_from_name(const char *s, kernel_fs &my_kernel)
@@ -40,22 +46,105 @@ void get_kernel_from_name(const char *s, kernel_fs &my_kernel)
 }
 
 
-FastSumOperator::FastSumOperator(int dimension, int N, int M, int n,  int m, const char *s)
+FastSumOperator::FastSumOperator(int dimension, int N, int M, int n,  int m, int p, const char *s, R c, float eps_I=0.0625, float eps_B=0.0625)
 {
-    this->d = dimension;
-    this->N = N;
-    this->M = M;
-    this->n = n;
-    this->m = m;
-    this->p = m;
-    this->s = s;
-    this->time = 0.0;
-    this->error = 0.0;
-    this->eps_I = 1/32;
-    this->eps_B = 1/32;
-    kernel_fs my_kernel;
-    get_kernel_from_name(s, my_kernel);
-    fastsum_init_guru(&(this->my_fastsum_plan), d, N, M, my_kernel, &this->c, 0, n, m, p, eps_I, eps_B);
+  this->d = dimension;
+  this->N = N;
+  this->M = M;
+  this->n = n;
+  this->m = m;
+  this->p = p;
+  this->s = s;
+  this->time = 0.0;
+  this->error = 0.0;
+  this->eps_I = eps_I;
+  this->eps_B = eps_B;
+  this->c = c;
+  kernel_fs my_kernel;
+  get_kernel_from_name(s, my_kernel);
+  fastsum_init_guru(&(this->my_fastsum_plan), d, N, M, my_kernel, &this->c, 0, n, m, p, eps_I, eps_B);
+
 }
 
+void FastSumOperator::init_random()
+{
+  /** init source knots in a d-ball with radius 0.25-eps_b/2 */
+  k = 0;
+  while (k < M)
+  {
+    R r_max = K(0.25) - my_fastsum_plan.eps_B / K(2.0);
+    R r2 = K(0.0);
 
+    for (j = 0; j < d; j++)
+      my_fastsum_plan.x[k * d + j] = K(2.0) * r_max * NFFT(drand48)() - r_max;
+
+    for (j = 0; j < d; j++)
+      r2 += my_fastsum_plan.x[k * d + j] * my_fastsum_plan.x[k * d + j];
+
+    if (r2 >= r_max * r_max)
+      continue;
+
+    k++;
+  }
+  
+  for (k = 0; k < N; k++)
+  {
+    my_fastsum_plan.alpha[k] = NFFT(drand48)() + NFFT(drand48)();
+  }
+  /** init target knots in a d-ball with radius 0.25-eps_b/2 */
+  k = 0;
+  while (k < M)
+  {
+    R r_max = K(0.25) - my_fastsum_plan.eps_B / K(2.0);
+    R r2 = K(0.0);
+
+    for (j = 0; j < d; j++)
+      my_fastsum_plan.y[k * d + j] = K(2.0) * r_max * NFFT(drand48)() - r_max;
+
+    for (j = 0; j < d; j++)
+      r2 += my_fastsum_plan.y[k * d + j] * my_fastsum_plan.y[k * d + j];
+
+    if (r2 >= r_max * r_max)
+      continue;
+
+    k++;
+  }
+}
+
+py::array_t<R> FastSumOperator::sum(py::array_t<R> points, bool direct)
+{
+  // Make all alphas as ones for first set of potentials
+  k = 0;
+  for (k = 0; k < N; k++)
+  {
+    my_fastsum_plan.alpha[k] = (R) 1;
+  }
+  // Initialize all the source knots
+  R *data = (R *) points.request().ptr;
+  for (k = 0; k < N*d; k++)
+  {
+    my_fastsum_plan.x[k] = data[k];
+    my_fastsum_plan.y[k] = data[k];
+  }
+  if(direct)
+  { 
+    printf("direct computation: \n");
+    fastsum_exact(&my_fastsum_plan);
+  }
+  else
+  {
+    // precomputation 
+    printf("pre-computation:    \n");
+    fastsum_precompute(&my_fastsum_plan);
+    printf("fast computation:   \n");
+    fastsum_trafo(&my_fastsum_plan);
+  }
+  /** copy result */
+  py::array_t<R> out_result({my_fastsum_plan.M_total});
+  R *out_data = (R *) out_result.request().ptr;
+  
+  for (j = 0; j < my_fastsum_plan.M_total; j++)
+    out_data[j] = creal(my_fastsum_plan.f[j]);
+  
+  return out_result;
+}

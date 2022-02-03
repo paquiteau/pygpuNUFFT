@@ -2,7 +2,9 @@
 #define FASTSUM_BINDER_HPP_INCLUDED
 
 #include "config.h"
-
+#include <pybind11/pybind11.h>
+#include <pybind11/numpy.h>
+#include <pybind11/complex.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -16,6 +18,7 @@
 #include "kernels.h"
 #include "infft.h"
 
+namespace py = pybind11;
 
 class FastSumOperator
 {
@@ -37,9 +40,10 @@ class FastSumOperator
 
 
   public:
-
-  FastSumOperator(int dimension, int N, int M, int n, int m, const char *s);
-  
+  FastSumOperator(int dimension, int N, int M, int n,  int m, int p, const char *s, R c, float eps_I, float eps_B);
+  void init_random();
+  py::array_t<R> sum(py::array_t<R>, bool);
+ 
   ~FastSumOperator()
   {    
   }

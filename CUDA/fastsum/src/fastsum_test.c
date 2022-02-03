@@ -154,7 +154,7 @@ int main(int argc, char **argv)
 #endif
 
   /** init d-dimensional fastsum plan */
-  fastsum_init_guru(&my_fastsum_plan, d, N, M, kernel, &c, 0, n, m, p, eps_I,
+fastsum_init_guru(&my_fastsum_plan, d, N, M, kernel, &c, 0, n, m, p, eps_I,
       eps_B);
   //fastsum_init_guru(&my_fastsum_plan, d, N, M, kernel, &c, NEARFIELD_BOXES, n, m, p, eps_I, eps_B);
 

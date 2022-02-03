@@ -21,5 +21,7 @@ PYBIND11_MODULE(gpuNUFFT, m) {
         .def("get_spectral_radius", &GpuNUFFTPythonOperator::get_spectral_radius);
 
     py::class_<FastSumOperator>(m, "FastSumOp")
-        .def(py::init<int, int, int, int, int, const char *>());
+        .def(py::init<int, int, int, int, int, int, const char *, R, float, float>())
+        .def("init_random", &FastSumOperator::init_random)
+        .def("sum", &FastSumOperator::sum);
 }
