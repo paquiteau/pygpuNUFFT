@@ -1200,7 +1200,7 @@ void fastsum_trafo(fastsum_plan *ths)
 #endif
   std::complex<DType> *adj_op_data = reinterpret_cast<std::complex<DType>(&)[0]>(*ths->src_adj_op.data);
   for (k = 0; k < ths->N_total; k++)
-    adj_op_data[k] = reinterpret_cast<std::complex<DType>(&)>(ths->b[k]) * adj_op_data[k];
+    adj_op_data[k] = reinterpret_cast<std::complex<DType>(&)[0]>(ths->b[k]) * [k];
 #ifdef MEASURE_TIME
   t1 = getticks();
   ths->MEASURE_TIME_t[5] += nfft_elapsed_seconds(t1,t0);

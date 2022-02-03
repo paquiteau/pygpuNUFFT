@@ -1144,7 +1144,7 @@ void fastsum_precompute_target_nodes(fastsum_plan *ths)
   t0 = getticks();
 #endif
 ths->target_node_loc.data = ths->y; // FIXME we need tyo take factor -1?
-ths->target_node_loc.dim.length = ths->M_total;
+ths->target_node_loc.dim.length = ths->N_total;
 //                                                                                             Sector, kernel, OSF, dimensions
 ths->gpuNUFFTOpTgt = ths->factory.createGpuNUFFTOperator(ths->target_node_loc, ths->density_compArray, ths->sensArray, 3, 8, 2, ths->imgDims);
   /** init NFFT plan for transform in third step*/
@@ -1183,9 +1183,6 @@ void fastsum_trafo(fastsum_plan *ths)
 #endif
   /** first step of algorithm */
   // CGR NFFT(adjoint)(&(ths->mv1));
-  ths->src_data.data = reinterpret_cast<DType2(&)[0]>(*ths->alpha);
-  ths->src_data.dim.length = ths->M_total;
-  ths->gpuNUFFTOpSrc->performGpuNUFFTAdj(ths->src_data, ths->src_adj_op);
 #ifdef MEASURE_TIME
   t1 = getticks();
   ths->MEASURE_TIME_t[4] += NFFT(elapsed_seconds)(t1,t0);
@@ -1198,9 +1195,8 @@ void fastsum_trafo(fastsum_plan *ths)
 #ifdef _OPENMP
   #pragma omp parallel for default(shared) private(k)
 #endif
-  std::complex<DType> *adj_op_data = reinterpret_cast<std::complex<DType>(&)[0]>(*ths->src_adj_op.data);
-  for (k = 0; k < ths->N_total; k++)
-    adj_op_data[k] = reinterpret_cast<std::complex<DType>(&)>(ths->b[k]) * adj_op_data[k];
+  //CGR for (k = 0; k < ths->mv2.N_total; k++)
+  //CGR   ths->mv2.f_hat[k] = ths->b[k] * ths->mv1.f_hat[k];
 #ifdef MEASURE_TIME
   t1 = getticks();
   ths->MEASURE_TIME_t[5] += nfft_elapsed_seconds(t1,t0);
@@ -1210,7 +1206,7 @@ void fastsum_trafo(fastsum_plan *ths)
   t0 = getticks();
 #endif
   /** third step of algorithm */
-ths->gpuNUFFTOpTgt->performForwardGpuNUFFT(ths->src_adj_op, ths->target_op);
+  // CGR NFFT(trafo)(&(ths->mv2));
 #ifdef MEASURE_TIME
   t1 = getticks();
   ths->MEASURE_TIME_t[6] += nfft_elapsed_seconds(t1,t0);
@@ -1224,7 +1220,8 @@ ths->gpuNUFFTOpTgt->performForwardGpuNUFFT(ths->src_adj_op, ths->target_op);
 #ifdef _OPENMP
   #pragma omp parallel for default(shared) private(j)
 #endif
-  ths->f = reinterpret_cast<std::complex<DType>*>(ths->target_op.data);
+  // CGR for (j = 0; j < ths->M_total; j++)
+  // CGR   ths->f[j] = ths->mv2.f[j];
 
   if (ths->eps_I > 0.0)
   {

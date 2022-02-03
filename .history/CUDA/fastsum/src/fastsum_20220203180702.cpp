@@ -1183,7 +1183,7 @@ void fastsum_trafo(fastsum_plan *ths)
 #endif
   /** first step of algorithm */
   // CGR NFFT(adjoint)(&(ths->mv1));
-  ths->src_data.data = reinterpret_cast<DType2(&)[0]>(*ths->alpha);
+  ths->src_data.data = reinterpret_cast<DType2(&)[0]>(*ths->alpha)
   ths->src_data.dim.length = ths->M_total;
   ths->gpuNUFFTOpSrc->performGpuNUFFTAdj(ths->src_data, ths->src_adj_op);
 #ifdef MEASURE_TIME
@@ -1198,9 +1198,9 @@ void fastsum_trafo(fastsum_plan *ths)
 #ifdef _OPENMP
   #pragma omp parallel for default(shared) private(k)
 #endif
-  std::complex<DType> *adj_op_data = reinterpret_cast<std::complex<DType>(&)[0]>(*ths->src_adj_op.data);
-  for (k = 0; k < ths->N_total; k++)
-    adj_op_data[k] = reinterpret_cast<std::complex<DType>(&)>(ths->b[k]) * adj_op_data[k];
+  DType2 *adj_op_data = (DType2*)ths->src_adj_op.data; 
+  for (k = 0; k < ths->mv2.N_total; k++)
+    adj_op_data[k] = reinterpret_cast<DType2>(ths->b[k]) * adj_op_data[k];
 #ifdef MEASURE_TIME
   t1 = getticks();
   ths->MEASURE_TIME_t[5] += nfft_elapsed_seconds(t1,t0);

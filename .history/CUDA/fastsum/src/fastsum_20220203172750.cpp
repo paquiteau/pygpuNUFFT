@@ -794,7 +794,7 @@ void fastsum_init_guru_kernel(fastsum_plan *ths, int d, kernel_fs k, R *param,
   ths->p = p;
   ths->eps_I = eps_I; /* =(R)ths->p/(R)nn; *//** inner boundary */
   ths->eps_B = eps_B; /* =K(1.0)/K(16.0); *//** outer boundary */
-  
+
   /** init spline for near field computation */
   if (ths->eps_I > 0.0 && !(ths->flags & EXACT_NEARFIELD))
   {
@@ -877,9 +877,7 @@ void fastsum_init_guru_kernel(fastsum_plan *ths, int d, kernel_fs k, R *param,
 #ifdef _OPENMP
 }
 #endif
-  // gpuNUFFT INIT
-  ths->sensArray.data = NULL; // We dont use sens for fastsum
-  ths->density_compArray.data = NULL;  // We dont use density compensation for fastsum
+
   fastsum_precompute_kernel(ths);
 }
 
@@ -964,12 +962,7 @@ void fastsum_init_guru_target_nodes(fastsum_plan *ths, int M_total, int nn_overs
     N[t] = ths->n;
     n[t] = nn_oversampled;
   }
-  ths->imgDims.width = n[0];
-  ths->imgDims.height = n[1];
-  if(ths->d==3)
-      ths->imgDims.depth = n[2];
-  else
-      ths->imgDims.depth = 0;
+
   // CGR NFFT(init_guru)(&(ths->mv2), ths->d, N, M_total, n, m,
   // CGR     sort_flags_trafo |
   // CGR     PRE_PHI_HUT | PRE_PSI | /*MALLOC_X | MALLOC_F_HAT | MALLOC_F |*/ FFTW_INIT
@@ -1110,17 +1103,20 @@ void fastsum_precompute_source_nodes(fastsum_plan *ths)
 #ifdef MEASURE_TIME
   t0 = getticks();
 #endif
- 
-  ths->src_node_loc.data = ths->x; // FIXME we need tyo take factor -1?
-  ths->src_node_loc.dim.length = ths->N_total;
-  //                                                                                             Sector, kernel, OSF, dimensions
-  ths->gpuNUFFTOpSrc = ths->factory.createGpuNUFFTOperator(ths->src_node_loc, ths->density_compArray, ths->sensArray, 3, 8, 2, ths->imgDims);
-  
   /** init NFFT plan for transposed transform in first step*/
 //  for (k = 0; k < ths->mv1.M_total; k++)
 //    for (t = 0; t < ths->mv1.d; t++)
 //      ths->mv1.x[ths->mv1.d * k + t] = -ths->x[ths->mv1.d * k + t]; /* note the factor -1 for transposed transform instead of adjoint*/
 
+  /** precompute psi, the entries of the matrix B */
+  // CGR if (ths->mv1.flags & PRE_LIN_PSI)
+  // CGR   NFFT(precompute_lin_psi)(&(ths->mv1));
+
+  // CGR if (ths->mv1.flags & PRE_PSI)
+  // CGR   NFFT(precompute_psi)(&(ths->mv1));
+
+  // CGR if (ths->mv1.flags & PRE_FULL_PSI)
+  // CGR   NFFT(precompute_full_psi)(&(ths->mv1));
 #ifdef MEASURE_TIME
   t1 = getticks();
   ths->MEASURE_TIME_t[1] += nfft_elapsed_seconds(t1,t0);
@@ -1143,15 +1139,21 @@ void fastsum_precompute_target_nodes(fastsum_plan *ths)
 #ifdef MEASURE_TIME
   t0 = getticks();
 #endif
-ths->target_node_loc.data = ths->y; // FIXME we need tyo take factor -1?
-ths->target_node_loc.dim.length = ths->M_total;
-//                                                                                             Sector, kernel, OSF, dimensions
-ths->gpuNUFFTOpTgt = ths->factory.createGpuNUFFTOperator(ths->target_node_loc, ths->density_compArray, ths->sensArray, 3, 8, 2, ths->imgDims);
+gpu
   /** init NFFT plan for transform in third step*/
 //  for (j = 0; j < ths->mv2.M_total; j++)
 //    for (t = 0; t < ths->mv2.d; t++)
 //      ths->mv2.x[ths->mv2.d * j + t] = -ths->y[ths->mv2.d * j + t]; /* note the factor -1 for conjugated transform instead of standard*/
 
+  /** precompute psi, the entries of the matrix B */
+  // CGR if (ths->mv2.flags & PRE_LIN_PSI)
+  // CGR   NFFT(precompute_lin_psi)(&(ths->mv2));
+
+  // CGR if (ths->mv2.flags & PRE_PSI)
+  // CGR   NFFT(precompute_psi)(&(ths->mv2));
+
+  // CGR if (ths->mv2.flags & PRE_FULL_PSI)
+  // CGR   NFFT(precompute_full_psi)(&(ths->mv2));
 #ifdef MEASURE_TIME
   t1 = getticks();
   ths->MEASURE_TIME_t[2] += NFFT(elapsed_seconds)(t1,t0);
@@ -1183,9 +1185,6 @@ void fastsum_trafo(fastsum_plan *ths)
 #endif
   /** first step of algorithm */
   // CGR NFFT(adjoint)(&(ths->mv1));
-  ths->src_data.data = reinterpret_cast<DType2(&)[0]>(*ths->alpha);
-  ths->src_data.dim.length = ths->M_total;
-  ths->gpuNUFFTOpSrc->performGpuNUFFTAdj(ths->src_data, ths->src_adj_op);
 #ifdef MEASURE_TIME
   t1 = getticks();
   ths->MEASURE_TIME_t[4] += NFFT(elapsed_seconds)(t1,t0);
@@ -1198,9 +1197,8 @@ void fastsum_trafo(fastsum_plan *ths)
 #ifdef _OPENMP
   #pragma omp parallel for default(shared) private(k)
 #endif
-  std::complex<DType> *adj_op_data = reinterpret_cast<std::complex<DType>(&)[0]>(*ths->src_adj_op.data);
-  for (k = 0; k < ths->N_total; k++)
-    adj_op_data[k] = reinterpret_cast<std::complex<DType>(&)>(ths->b[k]) * adj_op_data[k];
+  //CGR for (k = 0; k < ths->mv2.N_total; k++)
+  //CGR   ths->mv2.f_hat[k] = ths->b[k] * ths->mv1.f_hat[k];
 #ifdef MEASURE_TIME
   t1 = getticks();
   ths->MEASURE_TIME_t[5] += nfft_elapsed_seconds(t1,t0);
@@ -1210,7 +1208,7 @@ void fastsum_trafo(fastsum_plan *ths)
   t0 = getticks();
 #endif
   /** third step of algorithm */
-ths->gpuNUFFTOpTgt->performForwardGpuNUFFT(ths->src_adj_op, ths->target_op);
+  // CGR NFFT(trafo)(&(ths->mv2));
 #ifdef MEASURE_TIME
   t1 = getticks();
   ths->MEASURE_TIME_t[6] += nfft_elapsed_seconds(t1,t0);
@@ -1224,7 +1222,8 @@ ths->gpuNUFFTOpTgt->performForwardGpuNUFFT(ths->src_adj_op, ths->target_op);
 #ifdef _OPENMP
   #pragma omp parallel for default(shared) private(j)
 #endif
-  ths->f = reinterpret_cast<std::complex<DType>*>(ths->target_op.data);
+  // CGR for (j = 0; j < ths->M_total; j++)
+  // CGR   ths->f[j] = ths->mv2.f[j];
 
   if (ths->eps_I > 0.0)
   {

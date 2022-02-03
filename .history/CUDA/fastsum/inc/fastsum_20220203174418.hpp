@@ -119,8 +119,8 @@ typedef struct fastsum_plan_
   bool has_sense_data;
   gpuNUFFT::Dimensions imgDims;
   // sensitivity maps
-  gpuNUFFT::Array<DType2> sensArray, src_data, src_adj_op, target_data, target_op;
-  gpuNUFFT::Array<DType> density_compArray, src_node_loc, target_node_loc;
+  gpuNUFFT::Array<DType2> sensArray, src_data, target_data;
+  gpuNUFFT::Array<DType> kSpaceTrajgpuNUFFT::Array<DType> density_compArray;
   /** near field */
   int Ad;                               /**< number of spline knots for nearfield computation of regularized kernel */
   C *Add;                 /**< spline values */
