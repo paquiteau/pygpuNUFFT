@@ -964,10 +964,10 @@ void fastsum_init_guru_target_nodes(fastsum_plan *ths, int M_total, int nn_overs
     N[t] = ths->n;
     n[t] = nn_oversampled;
   }
-  ths->imgDims.width = N[0];
-  ths->imgDims.height = N[1];
+  ths->imgDims.width = n[0];
+  ths->imgDims.height = n[1];
   if(ths->d==3)
-      ths->imgDims.depth = N[2];
+      ths->imgDims.depth = n[2];
   else
       ths->imgDims.depth = 0;
   // CGR NFFT(init_guru)(&(ths->mv2), ths->d, N, M_total, n, m,
@@ -1185,8 +1185,6 @@ void fastsum_trafo(fastsum_plan *ths)
   // CGR NFFT(adjoint)(&(ths->mv1));
   ths->src_data.data = reinterpret_cast<DType2(&)[0]>(*ths->alpha);
   ths->src_data.dim.length = ths->M_total;
-  ths->src_adj_op.data = reinterpret_cast<DType2(&)[0]>(*ths->f_hat);
-  ths->src_adj_op.dim = ths->imgDims;
   ths->gpuNUFFTOpSrc->performGpuNUFFTAdj(ths->src_data, ths->src_adj_op);
 #ifdef MEASURE_TIME
   t1 = getticks();
@@ -1212,8 +1210,6 @@ void fastsum_trafo(fastsum_plan *ths)
   t0 = getticks();
 #endif
   /** third step of algorithm */
-ths->target_op.data = reinterpret_cast<DType2(&)[0]>(*ths->f);
-ths->target_data.dim.length = ths->M_total;
 ths->gpuNUFFTOpTgt->performForwardGpuNUFFT(ths->src_adj_op, ths->target_op);
 #ifdef MEASURE_TIME
   t1 = getticks();
@@ -1228,6 +1224,7 @@ ths->gpuNUFFTOpTgt->performForwardGpuNUFFT(ths->src_adj_op, ths->target_op);
 #ifdef _OPENMP
   #pragma omp parallel for default(shared) private(j)
 #endif
+  ths->f = reinterpret_cast<std::complex<DType>*>(ths->target_op.data);
 
   if (ths->eps_I > 0.0)
   {

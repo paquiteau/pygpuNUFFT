@@ -1185,8 +1185,8 @@ void fastsum_trafo(fastsum_plan *ths)
   // CGR NFFT(adjoint)(&(ths->mv1));
   ths->src_data.data = reinterpret_cast<DType2(&)[0]>(*ths->alpha);
   ths->src_data.dim.length = ths->M_total;
-  ths->src_adj_op.data = reinterpret_cast<DType2(&)[0]>(*ths->f_hat);
-  ths->src_adj_op.dim = ths->imgDims;
+  ths->src_adj_op.data = ths->f_hat;
+  ths->src.adj_op.dim = ths->imgDims;
   ths->gpuNUFFTOpSrc->performGpuNUFFTAdj(ths->src_data, ths->src_adj_op);
 #ifdef MEASURE_TIME
   t1 = getticks();
@@ -1213,7 +1213,6 @@ void fastsum_trafo(fastsum_plan *ths)
 #endif
   /** third step of algorithm */
 ths->target_op.data = reinterpret_cast<DType2(&)[0]>(*ths->f);
-ths->target_data.dim.length = ths->M_total;
 ths->gpuNUFFTOpTgt->performForwardGpuNUFFT(ths->src_adj_op, ths->target_op);
 #ifdef MEASURE_TIME
   t1 = getticks();
