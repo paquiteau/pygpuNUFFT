@@ -1,6 +1,6 @@
+import matplotlib.pyplot as plt
 import numpy as np
 from gpuNUFFT import FastSumOp
-import matplotlib.pyplot as plt
 
 #r::FastSumOperator(int dimension, int N, int M, int n,  int m, int p, const char *s, R c, float eps_I=0.0625, float eps_B=0.0625)
 """    

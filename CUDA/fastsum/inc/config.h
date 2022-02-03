@@ -1247,6 +1247,8 @@
 /* Define to compile in single precision. */
 /* #undef NFFT_SINGLE */
 
+#define NFFT_SINGLE 1
+
 /* Major version number. */
 #define NFFT_VERSION_MAJOR 3
 

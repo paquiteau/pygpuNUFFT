@@ -41,7 +41,7 @@ cuda_add_library(gpuNUFFT ${GPU_CU_SOURCES}
 
 set_target_properties(gpuNUFFT PROPERTIES PREFIX "")
 target_link_libraries(gpuNUFFT ${CUDA_LIBRARIES} ${CUDA_curand_LIBRARY})
-target_link_libraries(gpuNUFFT nfft3 fftw3)
+target_link_libraries(gpuNUFFT nfft3f fftw3)
 
 CUDA_ADD_CUFFT_TO_TARGET(gpuNUFFT)
 CUDA_ADD_CUBLAS_TO_TARGET(gpuNUFFT)
