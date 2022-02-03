@@ -14,7 +14,7 @@
 #endif
 
 
-#include "fastsum.hpp"
+#include "fastsum.h"
 #include "kernels.h"
 #include "infft.h"
 

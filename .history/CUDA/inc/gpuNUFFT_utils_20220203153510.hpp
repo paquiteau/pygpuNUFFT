@@ -12,6 +12,7 @@
 #define _USE_MATH_DEFINES
 #endif
 #include <cmath>
+#endif
 #include <math.h>
 #include <assert.h>
 
