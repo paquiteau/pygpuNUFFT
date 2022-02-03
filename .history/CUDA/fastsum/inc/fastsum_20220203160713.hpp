@@ -51,7 +51,7 @@
 /** Include header for utils from NFFT3 library. */
 /** Include header for NFFT3 library. */
 #include "infft.h"
-#define R float
+
 #if !(defined(NF_LIN) || defined(NF_QUADR) || defined(NF_KUB))
   #define NF_KUB
 #endif
@@ -104,8 +104,8 @@ typedef struct fastsum_plan_
 
   /** FS__ - fast summation */
   int n;                                /**< expansion degree                */
-  C *b;                               /**< expansion coefficients          */
-  C *f_hat;                           /**< Fourier coefficients of nfft plans */
+  C *b;                      /**< expansion coefficients          */
+  C *f_hat;  /**< Fourier coefficients of nfft plans */
 
   int p;                                /**< degree of smoothness of regularization */
   R eps_I;                         /**< inner boundary                  */  /* fixed to p/n so far  */

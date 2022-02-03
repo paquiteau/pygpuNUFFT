@@ -86,8 +86,8 @@ typedef struct fastsum_plan_
   int N_total;                          /**< number of source knots          */
   int M_total;                          /**< number of target knots          */
 
-  C *alpha;                       /**< source coefficients             */
-  C *f;                           /**< target evaluations              */
+  R *alpha;                       /**< source coefficients             */
+  R *f;                           /**< target evaluations              */
 
   R *x;                            /**< source knots in d-ball with radius 1/4-eps_b/2 */
   R *y;                            /**< target knots in d-ball with radius 1/4-eps_b/2 */
@@ -104,8 +104,8 @@ typedef struct fastsum_plan_
 
   /** FS__ - fast summation */
   int n;                                /**< expansion degree                */
-  C *b;                               /**< expansion coefficients          */
-  C *f_hat;                           /**< Fourier coefficients of nfft plans */
+  C *b;                      /**< expansion coefficients          */
+  C *f_hat;  /**< Fourier coefficients of nfft plans */
 
   int p;                                /**< degree of smoothness of regularization */
   R eps_I;                         /**< inner boundary                  */  /* fixed to p/n so far  */

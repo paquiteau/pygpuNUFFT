@@ -86,8 +86,8 @@ typedef struct fastsum_plan_
   int N_total;                          /**< number of source knots          */
   int M_total;                          /**< number of target knots          */
 
-  C *alpha;                       /**< source coefficients             */
-  C *f;                           /**< target evaluations              */
+  R *alpha;                       /**< source coefficients             */
+  R *f;                           /**< target evaluations              */
 
   R *x;                            /**< source knots in d-ball with radius 1/4-eps_b/2 */
   R *y;                            /**< target knots in d-ball with radius 1/4-eps_b/2 */
