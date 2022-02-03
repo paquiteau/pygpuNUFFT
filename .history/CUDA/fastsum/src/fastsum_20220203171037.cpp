@@ -33,6 +33,13 @@
 #include "nfft3.h"
 #include "fastsum.hpp"
 #include "infft.h"
+
+extern "C" {
+#include <complex.h>
+// Using _Complex or __complex__ since C's "complex" type doesn't exist in C++
+void cfunc(_Complex float x);
+}
+// Required for test if (ths->k == one_over_x)
 #include "kernels.h"
 
 /**
@@ -872,7 +879,7 @@ void fastsum_init_guru_kernel(fastsum_plan *ths, int d, kernel_fs k, R *param,
     FFTW(plan_with_nthreads)(nthreads);
 #endif
 
-  ths->fft_plan = FFTW(plan_dft)(d, N, &reinterpret_cast<DType(&)[2]>(*ths->b), &reinterpret_cast<DType(&)[2]>(*ths->b), FFTW_FORWARD, FFTW_ESTIMATE);
+  ths->fft_plan = FFTW(plan_dft)(d, N, cfunc(reinterpret_cast<DType(&)[2]>(ths->b), reinterpret_cast<DType(&)[2]>(ths->b), FFTW_FORWARD, FFTW_ESTIMATE);
 
 #ifdef _OPENMP
 }

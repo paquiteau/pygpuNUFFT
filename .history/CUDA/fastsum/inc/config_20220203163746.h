@@ -1,6 +1,8 @@
 /* include/config.h.  Generated from config.h.in by configure.  */
 /* include/config.h.in.  Generated from configure.ac by autoheader.  */
 
+/* Absolute path to source directory. */
+#define ABS_SRCDIR "/volatile/Chaithya/Codes/Libraries/nfft"
 
 /* Define to enable B-spline window function. */
 /* #undef B_SPLINE */

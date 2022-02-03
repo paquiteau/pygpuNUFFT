@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from gpuNUFFT import FastSumOp
 from time import perf_counter
-#from sparkling.fmm.gpu.keops import direct_pykeops_compute_torch
+from sparkling.fmm.gpu.keops import direct_pykeops_compute_torch
 #r::FastSumOperator(int dimension, int N, int M, int n,  int m, int p, const char *s, R c, float eps_I=0.0625, float eps_B=0.0625)
 """    
     printf("\nfastsum_test d N M n m p kernel c eps_I eps_B\n\n");
@@ -28,11 +28,11 @@ for N in np.logspace(3, 8, 10)[:1]:
     points = np.random.uniform(-max_val,  max_val, (N, dimension))
     print(points[0])
     st = perf_counter()
-    pots = fastsum.sum(points, False)
+    pots = fastsum.sum(points, True)
     times_fastsum.append(perf_counter() - st)
     print("Time for fastsum : ", perf_counter() - st)
     st = perf_counter()
-    #pots_keops = direct_pykeops_compute_torch(points)
+    pots_keops = direct_pykeops_compute_torch(points)
     times_keops.append(perf_counter() - st)
     print("Time for keops : ", perf_counter() - st)
     print(points[0])

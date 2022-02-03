@@ -33,6 +33,8 @@
 #include "nfft3.h"
 #include "fastsum.hpp"
 #include "infft.h"
+
+// Required for test if (ths->k == one_over_x)
 #include "kernels.h"
 
 /**
@@ -872,7 +874,7 @@ void fastsum_init_guru_kernel(fastsum_plan *ths, int d, kernel_fs k, R *param,
     FFTW(plan_with_nthreads)(nthreads);
 #endif
 
-  ths->fft_plan = FFTW(plan_dft)(d, N, &reinterpret_cast<DType(&)[2]>(*ths->b), &reinterpret_cast<DType(&)[2]>(*ths->b), FFTW_FORWARD, FFTW_ESTIMATE);
+  // CGR ths->fft_plan = FFTW(plan_dft)(d, N, ths->b, ths->b, FFTW_FORWARD, FFTW_ESTIMATE);
 
 #ifdef _OPENMP
 }
@@ -901,6 +903,13 @@ void fastsum_init_guru_source_nodes(fastsum_plan *ths, int N_total, int nn_overs
   ths->x = (R *) NFFT(malloc)((size_t)(ths->d * N_total) * (sizeof(R)));
   ths->alpha = (C *) NFFT(malloc)((size_t)(N_total) * (sizeof(C)));
 
+  /** init d-dimensional NFFT plan */
+  for (t = 0; t < ths->d; t++)
+  {
+    N[t] = ths->n;
+    n[t] = nn_oversampled;
+  }
+  gpuNUFFTOpSrc = fac
   // CGR NFFT(init_guru)(&(ths->mv1), ths->d, N, N_total, n, m,
   // CGR     sort_flags_adjoint |
   // CGR     PRE_PHI_HUT | PRE_PSI | /*MALLOC_X | MALLOC_F_HAT | MALLOC_F |*/ FFTW_INIT

@@ -28,7 +28,7 @@ for N in np.logspace(3, 8, 10)[:1]:
     points = np.random.uniform(-max_val,  max_val, (N, dimension))
     print(points[0])
     st = perf_counter()
-    pots = fastsum.sum(points, False)
+    pots = fastsum.sum(points, True)
     times_fastsum.append(perf_counter() - st)
     print("Time for fastsum : ", perf_counter() - st)
     st = perf_counter()
