@@ -23,6 +23,7 @@
  *  \date 2003-2006
  */
 #include "config.h"
+#include <omp.h>
 
 #include <stdlib.h>
 #include <math.h>

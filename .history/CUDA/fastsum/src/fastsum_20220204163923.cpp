@@ -23,6 +23,7 @@
  *  \date 2003-2006
  */
 #include "config.h"
+#include <omp.h>
 
 #include <stdlib.h>
 #include <math.h>
@@ -1203,11 +1204,11 @@ void fastsum_trafo(fastsum_plan *ths)
   t0 = getticks();
 #endif
   /** second step of algorithm */
-  C *adj_op_data = reinterpret_cast<std::complex<DType>(&)[0]>(*ths->src_adj_op.data);
-  R scale_factor = SQRT(pow(2, ths->d))*0.948*SQRT(ths->imgDims.count()); //0.948 is weird scale factor between NFFT and gpuNUFFT
 #ifdef _OPENMP
   #pragma omp parallel for default(shared) private(k)
 #endif
+  C *adj_op_data = reinterpret_cast<std::complex<DType>(&)[0]>(*ths->src_adj_op.data);
+  R scale_factor = SQRT(pow(2, ths->d))*0.948*SQRT(ths->imgDims.count()); //0.948 is weird scale factor between NFFT and gpuNUFFT
   for (k = 0; k < ths->imgDims.count(); k++)
     adj_op_data[k] =  reinterpret_cast<C (&)>(ths->b[k]) * adj_op_data[k] * scale_factor;
 #ifdef MEASURE_TIME
@@ -1245,6 +1246,7 @@ for (k = 0; k < ths->M_total; k++)
   #endif
     for (j = 0; j < ths->M_total; j++)
     {
+      printf("Thread %d reporting\n", omp_get_thread_num());
       R ymin[ths->d], ymax[ths->d]; /** limits for d-dimensional near field box */
 
       if (ths->flags & NEARFIELD_BOXES)

@@ -57,7 +57,7 @@ class CMakeBuild(build_ext):
             os.path.dirname(self.get_ext_fullpath(ext.name)))
         cmake_args = ["-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=" + extdir,
                       ]
-        cfg = "Debug" if self.debug else "Release"
+        cfg = "Debug" # if self.debug else "Release"
         build_args = ["--config", cfg]
 
         if platform.system() == "Windows":

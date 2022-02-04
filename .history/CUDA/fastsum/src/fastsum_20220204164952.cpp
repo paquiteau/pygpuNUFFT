@@ -23,6 +23,7 @@
  *  \date 2003-2006
  */
 #include "config.h"
+#include <omp.h>
 
 #include <stdlib.h>
 #include <math.h>
@@ -1245,6 +1246,7 @@ for (k = 0; k < ths->M_total; k++)
   #endif
     for (j = 0; j < ths->M_total; j++)
     {
+      printf("Thread %d reporting\n", omp_get_thread_num());
       R ymin[ths->d], ymax[ths->d]; /** limits for d-dimensional near field box */
 
       if (ths->flags & NEARFIELD_BOXES)

@@ -31,8 +31,8 @@
 #endif
 
 #include "nfft3.h"
-#include "infft.h"
 #include "fastsum.hpp"
+#include "infft.h"
 #include "kernels.h"
 
 /**
@@ -1118,7 +1118,7 @@ void fastsum_precompute_source_nodes(fastsum_plan *ths)
   ths->src_node_loc.data = ths->x2; // FIXME we need tyo take factor -1?
   ths->src_node_loc.dim.length = ths->N_total;
   //                                                                                             Sector, kernel, OSF, dimensions
-  //ths->gpuNUFFTOpSrc = ths->factory.createGpuNUFFTOperator(ths->src_node_loc, ths->density_compArray, ths->sensArray, 3, 8, 2, ths->imgDims);
+  ths->gpuNUFFTOpSrc = ths->factory.createGpuNUFFTOperator(ths->src_node_loc, ths->density_compArray, ths->sensArray, 3, 8, 2, ths->imgDims);
   /** init NFFT plan for transposed transform in first step*/
 //  for (k = 0; k < ths->mv1.M_total; k++)
 //    for (t = 0; t < ths->mv1.d; t++)
@@ -1152,7 +1152,7 @@ void fastsum_precompute_target_nodes(fastsum_plan *ths)
 ths->target_node_loc.data = ths->y2; // FIXME we need tyo take factor -1?
 ths->target_node_loc.dim.length = ths->M_total;
 //                                                                                             Sector, kernel, OSF, dimensions
-//ths->gpuNUFFTOpTgt = ths->factory.createGpuNUFFTOperator(ths->target_node_loc, ths->density_compArray, ths->sensArray, 3, 8, 2, ths->imgDims);
+ths->gpuNUFFTOpTgt = ths->factory.createGpuNUFFTOperator(ths->target_node_loc, ths->density_compArray, ths->sensArray, 3, 8, 2, ths->imgDims);
   /** init NFFT plan for transform in third step*/
 //  for (j = 0; j < ths->mv2.M_total; j++)
 //    for (t = 0; t < ths->mv2.d; t++)
@@ -1193,7 +1193,7 @@ void fastsum_trafo(fastsum_plan *ths)
   ths->src_data.dim.length = ths->M_total;
   ths->src_adj_op.data = reinterpret_cast<DType2(&)[0]>(*ths->f_hat);
   ths->src_adj_op.dim = ths->imgDims;
-  //ths->gpuNUFFTOpSrc->performGpuNUFFTAdj(ths->src_data, ths->src_adj_op);
+  ths->gpuNUFFTOpSrc->performGpuNUFFTAdj(ths->src_data, ths->src_adj_op);
 #ifdef MEASURE_TIME
   t1 = getticks();
   ths->MEASURE_TIME_t[4] += NFFT(elapsed_seconds)(t1,t0);
@@ -1203,11 +1203,11 @@ void fastsum_trafo(fastsum_plan *ths)
   t0 = getticks();
 #endif
   /** second step of algorithm */
-  C *adj_op_data = reinterpret_cast<std::complex<DType>(&)[0]>(*ths->src_adj_op.data);
-  R scale_factor = SQRT(pow(2, ths->d))*0.948*SQRT(ths->imgDims.count()); //0.948 is weird scale factor between NFFT and gpuNUFFT
 #ifdef _OPENMP
   #pragma omp parallel for default(shared) private(k)
 #endif
+  C *adj_op_data = reinterpret_cast<std::complex<DType>(&)[0]>(*ths->src_adj_op.data);
+  R scale_factor = SQRT(pow(2, ths->d))*0.948*SQRT(ths->imgDims.count()); //0.948 is weird scale factor between NFFT and gpuNUFFT
   for (k = 0; k < ths->imgDims.count(); k++)
     adj_op_data[k] =  reinterpret_cast<C (&)>(ths->b[k]) * adj_op_data[k] * scale_factor;
 #ifdef MEASURE_TIME
@@ -1222,9 +1222,6 @@ void fastsum_trafo(fastsum_plan *ths)
 ths->target_op.data = reinterpret_cast<DType2(&)[0]>(*ths->f);
 ths->target_op.dim.length = ths->M_total;
 //ths->gpuNUFFTOpTgt->performForwardGpuNUFFT(ths->src_adj_op, ths->target_op);
-#ifdef _OPENMP
-  #pragma omp parallel for default(shared) private(k)
-#endif
 for (k = 0; k < ths->M_total; k++)
     ths->f[k] =  ths->f[k] * scale_factor;
 #ifdef MEASURE_TIME
@@ -1236,6 +1233,10 @@ for (k = 0; k < ths->M_total; k++)
   t0 = getticks();
 #endif
 
+  /** write far field to output */
+#ifdef _OPENMP
+  #pragma omp parallel for default(shared) private(j)
+#endif
 
   if (ths->eps_I > 0.0)
   {

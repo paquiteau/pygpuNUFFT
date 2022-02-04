@@ -53,7 +53,8 @@
 
 #include "infft.h"
 #undef R
-#undef C
+
+
 #define R DType
 #define C std::complex<DType>
 #define K(x) ((R) x)
