@@ -1118,7 +1118,7 @@ void fastsum_precompute_source_nodes(fastsum_plan *ths)
   ths->src_node_loc.data = ths->x2; // FIXME we need tyo take factor -1?
   ths->src_node_loc.dim.length = ths->N_total;
   //                                                                                             Sector, kernel, OSF, dimensions
-  ths->gpuNUFFTOpSrc = ths->factory.createGpuNUFFTOperator(ths->src_node_loc, ths->density_compArray, ths->sensArray, 3, 8, 2, ths->imgDims);
+  //ths->gpuNUFFTOpSrc = ths->factory.createGpuNUFFTOperator(ths->src_node_loc, ths->density_compArray, ths->sensArray, 3, 8, 2, ths->imgDims);
   /** init NFFT plan for transposed transform in first step*/
 //  for (k = 0; k < ths->mv1.M_total; k++)
 //    for (t = 0; t < ths->mv1.d; t++)
@@ -1193,7 +1193,7 @@ void fastsum_trafo(fastsum_plan *ths)
   ths->src_data.dim.length = ths->M_total;
   ths->src_adj_op.data = reinterpret_cast<DType2(&)[0]>(*ths->f_hat);
   ths->src_adj_op.dim = ths->imgDims;
-  ths->gpuNUFFTOpSrc->performGpuNUFFTAdj(ths->src_data, ths->src_adj_op);
+  //ths->gpuNUFFTOpSrc->performGpuNUFFTAdj(ths->src_data, ths->src_adj_op);
 #ifdef MEASURE_TIME
   t1 = getticks();
   ths->MEASURE_TIME_t[4] += NFFT(elapsed_seconds)(t1,t0);
