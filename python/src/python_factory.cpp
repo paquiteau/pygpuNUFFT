@@ -224,11 +224,9 @@ py::array_t<std::complex<DType>> GpuNUFFTPythonOperator::data_consistency(
   gpuNUFFT::Dimensions myDims = imgDims;
   if (dimension == 2)
     myDims.depth = 1;
-  printf("in data_consistency\n");
 
   copyNumpyArray(input_image,image.data);
   gpuNUFFT::Array<DType2> obsArray = readNumpyArray(obs_data);
-  printf("image and obs init done\n");
 
   gpuNUFFT::GpuArray<DType2> obsArray_gpu;
   obsArray_gpu.dim = kspace_data.dim;
@@ -243,7 +241,6 @@ py::array_t<std::complex<DType>> GpuNUFFTPythonOperator::data_consistency(
   allocateAndCopyToDeviceMem(&obsArray_gpu.data, obsArray.data, obsArray.count());
 
   HANDLE_ERROR(cudaDeviceSynchronize());
-  printf("### init done\n");
   // F^H(Fx - y) on gpu.
   gpuNUFFTOp->performForwardGpuNUFFT(imArray_gpu,resArray_gpu);
   if(DEBUG && cudaDeviceSynchronize() == cudaSuccess)
