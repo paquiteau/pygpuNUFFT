@@ -821,7 +821,7 @@ __global__ void diffInplaceKernel(DType2* data1, DType2* data2, int N)
     DType2 data1p = data1[t];
     DType2 data2p = data2[t];
     data1p.x = data1p.x - data2p.x;
-    data1p.y = data1p.y - data2p.x;
+    data1p.y = data1p.y - data2p.y;
     data1[t] = data1p;
     t = t + blockDim.x*gridDim.x;
   }

@@ -256,6 +256,8 @@ py::array_t<std::complex<DType>> GpuNUFFTPythonOperator::data_consistency(
     printf("### from device done");
   HANDLE_ERROR(cudaDeviceSynchronize());
 
+
+  freeTotalDeviceMemory(imArray_gpu.data, resArray_gpu.data, obsArray_gpu.data, NULL);
  //return image as numpy array
   std::complex<DType> *ptr =
       reinterpret_cast<std::complex<DType>(&)[0]>(*image.data);
@@ -351,6 +353,7 @@ float GpuNUFFTPythonOperator::get_spectral_radius(int max_iter=20, float toleran
     }
     norm_old = norm_new;
   }
+  freeTotalDeviceMemory(tmp_kspace_gpu.data, x_gpu.data, NULL);
   cublasDestroy(handle);
   return norm_new;
 }
