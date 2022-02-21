@@ -13,31 +13,40 @@ parser.add_argument('dim', metavar='dim', type=int, const=0, default=0, nargs='?
                     help='select dimension')
 parser.add_argument('--new', action='store_true', default=False)
 parser.add_argument('--gpu-density', dest='density', action='store_true', default=False)
-
 def test_gradient(image, shape, n_coils, samples, samples_data, smaps=None, density=None, new=False):
-    fourier_op = NonCartesianFFT(samples=samples,
+
+    fourier_op2 = NonCartesianFFT(samples=samples.copy(),
                                  shape=shape,
-                                 density_comp=density,
+                                 density_comp=density.copy(),
+                                 n_coils=n_coils,
+                                 smaps=smaps,
+                                 implementation="gpuNUFFT",
+                                 )
+
+    fourier_op = NonCartesianFFT(samples=samples.copy(),
+                                 shape=shape,
+                                 density_comp=density.copy(),
                                  n_coils=n_coils,
                                  smaps=smaps,
                                  implementation="gpuNUFFT",
                                  )
     ts = perf_counter()
-    gradient = fourier_op.adj_op(fourier_op.op(image) - samples_data)
+    gradient = fourier_op2.adj_op(fourier_op2.op(image.copy()) - np.zeros_like(samples_data))
     tf = perf_counter()
     print("elapsed_time: {:.3f}s".format(tf-ts))
     print("||g||= ", np.linalg.norm(gradient.flatten()))
     if new:
         ts2 = perf_counter()
-        gradient_new = fourier_op.impl.operator.data_consistency(
-            np.reshape(image.T, image.size), samples_data)
+        gradient_new = fourier_op.impl.data_consistency(image.copy(), np.zeros_like(samples_data))
         tf2 = perf_counter()
         print("elapsed_time: {:.3f}s, x{:.1f}".format(tf2-ts2, (tf-ts)/(tf2-ts2)))
         print("||g_new||= ", np.linalg.norm(gradient_new.flatten()))
-        print("allclose: ", np.allclose(gradient, gradient_new.T))
-        print("allclose_reverse: ", np.allclose(gradient_new.T, gradient))
-        print("||g-g_new||/||g||= ", np.linalg.norm((gradient- gradient_new.T).flatten())/np.linalg.norm(gradient))
+        print("allclose: ", np.allclose(gradient, gradient_new))
+        print("||g-g_new||/||g||= ", np.linalg.norm((gradient-gradient_new).flatten())/np.linalg.norm(gradient))
 
+        return gradient.copy(), gradient_new.copy()
+    else:
+        return gradient.copy(), gradient.copy()
 
 def test_gradient3D(new, density):
     print("# 3D gradient")

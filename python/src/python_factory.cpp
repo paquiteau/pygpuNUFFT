@@ -32,9 +32,7 @@ py::array_t<std::complex<DType>> sense_maps,  py::array_t<float> density_comp, i
 int sector_width, int osr, bool balance_workload)
 {
     //initialize CUDA
-    printf("initialize cuda...");
     cudaFree(0);
-    printf("done\n");
     // k-space coordinates
     py::buffer_info sample_loc = kspace_loc.request();
     trajectory_length = sample_loc.shape[1];
@@ -226,8 +224,7 @@ py::array_t<std::complex<DType>> GpuNUFFTPythonOperator::data_consistency(
     myDims.depth = 1;
 
   copyNumpyArray(input_image,image.data);
-  gpuNUFFT::Array<DType2> obsArray = readNumpyArray(obs_data);
-
+  copyNumpyArray(obs_data, kspace_data.data);
   gpuNUFFT::GpuArray<DType2> obsArray_gpu;
   obsArray_gpu.dim = kspace_data.dim;
   gpuNUFFT::GpuArray<DType2> resArray_gpu;
@@ -236,16 +233,17 @@ py::array_t<std::complex<DType>> GpuNUFFTPythonOperator::data_consistency(
   imArray_gpu.dim = image.dim;
   allocateDeviceMem(&imArray_gpu.data, image.count());
   allocateDeviceMem(&resArray_gpu.data, resArray_gpu.count());
+  allocateDeviceMem(&obsArray_gpu.data, obsArray_gpu.count());
 
   copyToDevice(image.data, imArray_gpu.data, image.count());
-  allocateAndCopyToDeviceMem(&obsArray_gpu.data, obsArray.data, obsArray.count());
+  copyToDevice(kspace_data.data, obsArray_gpu.data, kspace_data.count());
 
   HANDLE_ERROR(cudaDeviceSynchronize());
   // F^H(Fx - y) on gpu.
   gpuNUFFTOp->performForwardGpuNUFFT(imArray_gpu,resArray_gpu);
   if(DEBUG && cudaDeviceSynchronize() == cudaSuccess)
     printf("### forward done\n");
-  diffInPlace(resArray_gpu.data, obsArray_gpu.data, obsArray.count());
+  diffInPlace(resArray_gpu.data, obsArray_gpu.data, obsArray_gpu.count());
   if(DEBUG && cudaDeviceSynchronize() == cudaSuccess)
     printf("### diff done\n");
   gpuNUFFTOp->performGpuNUFFTAdj(resArray_gpu, imArray_gpu);
@@ -258,6 +256,7 @@ py::array_t<std::complex<DType>> GpuNUFFTPythonOperator::data_consistency(
 
 
   freeTotalDeviceMemory(imArray_gpu.data, resArray_gpu.data, obsArray_gpu.data, NULL);
+  cudaDeviceReset();
  //return image as numpy array
   std::complex<DType> *ptr =
       reinterpret_cast<std::complex<DType>(&)[0]>(*image.data);

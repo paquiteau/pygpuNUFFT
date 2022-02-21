@@ -101,6 +101,7 @@ class GpuNUFFTPythonOperator
     {
         cudaFreeHost(kspace_data.data);
         cudaFreeHost(image.data);
+        cudaDeviceReset();
         delete gpuNUFFTOp;
     }
 };
