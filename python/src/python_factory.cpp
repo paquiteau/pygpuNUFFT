@@ -240,7 +240,6 @@ py::array_t<std::complex<DType>> GpuNUFFTPythonOperator::data_consistency(
   imArray_gpu.dim = image.dim;
   allocateDeviceMem(&imArray_gpu.data, image.count());
   allocateDeviceMem(&resArray_gpu.data, resArray_gpu.count());
-  allocateDeviceMem(&obsArray_gpu.data, obsArray_gpu.count());
 
   copyToDevice(image.data, imArray_gpu.data, image.count());
   allocateAndCopyToDeviceMem(&obsArray_gpu.data, obsArray.data,
