@@ -20,7 +20,7 @@ from sparkling.fmm.gpu.keops import direct_pykeops_compute_torch
 np.random.seed(0)
 times_keops = []
 times_fastsum = []
-for N in np.logspace(7, 8, 10)[:1]:
+for N in np.logspace(8, 9, 10):
     dimension = 3
     N = int(N)
     fastsum = FastSumOp(dimension, N, N, 128, 4, 2, "inverse_multiquadric", 1e-5, 0.003125, 0.003125)
@@ -31,6 +31,7 @@ for N in np.logspace(7, 8, 10)[:1]:
     pots = fastsum.sum(points, np.reshape(points, points.shape[::-1], order='F'), False)
     times_fastsum.append(perf_counter() - st)
     print("Time for fastsum : ", perf_counter() - st)
+    # COmpile warmup
     pots_keops = direct_pykeops_compute_torch(points)
     st = perf_counter()
     pots_keops = direct_pykeops_compute_torch(points)
