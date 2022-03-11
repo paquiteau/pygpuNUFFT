@@ -1,7 +1,7 @@
 #ifndef GPUNUFFT_KERNELS_H
 #define GPUNUFFT_KERNELS_H
-#include "gpuNUFFT_utils.hpp"
 #include "cuda_utils.hpp"
+#include "gpuNUFFT_utils.hpp"
 
 /**
  * @file
