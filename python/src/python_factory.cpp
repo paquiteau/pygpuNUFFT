@@ -95,8 +95,8 @@ GpuNUFFTPythonOperator::GpuNUFFTPythonOperator(
   }
   cudaDeviceSynchronize();
 }
-
 py::array_t<std::complex<DType>>
+
 GpuNUFFTPythonOperator::op(py::array_t<std::complex<DType>> input_image,
                            bool interpolate_data)
 {
@@ -250,8 +250,7 @@ py::array_t<std::complex<DType>> GpuNUFFTPythonOperator::data_consistency(
   gpuNUFFTOp->performForwardGpuNUFFT(imArray_gpu, resArray_gpu);
   if (DEBUG && cudaDeviceSynchronize() == cudaSuccess)
     printf("### forward done\n");
-  diffInPlaceFlatten((DType *)resArray_gpu.data, (DType *)obsArray_gpu.data,
-                     2 * obsArray.count());
+  diffInPlace(resArray_gpu.data, obsArray_gpu.data, obsArray.count());
   if (DEBUG && cudaDeviceSynchronize() == cudaSuccess)
     printf("### diff done\n");
   gpuNUFFTOp->performGpuNUFFTAdj(resArray_gpu, imArray_gpu);
