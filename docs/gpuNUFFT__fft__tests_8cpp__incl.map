@@ -1,33 +1,33 @@
 <map id="CUDA/test/gpu/gpuNUFFT_fft_tests.cpp" name="CUDA/test/gpu/gpuNUFFT_fft_tests.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="501,5,680,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="457,95,519,121"/>
-<area shape="rect" id="node3" title=" " alt="" coords="543,95,638,121"/>
-<area shape="rect" id="node4" href="$gpuNUFFT__operator__factory_8hpp.html" title=" " alt="" coords="663,95,873,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="456,632,536,659"/>
+<area shape="rect" id="node1" title=" " alt="" coords="476,5,655,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="431,95,494,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="518,95,613,121"/>
+<area shape="rect" id="node4" href="$gpuNUFFT__operator__factory_8hpp.html" title=" " alt="" coords="637,95,848,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="412,632,492,659"/>
 <area shape="rect" id="node6" href="$gpuNUFFT__operator_8hpp.html" title=" " alt="" coords="565,333,731,360"/>
-<area shape="rect" id="node16" title=" " alt="" coords="1147,632,1205,659"/>
-<area shape="rect" id="node19" href="$cuda__utils_8hpp.html" title="Util functions for CUDA memory and texture management." alt="" coords="719,483,825,509"/>
-<area shape="rect" id="node23" href="$balanced__gpuNUFFT__operator_8hpp.html" title=" " alt="" coords="189,259,413,285"/>
-<area shape="rect" id="node25" href="$texture__gpuNUFFT__operator_8hpp.html" title=" " alt="" coords="437,259,648,285"/>
-<area shape="rect" id="node28" href="$balanced__texture__gpuNUFFT__operator_8hpp.html" title=" " alt="" coords="107,169,299,211"/>
-<area shape="rect" id="node29" title=" " alt="" coords="856,177,931,203"/>
-<area shape="rect" id="node30" title=" " alt="" coords="955,177,1013,203"/>
-<area shape="rect" id="node31" title=" " alt="" coords="1038,177,1093,203"/>
-<area shape="rect" id="node32" href="$precomp__utils_8hpp.html" title="UTIL functions for precomputation." alt="" coords="939,259,1066,285"/>
-<area shape="rect" id="node7" href="$gpuNUFFT__types_8hpp.html" title="Definition of gpuNUFFT defined types." alt="" coords="209,408,359,435"/>
-<area shape="rect" id="node8" title=" " alt="" coords="306,483,366,509"/>
-<area shape="rect" id="node9" title=" " alt="" coords="391,483,463,509"/>
-<area shape="rect" id="node10" href="$gpuNUFFT__kernels_8hpp.html" title="gpuNUFFT CUDA function prototypes" alt="" coords="805,408,965,435"/>
-<area shape="rect" id="node22" title=" " alt="" coords="601,408,679,435"/>
-<area shape="rect" id="node11" href="$gpuNUFFT__utils_8hpp.html" title="Definition of util functions used in gridding operations." alt="" coords="814,557,957,584"/>
-<area shape="rect" id="node12" title=" " alt="" coords="925,632,987,659"/>
-<area shape="rect" id="node13" title=" " alt="" coords="578,632,638,659"/>
-<area shape="rect" id="node14" title=" " alt="" coords="662,632,722,659"/>
-<area shape="rect" id="node15" title=" " alt="" coords="1011,632,1122,659"/>
-<area shape="rect" id="node17" title=" " alt="" coords="747,632,808,659"/>
-<area shape="rect" id="node18" title=" " alt="" coords="833,632,901,659"/>
-<area shape="rect" id="node20" title=" " alt="" coords="538,557,595,584"/>
-<area shape="rect" id="node21" title=" " alt="" coords="619,557,687,584"/>
+<area shape="rect" id="node11" href="$cuda__utils_8hpp.html" title="Util functions for CUDA memory and texture management." alt="" coords="1142,483,1247,509"/>
+<area shape="rect" id="node18" title=" " alt="" coords="739,632,797,659"/>
+<area shape="rect" id="node23" href="$balanced__gpuNUFFT__operator_8hpp.html" title=" " alt="" coords="171,259,395,285"/>
+<area shape="rect" id="node25" href="$texture__gpuNUFFT__operator_8hpp.html" title=" " alt="" coords="419,259,629,285"/>
+<area shape="rect" id="node28" href="$balanced__texture__gpuNUFFT__operator_8hpp.html" title=" " alt="" coords="105,169,297,211"/>
+<area shape="rect" id="node29" title=" " alt="" coords="831,177,905,203"/>
+<area shape="rect" id="node30" title=" " alt="" coords="929,177,988,203"/>
+<area shape="rect" id="node31" title=" " alt="" coords="1013,177,1067,203"/>
+<area shape="rect" id="node32" href="$precomp__utils_8hpp.html" title="UTIL functions for precomputation." alt="" coords="781,259,907,285"/>
+<area shape="rect" id="node7" href="$gpuNUFFT__types_8hpp.html" title="Definition of gpuNUFFT defined types." alt="" coords="259,408,408,435"/>
+<area shape="rect" id="node8" title=" " alt="" coords="374,483,434,509"/>
+<area shape="rect" id="node9" title=" " alt="" coords="460,483,532,509"/>
+<area shape="rect" id="node10" href="$gpuNUFFT__kernels_8hpp.html" title="gpuNUFFT CUDA function prototypes" alt="" coords="856,408,1016,435"/>
+<area shape="rect" id="node22" title=" " alt="" coords="609,408,687,435"/>
+<area shape="rect" id="node16" href="$gpuNUFFT__utils_8hpp.html" title="Definition of util functions used in gridding operations." alt="" coords="870,557,1013,584"/>
+<area shape="rect" id="node12" title=" " alt="" coords="1086,632,1146,659"/>
+<area shape="rect" id="node13" title=" " alt="" coords="1170,632,1281,659"/>
+<area shape="rect" id="node14" title=" " alt="" coords="1305,632,1365,659"/>
+<area shape="rect" id="node15" title=" " alt="" coords="1181,557,1238,584"/>
+<area shape="rect" id="node21" title=" " alt="" coords="1037,557,1105,584"/>
+<area shape="rect" id="node17" title=" " alt="" coords="999,632,1062,659"/>
+<area shape="rect" id="node19" title=" " alt="" coords="821,632,883,659"/>
+<area shape="rect" id="node20" title=" " alt="" coords="907,632,975,659"/>
 <area shape="rect" id="node24" href="$balanced__operator_8hpp.html" title=" " alt="" coords="93,333,245,360"/>
 <area shape="rect" id="node26" title=" " alt="" coords="371,333,437,360"/>
 <area shape="rect" id="node27" title=" " alt="" coords="462,333,541,360"/>
