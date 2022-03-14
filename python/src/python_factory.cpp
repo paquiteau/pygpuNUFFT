@@ -54,7 +54,7 @@ GpuNUFFTPythonOperator::GpuNUFFTPythonOperator(
   if (dimension == 3)
     imgDims.depth = dims[2];
   else
-    imgDims.depth = 0;
+    imgDims.depth = 1;
 
   n_coils = num_coils;
 

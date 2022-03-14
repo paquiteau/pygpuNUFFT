@@ -275,8 +275,14 @@ void gpuNUFFT::GpuNUFFTOperator::initDeviceMemory(int n_coils, int n_coils_cc)
   // copy deapo function to device
   if (this->deapo.data)
   {
-    if (DEBUG)
+    if (DEBUG){
       printf("allocate precomputed deapofunction of size %d...\n", imdata_count);
+      float s=0.0;
+        for(int i; i < this->deapo.count(); i++){
+          s += (this->deapo.data)[i];
+        }
+      printf("deapo sum: %f\n", s);
+    }
     allocateAndCopyToDeviceMem<DType>(&deapo_d, this->deapo.data, imdata_count);
   }
   if (DEBUG)
@@ -474,6 +480,10 @@ void gpuNUFFT::GpuNUFFTOperator::performGpuNUFFTAdj(
 
       freeTotalDeviceMemory(imdata_sum_d, NULL);
       this->freeDeviceMemory();
+      if (cudaDeviceSynchronize() != cudaSuccess){
+        fprintf(stderr, "error in performForwardGpuNUFFT function: %s\n",
+                cudaGetErrorString(cudaGetLastError()));
+      }
       return;
     }
     if ((cudaStreamSynchronize(new_stream) != cudaSuccess))
@@ -755,13 +765,22 @@ void gpuNUFFT::GpuNUFFTOperator::performGpuNUFFTAdj(
         continue;
 
       if (DEBUG)
+      {
         printf("stopping output after CONVOLUTION step\n");
-
-      if (DEBUG)
         printf("test value at point zero: %f\n", (imgData.data)[0].x);
-
+        float s=0.0;
+        for(int i; i < imgData.count(); i++){
+          s += (imgData.data)[i].x;
+        }
+        printf("test sum real: %f\n", s);
+      }
       freeTotalDeviceMemory(data_d, imdata_d, imdata_sum_d, NULL);
       this->freeDeviceMemory();
+
+      if (cudaDeviceSynchronize() != cudaSuccess){
+        fprintf(stderr, "error in performForwardGpuNUFFT function: %s\n",
+                cudaGetErrorString(cudaGetLastError()));
+      }
       return;
     }
     if ((cudaDeviceSynchronize() != cudaSuccess))
@@ -991,6 +1010,9 @@ void gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT(
 
     // apodization Correction
     performForwardDeapodization(imdata_d, deapo_d, gi_host);
+    if (DEBUG && (cudaThreadSynchronize() != cudaSuccess))
+      printf("error at thread synchronization 2: %s\n",
+             cudaGetErrorString(cudaGetLastError()));
     if(gpuNUFFTOut == DENSITY_ESTIMATION)
     {
       forwardConvolution(data_d, crds_d, imdata_d, NULL, sectors_d,
@@ -1002,12 +1024,12 @@ void gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT(
         if ((coil_it + n_coils_cc) < (n_coils))
             continue;
         this->freeDeviceMemory();
+        if (cudaDeviceSynchronize() != cudaSuccess){
+          fprintf(stderr, "error in performForwardGpuNUFFT function: %s\n",
+                  cudaGetErrorString(cudaGetLastError()));
+        }
         return;
     }
-
-    if (DEBUG && (cudaDeviceSynchronize() != cudaSuccess))
-      printf("error at thread synchronization 2: %s\n",
-             cudaGetErrorString(cudaGetLastError()));
     // resize by oversampling factor and zero pad
     performPadding(imdata_d, gdata_d, gi_host);
 
@@ -1199,7 +1221,11 @@ void gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT(
 
     // apodization Correction
     performForwardDeapodization(imdata_d, deapo_d, gi_host);
-	  if(gpuNUFFTOut == DENSITY_ESTIMATION)
+    if (DEBUG && (cudaThreadSynchronize() != cudaSuccess))
+      printf("error at thread synchronization 2: %s\n",
+             cudaGetErrorString(cudaGetLastError()));
+
+    if(gpuNUFFTOut == DENSITY_ESTIMATION)
 	  {
 	      forwardConvolution(data_d, crds_d, imdata_d, NULL, sectors_d,
                        sector_centers_d, gi_host);
@@ -1211,11 +1237,13 @@ void gpuNUFFT::GpuNUFFTOperator::performForwardGpuNUFFT(
             continue;
         freeTotalDeviceMemory(data_d, imdata_d, NULL);
         this->freeDeviceMemory();
+
+        if (cudaDeviceSynchronize() != cudaSuccess){
+          fprintf(stderr, "error in performForwardGpuNUFFT function: %s\n",
+                  cudaGetErrorString(cudaGetLastError()));
+        }
         return;
     }
-    if (DEBUG && (cudaThreadSynchronize() != cudaSuccess))
-      printf("error at thread synchronization 2: %s\n",
-             cudaGetErrorString(cudaGetLastError()));
     // resize by oversampling factor and zero pad
     performPadding(imdata_d, gdata_d, gi_host);
 
