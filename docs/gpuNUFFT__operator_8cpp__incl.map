@@ -6,8 +6,8 @@
 <area shape="rect" id="node8" href="$cuda__utils_8hpp.html" title="Util functions for CUDA memory and texture management." alt="" coords="550,379,655,405"/>
 <area shape="rect" id="node20" title=" " alt="" coords="905,80,1017,107"/>
 <area shape="rect" id="node21" href="$precomp__kernels_8hpp.html" title="GPU Kernels for Precomputation (sector assignment)" alt="" coords="581,80,726,107"/>
-<area shape="rect" id="node24" title=" " alt="" coords="1041,80,1111,107"/>
-<area shape="rect" id="node25" title=" " alt="" coords="1135,80,1209,107"/>
+<area shape="rect" id="node24" title=" " alt="" coords="1041,80,1116,107"/>
+<area shape="rect" id="node25" title=" " alt="" coords="1140,80,1209,107"/>
 <area shape="rect" id="node3" href="$gpuNUFFT__types_8hpp.html" title="Definition of gpuNUFFT defined types." alt="" coords="93,304,243,331"/>
 <area shape="rect" id="node4" title=" " alt="" coords="263,379,323,405"/>
 <area shape="rect" id="node6" title=" " alt="" coords="337,528,417,555"/>
