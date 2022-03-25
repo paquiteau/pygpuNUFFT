@@ -18,8 +18,6 @@ parser.add_argument('--iter', type=int, default=10, help="number of iteration")
 parser.add_argument('--new', action='store_true', default=False, )
 
 
-
-
 def test_density(samples, shape, new, itr=10):
 
     ts = perf_counter()
@@ -30,17 +28,20 @@ def test_density(samples, shape, new, itr=10):
     if new:
         ts2 = perf_counter()
         grid_op = NonCartesianFFT(
-                samples=samples,
-                shape=shape,
-                implementation="gpuNUFFT",
-                osf=1,
-            )
+            samples=samples,
+            shape=shape,
+            implementation="gpuNUFFT",
+            osf=1,
+        )
         density_new = grid_op.impl.operator.estimate_density_comp(itr)
         tf2 = perf_counter()
-        print("elapsed_time: {:.3f}s, x{:.1f}".format(tf2-ts2, (tf-ts)/(tf2-ts2)))
+        print("elapsed_time: {:.3f}s, x{:.1f}".format(
+            tf2 - ts2, (tf - ts) / (tf2 - ts2)))
         print("||d_new||= ", np.linalg.norm(density_new))
         print("allclose: ", np.allclose(density_comp, density_new))
-        print("||d-d_new||/||d|| = ",np.linalg.norm(density_comp - density_new) / np.linalg.norm(density_comp))
+        print("||d-d_new||/||d|| = ", np.linalg.norm(density_comp -
+              density_new) / np.linalg.norm(density_comp))
+
 
 def test_density3D(new, itr=10):
     print("# 3D DensityCompensation")
@@ -50,13 +51,15 @@ def test_density3D(new, itr=10):
     print("img size ", shape3d)
     return test_density(samples3d, shape3d, new, itr)
 
+
 def test_density2D(new, itr=10):
     print("# 2D DensityCompensation")
     samples2d = get_sample_data("mri-radial-samples").data
-    shape2d = (512,512)
+    shape2d = (512, 512)
     print("samples: ", samples2d.shape)
     print("img size ", shape2d)
     return test_density(samples2d, shape2d, new, itr)
+
 
 if __name__ == "__main__":
     args = parser.parse_args()

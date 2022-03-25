@@ -58,7 +58,6 @@ IF(CMAKE_BUILD_TYPE MATCHES Debug)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g  -std=c++11")
 ELSE(CMAKE_BUILD_TYPE)
   list(APPEND CUDA_NVCC_FLAGS ${MY_NVCC_FLAGS} ${ARCH_FLAGS} --generate-line-info)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g  -std=c++11")
 ENDIF()
 
 message(STATUS "setting NVCC FLAGS to: ${CUDA_NVCC_FLAGS}")
