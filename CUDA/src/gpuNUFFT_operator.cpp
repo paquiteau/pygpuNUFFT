@@ -840,6 +840,7 @@ void gpuNUFFT::GpuNUFFTOperator::performGpuNUFFTAdj(
       copyFromDevice<CufftType>(imdata_d, imgData.data, gi_host->imgDims_count);
 
       freeTotalDeviceMemory(data_d, imdata_d, imdata_sum_d, NULL);
+      this->freeDeviceMemory();
       if (DEBUG)
         printf("last cuda error: %s\n", cudaGetErrorString(cudaGetLastError()));
       return;
